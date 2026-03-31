@@ -2,20 +2,21 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
+import sendContactEmail from '../utils/email'
 
 const initialState = { name: '', email: '', subject: '', message: '' }
 
 export default function ContactForm() {
   const { t } = useTranslation()
-  const [form, setForm]     = useState(initialState)
+  const [form, setForm] = useState(initialState)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState(null) // 'success' | 'error' | null
   const [loading, setLoading] = useState(false)
 
   const validate = () => {
     const e = {}
-    if (!form.name.trim())    e.name = 'Nama wajib diisi'
-    if (!form.email.trim())   e.email = 'Email wajib diisi'
+    if (!form.name.trim()) e.name = 'Nama wajib diisi'
+    if (!form.email.trim()) e.email = 'Email wajib diisi'
     else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Format email tidak valid'
     if (!form.subject.trim()) e.subject = 'Subjek wajib diisi'
     if (!form.message.trim()) e.message = 'Pesan wajib diisi'
@@ -34,22 +35,35 @@ export default function ContactForm() {
     if (Object.keys(e2).length) { setErrors(e2); return }
 
     setLoading(true)
-    // Simulate async submission
-    await new Promise(r => setTimeout(r, 1400))
+    setStatus(null)
+    const result = await sendContactEmail(form)
     setLoading(false)
-    setStatus('success')
-    setForm(initialState)
-    setTimeout(() => setStatus(null), 5000)
+    setStatus(result.success ? 'success' : 'error')
+    if (result.success) {
+      setForm(initialState)
+      setTimeout(() => setStatus(null), 5000)
+    }
   }
 
   const fields = [
-    { name: 'name',    type: 'text',  label: t('contact.form.name'),    placeholder: t('contact.form.name_placeholder'),    half: true },
-    { name: 'email',   type: 'email', label: t('contact.form.email'),   placeholder: t('contact.form.email_placeholder'),   half: true },
-    { name: 'subject', type: 'text',  label: t('contact.form.subject'), placeholder: t('contact.form.subject_placeholder'), half: false },
+    { name: 'name', type: 'text', label: t('contact.form.name'), placeholder: t('contact.form.name_placeholder'), half: true },
+    { name: 'email', type: 'email', label: t('contact.form.email'), placeholder: t('contact.form.email_placeholder'), half: true },
+    { name: 'subject', type: 'text', label: t('contact.form.subject'), placeholder: t('contact.form.subject_placeholder'), half: false },
   ]
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      {/* Honeypot (hidden spam filter) */}
+      <input
+        type="text"
+        name="bot-field"
+        value={form['bot-field'] || ''}
+        onChange={handleChange}
+        style={{ display: 'none' }}
+        aria-hidden="true"
+        tabIndex={-1}
+      />
+
       {/* Two-column fields */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {fields.map(({ name, type, label, placeholder, half }) => (
@@ -122,11 +136,10 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className={`flex items-start gap-3 p-4 rounded-xl text-sm font-sans ${
-              status === 'success'
-                ? 'bg-green-50 text-green-700 border border-green-200'
-                : 'bg-red-50 text-red-700 border border-red-200'
-            }`}
+            className={`flex items-start gap-3 p-4 rounded-xl text-sm font-sans ${status === 'success'
+              ? 'bg-green-50 text-green-700 border border-green-200'
+              : 'bg-red-50 text-red-700 border border-red-200'
+              }`}
           >
             {status === 'success'
               ? <FiCheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />

@@ -35,18 +35,22 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-forest-900">
-      {/* Video Background */}
+      {/* Video Background - Optimized */}
       <video
         ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
+        poster="/logo.png"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-60' : 'opacity-0'
           }`}
         aria-hidden="true"
       >
+        <source src="/video.webm" type="video/webm" />
         <source src="/video.mp4" type="video/mp4" />
+        Browser tidak mendukung video.
       </video>
 
       {/* Gradient Overlay */}

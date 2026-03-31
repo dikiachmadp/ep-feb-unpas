@@ -18,10 +18,11 @@ export default function Navbar() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
+
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Detect scroll for glass-morphism effect
+  // Scroll effect (glass navbar)
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -29,7 +30,9 @@ export default function Navbar() {
   }, [])
 
   // Close mobile menu on route change
-  useEffect(() => { setIsOpen(false) }, [location.pathname])
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.pathname])
 
   const toggleLanguage = useCallback(() => {
     i18n.changeLanguage(i18n.language === 'id' ? 'en' : 'id')
@@ -43,14 +46,24 @@ export default function Navbar() {
     }
   }, [location.pathname, navigate])
 
+  // ✅ FIXED navigation handler (handles animation timing issue)
+  const handleNavClick = () => {
+    setIsOpen(false)
+
+    // Delay to wait for route + layout + animation settle
+    setTimeout(() => {
+      scrollToTop()
+    }, 60)
+  }
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white backdrop-blur-md rounded-xl mx-4 mt-4 shadow-lg'
-        : 'bg-white/0 backdrop-blur-sm'
+          ? 'bg-white backdrop-blur-md rounded-xl mx-4 mt-4 shadow-lg'
+          : 'bg-white/0 backdrop-blur-sm'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 lg:py-0">
@@ -66,7 +79,7 @@ export default function Navbar() {
               <img
                 src="/logo.png"
                 alt="Logo FEB UNPAS"
-                className="h-full object-contain items-center p-1"
+                className="h-full object-contain p-1"
                 onError={(e) => {
                   e.target.onerror = null
                   e.target.src = logoFallback
@@ -82,6 +95,7 @@ export default function Navbar() {
                 key={key}
                 to={path}
                 end={path === '/'}
+                onClick={handleNavClick}
                 className={({ isActive }) =>
                   `nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
                     ? 'text-forest-600 bg-forest-50 font-semibold'
@@ -94,20 +108,21 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right: Lang Toggle + Mobile Menu */}
+          {/* Right Section */}
           <div className="flex items-center gap-2">
+
             {/* Language Toggle */}
             <motion.button
               onClick={toggleLanguage}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg borde bg-white border-forest-200 hover:border-forest-400 hover:bg-forest-50 text-forest-600 font-semibold text-xs transition-all duration-200"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-forest-200 hover:border-forest-400 hover:bg-forest-50 text-forest-600 font-semibold text-xs transition-all duration-200"
               aria-label="Toggle language"
             >
               <FiGlobe className="w-3.5 h-3.5" />
               <span>{t('nav.language')}</span>
             </motion.button>
 
-            {/* Mobile Hamburger */}
+            {/* Mobile Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 rounded-lg bg-white text-gray-600 hover:text-forest-500 hover:bg-gray-50 transition-colors duration-200"
@@ -115,6 +130,7 @@ export default function Navbar() {
             >
               {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
             </button>
+
           </div>
         </div>
       </div>
@@ -127,7 +143,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden bg-white/0 border-t border-gray-100 shadow-lg"
+            className="lg:hidden overflow-hidden bg-white border-t border-gray-100 shadow-lg"
           >
             <nav className="flex flex-col py-3 px-4 gap-1">
               {NAV_ROUTES.map(({ key, path }, i) => (
@@ -140,10 +156,11 @@ export default function Navbar() {
                   <NavLink
                     to={path}
                     end={path === '/'}
+                    onClick={handleNavClick}
                     className={({ isActive }) =>
                       `block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${isActive
                         ? 'text-forest-600 bg-forest-50 font-semibold'
-                        : 'text-forest-900 bg-forest-50 hover:text-forest-500 hover:bg-gray-50'
+                        : 'text-forest-900 hover:text-forest-500 hover:bg-gray-50'
                       }`
                     }
                   >
