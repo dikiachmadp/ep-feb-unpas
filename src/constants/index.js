@@ -38,7 +38,7 @@ export const SEO_DEFAULTS = {
 // SEO helpers for pages
 export const getSEO = (page) => ({
     home: {
-        title: 'Fakultas Ekonomi dan Bisnis - Universitas Pasundan',
+        title: 'Prodi Ekonomi Pembangunan - FEB UNPAS',
         description: 'Program S1 Ekonomi Pembangunan terakreditasi Unggul dengan kurikulum Merdeka Belajar.',
     },
     profile: {
