@@ -1,0 +1,337 @@
+{
+  "nav": {
+    "home": "Home",
+    "profile": "Profile",
+    "academics": "Academics",
+    "faculty": "Faculty",
+    "contact": "Contact",
+    "language": "ID"
+  },
+  "hero": {
+    "badge": "Accredited Excellent",
+    "title": "Study Program",
+    "subtitle": "Economics",
+    "description": "Faculty of Economics and Business, Universitas Pasundan",
+    "cta_primary": "Join Now",
+    "cta_secondary": "Contact Us",
+    "stats": {
+      "students": "Active Students",
+      "lecturers": "Experienced Lecturers",
+      "years": "Years of Experience",
+      "accreditation": "Accreditation"
+    }
+  },
+  "home": {
+    "why_title": "Why Development Economics?",
+    "why_subtitle": "Our Excellence",
+    "why_description": "The Development Economics Study Program at FEB UNPAS offers a modern curriculum relevant to industry needs and national development goals.",
+    "features": {
+      "curriculum": {
+        "title": "KKNI-Based Curriculum",
+        "desc": "Continuously updated curriculum aligned with the Indonesian National Qualifications Framework and labor market demands."
+      },
+      "research": {
+        "title": "Research & Community Service",
+        "desc": "Actively engaged in research and community service contributing to regional development."
+      },
+      "network": {
+        "title": "Extensive Alumni Network",
+        "desc": "Alumni working across government agencies, financial institutions, and leading corporations."
+      },
+      "international": {
+        "title": "International Exposure",
+        "desc": "Student exchange programs and research collaborations with international universities and institutions."
+      }
+    },
+    "news_title": "News & Activities",
+    "news_subtitle": "Latest",
+    "news": [
+      {
+        "title": "National Development Economics Seminar 2024",
+        "date": "March 15, 2024",
+        "excerpt": "The Development Economics Study Program held a national seminar themed on Indonesia's digital economic transformation.",
+        "category": "Seminar"
+      },
+      {
+        "title": "EP Students Win National PKM Award",
+        "date": "February 22, 2024",
+        "excerpt": "Development Economics student team won top honors in the National Student Creativity Program.",
+        "category": "Achievement"
+      },
+      {
+        "title": "Industry Visit to Bank Indonesia",
+        "date": "February 8, 2024",
+        "excerpt": "The industry visit to Bank Indonesia provided direct insights into national monetary policy.",
+        "category": "Activity"
+      }
+    ],
+    "cta_title": "Ready to Join Us?",
+    "cta_desc": "Register now and become part of an academic community dedicated to Indonesia's economic progress.",
+    "cta_button": "Register Now"
+  },
+  "profile": {
+    "title": "Study Program Profile",
+    "subtitle": "About Us",
+    "history_title": "Program History",
+    "history": "The Development Economics Study Program at the Faculty of Economics and Business, Universitas Pasundan (UNPAS), was established in 1974. Over more than five decades, the program has made tangible contributions in producing quality human resources in the field of development economics. Located in Bandung, West Java, UNPAS is committed to producing graduates who can compete at both national and international levels.",
+    "vision_title": "Vision",
+    "vision": "To become a distinguished, innovative, and internationally competitive Development Economics Study Program in sustainable development economics based on Islamic values by 2030.",
+    "mission_title": "Mission",
+    "missions": [
+      "To provide quality, relevant, and adaptive development economics education in response to advances in science and technology.",
+      "To conduct innovative scientific research in development economics to contribute to knowledge and national development.",
+      "To implement community service programs that contribute to improving social welfare.",
+      "To develop strategic cooperation with various domestic and international institutions to improve academic quality and professional networks.",
+      "To create a conducive academic environment with integrity, based on Islamic values in campus life."
+    ],
+    "objectives_title": "Program Objectives",
+    "objectives": [
+      "To produce competent, professional, and ethical graduates in the field of development economics.",
+      "To produce nationally and internationally recognized research and scientific publications.",
+      "To make real contributions to society through sustainable community service programs.",
+      "To build strategic partnerships to improve graduate quality and program relevance."
+    ],
+    "achievements_title": "Achievements & Awards",
+    "achievements": [
+      {
+        "year": "2023",
+        "title": "Accreditation B – BAN-PT",
+        "desc": "The study program received a B accreditation from the National Accreditation Board for Higher Education."
+      },
+      {
+        "year": "2022",
+        "title": "National PKM Champion",
+        "desc": "EP UNPAS students won the national Student Creativity Program in the research category."
+      },
+      {
+        "year": "2021",
+        "title": "Best Paper Award",
+        "desc": "EP UNPAS lecturer received a best paper award at the National Economics Conference."
+      },
+      {
+        "year": "2020",
+        "title": "International MoU",
+        "desc": "Signing of international cooperation agreements with universities in Malaysia and Thailand."
+      }
+    ]
+  },
+  "academics": {
+    "title": "Academic Programs",
+    "subtitle": "Curriculum & Programs",
+    "program_title": "Bachelor's Program (S1)",
+    "program_desc": "The Bachelor's Program in Development Economics is designed to equip students with comprehensive theoretical knowledge and analytical skills in the field of development economics.",
+    "duration": "4 Years (8 Semesters)",
+    "credits": "144 Credits",
+    "degree": "Bachelor of Economics (S.E.)",
+    "concentration_title": "Study Concentrations",
+    "concentrations": [
+      {
+        "name": "Monetary Economics & Banking",
+        "desc": "Studying monetary policy, banking systems, and macroeconomic financial management.",
+        "courses": [
+          "Monetary Economics",
+          "Banking Management",
+          "Fiscal Policy",
+          "Capital Markets"
+        ]
+      },
+      {
+        "name": "Regional Planning & Development",
+        "desc": "Focused on regional development planning, regional autonomy, and public policy.",
+        "courses": [
+          "Regional Planning",
+          "Regional Economics",
+          "Public Policy",
+          "Fiscal Decentralization"
+        ]
+      },
+      {
+        "name": "Resource & Environmental Economics",
+        "desc": "Examining natural resource management and environmental policy in sustainable development.",
+        "courses": [
+          "Environmental Economics",
+          "Natural Resource Economics",
+          "Sustainable Development",
+          "Green Economy"
+        ]
+      }
+    ],
+    "curriculum_title": "Curriculum Structure",
+    "semesters": [
+      {
+        "sem": 1,
+        "courses": [
+          "Introduction to Microeconomics",
+          "Economic Mathematics",
+          "Introduction to Accounting",
+          "Indonesian Language",
+          "Religious Education",
+          "Pancasila & Civics"
+        ]
+      },
+      {
+        "sem": 2,
+        "courses": [
+          "Introduction to Macroeconomics",
+          "Economic Statistics",
+          "Introduction to Management",
+          "English for Economics",
+          "Economic Sociology",
+          "Business Law"
+        ]
+      },
+      {
+        "sem": 3,
+        "courses": [
+          "Intermediate Microeconomics",
+          "Intermediate Macroeconomics",
+          "Research Methods",
+          "Basic Econometrics",
+          "Public Finance",
+          "Development Economics I"
+        ]
+      },
+      {
+        "sem": 4,
+        "courses": [
+          "Advanced Microeconomics",
+          "Advanced Macroeconomics",
+          "Advanced Econometrics",
+          "International Economics",
+          "Development Economics II",
+          "Development Planning"
+        ]
+      }
+    ],
+    "prospect_title": "Graduate Career Prospects",
+    "prospects": [
+      {
+        "icon": "building",
+        "title": "Government Agencies",
+        "desc": "Ministry of Finance, Bappenas, Bank Indonesia, BPS, and regional agencies."
+      },
+      {
+        "icon": "bank",
+        "title": "Financial Institutions",
+        "desc": "Banking, OJK, state-owned financial enterprises, and financing institutions."
+      },
+      {
+        "icon": "chart",
+        "title": "Economic Consultants",
+        "desc": "Development consultants, policy analysts, and economic researchers."
+      },
+      {
+        "icon": "academic",
+        "title": "Academics & Researchers",
+        "desc": "Lecturers, researchers at national and international research institutions."
+      }
+    ]
+  },
+  "faculty": {
+    "title": "Faculty Team",
+    "subtitle": "Teaching Staff",
+    "description": "The Development Economics Study Program at FEB UNPAS is supported by experienced and dedicated lecturers with the best academic qualifications.",
+    "members": [
+      {
+        "name": "Prof. Dr. H. Ahmad Hidayat, M.Si.",
+        "position": "Head of Study Program",
+        "specialization": "Development Economics & Fiscal Policy",
+        "education": "PhD in Economics, Universitas Padjadjaran",
+        "email": "ahmad.hidayat@unpas.ac.id",
+        "research": "Regional Fiscal Policy, Regional Economics"
+      },
+      {
+        "name": "Dr. Hj. Siti Rahayu, M.Ec.",
+        "position": "Secretary of Study Program",
+        "specialization": "Monetary Economics & Banking",
+        "education": "PhD in Economics, Universitas Indonesia",
+        "email": "siti.rahayu@unpas.ac.id",
+        "research": "Monetary Policy, Inflation, Interest Rates"
+      },
+      {
+        "name": "Dr. Dedi Kurniawan, M.Si.",
+        "position": "Senior Lecturer",
+        "specialization": "Regional Planning & Development",
+        "education": "PhD in Regional Planning, ITB",
+        "email": "dedi.kurniawan@unpas.ac.id",
+        "research": "Regional Development, Decentralization"
+      },
+      {
+        "name": "Dr. Rd. Mohamad Fauzi, M.Sc.",
+        "position": "Senior Lecturer",
+        "specialization": "Econometrics & Data Analysis",
+        "education": "PhD in Quantitative Economics, Erasmus University",
+        "email": "m.fauzi@unpas.ac.id",
+        "research": "Applied Econometrics, Economic Big Data"
+      },
+      {
+        "name": "Dr. Lilis Suryani, M.SE.",
+        "position": "Lecturer",
+        "specialization": "Resource & Environmental Economics",
+        "education": "PhD in Environmental Science, IPB University",
+        "email": "lilis.suryani@unpas.ac.id",
+        "research": "Green Economy, Sustainable Development"
+      },
+      {
+        "name": "Asep Ridwan, S.E., M.Si.",
+        "position": "Lecturer",
+        "specialization": "Public Finance & Taxation",
+        "education": "Master of Economics, UNPAD",
+        "email": "asep.ridwan@unpas.ac.id",
+        "research": "Regional Taxation, State Budget"
+      },
+      {
+        "name": "Nenden Rosaria, S.E., M.Sc.",
+        "position": "Lecturer",
+        "specialization": "International Economics & Trade",
+        "education": "Master of Science, University of Birmingham",
+        "email": "nenden.rosaria@unpas.ac.id",
+        "research": "International Trade, FDI"
+      },
+      {
+        "name": "Yudi Pratama, S.E., M.M.",
+        "position": "Lecturer",
+        "specialization": "Financial Management & Investment",
+        "education": "Master of Management, Universitas Gadjah Mada",
+        "email": "yudi.pratama@unpas.ac.id",
+        "research": "Capital Markets, Investment Portfolio"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Contact & Location",
+    "description": "We are ready to assist you. Feel free to reach out to us through any of our available communication channels.",
+    "address_title": "Address",
+    "address": "Jl. Tamansari No. 6-8, Bandung 40116, West Java, Indonesia",
+    "phone_title": "Phone",
+    "phone": "+62 22 4206223",
+    "email_title": "Email",
+    "email": "ep.feb@unpas.ac.id",
+    "hours_title": "Office Hours",
+    "hours": "Monday – Friday: 08:00 – 16:00 WIB",
+    "form": {
+      "title": "Send a Message",
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Your message has been sent successfully! We will get back to you shortly.",
+      "error": "An error occurred. Please try again.",
+      "name_placeholder": "Enter your full name",
+      "email_placeholder": "Enter your email address",
+      "subject_placeholder": "What would you like to ask?",
+      "message_placeholder": "Write your message here..."
+    }
+  },
+  "footer": {
+    "tagline": "Building Capable Economists for Indonesia",
+    "links_title": "Quick Links",
+    "contact_title": "Contact",
+    "social_title": "Follow Us",
+    "copyright": "© 2024 Development Economics FEB UNPAS. All Rights Reserved.",
+    "faculty": "Faculty of Economics and Business",
+    "university": "Universitas Pasundan"
+  }
+}

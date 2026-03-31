@@ -1,0 +1,262 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "profile": "Profil",
+    "academics": "Akademik",
+    "faculty": "Dosen",
+    "contact": "Kontak",
+    "language": "EN"
+  },
+  "hero": {
+    "badge": "Terakreditasi Unggul",
+    "title": "Program Studi",
+    "subtitle": "Ekonomi Pembangunan",
+    "description": "Fakultas Ekonomi dan Bisnis - Universitas Pasundan",
+    "cta_primary": "Daftar Sekarang",
+    "cta_secondary": "Hubungi Kami",
+    "stats": {
+      "students": "Mahasiswa Aktif",
+      "lecturers": "Dosen Berpengalaman",
+      "years": "Tahun Pengalaman",
+      "accreditation": "Akreditasi"
+    }
+  },
+  "home": {
+    "why_title": "Mengapa Ekonomi Pembangunan?",
+    "why_subtitle": "Keunggulan Kami",
+    "why_description": "Program Studi Ekonomi Pembangunan FEB UNPAS hadir dengan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.",
+    "features": {
+      "curriculum": {
+        "title": "Kurikulum Berbasis KKNI",
+        "desc": "Kurikulum yang terus diperbarui sesuai Kerangka Kualifikasi Nasional Indonesia dan kebutuhan pasar kerja."
+      },
+      "research": {
+        "title": "Penelitian & Pengabdian",
+        "desc": "Aktif dalam kegiatan penelitian dan pengabdian masyarakat yang berkontribusi pada pembangunan daerah."
+      },
+      "network": {
+        "title": "Jaringan Alumni Luas",
+        "desc": "Alumni tersebar di berbagai instansi pemerintah, lembaga keuangan, dan perusahaan terkemuka."
+      },
+      "international": {
+        "title": "Wawasan Internasional",
+        "desc": "Program pertukaran mahasiswa dan kolaborasi riset dengan universitas dan lembaga internasional."
+      }
+    },
+    "news_title": "Berita & Kegiatan",
+    "news_subtitle": "Terkini",
+    "news": [
+      {
+        "title": "Seminar Nasional Ekonomi Pembangunan 2024",
+        "date": "15 Maret 2024",
+        "excerpt": "Program Studi Ekonomi Pembangunan menggelar seminar nasional dengan tema transformasi ekonomi digital Indonesia.",
+        "category": "Seminar"
+      },
+      {
+        "title": "Mahasiswa EP Raih Juara PKM Nasional",
+        "date": "22 Februari 2024",
+        "excerpt": "Tim mahasiswa Ekonomi Pembangunan berhasil meraih penghargaan terbaik dalam Program Kreativitas Mahasiswa tingkat nasional.",
+        "category": "Prestasi"
+      },
+      {
+        "title": "Kunjungan Industri ke Bank Indonesia",
+        "date": "8 Februari 2024",
+        "excerpt": "Kegiatan kunjungan industri ke Bank Indonesia memberikan wawasan langsung tentang kebijakan moneter nasional.",
+        "category": "Kegiatan"
+      }
+    ],
+    "cta_title": "Siap Bergabung Bersama Kami?",
+    "cta_desc": "Daftarkan diri Anda dan jadilah bagian dari komunitas akademik yang berdedikasi untuk kemajuan ekonomi Indonesia.",
+    "cta_button": "Daftar Sekarang"
+  },
+  "profile": {
+    "title": "Profil Program Studi",
+    "subtitle": "Tentang Kami",
+    "history_title": "Sejarah Program Studi",
+    "history": "Program Studi Ekonomi Pembangunan Fakultas Ekonomi dan Bisnis Universitas Pasundan (UNPAS) berdiri sejak tahun 1974. Selama lebih dari lima dekade, program studi ini telah berkontribusi nyata dalam mencetak sumber daya manusia berkualitas di bidang ekonomi pembangunan. Berlokasi di Kota Bandung, Jawa Barat, UNPAS berkomitmen untuk menghasilkan lulusan yang mampu bersaing di tingkat nasional maupun internasional.",
+    "vision_title": "Visi",
+    "vision": "Menjadi Program Studi Ekonomi Pembangunan yang unggul, inovatif, dan berdaya saing internasional dalam pengembangan ilmu ekonomi pembangunan yang berkelanjutan berbasis nilai-nilai Islami pada tahun 2030.",
+    "mission_title": "Misi",
+    "missions": [
+      "Menyelenggarakan pendidikan ekonomi pembangunan yang berkualitas, relevan, dan adaptif terhadap perkembangan ilmu pengetahuan dan teknologi.",
+      "Melaksanakan penelitian ilmiah yang inovatif di bidang ekonomi pembangunan untuk memberikan kontribusi pada ilmu pengetahuan dan pembangunan nasional.",
+      "Menyelenggarakan pengabdian kepada masyarakat yang bermanfaat bagi peningkatan kesejahteraan masyarakat.",
+      "Mengembangkan kerjasama strategis dengan berbagai institusi dalam dan luar negeri untuk meningkatkan kualitas akademik dan jaringan profesional.",
+      "Menciptakan lingkungan akademik yang kondusif, berintegritas, dan berbasis nilai-nilai Islam dalam kehidupan kampus."
+    ],
+    "objectives_title": "Tujuan Program Studi",
+    "objectives": [
+      "Menghasilkan lulusan yang kompeten, profesional, dan berintegritas di bidang ekonomi pembangunan.",
+      "Menghasilkan karya penelitian dan publikasi ilmiah yang diakui secara nasional dan internasional.",
+      "Memberikan kontribusi nyata bagi masyarakat melalui program pengabdian yang berkelanjutan.",
+      "Membangun kemitraan strategis untuk meningkatkan kualitas lulusan dan relevansi program."
+    ],
+    "achievements_title": "Capaian & Penghargaan",
+    "achievements": [
+      { "year": "2023", "title": "Akreditasi B – BAN-PT", "desc": "Program studi memperoleh akreditasi B dari Badan Akreditasi Nasional Perguruan Tinggi." },
+      { "year": "2022", "title": "Juara PKM Nasional", "desc": "Mahasiswa EP UNPAS meraih juara nasional Program Kreativitas Mahasiswa kategori penelitian." },
+      { "year": "2021", "title": "Best Paper Award", "desc": "Dosen EP UNPAS meraih penghargaan best paper pada Konferensi Ekonomi Nasional." },
+      { "year": "2020", "title": "MoU Internasional", "desc": "Penandatanganan kerja sama internasional dengan universitas di Malaysia dan Thailand." }
+    ]
+  },
+  "academics": {
+    "title": "Program Akademik",
+    "subtitle": "Kurikulum & Program",
+    "program_title": "Program Sarjana (S1)",
+    "program_desc": "Program Sarjana Ekonomi Pembangunan dirancang untuk membekali mahasiswa dengan pengetahuan teoritis dan keterampilan analitis yang komprehensif dalam bidang ekonomi pembangunan.",
+    "duration": "4 Tahun (8 Semester)",
+    "credits": "144 SKS",
+    "degree": "Sarjana Ekonomi (S.E.)",
+    "concentration_title": "Konsentrasi Studi",
+    "concentrations": [
+      {
+        "name": "Ekonomi Moneter & Perbankan",
+        "desc": "Mempelajari kebijakan moneter, sistem perbankan, dan manajemen keuangan makro.",
+        "courses": ["Ekonomi Moneter", "Manajemen Perbankan", "Kebijakan Fiskal", "Pasar Modal"]
+      },
+      {
+        "name": "Perencanaan & Pembangunan Daerah",
+        "desc": "Fokus pada perencanaan pembangunan wilayah, otonomi daerah, dan kebijakan publik.",
+        "courses": ["Perencanaan Wilayah", "Ekonomi Regional", "Kebijakan Publik", "Desentralisasi Fiskal"]
+      },
+      {
+        "name": "Ekonomi Sumber Daya & Lingkungan",
+        "desc": "Mengkaji pengelolaan sumber daya alam dan kebijakan lingkungan dalam pembangunan berkelanjutan.",
+        "courses": ["Ekonomi Lingkungan", "Ekonomi SDA", "Pembangunan Berkelanjutan", "Green Economy"]
+      }
+    ],
+    "curriculum_title": "Struktur Kurikulum",
+    "semesters": [
+      {
+        "sem": 1,
+        "courses": ["Pengantar Ekonomi Mikro", "Matematika Ekonomi", "Pengantar Akuntansi", "Bahasa Indonesia", "Pendidikan Agama", "Pancasila & Kewarganegaraan"]
+      },
+      {
+        "sem": 2,
+        "courses": ["Pengantar Ekonomi Makro", "Statistika Ekonomi", "Pengantar Manajemen", "Bahasa Inggris Ekonomi", "Sosiologi Ekonomi", "Hukum Bisnis"]
+      },
+      {
+        "sem": 3,
+        "courses": ["Ekonomi Mikro Menengah", "Ekonomi Makro Menengah", "Metode Penelitian", "Ekonometrika Dasar", "Keuangan Publik", "Ekonomi Pembangunan I"]
+      },
+      {
+        "sem": 4,
+        "courses": ["Ekonomi Mikro Lanjutan", "Ekonomi Makro Lanjutan", "Ekonometrika Lanjutan", "Ekonomi Internasional", "Ekonomi Pembangunan II", "Perencanaan Pembangunan"]
+      }
+    ],
+    "prospect_title": "Prospek Karier Lulusan",
+    "prospects": [
+      { "icon": "building", "title": "Instansi Pemerintah", "desc": "Kementerian Keuangan, Bappenas, Bank Indonesia, BPS, dan instansi daerah." },
+      { "icon": "bank", "title": "Lembaga Keuangan", "desc": "Perbankan, OJK, BUMN keuangan, dan lembaga pembiayaan." },
+      { "icon": "chart", "title": "Konsultan Ekonomi", "desc": "Konsultan pembangunan, analis kebijakan, dan peneliti ekonomi." },
+      { "icon": "academic", "title": "Akademisi & Peneliti", "desc": "Dosen, peneliti lembaga riset nasional dan internasional." }
+    ]
+  },
+  "faculty": {
+    "title": "Tim Dosen",
+    "subtitle": "Tenaga Pengajar",
+    "description": "Program Studi Ekonomi Pembangunan FEB UNPAS didukung oleh dosen-dosen berpengalaman dan berdedikasi tinggi dengan kualifikasi akademik terbaik.",
+    "members": [
+      {
+        "name": "Prof. Dr. H. Ahmad Hidayat, M.Si.",
+        "position": "Ketua Program Studi",
+        "specialization": "Ekonomi Pembangunan & Kebijakan Fiskal",
+        "education": "Doktor Ilmu Ekonomi, Universitas Padjadjaran",
+        "email": "ahmad.hidayat@unpas.ac.id",
+        "research": "Kebijakan Fiskal Daerah, Ekonomi Regional"
+      },
+      {
+        "name": "Dr. Hj. Siti Rahayu, M.Ec.",
+        "position": "Sekretaris Program Studi",
+        "specialization": "Ekonomi Moneter & Perbankan",
+        "education": "Doktor Ekonomi, Universitas Indonesia",
+        "email": "siti.rahayu@unpas.ac.id",
+        "research": "Kebijakan Moneter, Inflasi, Suku Bunga"
+      },
+      {
+        "name": "Dr. Dedi Kurniawan, M.Si.",
+        "position": "Dosen Senior",
+        "specialization": "Perencanaan Wilayah & Pembangunan",
+        "education": "Doktor Perencanaan Wilayah, ITB",
+        "email": "dedi.kurniawan@unpas.ac.id",
+        "research": "Pembangunan Daerah, Desentralisasi"
+      },
+      {
+        "name": "Dr. Rd. Mohamad Fauzi, M.Sc.",
+        "position": "Dosen Senior",
+        "specialization": "Ekonometrika & Analisis Data",
+        "education": "Doktor Ekonomi Kuantitatif, Erasmus University",
+        "email": "m.fauzi@unpas.ac.id",
+        "research": "Ekonometrika Terapan, Big Data Ekonomi"
+      },
+      {
+        "name": "Dr. Lilis Suryani, M.SE.",
+        "position": "Dosen",
+        "specialization": "Ekonomi Sumber Daya & Lingkungan",
+        "education": "Doktor Ilmu Lingkungan, IPB University",
+        "email": "lilis.suryani@unpas.ac.id",
+        "research": "Green Economy, Pembangunan Berkelanjutan"
+      },
+      {
+        "name": "Asep Ridwan, S.E., M.Si.",
+        "position": "Dosen",
+        "specialization": "Keuangan Publik & Perpajakan",
+        "education": "Magister Ekonomi, UNPAD",
+        "email": "asep.ridwan@unpas.ac.id",
+        "research": "Perpajakan Daerah, APBN/APBD"
+      },
+      {
+        "name": "Nenden Rosaria, S.E., M.Sc.",
+        "position": "Dosen",
+        "specialization": "Ekonomi Internasional & Perdagangan",
+        "education": "Master of Science, University of Birmingham",
+        "email": "nenden.rosaria@unpas.ac.id",
+        "research": "Perdagangan Internasional, FDI"
+      },
+      {
+        "name": "Yudi Pratama, S.E., M.M.",
+        "position": "Dosen",
+        "specialization": "Manajemen Keuangan & Investasi",
+        "education": "Magister Manajemen, Universitas Gadjah Mada",
+        "email": "yudi.pratama@unpas.ac.id",
+        "research": "Pasar Modal, Portofolio Investasi"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Kontak & Lokasi",
+    "description": "Kami siap membantu Anda. Jangan ragu untuk menghubungi kami melalui berbagai saluran komunikasi yang tersedia.",
+    "address_title": "Alamat",
+    "address": "Jl. Tamansari No. 6-8, Bandung 40116, Jawa Barat, Indonesia",
+    "phone_title": "Telepon",
+    "phone": "+62 22 4206223",
+    "email_title": "Email",
+    "email": "ep.feb@unpas.ac.id",
+    "hours_title": "Jam Operasional",
+    "hours": "Senin – Jumat: 08.00 – 16.00 WIB",
+    "form": {
+      "title": "Kirim Pesan",
+      "name": "Nama Lengkap",
+      "email": "Alamat Email",
+      "subject": "Subjek",
+      "message": "Pesan",
+      "submit": "Kirim Pesan",
+      "success": "Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.",
+      "error": "Terjadi kesalahan. Silakan coba lagi.",
+      "name_placeholder": "Masukkan nama lengkap Anda",
+      "email_placeholder": "Masukkan alamat email Anda",
+      "subject_placeholder": "Apa yang ingin Anda tanyakan?",
+      "message_placeholder": "Tuliskan pesan Anda di sini..."
+    }
+  },
+  "footer": {
+    "tagline": "Mencetak Ekonom Handal untuk Indonesia",
+    "links_title": "Tautan Cepat",
+    "contact_title": "Kontak",
+    "social_title": "Ikuti Kami",
+    "copyright": "© 2024 Ekonomi Pembangunan FEB UNPAS. Hak Cipta Dilindungi.",
+    "faculty": "Fakultas Ekonomi dan Bisnis",
+    "university": "Universitas Pasundan"
+  }
+}
