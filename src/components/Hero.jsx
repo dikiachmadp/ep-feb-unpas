@@ -104,7 +104,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
-              <Link to="/akademik" className="btn-secondary group">
+              <Link to="/kontak" className="btn-secondary group">
                 {t('hero.cta_primary')}
                 <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>

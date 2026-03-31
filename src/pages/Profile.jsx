@@ -159,13 +159,72 @@ export default function Profile() {
 
         {/* Achievements */}
         <section className="py-20 bg-white">
-          <div className="max-w-3xl mx-auto">
-            {achievements.map((a, i) => (
-              <div key={i} className="mb-4">
-                <p>{a.year} - {a.title}</p>
-                <p>{a.desc}</p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <SectionHeader
+              subtitle="Capaian"
+              title={t('profile.achievements_title')}
+              center
+            />
+
+            <div className="relative max-w-3xl mx-auto">
+
+              {/* Vertical line */}
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-forest-200 via-gold-200 to-forest-100" />
+
+              <div className="space-y-6">
+                {Array.isArray(achievements) && achievements.map((a, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="relative flex items-start gap-6 pl-14"
+                  >
+
+                    {/* Timeline dot */}
+                    <div className="absolute left-6 top-4 -translate-x-1/2">
+                      <div className="w-8 h-8 rounded-full bg-white border-2 border-gold-400 flex items-center justify-center shadow-sm">
+                        <div className="w-2.5 h-2.5 rounded-full bg-gold-400" />
+                      </div>
+                    </div>
+
+                    {/* Card */}
+                    <div className="card p-6 flex-1 hover:shadow-md transition-shadow duration-200">
+
+                      <div className="flex items-start justify-between gap-4">
+
+                        <div>
+                          {/* Year */}
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-gold-500 font-bold text-sm font-sans">
+                              {a.year}
+                            </span>
+                          </div>
+
+                          {/* Title */}
+                          <h4 className="font-display font-bold text-gray-800 text-base">
+                            {a.title}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="text-gray-500 text-sm mt-1 font-sans leading-relaxed">
+                            {a.desc}
+                          </p>
+                        </div>
+
+                        {/* Badge */}
+                        <div className="w-10 h-10 rounded-xl bg-gold-50 flex items-center justify-center flex-shrink-0">
+                          <FiAward className="w-5 h-5 text-gold-500" />
+                        </div>
+
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </section>
       </div>

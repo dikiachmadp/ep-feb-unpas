@@ -14,7 +14,7 @@ const NAV_ROUTES = [
 ]
 
 const SOCIALS = [
-  { icon: FaInstagram, href: '#', label: 'Instagram' },
+  { icon: FaInstagram, href: 'https://www.instagram.com/ekonomifebunpas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', label: 'Instagram' },
   { icon: FaFacebook, href: '#', label: 'Facebook' },
   { icon: FaYoutube, href: '#', label: 'YouTube' },
   { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
@@ -117,7 +117,7 @@ export default function Footer() {
           {/* Map embed placeholder */}
           <div>
             <h3 className="font-semibold text-white text-sm uppercase tracking-wider mb-5 font-sans">
-              Lokasi
+              {t('footer.location')}
             </h3>
             <div className="rounded-xl overflow-hidden border border-white/10 aspect-video bg-forest-800 flex items-center justify-center">
               <iframe
@@ -136,11 +136,21 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-forest-300 text-xs text-center sm:text-left">
+          <p className="text-forest-300 text-sm text-center sm:text-left">
             {t('footer.copyright')}
           </p>
-          <p className="text-forest-400 text-xs">
-            Designed with ♥ for FEB UNPAS
+
+          <p className="text-forest-400 text-xs flex items-center gap-1">
+            <span>©</span>
+            <a
+              href="https://dikiachmadp.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-400 hover:text-gold-300 font-medium transition-colors"
+            >
+              dikiachmadp
+            </a>
+            <span> {new Date().getFullYear()}</span>
           </p>
         </div>
       </div>

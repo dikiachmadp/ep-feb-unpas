@@ -93,10 +93,26 @@
     ],
     "achievements_title": "Capaian & Penghargaan",
     "achievements": [
-      { "year": "2023", "title": "Akreditasi B – BAN-PT", "desc": "Program studi memperoleh akreditasi B dari Badan Akreditasi Nasional Perguruan Tinggi." },
-      { "year": "2022", "title": "Juara PKM Nasional", "desc": "Mahasiswa EP UNPAS meraih juara nasional Program Kreativitas Mahasiswa kategori penelitian." },
-      { "year": "2021", "title": "Best Paper Award", "desc": "Dosen EP UNPAS meraih penghargaan best paper pada Konferensi Ekonomi Nasional." },
-      { "year": "2020", "title": "MoU Internasional", "desc": "Penandatanganan kerja sama internasional dengan universitas di Malaysia dan Thailand." }
+      {
+        "year": "2023",
+        "title": "Akreditasi B – BAN-PT",
+        "desc": "Program studi memperoleh akreditasi B dari Badan Akreditasi Nasional Perguruan Tinggi."
+      },
+      {
+        "year": "2022",
+        "title": "Juara PKM Nasional",
+        "desc": "Mahasiswa EP UNPAS meraih juara nasional Program Kreativitas Mahasiswa kategori penelitian."
+      },
+      {
+        "year": "2021",
+        "title": "Best Paper Award",
+        "desc": "Dosen EP UNPAS meraih penghargaan best paper pada Konferensi Ekonomi Nasional."
+      },
+      {
+        "year": "2020",
+        "title": "MoU Internasional",
+        "desc": "Penandatanganan kerja sama internasional dengan universitas di Malaysia dan Thailand."
+      }
     ]
   },
   "academics": {
@@ -112,44 +128,103 @@
       {
         "name": "Ekonomi Moneter & Perbankan",
         "desc": "Mempelajari kebijakan moneter, sistem perbankan, dan manajemen keuangan makro.",
-        "courses": ["Ekonomi Moneter", "Manajemen Perbankan", "Kebijakan Fiskal", "Pasar Modal"]
+        "courses": [
+          "Ekonomi Moneter",
+          "Manajemen Perbankan",
+          "Kebijakan Fiskal",
+          "Pasar Modal"
+        ]
       },
       {
         "name": "Perencanaan & Pembangunan Daerah",
         "desc": "Fokus pada perencanaan pembangunan wilayah, otonomi daerah, dan kebijakan publik.",
-        "courses": ["Perencanaan Wilayah", "Ekonomi Regional", "Kebijakan Publik", "Desentralisasi Fiskal"]
+        "courses": [
+          "Perencanaan Wilayah",
+          "Ekonomi Regional",
+          "Kebijakan Publik",
+          "Desentralisasi Fiskal"
+        ]
       },
       {
         "name": "Ekonomi Sumber Daya & Lingkungan",
         "desc": "Mengkaji pengelolaan sumber daya alam dan kebijakan lingkungan dalam pembangunan berkelanjutan.",
-        "courses": ["Ekonomi Lingkungan", "Ekonomi SDA", "Pembangunan Berkelanjutan", "Green Economy"]
+        "courses": [
+          "Ekonomi Lingkungan",
+          "Ekonomi SDA",
+          "Pembangunan Berkelanjutan",
+          "Green Economy"
+        ]
       }
     ],
     "curriculum_title": "Struktur Kurikulum",
     "semesters": [
       {
         "sem": 1,
-        "courses": ["Pengantar Ekonomi Mikro", "Matematika Ekonomi", "Pengantar Akuntansi", "Bahasa Indonesia", "Pendidikan Agama", "Pancasila & Kewarganegaraan"]
+        "courses": [
+          "Pengantar Ekonomi Mikro",
+          "Matematika Ekonomi",
+          "Pengantar Akuntansi",
+          "Bahasa Indonesia",
+          "Pendidikan Agama",
+          "Pancasila & Kewarganegaraan"
+        ]
       },
       {
         "sem": 2,
-        "courses": ["Pengantar Ekonomi Makro", "Statistika Ekonomi", "Pengantar Manajemen", "Bahasa Inggris Ekonomi", "Sosiologi Ekonomi", "Hukum Bisnis"]
+        "courses": [
+          "Pengantar Ekonomi Makro",
+          "Statistika Ekonomi",
+          "Pengantar Manajemen",
+          "Bahasa Inggris Ekonomi",
+          "Sosiologi Ekonomi",
+          "Hukum Bisnis"
+        ]
       },
       {
         "sem": 3,
-        "courses": ["Ekonomi Mikro Menengah", "Ekonomi Makro Menengah", "Metode Penelitian", "Ekonometrika Dasar", "Keuangan Publik", "Ekonomi Pembangunan I"]
+        "courses": [
+          "Ekonomi Mikro Menengah",
+          "Ekonomi Makro Menengah",
+          "Metode Penelitian",
+          "Ekonometrika Dasar",
+          "Keuangan Publik",
+          "Ekonomi Pembangunan I"
+        ]
       },
       {
         "sem": 4,
-        "courses": ["Ekonomi Mikro Lanjutan", "Ekonomi Makro Lanjutan", "Ekonometrika Lanjutan", "Ekonomi Internasional", "Ekonomi Pembangunan II", "Perencanaan Pembangunan"]
+        "courses": [
+          "Ekonomi Mikro Lanjutan",
+          "Ekonomi Makro Lanjutan",
+          "Ekonometrika Lanjutan",
+          "Ekonomi Internasional",
+          "Ekonomi Pembangunan II",
+          "Perencanaan Pembangunan"
+        ]
       }
     ],
     "prospect_title": "Prospek Karier Lulusan",
     "prospects": [
-      { "icon": "building", "title": "Instansi Pemerintah", "desc": "Kementerian Keuangan, Bappenas, Bank Indonesia, BPS, dan instansi daerah." },
-      { "icon": "bank", "title": "Lembaga Keuangan", "desc": "Perbankan, OJK, BUMN keuangan, dan lembaga pembiayaan." },
-      { "icon": "chart", "title": "Konsultan Ekonomi", "desc": "Konsultan pembangunan, analis kebijakan, dan peneliti ekonomi." },
-      { "icon": "academic", "title": "Akademisi & Peneliti", "desc": "Dosen, peneliti lembaga riset nasional dan internasional." }
+      {
+        "icon": "building",
+        "title": "Instansi Pemerintah",
+        "desc": "Kementerian Keuangan, Bappenas, Bank Indonesia, BPS, dan instansi daerah."
+      },
+      {
+        "icon": "bank",
+        "title": "Lembaga Keuangan",
+        "desc": "Perbankan, OJK, BUMN keuangan, dan lembaga pembiayaan."
+      },
+      {
+        "icon": "chart",
+        "title": "Konsultan Ekonomi",
+        "desc": "Konsultan pembangunan, analis kebijakan, dan peneliti ekonomi."
+      },
+      {
+        "icon": "academic",
+        "title": "Akademisi & Peneliti",
+        "desc": "Dosen, peneliti lembaga riset nasional dan internasional."
+      }
     ]
   },
   "faculty": {
@@ -255,8 +330,9 @@
     "links_title": "Tautan Cepat",
     "contact_title": "Kontak",
     "social_title": "Ikuti Kami",
-    "copyright": "© 2024 Ekonomi Pembangunan FEB UNPAS. Hak Cipta Dilindungi.",
+    "copyright": "Program Studi Ekonomi Pembangunan - FEB UNPAS. Hak Cipta Dilindungi.",
     "faculty": "Fakultas Ekonomi dan Bisnis",
-    "university": "Universitas Pasundan"
+    "university": "Universitas Pasundan",
+    "location": "Lokasi Kami"
   }
 }
