@@ -73,10 +73,10 @@ export default function Profile() {
 
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   {[
-                    { label: 'Tahun Berdiri', value: '1974' },
+                    { label: 'Tahun Berdiri', value: '1985' },
                     { label: 'Status', value: 'Aktif' },
                     { label: 'Jenjang', value: 'S1' },
-                    { label: 'Akreditasi', value: 'B' },
+                    { label: 'Akreditasi', value: 'Unggul' },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex items-center gap-3 p-4 bg-forest-50 rounded-xl">
                       <div className="w-2 h-8 bg-gradient-to-b from-gold-400 to-forest-500 rounded-full" />
@@ -98,7 +98,7 @@ export default function Profile() {
               >
                 <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-forest-100 to-forest-200 flex items-center justify-center">
                   <div className="text-center">
-                    <p className="text-6xl font-bold text-forest-600/30">50+</p>
+                    <p className="text-6xl font-bold text-forest-600/30">30+</p>
                     <p className="text-lg text-forest-700">Tahun Berdedikasi</p>
                   </div>
                 </div>

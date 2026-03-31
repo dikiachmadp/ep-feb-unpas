@@ -233,68 +233,68 @@
     "description": "Program Studi Ekonomi Pembangunan FEB UNPAS didukung oleh dosen-dosen berpengalaman dan berdedikasi tinggi dengan kualifikasi akademik terbaik.",
     "members": [
       {
-        "name": "Prof. Dr. H. Ahmad Hidayat, M.Si.",
-        "position": "Ketua Program Studi",
+        "name": "Prof. Dr. H. Horas Djulius, S.E.",
+        "position": "Guru Besar",
         "specialization": "Ekonomi Pembangunan & Kebijakan Fiskal",
-        "education": "Doktor Ilmu Ekonomi, Universitas Padjadjaran",
-        "email": "ahmad.hidayat@unpas.ac.id",
+        "education": "Doktor Ilmu Ekonomi",
+        "email": "horas.djulius@unpas.ac.id",
         "research": "Kebijakan Fiskal Daerah, Ekonomi Regional"
       },
       {
-        "name": "Dr. Hj. Siti Rahayu, M.Ec.",
-        "position": "Sekretaris Program Studi",
+        "name": "Dr. Endang Rostiana, S.E., M.T.",
+        "position": "Wakil Dekan Bidang Riset dan Kerjasama",
         "specialization": "Ekonomi Moneter & Perbankan",
-        "education": "Doktor Ekonomi, Universitas Indonesia",
-        "email": "siti.rahayu@unpas.ac.id",
+        "education": "Doktor Ilmu Ekonomi",
+        "email": "endang.rostiana@unpas.ac.id",
         "research": "Kebijakan Moneter, Inflasi, Suku Bunga"
       },
       {
-        "name": "Dr. Dedi Kurniawan, M.Si.",
-        "position": "Dosen Senior",
+        "name": "Gugum Mukdas Sudarjah, S.E., M.T.",
+        "position": "Ketua Program Studi",
         "specialization": "Perencanaan Wilayah & Pembangunan",
-        "education": "Doktor Perencanaan Wilayah, ITB",
-        "email": "dedi.kurniawan@unpas.ac.id",
+        "education": "Doktor Ilmu Ekonomi",
+        "email": "gugum.mukdas@unpas.ac.id",
         "research": "Pembangunan Daerah, Desentralisasi"
       },
       {
-        "name": "Dr. Rd. Mohamad Fauzi, M.Sc.",
-        "position": "Dosen Senior",
+        "name": "Restu Akbar Suryaman, S.E., M.E.",
+        "position": "Sekretaris Program Studi",
         "specialization": "Ekonometrika & Analisis Data",
-        "education": "Doktor Ekonomi Kuantitatif, Erasmus University",
-        "email": "m.fauzi@unpas.ac.id",
+        "education": "Magister Ekonomi",
+        "email": "restu.suryaman@unpas.ac.id",
         "research": "Ekonometrika Terapan, Big Data Ekonomi"
       },
       {
-        "name": "Dr. Lilis Suryani, M.SE.",
+        "name": "Dr. Dikdik Kusdiana, S.E., M.T.",
         "position": "Dosen",
         "specialization": "Ekonomi Sumber Daya & Lingkungan",
-        "education": "Doktor Ilmu Lingkungan, IPB University",
-        "email": "lilis.suryani@unpas.ac.id",
+        "education": "Doktor Ilmu Ekonomi",
+        "email": "dikdik.kusdiana@unpas.ac.id",
         "research": "Green Economy, Pembangunan Berkelanjutan"
       },
       {
-        "name": "Asep Ridwan, S.E., M.Si.",
+        "name": "Dr. H. Tete Saepudin, S.E., M.Si.",
         "position": "Dosen",
         "specialization": "Keuangan Publik & Perpajakan",
-        "education": "Magister Ekonomi, UNPAD",
-        "email": "asep.ridwan@unpas.ac.id",
+        "education": "Doktor Ilmu Ekonomi",
+        "email": "tete.saepudin@unpas.ac.id",
         "research": "Perpajakan Daerah, APBN/APBD"
       },
       {
-        "name": "Nenden Rosaria, S.E., M.Sc.",
+        "name": "Intan Ramdaniatulfitri, S.E., M.E.",
         "position": "Dosen",
         "specialization": "Ekonomi Internasional & Perdagangan",
-        "education": "Master of Science, University of Birmingham",
-        "email": "nenden.rosaria@unpas.ac.id",
+        "education": "Magister Ekonomi",
+        "email": "intan.ramdaniatulfitri@unpas.ac.id",
         "research": "Perdagangan Internasional, FDI"
       },
       {
-        "name": "Yudi Pratama, S.E., M.M.",
-        "position": "Dosen",
-        "specialization": "Manajemen Keuangan & Investasi",
-        "education": "Magister Manajemen, Universitas Gadjah Mada",
-        "email": "yudi.pratama@unpas.ac.id",
-        "research": "Pasar Modal, Portofolio Investasi"
+        "name": "Muhimam",
+        "position": "Staf Akademik",
+        "specialization": "-",
+        "education": "-",
+        "email": "muhimam@unpas.ac.id",
+        "research": "-"
       }
     ]
   },
