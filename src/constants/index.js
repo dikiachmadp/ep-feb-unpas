@@ -29,7 +29,7 @@ export const BREAKPOINTS = {
 
 // SEO Defaults
 export const SEO_DEFAULTS = {
-    title: 'Fakultas Ekonomi dan Bisnis - Universitas Pasundan',
+    title: 'Ekonomi Pembangunan - FEB UNPAS',
     description: 'Program Ekonomi terbaik dengan kurikulum Merdeka Belajar. Akreditasi Unggul, dosen berpengalaman, prospek karier luas.',
     image: '/logo.png',
     keywords: 'ekonomi, unpas, universitas pasundan, fakultas ekonomi, bandung',
