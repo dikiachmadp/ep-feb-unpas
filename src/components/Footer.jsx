@@ -148,7 +148,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gold-400 hover:text-gold-300 font-medium transition-colors"
             >
-              dikiachmadp
+              Techteam
             </a>
             <span> {new Date().getFullYear()}</span>
           </p>
