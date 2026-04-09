@@ -6,6 +6,8 @@ import { FiBookOpen, FiUsers, FiGlobe, FiFileText, FiArrowRight } from 'react-ic
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import { FeatureCard, NewsCard } from '../components/Cards'
+import { NEWS_DATA } from '../constants/newsData'
+
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
 
@@ -29,7 +31,7 @@ export default function Home() {
     accent: i % 2 === 1,
   }))
 
-  const news = t('home.news', { returnObjects: true })
+  const news = NEWS_DATA.slice(0, 3)
 
   return (
     <>
@@ -123,7 +125,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <Link to="/kontak" className="hidden sm:inline-flex items-center gap-2 text-forest-600 hover:text-forest-800 font-semibold text-sm font-sans group">
+                <Link to="/berita-kegiatan" className="hidden sm:inline-flex items-center gap-2 text-forest-600 hover:text-forest-800 font-semibold text-sm font-sans group">
                   Lihat Semua
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -169,7 +171,7 @@ export default function Home() {
                   {t('home.cta_desc')}
                 </p>
                 <Link
-                  to="/kontak"
+                  to="/pendaftaran"
                   className="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-gold hover:shadow-lg hover:-translate-y-0.5 text-sm"
                 >
                   {t('home.cta_button')}

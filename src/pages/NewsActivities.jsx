@@ -1,93 +1,104 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
-import Cards from '../components/Cards'
+import { NewsCard } from '../components/Cards'
+import { NEWS_DATA } from '../constants/newsData'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
 
 const NewsActivities = () => {
     const { t, i18n } = useTranslation()
     const isId = i18n.language === 'id'
+    const seo = getSEO('news') // Pastikan 'news' ada di constants atau gunakan fallback
 
-    const newsData = t('home.news', { returnObjects: true }) || []
+    const categories = ['all', ...new Set(NEWS_DATA.map(item => item.category))]
+    const [activeCategory, setActiveCategory] = useState('all')
 
-    const seoProps = getSEO('home') // Reuse home SEO or customize
+    const filteredNews = activeCategory === 'all'
+        ? NEWS_DATA
+        : NEWS_DATA.filter(item => item.category === activeCategory)
 
     return (
         <>
-            <SEO {...seoProps} title={t('nav.news')} />
-            <div className="min-h-screen">
-                {/* Hero */}
-                <Hero
-                    badge={isId ? 'Berita Terkini' : 'Latest News'}
-                    title={t('nav.news')}
-                    subtitle={isId ? 'Informasi Kegiatan Program Studi' : 'Study Program Activities'}
-                    ctaPrimaryText={t('nav.registration')}
-                    ctaPrimaryLink="/pendaftaran"
-                    ctaSecondaryText={t('nav.home')}
-                    ctaSecondaryLink="/"
-                />
+            <SEO title={t('nav.news')} description={isId ? 'Berita dan kegiatan terbaru Ekonomi Pembangunan FEB UNPAS' : 'Latest news and activities'} />
 
-                {/* News Grid */}
-                <section className="py-20 bg-gray-50">
+            <div className="page-wrapper pt-20">
+                {/* REPLACEMENT: Menggunakan struktur Hero yang sama dengan Profile & Academics 
+                */}
+                <div className="relative bg-gradient-to-br from-forest-700 to-forest-900 py-24 overflow-hidden">
+                    <div
+                        className="absolute inset-0 opacity-10"
+                        style={{
+                            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+                            backgroundSize: '40px 40px',
+                        }}
+                    />
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-gold-400/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl" />
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <motion.div
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <p className="section-subtitle text-gold-400 mb-3">
+                                {isId ? 'Berita Terkini' : 'Latest News'}
+                            </p>
+                            <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
+                                {t('nav.news')}
+                            </h1>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* News Grid Section */}
+                <section className="py-20 bg-white">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <SectionHeader
-                            title={t('home.news_title')}
-                            subtitle={t('home.news_subtitle')}
-                        />
+                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                            <SectionHeader
+                                title={isId ? "Warta Kampus" : "Campus News"}
+                                subtitle={t('home.news_subtitle')}
+                                margin={false}
+                            />
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-                            {newsData.map((item, index) => (
-                                <motion.div
-                                    key={item.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                >
-                                    <Cards.NewsCard
+                            {/* Category Filter - Styled to match Tabs in Profile */}
+                            <div className="flex flex-wrap gap-2">
+                                {categories.map((category) => (
+                                    <button
+                                        key={category}
+                                        onClick={() => setActiveCategory(category)}
+                                        className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeCategory === category
+                                                ? 'bg-forest-500 text-white shadow-md'
+                                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                            }`}
+                                    >
+                                        {category === 'all' ? (isId ? 'Semua' : 'All') : category}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {filteredNews.length > 0 ? (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {filteredNews.map((item, index) => (
+                                    <NewsCard
+                                        key={index}
                                         title={item.title}
                                         date={item.date}
                                         excerpt={item.excerpt}
                                         category={item.category}
+                                        delay={index * 0.1}
                                     />
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        {newsData.length === 0 && (
-                            <div className="text-center py-20">
-                                <p className="text-xl text-gray-500">{isId ? 'Berita akan segera hadir' : 'News coming soon'}</p>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
+                                <p className="text-gray-500 font-sans">
+                                    {isId ? 'Belum ada berita untuk kategori ini.' : 'No news found for this category.'}
+                                </p>
                             </div>
                         )}
-                    </div>
-                </section>
-
-                {/* CTA Section */}
-                <section className="bg-gradient-to-r from-forest-600 to-forest-800 text-white py-20">
-                    <div className="max-w-4xl mx-auto text-center px-4">
-                        <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                            {isId ? 'Ikuti Update Terbaru' : 'Stay Updated'}
-                        </h2>
-                        <p className="text-xl mb-8 opacity-90">
-                            {isId ? 'Dapatkan informasi kegiatan dan berita terbaru dari Program Studi Ekonomi Pembangunan FEB UNPAS.' : 'Get the latest news and activities from Development Economics Study Program FEB UNPAS.'}
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                to="/pendaftaran"
-                                className="btn-primary px-8 py-4 text-lg"
-                            >
-                                {t('nav.registration')}
-                            </Link>
-                            <Link
-                                to="/"
-                                className="btn-secondary px-8 py-4 text-lg border-2 border-white"
-                            >
-                                {t('nav.home')}
-                            </Link>
-                        </div>
                     </div>
                 </section>
             </div>
@@ -95,5 +106,4 @@ const NewsActivities = () => {
     )
 }
 
-export default NewsActivities
-
+export default NewsActivities;

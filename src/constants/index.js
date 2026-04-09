@@ -71,3 +71,6 @@ export const ANIMATION_DELAYS = {
     stagger: 0.1,
     item: 0.6,
 }
+
+export { NEWS_DATA } from './newsData'
+

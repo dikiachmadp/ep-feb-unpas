@@ -1,0 +1,38 @@
+export const NEWS_DATA = [
+    {
+        title: 'Seminar Nasional Ekonomi Pembangunan 2024',
+        date: '15 Maret 2024',
+        excerpt: 'Program Studi Ekonomi Pembangunan menggelar seminar nasional dengan tema transformasi ekonomi digital Indonesia.',
+        category: 'Seminar'
+    },
+    {
+        title: 'Mahasiswa EP Raih Juara PKM Nasional',
+        date: '22 Februari 2024',
+        excerpt: 'Tim mahasiswa Ekonomi Pembangunan berhasil meraih penghargaan terbaik dalam Program Kreativitas Mahasiswa tingkat nasional.',
+        category: 'Prestasi'
+    },
+    {
+        title: 'Kunjungan Industri ke Bank Indonesia',
+        date: '8 Februari 2024',
+        excerpt: 'Kegiatan kunjungan industri ke Bank Indonesia memberikan wawasan langsung tentang kebijakan moneter nasional.',
+        category: 'Kegiatan'
+    },
+    {
+        title: 'Lokakarya Penelitian Ekonomi Regional',
+        date: '5 Januari 2024',
+        excerpt: 'Lokakarya penelitian dengan narasumber dari Bappenas membahas strategi pembangunan ekonomi daerah berkelanjutan.',
+        category: 'Penelitian'
+    },
+    {
+        title: 'Peluncuran Jurnal Ekonomi Pembangunan Edisi Baru',
+        date: '20 Desember 2023',
+        excerpt: 'Jurnal Ekonomi Pembangunan UNPAS Volume 12 hadir dengan 8 artikel penelitian terkini.',
+        category: 'Publikasi'
+    },
+    {
+        title: 'Workshop Ekonometrika Terapan untuk Mahasiswa',
+        date: '10 Desember 2023',
+        excerpt: 'Workshop praktik ekonometrika menggunakan Stata dan Eviews untuk analisis data ekonomi.',
+        category: 'Pelatihan'
+    }
+]
