@@ -5,7 +5,10 @@
     "academics": "Akademik",
     "faculty": "Dosen",
     "contact": "Kontak",
-    "language": "EN"
+    "language": "EN",
+    "student": "Mahasiswa",
+    "registration": "Pendaftaran",
+    "news": "Berita dan Kegiatan"
   },
   "hero": {
     "badge": "Terakreditasi Unggul",

@@ -9,8 +9,9 @@ const NAV_ROUTES = [
   { key: 'home', path: '/' },
   { key: 'profile', path: '/profil' },
   { key: 'academics', path: '/akademik' },
-  { key: 'faculty', path: '/dosen' },
-  { key: 'contact', path: '/kontak' },
+  { key: 'student', path: '/mahasiswa' },
+  { key: 'registration', path: '/pendaftaran' },
+  { key: 'news', path: '/berita-kegiatan' },
 ]
 
 const SOCIALS = [

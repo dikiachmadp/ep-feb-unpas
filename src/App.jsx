@@ -15,6 +15,8 @@ const Academics = lazy(() => import('./pages/Academics'))
 const Faculty = lazy(() => import('./pages/Faculty'))
 const Contact = lazy(() => import('./pages/Contact'))
 
+const NewsActivities = lazy(() => import('./pages/NewsActivities'))
+
 // Loading fallback
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -40,8 +42,10 @@ export default function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/profil" element={<Profile />} />
                   <Route path="/akademik" element={<Academics />} />
-                  <Route path="/dosen" element={<Faculty />} />
-                  <Route path="/kontak" element={<Contact />} />
+                  <Route path="/mahasiswa" element={<Faculty />} />
+                  <Route path="/pendaftaran" element={<Contact />} />
+
+                  <Route path="/berita-kegiatan" element={<NewsActivities />} />
                 </Routes>
               </Suspense>
             </main>

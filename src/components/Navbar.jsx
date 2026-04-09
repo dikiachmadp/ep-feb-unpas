@@ -10,8 +10,9 @@ const NAV_ROUTES = [
   { key: 'home', path: '/' },
   { key: 'profile', path: '/profil' },
   { key: 'academics', path: '/akademik' },
-  { key: 'faculty', path: '/dosen' },
-  { key: 'contact', path: '/kontak' },
+  { key: 'student', path: '/mahasiswa' },
+  { key: 'registration', path: '/pendaftaran' },
+  { key: 'news', path: '/berita-kegiatan' },
 ]
 
 export default function Navbar() {
@@ -62,8 +63,8 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white backdrop-blur-md rounded-xl mx-4 mt-4 shadow-lg'
-          : 'bg-white/0 backdrop-blur-sm'
+        ? 'bg-white backdrop-blur-md rounded-xl mx-4 mt-4 shadow-lg'
+        : 'bg-white/0 backdrop-blur-sm'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 lg:py-0">

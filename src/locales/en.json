@@ -5,7 +5,10 @@
     "academics": "Academics",
     "faculty": "Faculty",
     "contact": "Contact",
-    "language": "ID"
+    "language": "ID",
+    "student": "Students",
+    "registration": "Registration",
+    "news": "News & Activities"
   },
   "hero": {
     "badge": "Accredited Excellent",
