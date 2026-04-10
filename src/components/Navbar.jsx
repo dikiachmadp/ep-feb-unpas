@@ -24,16 +24,34 @@ export default function Navbar() {
   const { scrollY } = useScroll()
   const [isCondensed, setIsCondensed] = useState(false)
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   useEffect(() => {
     return scrollY.onChange((latest) => {
       const previous = scrollY.getPrevious()
-      if (latest > previous && latest > 40) {
-        setIsCondensed(true)
+
+      if (isMobile) {
+        if (latest > previous && latest > 50) {
+          setIsCondensed(true)
+        } else {
+          setIsCondensed(false)
+        }
       } else {
-        setIsCondensed(false)
+        // Desktop tetap kembali normal hanya saat di atas
+        if (latest > 120) {
+          setIsCondensed(true)
+        } else {
+          setIsCondensed(false)
+        }
       }
     })
-  }, [scrollY])
+  }, [scrollY, isMobile])
 
   useEffect(() => { setIsOpen(false) }, [location.pathname])
 
@@ -50,47 +68,63 @@ export default function Navbar() {
     setTimeout(() => { scrollToTop() }, 60)
   }
 
-  // Pegas yang lebih empuk (damping lebih tinggi) agar tidak terlalu goyang
-  const springConfig = { type: 'spring', stiffness: 300, damping: 35 };
+  const springConfig = { type: 'spring', stiffness: 350, damping: 35 }
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={{ y: -120 }}
       animate={{
         y: 0,
-        marginTop: isCondensed ? 12 : 0,
+        // DESKTOP: Selalu melayang sedikit agar tidak menempel kaku di tepi atas
+        // MOBILE: Tetap 14px saat kondensasi, 0 saat normal (sesuai permintaanmu)
+        marginTop: isMobile
+          ? (isCondensed ? 14 : 0)
+          : (isCondensed ? 20 : 12),
       }}
       transition={springConfig}
-      className="fixed top-0 left-0 right-0 z-[110]"
+      className="fixed top-0 left-0 right-0 z-[110] w-full"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
           layout
           animate={{
-            margin: isCondensed ? "0 1.5rem" : "0 0rem",
-            borderRadius: isCondensed ? "3rem" : "0rem",
-            height: isCondensed ? 50 : 85,
-            backgroundColor: isCondensed ? "rgba(255, 255, 255, 0.92)" : "rgba(255, 255, 255, 1)",
-            boxShadow: isCondensed ? "0 15px 35px rgba(0,0,0,0.1)" : "0 1px 0px rgba(0,0,0,0.05)",
+            // DESKTOP: Menggunakan Glassmorphism (bg-white/80) dan Radius dinamis
+            // MOBILE: Tetap sesuai kode yang kamu sukai
+            margin: isCondensed
+              ? (isMobile ? "0 1.5rem" : "0 4rem")
+              : "0 0rem",
+
+            borderRadius: isCondensed
+              ? "3rem"
+              : (isMobile ? "0rem" : "1.5rem"),
+
+            height: isCondensed ? (isMobile ? 54 : 64) : 95,
+
+            backgroundColor: isCondensed
+              ? "rgba(255, 255, 255, 0.95)"
+              : (isMobile ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.85)"),
+
+            boxShadow: isCondensed
+              ? "0 15px 40px rgba(0,0,0,0.12)"
+              : (isMobile ? "0 1px 0px rgba(0,0,0,0.03)" : "0 4px 20px rgba(0,0,0,0.02)"),
           }}
           transition={springConfig}
-          className={`flex items-center justify-between px-6 lg:px-10 border-b transition-colors duration-500 ${isCondensed ? 'border-transparent backdrop-blur-md' : 'border-gray-100'
+          className={`flex items-center justify-between px-8 lg:px-12 transition-colors duration-500 backdrop-blur-md ${isCondensed ? 'border-transparent' : 'border-gray-100/50'
             }`}
         >
 
-          {/* Logo Polos Tanpa Background & Tanpa Padding */}
+          {/* Logo */}
           <motion.button
             layout
             onClick={handleLogoClick}
-            className="flex items-center focus:outline-none py-2"
+            className="flex items-center focus:outline-none py-1 mr-6"
           >
             <motion.img
               layout
               src="/logo.png"
               alt="Logo FEB UNPAS"
-              // Transisi tinggi gambar langsung untuk kehalusan maksimal
               animate={{
-                height: isCondensed ? 32 : 55, // Dari h-14 ke h-8 secara visual
+                height: isCondensed ? (isMobile ? 36 : 42) : 65,
               }}
               transition={springConfig}
               className="w-auto object-contain pointer-events-none"
@@ -108,8 +142,8 @@ export default function Navbar() {
                 onClick={handleNavClick}
                 className={({ isActive }) =>
                   `px-4 py-2 rounded-full text-[13px] font-bold transition-all duration-300 ${isActive
-                    ? 'text-forest-700 bg-forest-50'
-                    : 'text-gray-500 hover:text-forest-600 hover:bg-gray-50'
+                    ? 'text-forest-700 bg-forest-50 shadow-inner'
+                    : 'text-gray-500 hover:text-forest-600 hover:bg-white/50'
                   }`
                 }
               >
@@ -124,10 +158,10 @@ export default function Navbar() {
               layout
               onClick={toggleLanguage}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 font-bold text-[10px] uppercase tracking-wider transition-all duration-500 ${isCondensed ? 'bg-forest-700 text-white border-transparent' : 'bg-white text-forest-600'
+              className={`flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 font-bold text-[10px] uppercase tracking-wider transition-all duration-500 ${isCondensed ? 'bg-forest-700 text-white border-transparent' : 'bg-white text-forest-600'
                 }`}
             >
-              <FiGlobe className="w-3.5 h-3.5" />
+              <FiGlobe className="w-4 h-4" />
               <span className="hidden sm:inline">{t('nav.language')}</span>
               <span className="sm:hidden">{i18n.language.toUpperCase()}</span>
             </motion.button>
@@ -135,7 +169,7 @@ export default function Navbar() {
             <motion.button
               layout
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-full bg-gray-50 text-forest-700"
+              className="lg:hidden p-2.5 rounded-full bg-gray-50 text-forest-700"
             >
               {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
             </motion.button>
@@ -150,7 +184,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="lg:hidden absolute top-full left-6 right-6 mt-3 overflow-hidden bg-white/95 backdrop-blur-xl border border-gray-100 shadow-2xl rounded-[2.5rem]"
+            className="lg:hidden absolute top-full left-10 right-10 mt-3 overflow-hidden bg-white/95 backdrop-blur-xl border border-gray-100 shadow-2xl rounded-[2.5rem]"
           >
             <nav className="flex flex-col py-6 px-6 gap-2">
               {NAV_ROUTES.map(({ key, path }, i) => (
@@ -161,7 +195,7 @@ export default function Navbar() {
                   onClick={handleNavClick}
                   className={({ isActive }) =>
                     `block px-6 py-4 rounded-2xl text-base font-bold transition-all ${isActive
-                      ? 'text-white bg-forest-700 shadow-lg scale-[1.02]'
+                      ? 'text-white bg-forest-700 shadow-lg'
                       : 'text-gray-600 hover:bg-gray-50'
                     }`
                   }
