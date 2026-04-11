@@ -5,7 +5,6 @@ jspm_packages/
 .pnp.js
 
 # --- Output Build ---
-dist/
 build/
 .next/
 out/
