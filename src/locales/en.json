@@ -6,16 +6,16 @@
     "faculty": "Faculty",
     "contact": "Contact",
     "language": "ID",
-    "student": "Students",
+    "student": "Student",
     "registration": "Registration",
-    "news": "News & Activities"
+    "news": "News & Events"
   },
   "hero": {
     "badge": "Accredited Excellent",
     "title": "Study Program",
-    "subtitle": "Economics",
-    "description": "Faculty of Economics and Business, Universitas Pasundan",
-    "cta_primary": "Join Now",
+    "subtitle": "Economic Development",
+    "description": "Faculty of Economics and Business - Pasundan University",
+    "cta_primary": "Register Now",
     "cta_secondary": "Contact Us",
     "stats": {
       "students": "Active Students",
@@ -25,112 +25,304 @@
     }
   },
   "home": {
-    "why_title": "Why Development Economics?",
+    "why_title": "Why Economic Development?",
     "why_subtitle": "Our Excellence",
-    "why_description": "The Development Economics Study Program at FEB UNPAS offers a modern curriculum relevant to industry needs and national development goals.",
+    "why_description": "The FEB UNPAS Economic Development Study Program offers a modern curriculum relevant to industry needs and national development.",
     "features": {
       "curriculum": {
-        "title": "KKNI-Based Curriculum",
-        "desc": "Continuously updated curriculum aligned with the Indonesian National Qualifications Framework and labor market demands."
+        "title": "IQF-Based Curriculum",
+        "desc": "A curriculum constantly updated according to the Indonesian Qualifications Framework and job market demands."
       },
       "research": {
         "title": "Research & Community Service",
-        "desc": "Actively engaged in research and community service contributing to regional development."
+        "desc": "Active in research and community service activities contributing to regional development."
       },
       "network": {
-        "title": "Extensive Alumni Network",
-        "desc": "Alumni working across government agencies, financial institutions, and leading corporations."
+        "title": "Broad Alumni Network",
+        "desc": "Alumni are spread across various government agencies, financial institutions, and leading companies."
       },
       "international": {
-        "title": "International Exposure",
+        "title": "International Outlook",
         "desc": "Student exchange programs and research collaborations with international universities and institutions."
       }
     },
-    "news_title": "News & Activities",
-    "news_subtitle": "Latest",
+    "news_title": "News & Events",
+    "news_subtitle": "Latest updates",
     "news": [
       {
-        "title": "National Development Economics Seminar 2024",
+        "title": "2024 National Seminar on Economic Development",
         "date": "March 15, 2024",
-        "excerpt": "The Development Economics Study Program held a national seminar themed on Indonesia's digital economic transformation.",
+        "excerpt": "The Economic Development Study Program held a national seminar on Indonesia's digital economic transformation.",
         "category": "Seminar"
       },
       {
         "title": "EP Students Win National PKM Award",
         "date": "February 22, 2024",
-        "excerpt": "Development Economics student team won top honors in the National Student Creativity Program.",
+        "excerpt": "A team of Economic Development students won the top award in the National Student Creativity Program.",
         "category": "Achievement"
       },
       {
-        "title": "Industry Visit to Bank Indonesia",
+        "title": "Industrial Visit to Bank Indonesia",
         "date": "February 8, 2024",
-        "excerpt": "The industry visit to Bank Indonesia provided direct insights into national monetary policy.",
+        "excerpt": "An industrial visit to Bank Indonesia provided direct insights into national monetary policy.",
         "category": "Activity"
       }
     ],
     "cta_title": "Ready to Join Us?",
-    "cta_desc": "Register now and become part of an academic community dedicated to Indonesia's economic progress.",
+    "cta_desc": "Register now and become part of an academic community dedicated to the progress of Indonesia's economy.",
     "cta_button": "Register Now"
   },
   "profile": {
     "title": "Study Program Profile",
     "subtitle": "About Us",
-    "history_title": "Program History",
-    "history": "The Development Economics Study Program at the Faculty of Economics and Business, Universitas Pasundan (UNPAS), was established in 1974. Over more than five decades, the program has made tangible contributions in producing quality human resources in the field of development economics. Located in Bandung, West Java, UNPAS is committed to producing graduates who can compete at both national and international levels.",
+    "hero_badge": "Explore Our Essence",
+    "nav_menu": [
+      {
+        "id": "sejarah",
+        "label": "History",
+        "icon": "FiClock"
+      },
+      {
+        "id": "logo",
+        "label": "Identity",
+        "icon": "FiHexagon"
+      },
+      {
+        "id": "visimisi",
+        "label": "Vision Mission",
+        "icon": "FiTarget"
+      },
+      {
+        "id": "keunggulan",
+        "label": "Excellence",
+        "icon": "FiStar"
+      },
+      {
+        "id": "capaian",
+        "label": "Achievements",
+        "icon": "FiAward"
+      },
+      {
+        "id": "fasilitas",
+        "label": "Facilities",
+        "icon": "FiMapPin"
+      }
+    ],
+    "history_title": "Study Program History",
+    "history_footer": "Continuing to transform into a leading economics faculty in West Java.",
+    "history_timeline_label": "Timeline",
+    "history": [
+      "The Economic Development Study Program of the Faculty of Economics and Business, Pasundan University (FEB UNPAS), is a strategic program in the development of economic education in Bandung and West Java. Located in the heart of Bandung, this program was born as a response to complex national economic development needs and the increasing demand for experts in economic development.",
+      "The history of the Economic Development Study Program began in 1983, marked by the granting of the operational license through the Decree of the Directorate General of Higher Education, Ministry of Education and Culture of the Republic of Indonesia. Academic legality was further strengthened by the Decree of the Minister of Education and Culture No. 10427/0/1985 dated October 5, 1985, which became the milestone for formal economic education at Pasundan University.",
+      "In line with the development of educational quality, on August 5, 1990, the Economics Study Program obtained 'Recognized' status through Decree No. 0702/0/1990. Sustained academic quality and governance led to an upgrade to 'Equalized' status based on Decree No. 07/DIKTI/KEP/1993. This status confirmed that the educational quality was on par with state universities at that time.",
+      "Entering the era of national higher education quality assurance reform, since 1995, the government implemented an accreditation mechanism by an independent body, the National Accreditation Board for Higher Education (BAN-PT). Adapting to this policy, in 1996, the Economics Study Program underwent its first reaccreditation and achieved a 'B' (Good) rank.",
+      "A commitment to academic quality improvement was shown through curriculum strengthening, lecturer quality enhancement, research development, and network expansion. These efforts paid off in 2005 when the program upgraded its accreditation rank from 'B' to 'A' (Excellent).",
+      "This achievement was not a one-time event; it was consistently maintained. In the 2010 reaccreditation, the program again achieved an 'A' rank, which was maintained in 2016, valid until 2021. This consistency reflects a sustainable culture of quality and strong academic governance within the FEB UNPAS Economic Development Study Program.",
+      "The peak of quality achievement was marked by the Decree of the Executive Director of BAN-PT No. 4401/SK/BAN-PT/Ak.KP/S/V/2024 dated May 21, 2024, which granted the Economic Development Study Program the 'EXCELLENT' (UNGGUL) status. This rank is national recognition for education quality, research, community service, governance, and tangible contributions to regional and national economic development.",
+      "With a journey spanning over four decades, the FEB Pasundan University Economic Development Study Program continues to transform into an adaptive center for economic development science, community-oriented, and committed to producing excellent, professional, and globally competitive graduates."
+    ],
+    "history_milestones": [
+      {
+        "year": "1983",
+        "event": "Operational license from DGHE."
+      },
+      {
+        "year": "1985",
+        "event": "Formal legality via Ministerial Decree."
+      },
+      {
+        "year": "2005",
+        "event": "Achieved 'A' Accreditation Rank."
+      },
+      {
+        "year": "2024",
+        "event": "Achieved 'EXCELLENT' Accreditation."
+      }
+    ],
+    "identity": {
+      "title": "Visual Philosophy & Meaning",
+      "description": "The Economics Study Program logo at FEB Pasundan University is a visual representation of academic identity, scientific values, and future development direction. The logo features a stylized letter 'E' as the main symbol representing Economics, built from three dynamic curved elements moving upwards.",
+      "approach_title": "Scientific Approach",
+      "approach_desc": "The curved shapes symbolize a comprehensive, adaptive, and sustainable approach to economic science, while reflecting the synergy between education, research, and community service as the pillars of higher education.",
+      "growth_title": "Spirit of Growth",
+      "growth_desc": "The upward-pointing direction illustrates optimism, growth, and transformation, showing the commitment to producing graduates who continue to develop, excel academically, and compete nationally and globally.",
+      "closing": "Overall, the logo reflects a progressive, future-oriented academic identity based on professionalism and real contributions to societal economic development.",
+      "labels": {
+        "construction": "Symbol Construction",
+        "official_mark": "Official Study Program Mark",
+        "philosophy": "Shape Philosophy",
+        "color_palette": "Official Color Palette",
+        "typography": "Typography System",
+        "headline_font": "Headline Font (Display)",
+        "body_font": "Body Font (Content)"
+      },
+      "colors": {
+        "primary_name": "Forest Green",
+        "primary_desc": "Represents growth, sustainability, balance, and a commitment to inclusive economic development.",
+        "accent_name": "Gold",
+        "accent_desc": "Symbolizes excellence, achievement, and the intellectual value that is the primary goal of the educational process."
+      }
+    },
     "vision_title": "Vision",
-    "vision": "To become a distinguished, innovative, and internationally competitive Development Economics Study Program in sustainable development economics based on Islamic values by 2030.",
+    "vision": "To become a leading study program in producing competent economics graduates recognized nationally and internationally in the fields of Governance, Banking, Entrepreneurship, and Academia or Economic Research Institutions, upholding Islamic values and Sundanese culture by 2037.",
     "mission_title": "Mission",
     "missions": [
-      "To provide quality, relevant, and adaptive development economics education in response to advances in science and technology.",
-      "To conduct innovative scientific research in development economics to contribute to knowledge and national development.",
-      "To implement community service programs that contribute to improving social welfare.",
-      "To develop strategic cooperation with various domestic and international institutions to improve academic quality and professional networks.",
-      "To create a conducive academic environment with integrity, based on Islamic values in campus life."
+      "To organize high-quality, relevant, and adaptive economic development education in line with science and technology developments.",
+      "To conduct innovative scientific research in economic development to contribute to knowledge and national development.",
+      "To implement community service that benefits the improvement of public welfare.",
+      "To develop strategic collaborations with various national and international institutions to enhance academic quality and professional networks.",
+      "To create a conducive academic environment, based on integrity and Islamic values in campus life."
     ],
-    "objectives_title": "Program Objectives",
+    "objectives_title": "Study Program Objectives",
     "objectives": [
-      "To produce competent, professional, and ethical graduates in the field of development economics.",
-      "To produce nationally and internationally recognized research and scientific publications.",
-      "To make real contributions to society through sustainable community service programs.",
-      "To build strategic partnerships to improve graduate quality and program relevance."
+      "To produce competent, professional, and ethical graduates in the field of economic development.",
+      "To produce research and scientific publications recognized nationally and internationally.",
+      "To provide real contributions to society through sustainable community service programs.",
+      "To build strategic partnerships to enhance graduate quality and program relevance."
     ],
-    "achievements_title": "Achievements & Awards",
+    "advantages_title": "Our Value Added",
+    "advantages": [
+      {
+        "title": "Adaptive Curriculum",
+        "desc": "Aligned with the needs of the financial industry and global digital business."
+      },
+      {
+        "title": "Expert Faculty",
+        "desc": "A combination of doctoral academics and experienced corporate practitioners."
+      },
+      {
+        "title": "Digital Ecosystem",
+        "desc": "A learning environment with access to the latest economic data platforms."
+      },
+      {
+        "title": "Professional Certification",
+        "desc": "Graduates are equipped with internationally recognized competency certifications."
+      }
+    ],
+    "achievements_title": "Milestones & Accreditation",
+    "achievements_subtitle": "Achievements",
+    "achievements_footer": "Towards Sustainable Transformation & Academic Internationalization",
     "achievements": [
       {
-        "year": "2023",
-        "title": "Accreditation B – BAN-PT",
-        "desc": "The study program received a B accreditation from the National Accreditation Board for Higher Education."
+        "year": "1983",
+        "title": "Operational License",
+        "desc": "The Economics Study Program was established through an operational license by the DGHE, Ministry of Education and Culture RI."
       },
       {
-        "year": "2022",
-        "title": "National PKM Champion",
-        "desc": "EP UNPAS students won the national Student Creativity Program in the research category."
+        "year": "1985",
+        "title": "Legality Strengthening",
+        "desc": "Obtained academic legality through Ministerial Decree No. 10427/0/1985 as a formal milestone."
       },
       {
-        "year": "2021",
-        "title": "Best Paper Award",
-        "desc": "EP UNPAS lecturer received a best paper award at the National Economics Conference."
+        "year": "1990",
+        "title": "Recognized Status",
+        "desc": "Obtained 'Recognized' status based on Ministerial Decree No. 0702/0/1990."
+      },
+      {
+        "year": "1993",
+        "title": "Equalized Status",
+        "desc": "Upgraded to 'Equalized' status, indicating quality on par with state universities."
+      },
+      {
+        "year": "1996",
+        "title": "First National Accreditation",
+        "desc": "Underwent the first national accreditation by BAN-PT and achieved a 'B' rank."
+      },
+      {
+        "year": "2005",
+        "title": "Accreditation A",
+        "desc": "Successfully improved academic quality, achieving the 'A' (Excellent) rank from BAN-PT."
+      },
+      {
+        "year": "2010",
+        "title": "Quality Consistency",
+        "desc": "Maintained the 'A' Accreditation, showing consistency in education and governance."
+      },
+      {
+        "year": "2016",
+        "title": "Re-Accreditation A",
+        "desc": "Successfully maintained the 'A' rank from BAN-PT (valid until 2021)."
       },
       {
         "year": "2020",
-        "title": "International MoU",
-        "desc": "Signing of international cooperation agreements with universities in Malaysia and Thailand."
+        "title": "MBKM Curriculum Grant",
+        "desc": "Received the Merdeka Belajar Kampus Merdeka (MBKM) curriculum grant for adaptive transformation."
+      },
+      {
+        "year": "2021",
+        "title": "Quality Certification",
+        "desc": "Maintained the 'A' rank accreditation from BAN-PT."
+      },
+      {
+        "year": "2022",
+        "title": "PKKM Grant",
+        "desc": "Won the Competitive Campus Program (PKKM) grant from the Ministry of Education for learning quality enhancement."
+      },
+      {
+        "year": "2024",
+        "title": "EXCELLENT Rank",
+        "desc": "Achieved the highest 'EXCELLENT' (UNGGUL) rank based on BAN-PT Decree No. 4401/SK/BAN-PT/Ak.KP/S/V/2024."
+      },
+      {
+        "year": "2025",
+        "title": "AACSB International Member",
+        "desc": "Became a member of the AACSB international accreditation body as a strategic step toward global business education standards."
+      }
+    ],
+    "facilities_title": "Campus Infrastructure",
+    "facilities_footer": "Global standard facilities to support student academic potential.",
+    "facilities": [
+      {
+        "name": "Library",
+        "icon": "FiMapPin",
+        "desc": "Access to book collections, journals, and the latest economic databases",
+        "img": "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800"
+      },
+      {
+        "name": "Computer Lab",
+        "icon": "FiBox",
+        "desc": "Computers equipped with the latest economic data analysis software",
+        "img": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800"
+      },
+      {
+        "name": "Seminar Room",
+        "icon": "FiZap",
+        "desc": "Seminar room with complete audio-visual facilities",
+        "img": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800"
+      },
+      {
+        "name": "Discussion Area",
+        "icon": "FiTarget",
+        "desc": "Open discussion areas for collaboration and brainstorming",
+        "img": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800"
+      },
+      {
+        "name": "Investment Gallery",
+        "icon": "FiAward",
+        "desc": "Investment corner with stock market info and global economic data",
+        "img": "https://images.unsplash.com/photo-1611974717535-7c805a0a7d53?q=80&w=800"
+      },
+      {
+        "name": "Hybrid Classroom",
+        "icon": "FiEye",
+        "desc": "Hybrid-ready classrooms for interactive learning",
+        "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800"
       }
     ]
   },
   "academics": {
     "title": "Academic Programs",
     "subtitle": "Curriculum & Programs",
-    "program_title": "Bachelor's Program (S1)",
-    "program_desc": "The Bachelor's Program in Development Economics is designed to equip students with comprehensive theoretical knowledge and analytical skills in the field of development economics.",
+    "program_title": "Bachelor Program (S1)",
+    "program_desc": "The Bachelor of Economic Development is designed to equip students with comprehensive theoretical knowledge and analytical skills.",
     "duration": "4 Years (8 Semesters)",
     "credits": "144 Credits",
-    "degree": "Bachelor of Economics (S.E.)",
+    "degree": "Bachelor of Economics (B.Econ / S.E.)",
     "concentration_title": "Study Concentrations",
     "concentrations": [
       {
-        "name": "Monetary Economics & Banking",
-        "desc": "Studying monetary policy, banking systems, and macroeconomic financial management.",
+        "name": "Monetary & Banking Economics",
+        "desc": "Studying monetary policy, banking systems, and macro-financial management.",
         "courses": [
           "Monetary Economics",
           "Banking Management",
@@ -140,7 +332,7 @@
       },
       {
         "name": "Regional Planning & Development",
-        "desc": "Focused on regional development planning, regional autonomy, and public policy.",
+        "desc": "Focusing on regional development planning, regional autonomy, and public policy.",
         "courses": [
           "Regional Planning",
           "Regional Economics",
@@ -164,21 +356,21 @@
       {
         "sem": 1,
         "courses": [
-          "Introduction to Microeconomics",
-          "Economic Mathematics",
-          "Introduction to Accounting",
+          "Intro to Microeconomics",
+          "Mathematical Economics",
+          "Intro to Accounting",
           "Indonesian Language",
-          "Religious Education",
-          "Pancasila & Civics"
+          "Islamic Religious Education",
+          "Civics & Pancasila"
         ]
       },
       {
         "sem": 2,
         "courses": [
-          "Introduction to Macroeconomics",
+          "Intro to Macroeconomics",
           "Economic Statistics",
-          "Introduction to Management",
-          "English for Economics",
+          "Intro to Management",
+          "Business English",
           "Economic Sociology",
           "Business Law"
         ]
@@ -191,7 +383,7 @@
           "Research Methods",
           "Basic Econometrics",
           "Public Finance",
-          "Development Economics I"
+          "Economic Development I"
         ]
       },
       {
@@ -201,12 +393,12 @@
           "Advanced Macroeconomics",
           "Advanced Econometrics",
           "International Economics",
-          "Development Economics II",
+          "Economic Development II",
           "Development Planning"
         ]
       }
     ],
-    "prospect_title": "Graduate Career Prospects",
+    "prospect_title": "Career Prospects",
     "prospects": [
       {
         "icon": "building",
@@ -216,7 +408,7 @@
       {
         "icon": "bank",
         "title": "Financial Institutions",
-        "desc": "Banking, OJK, state-owned financial enterprises, and financing institutions."
+        "desc": "Banking, OJK, financial SOEs, and financing institutions."
       },
       {
         "icon": "chart",
@@ -225,94 +417,94 @@
       },
       {
         "icon": "academic",
-        "title": "Academics & Researchers",
-        "desc": "Lecturers, researchers at national and international research institutions."
+        "title": "Academia & Researchers",
+        "desc": "Lecturers, researchers in national and international research institutions."
       }
     ]
   },
   "faculty": {
     "title": "Faculty Team",
     "subtitle": "Teaching Staff",
-    "description": "The Development Economics Study Program at FEB UNPAS is supported by experienced and dedicated lecturers with the best academic qualifications.",
+    "description": "The Economic Development Study Program at FEB UNPAS is supported by experienced and dedicated lecturers with top academic qualifications.",
     "members": [
       {
-        "name": "Prof. Dr. H. Ahmad Hidayat, M.Si.",
-        "position": "Head of Study Program",
-        "specialization": "Development Economics & Fiscal Policy",
-        "education": "PhD in Economics, Universitas Padjadjaran",
-        "email": "ahmad.hidayat@unpas.ac.id",
+        "name": "Prof. Dr. H. Horas Djulius, S.E.",
+        "position": "Professor",
+        "specialization": "Economic Development & Fiscal Policy",
+        "education": "Doctor of Economics",
+        "email": "horas.djulius@unpas.ac.id",
         "research": "Regional Fiscal Policy, Regional Economics"
       },
       {
-        "name": "Dr. Hj. Siti Rahayu, M.Ec.",
-        "position": "Secretary of Study Program",
-        "specialization": "Monetary Economics & Banking",
-        "education": "PhD in Economics, Universitas Indonesia",
-        "email": "siti.rahayu@unpas.ac.id",
+        "name": "Dr. Endang Rostiana, S.E., M.T.",
+        "position": "Vice Dean for Research and Cooperation",
+        "specialization": "Monetary & Banking Economics",
+        "education": "Doctor of Economics",
+        "email": "endang.rostiana@unpas.ac.id",
         "research": "Monetary Policy, Inflation, Interest Rates"
       },
       {
-        "name": "Dr. Dedi Kurniawan, M.Si.",
-        "position": "Senior Lecturer",
+        "name": "Gugum Mukdas Sudarjah, S.E., M.T.",
+        "position": "Head of Study Program",
         "specialization": "Regional Planning & Development",
-        "education": "PhD in Regional Planning, ITB",
-        "email": "dedi.kurniawan@unpas.ac.id",
+        "education": "Doctor of Economics",
+        "email": "gugum.mukdas@unpas.ac.id",
         "research": "Regional Development, Decentralization"
       },
       {
-        "name": "Dr. Rd. Mohamad Fauzi, M.Sc.",
-        "position": "Senior Lecturer",
+        "name": "Restu Akbar Suryaman, S.E., M.E.",
+        "position": "Secretary of Study Program",
         "specialization": "Econometrics & Data Analysis",
-        "education": "PhD in Quantitative Economics, Erasmus University",
-        "email": "m.fauzi@unpas.ac.id",
+        "education": "Master of Economics",
+        "email": "restu.suryaman@unpas.ac.id",
         "research": "Applied Econometrics, Economic Big Data"
       },
       {
-        "name": "Dr. Lilis Suryani, M.SE.",
+        "name": "Dr. Dikdik Kusdiana, S.E., M.T.",
         "position": "Lecturer",
         "specialization": "Resource & Environmental Economics",
-        "education": "PhD in Environmental Science, IPB University",
-        "email": "lilis.suryani@unpas.ac.id",
+        "education": "Doctor of Economics",
+        "email": "dikdik.kusdiana@unpas.ac.id",
         "research": "Green Economy, Sustainable Development"
       },
       {
-        "name": "Asep Ridwan, S.E., M.Si.",
+        "name": "Dr. H. Tete Saepudin, S.E., M.Si.",
         "position": "Lecturer",
         "specialization": "Public Finance & Taxation",
-        "education": "Master of Economics, UNPAD",
-        "email": "asep.ridwan@unpas.ac.id",
-        "research": "Regional Taxation, State Budget"
+        "education": "Doctor of Economics",
+        "email": "tete.saepudin@unpas.ac.id",
+        "research": "Regional Taxation, National/Regional Budgets"
       },
       {
-        "name": "Nenden Rosaria, S.E., M.Sc.",
+        "name": "Intan Ramdaniatulfitri, S.E., M.E.",
         "position": "Lecturer",
         "specialization": "International Economics & Trade",
-        "education": "Master of Science, University of Birmingham",
-        "email": "nenden.rosaria@unpas.ac.id",
+        "education": "Master of Economics",
+        "email": "intan.ramdaniatulfitri@unpas.ac.id",
         "research": "International Trade, FDI"
       },
       {
-        "name": "Yudi Pratama, S.E., M.M.",
-        "position": "Lecturer",
-        "specialization": "Financial Management & Investment",
-        "education": "Master of Management, Universitas Gadjah Mada",
-        "email": "yudi.pratama@unpas.ac.id",
-        "research": "Capital Markets, Investment Portfolio"
+        "name": "Muhimam",
+        "position": "Academic Staff",
+        "specialization": "-",
+        "education": "-",
+        "email": "muhimam@unpas.ac.id",
+        "research": "-"
       }
     ]
   },
   "contact": {
     "title": "Contact Us",
     "subtitle": "Contact & Location",
-    "description": "We are ready to assist you. Feel free to reach out to us through any of our available communication channels.",
+    "description": "We are ready to help. Feel free to reach out to us through the following communication channels.",
     "address_title": "Address",
     "address": "Jl. Tamansari No. 6-8, Bandung 40116, West Java, Indonesia",
     "phone_title": "Phone",
     "phone": "+62 22 4206223",
     "email_title": "Email",
     "email": "ep.feb@unpas.ac.id",
-    "hours_title": "Office Hours",
-    "hours": "Monday – Friday: 08:00 – 16:00 WIB",
+    "hours_title": "Operational Hours",
+    "hours": "Monday – Friday: 08:00 AM – 04:00 PM WIB",
     "form": {
       "title": "Send a Message",
       "name": "Full Name",
@@ -320,22 +512,22 @@
       "subject": "Subject",
       "message": "Message",
       "submit": "Send Message",
-      "success": "Your message has been sent successfully! We will get back to you shortly.",
+      "success": "Your message has been sent successfully! We will contact you soon.",
       "error": "An error occurred. Please try again.",
       "name_placeholder": "Enter your full name",
       "email_placeholder": "Enter your email address",
-      "subject_placeholder": "What would you like to ask?",
+      "subject_placeholder": "What is your inquiry about?",
       "message_placeholder": "Write your message here..."
     }
   },
   "footer": {
-    "tagline": "Building Capable Economists for Indonesia",
+    "tagline": "Creating Reliable Economists for Indonesia",
     "links_title": "Quick Links",
     "contact_title": "Contact",
     "social_title": "Follow Us",
-    "copyright": "Study Program Development Economics - FEB UNPAS. All Rights Reserved.",
+    "copyright": "Economic Development Study Program - FEB UNPAS. All Rights Reserved.",
     "faculty": "Faculty of Economics and Business",
-    "university": "Universitas Pasundan",
+    "university": "Pasundan University",
     "location": "Our Location"
   }
 }

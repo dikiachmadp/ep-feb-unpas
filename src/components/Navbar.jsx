@@ -121,8 +121,8 @@ export default function Navbar() {
           >
             <motion.img
               layout
-              src="/logo.png"
-              alt="Logo FEB UNPAS"
+              src="/logo.webp"
+              alt="Logo Ekonomi Pembangunan FEB UNPAS"
               animate={{
                 height: isCondensed ? (isMobile ? 36 : 42) : 65,
               }}

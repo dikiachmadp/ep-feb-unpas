@@ -75,10 +75,96 @@
   "profile": {
     "title": "Profil Program Studi",
     "subtitle": "Tentang Kami",
+    "hero_badge": "Explore Our Essence",
+    "nav_menu": [
+      {
+        "id": "sejarah",
+        "label": "Sejarah",
+        "icon": "FiClock"
+      },
+      {
+        "id": "logo",
+        "label": "Identitas",
+        "icon": "FiHexagon"
+      },
+      {
+        "id": "visimisi",
+        "label": "Visi Misi",
+        "icon": "FiTarget"
+      },
+      {
+        "id": "keunggulan",
+        "label": "Unggul",
+        "icon": "FiStar"
+      },
+      {
+        "id": "capaian",
+        "label": "Capaian",
+        "icon": "FiAward"
+      },
+      {
+        "id": "fasilitas",
+        "label": "Fasilitas",
+        "icon": "FiMapPin"
+      }
+    ],
     "history_title": "Sejarah Program Studi",
-    "history": "Program Studi Ekonomi Pembangunan Fakultas Ekonomi dan Bisnis Universitas Pasundan (UNPAS) berdiri sejak tahun 1974. Selama lebih dari lima dekade, program studi ini telah berkontribusi nyata dalam mencetak sumber daya manusia berkualitas di bidang ekonomi pembangunan. Berlokasi di Kota Bandung, Jawa Barat, UNPAS berkomitmen untuk menghasilkan lulusan yang mampu bersaing di tingkat nasional maupun internasional.",
+    "history_footer": "Terus bertransformasi menjadi fakultas ekonomi terdepan di Jawa Barat.",
+    "history_timeline_label": "Garis Waktu",
+    "history": [
+      "Program Studi Ekonomi Pembangunan Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) merupakan salah satu program studi yang memiliki peran strategis dalam pengembangan pendidikan ekonomi di Kota Bandung dan Jawa Barat. Berlokasi di pusat Kota Bandung, program studi ini lahir sebagai respons terhadap kebutuhan pembangunan ekonomi nasional yang semakin kompleks serta meningkatnya kebutuhan tenaga ahli di bidang ekonomi pembangunan.",
+      "Sejarah Program Studi Ekonomi Pembangunan dimulai pada tahun 1983, ditandai dengan penetapan izin penyelenggaraan melalui Keputusan Direktorat Jenderal Pendidikan Tinggi Departemen Pendidikan dan Kebudayaan Republik Indonesia. Legalitas akademik program studi kemudian semakin diperkuat melalui Surat Keputusan Menteri Pendidikan dan Kebudayaan Republik Indonesia Nomor 10427/0/1985 tanggal 5 Oktober 1985, yang menjadi tonggak awal penyelenggaraan pendidikan ekonomi secara formal di lingkungan Universitas Pasundan.",
+      "Seiring dengan perkembangan kualitas penyelenggaraan pendidikan, pada tanggal 5 Agustus 1990, Program Studi Ekonomi memperoleh status Diakui melalui SK Mendikbud Nomor 0702/0/1990. Peningkatan kualitas akademik dan tata kelola yang berkelanjutan mendorong peningkatan status kelembagaan menjadi Disamakan berdasarkan SK Direktur Jenderal Pendidikan Tinggi Nomor 07/DIKTI/KEP/1993. Status ini menegaskan bahwa mutu penyelenggaraan pendidikan telah setara dengan perguruan tinggi negeri pada masa tersebut.",
+      "Memasuki era reformasi sistem penjaminan mutu pendidikan tinggi nasional, sejak tahun 1995 pemerintah menerapkan mekanisme akreditasi oleh lembaga independen, yaitu Badan Akreditasi Nasional Perguruan Tinggi (BAN-PT). Menyesuaikan kebijakan baru tersebut, pada tahun 1996 Program Studi Ekonomi mengikuti proses reakreditasi pertama dengan sistem penilaian BAN-PT dan berhasil memperoleh peringkat Akreditasi B (Baik).",
+      "Komitmen terhadap peningkatan mutu akademik terus ditunjukkan melalui berbagai penguatan kurikulum, peningkatan kualitas dosen, pengembangan riset, serta perluasan jejaring kerja sama. Upaya tersebut membuahkan hasil pada tahun 2005, ketika Program Studi Ekonomi berhasil meningkatkan peringkat akreditasi dari B menjadi A (Baik Sekali).",
+      "Prestasi tersebut tidak hanya dicapai sekali, tetapi mampu dipertahankan secara konsisten. Pada proses reakreditasi tahun 2010, program studi kembali memperoleh Akreditasi A, yang kemudian kembali dipertahankan pada reakreditasi tahun 2016, dengan masa berlaku hingga tahun 2021. Konsistensi ini mencerminkan keberlanjutan budaya mutu dan tata kelola akademik yang kuat di lingkungan Program Studi Ekonomi Pembangunan FEB UNPAS.",
+      "Puncak capaian mutu institusi ditandai dengan diterbitkannya Surat Keputusan Direktur Eksekutif Badan Akreditasi Nasional Perguruan Tinggi Nomor 4401/SK/BAN-PT/Ak.KP/S/V/2024 tanggal 21 Mei 2024, yang menetapkan Program Studi Ekonomi memperoleh peringkat akreditasi UNGGUL. Predikat ini menjadi pengakuan nasional atas kualitas pendidikan, penelitian, pengabdian kepada masyarakat, tata kelola, serta kontribusi nyata program studi dalam mendukung pembangunan ekonomi regional dan nasional.",
+      "Dengan perjalanan lebih dari empat dekade, Program Studi Ekonomi Pembangunan FEB Universitas Pasundan terus bertransformasi menjadi pusat pengembangan ilmu ekonomi pembangunan yang adaptif terhadap perubahan zaman, berorientasi pada kebutuhan masyarakat, serta berkomitmen menghasilkan lulusan yang unggul, profesional, dan berdaya saing global."
+    ],
+    "history_milestones": [
+      {
+        "year": "1983",
+        "event": "Izin penyelenggaraan Dirjen DIKTI."
+      },
+      {
+        "year": "1985",
+        "event": "Legalitas formal SK Mendikbud RI."
+      },
+      {
+        "year": "2005",
+        "event": "Meraih Peringkat Akreditasi A."
+      },
+      {
+        "year": "2024",
+        "event": "Meraih Akreditasi UNGGUL."
+      }
+    ],
+    "identity": {
+      "title": "Filosofi Visual & Makna",
+      "description": "Logo Program Studi Ekonomi Fakultas Ekonomi dan Bisnis Universitas Pasundan merupakan representasi visual dari identitas akademik, nilai keilmuan, serta arah pengembangan program studi di masa depan. Logo ini menampilkan stilisasi huruf “E” sebagai simbol utama yang merepresentasikan Ekonomi, dibangun dari tiga elemen lengkung dinamis yang bergerak ke arah atas.",
+      "approach_title": "Pendekatan Keilmuan",
+      "approach_desc": "Bentuk lengkung tersebut melambangkan pendekatan keilmuan ekonomi yang komprehensif, adaptif, dan berkelanjutan, sekaligus mencerminkan sinergi antara pendidikan, penelitian, dan pengabdian kepada masyarakat sebagai pilar utama perguruan tinggi.",
+      "growth_title": "Semangat Pertumbuhan",
+      "growth_desc": "Arah panah yang mengarah ke atas menggambarkan semangat optimisme, pertumbuhan, dan transformasi, menunjukkan komitmen Program Studi Ekonomi dalam menghasilkan lulusan yang terus berkembang, unggul secara akademik, serta mampu bersaing pada tingkat nasional maupun global.",
+      "closing": "Secara keseluruhan, logo Program Studi Ekonomi FEB UNPAS merefleksikan identitas akademik yang progresif, berorientasi masa depan, serta berlandaskan nilai profesionalisme dan kontribusi nyata bagi pembangunan ekonomi masyarakat.",
+      "labels": {
+        "construction": "Konstruksi Simbol",
+        "official_mark": "Logo Resmi Program Studi",
+        "philosophy": "Filosofi Bentuk",
+        "color_palette": "Palet Warna Resmi",
+        "typography": "Sistem Tipografi",
+        "headline_font": "Font Judul (Display)",
+        "body_font": "Font Konten (Body)"
+      },
+      "colors": {
+        "primary_name": "Warna Hijau",
+        "primary_desc": "Merepresentasikan pertumbuhan, keberlanjutan, keseimbangan, serta komitmen terhadap pembangunan ekonomi yang inklusif.",
+        "accent_name": "Warna Emas",
+        "accent_desc": "Melambangkan keunggulan, prestasi, dan nilai intelektual yang menjadi tujuan utama proses pendidikan."
+      }
+    },
     "vision_title": "Visi",
-    "vision": "Menjadi Program Studi Ekonomi Pembangunan yang unggul, inovatif, dan berdaya saing internasional dalam pengembangan ilmu ekonomi pembangunan yang berkelanjutan berbasis nilai-nilai Islami pada tahun 2030.",
+    "vision": "Menjadi program studi unggulan dalam menghasilkan sarjana ekonomi yang kompeten yang diakui Nasional dan Internasional di bidang Tata Kelola Pemerintahan, Perbankan, Entrepeneur, dan Akademisi maupun Lembaga Riset Ekonomi yang menjunjung tinggi nilai Islam dan budaya Sunda di tahun 2037.",
     "mission_title": "Misi",
     "missions": [
       "Menyelenggarakan pendidikan ekonomi pembangunan yang berkualitas, relevan, dan adaptif terhadap perkembangan ilmu pengetahuan dan teknologi.",
@@ -94,27 +180,133 @@
       "Memberikan kontribusi nyata bagi masyarakat melalui program pengabdian yang berkelanjutan.",
       "Membangun kemitraan strategis untuk meningkatkan kualitas lulusan dan relevansi program."
     ],
-    "achievements_title": "Capaian & Penghargaan",
+    "advantages_title": "Nilai Tambah Kami",
+    "advantages": [
+      {
+        "title": "Kurikulum Adaptif",
+        "desc": "Sesuai dengan kebutuhan industri keuangan dan bisnis digital global."
+      },
+      {
+        "title": "Tenaga Pengajar Ahli",
+        "desc": "Kombinasi akademisi doktor dan praktisi korporasi berpengalaman."
+      },
+      {
+        "title": "Ekosistem Digital",
+        "desc": "Lingkungan belajar dengan akses platform data ekonomi terkini."
+      },
+      {
+        "title": "Sertifikasi Profesi",
+        "desc": "Lulusan dibekali sertifikasi kompetensi yang diakui internasional."
+      }
+    ],
+    "achievements_title": "Jejak Prestasi & Akreditasi",
+    "achievements_subtitle": "Capaian",
+    "achievements_footer": "Menuju Transformasi Berkelanjutan & Internasionalisasi Akademik",
     "achievements": [
       {
-        "year": "2023",
-        "title": "Akreditasi B – BAN-PT",
-        "desc": "Program studi memperoleh akreditasi B dari Badan Akreditasi Nasional Perguruan Tinggi."
+        "year": "1983",
+        "title": "Izin Penyelenggaraan",
+        "desc": "Program Studi Ekonomi didirikan melalui penetapan izin penyelenggaraan oleh Direktorat Jenderal Pendidikan Tinggi Departemen Pendidikan dan Kebudayaan RI."
       },
       {
-        "year": "2022",
-        "title": "Juara PKM Nasional",
-        "desc": "Mahasiswa EP UNPAS meraih juara nasional Program Kreativitas Mahasiswa kategori penelitian."
+        "year": "1985",
+        "title": "Penguatan Legalitas",
+        "desc": "Memperoleh penguatan legalitas akademik melalui SK Mendikbud No. 10427/0/1985 sebagai tonggak resmi penyelenggaraan."
       },
       {
-        "year": "2021",
-        "title": "Best Paper Award",
-        "desc": "Dosen EP UNPAS meraih penghargaan best paper pada Konferensi Ekonomi Nasional."
+        "year": "1990",
+        "title": "Status Diakui",
+        "desc": "Mendapatkan status Diakui berdasarkan SK Mendikbud No. 0702/0/1990."
+      },
+      {
+        "year": "1993",
+        "title": "Status Disamakan",
+        "desc": "Status meningkat menjadi Disamakan melalui SK Dirjen Dikti No. 07/DIKTI/KEP/1993, menandakan mutu setara PTN."
+      },
+      {
+        "year": "1996",
+        "title": "Akreditasi Nasional Pertama",
+        "desc": "Mengikuti sistem akreditasi nasional pertama oleh BAN-PT dan memperoleh Akreditasi B (Baik)."
+      },
+      {
+        "year": "2005",
+        "title": "Akreditasi A",
+        "desc": "Berhasil meningkatkan mutu akademik dengan memperoleh Akreditasi A (Baik Sekali) dari BAN-PT."
+      },
+      {
+        "year": "2010",
+        "title": "Konsistensi Kualitas",
+        "desc": "Mempertahankan Akreditasi A, menunjukkan konsistensi kualitas pendidikan dan tata kelola akademik."
+      },
+      {
+        "year": "2016",
+        "title": "Re-Akreditasi A",
+        "desc": "Kembali mempertahankan Akreditasi A BAN-PT (berlaku hingga 2021)."
       },
       {
         "year": "2020",
-        "title": "MoU Internasional",
-        "desc": "Penandatanganan kerja sama internasional dengan universitas di Malaysia dan Thailand."
+        "title": "Hibah KSKI MBKM",
+        "desc": "Mendapatkan Hibah Kurikulum Merdeka Belajar Kampus Merdeka (MBKM) untuk transformasi kurikulum adaptif."
+      },
+      {
+        "year": "2021",
+        "title": "Sertifikasi Mutu",
+        "desc": "Mempertahankan Akreditasi A dari BAN-PT."
+      },
+      {
+        "year": "2022",
+        "title": "Hibah PKKM",
+        "desc": "Meraih Hibah Program Kreativitas Kampus Merdeka dari Kemdikbudristek untuk penguatan kualitas pembelajaran."
+      },
+      {
+        "year": "2024",
+        "title": "Peringkat UNGGUL",
+        "desc": "Meraih peringkat akreditasi tertinggi UNGGUL berdasarkan SK BAN-PT Nomor 4401/SK/BAN-PT/Ak.KP/S/V/2024."
+      },
+      {
+        "year": "2025",
+        "title": "Member AACSB International",
+        "desc": "Menjadi member lembaga akreditasi internasional AACSB sebagai langkah strategis menuju standar pendidikan bisnis global."
+      }
+    ],
+    "facilities_title": "Infrastruktur Kampus",
+    "facilities_footer": "Fasilitas berstandar global untuk mendukung potensi akademik mahasiswa.",
+    "facilities": [
+      {
+        "name": "Perpustakaan",
+        "icon": "FiMapPin",
+        "desc": "Akses ke koleksi buku, jurnal, dan database ekonomi terkini",
+        "img": "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800"
+      },
+      {
+        "name": "Lab Komputer",
+        "icon": "FiBox",
+        "desc": "Perangkat komputer dengan software analisis data ekonomi terbaru",
+        "img": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800"
+      },
+      {
+        "name": "Ruang Seminar",
+        "icon": "FiZap",
+        "desc": "Ruang seminar dengan fasilitas audio visual lengkap",
+        "img": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800"
+      },
+      {
+        "name": "Area Diskusi",
+        "icon": "FiTarget",
+        "desc": "Area diskusi terbuka untuk kolaborasi dan brainstorming",
+        "img": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800"
+      },
+      {
+        "name": "Galeri Investasi",
+        "icon": "FiAward",
+        "desc": "Pojok investasi dengan informasi pasar saham dan ekonomi global",
+        "img": "https://images.unsplash.com/photo-1611974717535-7c805a0a7d53?q=80&w=800"
+      },
+      {
+        "name": "Kelas Hybrid",
+        "icon": "FiEye",
+        "desc": "Kelas hybrid yang siap untuk pembelajaran interaktif",
+        "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800"
       }
     ]
   },

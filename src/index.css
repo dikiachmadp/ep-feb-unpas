@@ -129,3 +129,14 @@
 .page-wrapper {
   min-height: 100vh;
 }
+
+/* Di globals.css */
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
