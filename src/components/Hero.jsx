@@ -5,9 +5,9 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiPlay, FiUsers, FiBook, FiAward, FiStar } from 'react-icons/fi'
 
 const STATS = [
-  { key: 'students', value: '1.200+', icon: FiUsers },
-  { key: 'lecturers', value: '32', icon: FiBook },
-  { key: 'years', value: '50+', icon: FiStar },
+  { key: 'students', value: '180+', icon: FiUsers },
+  { key: 'lecturers', value: '8', icon: FiBook },
+  { key: 'years', value: '30+', icon: FiStar },
   { key: 'accreditation', value: 'Unggul', icon: FiAward },
 ]
 
