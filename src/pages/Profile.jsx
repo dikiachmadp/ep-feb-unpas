@@ -127,18 +127,26 @@ export default function Profile() {
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="lg:hidden fixed bottom-6 left-4 right-4 z-[100]"
             >
-              <div className="bg-forest-900/95 backdrop-blur-lg border border-white/10 px-4 py-3 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                <div className="grid grid-cols-3 gap-1">
+              <div className="bg-forest-900/95 backdrop-blur-lg border border-white/10 px-2 py-3 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                <div className="grid grid-cols-6 gap-0">
                   {navMenu.map((item) => {
                     const isActive = activeSection === item.id;
                     const Icon = IconMap[item.icon] || FiHexagon;
                     return (
-                      <button key={item.id} onClick={() => handleNavClick(item.id)} className="flex flex-col items-center justify-center py-1">
-                        <div className={`mb-1 w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-500 ${isActive ? 'bg-gold-400 text-forest-900 shadow-[0_0_20px_rgba(251,191,36,0.3)]' : 'bg-transparent text-white/40'}`}>
+                      <button
+                        key={item.id}
+                        onClick={() => handleNavClick(item.id)}
+                        className="flex flex-col items-center justify-center py-1"
+                      >
+                        <div className={`mb-1 w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-500 ${isActive
+                          ? 'bg-gold-400 text-forest-900 shadow-[0_0_20px_rgba(251,191,36,0.3)]'
+                          : 'bg-transparent text-white/40'
+                          }`}>
                           <Icon className="w-5 h-5" />
                         </div>
-                        <span className={`text-[8px] font-black uppercase tracking-widest ${isActive ? 'text-gold-400' : 'text-white/30'}`}>
-                          {item.label}
+                        <span className={`text-[6px] font-black uppercase tracking-widest transition-colors duration-500 ${isActive ? 'text-gold-400' : 'text-white/30'
+                          }`}>
+                          {item.label.split(' ')[0]}
                         </span>
                       </button>
                     )
