@@ -500,12 +500,13 @@
     "address_title": "Alamat",
     "address": "Jl. Tamansari No. 6-8, Bandung 40116, Jawa Barat, Indonesia",
     "phone_title": "Telepon",
-    "phone": "+62 22 4206223",
+    "phone": "0811-2046-768",
     "email_title": "Email",
-    "email": "ep.feb@unpas.ac.id",
+    "email": "prodi.ekonomi.feb@unpas.ac.id",
     "hours_title": "Jam Operasional",
     "hours": "Senin – Jumat: 08.00 – 16.00 WIB",
     "form": {
+      "subtitle": "Formulir",
       "title": "Kirim Pesan",
       "name": "Nama Lengkap",
       "email": "Alamat Email",
@@ -518,6 +519,26 @@
       "email_placeholder": "Masukkan alamat email Anda",
       "subject_placeholder": "Apa yang ingin Anda tanyakan?",
       "message_placeholder": "Tuliskan pesan Anda di sini..."
+    },
+    "brochure": {
+      "title": "Brosur Pendaftaran",
+      "subtitle": "Brosur & Informasi",
+      "page1_alt": "Halaman 1 Brosur Pendaftaran",
+      "page2_alt": "Halaman 2 Brosur Pendaftaran",
+      "download_title": "Unduh Brosur",
+      "download_subtitle": "Klik untuk mengunduh versi cetak"
+    },
+    "extra_info": {
+      "title": "Informasi Tambahan",
+      "item1": "Kunjungan langsung terbuka selama jam kerja.",
+      "item2": "Bimbingan akademik dapat dijadwalkan dengan dosen pembimbing sesuai kebutuhan mahasiswa.",
+      "item3": "Untuk pertanyaan akademik, silakan hubungi bagian akademik melalui email atau telepon yang tersedia."
+    },
+    "cashback": {
+      "badge": "Program Spesial Mahasiswa Baru",
+      "title": "Dapatkan Cashback sebesar Rp3.000.000 per Tahun",
+      "description": "Daftar sekarang dan manfaatkan kesempatan ini!",
+      "button": "Daftar Sekarang"
     }
   },
   "footer": {

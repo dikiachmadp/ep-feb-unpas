@@ -494,32 +494,53 @@
     ]
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Contact & Location",
-    "description": "We are ready to help. Feel free to reach out to us through the following communication channels.",
-    "address_title": "Address",
-    "address": "Jl. Tamansari No. 6-8, Bandung 40116, West Java, Indonesia",
-    "phone_title": "Phone",
-    "phone": "+62 22 4206223",
-    "email_title": "Email",
-    "email": "ep.feb@unpas.ac.id",
-    "hours_title": "Operational Hours",
-    "hours": "Monday – Friday: 08:00 AM – 04:00 PM WIB",
-    "form": {
-      "title": "Send a Message",
-      "name": "Full Name",
-      "email": "Email Address",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message",
-      "success": "Your message has been sent successfully! We will contact you soon.",
-      "error": "An error occurred. Please try again.",
-      "name_placeholder": "Enter your full name",
-      "email_placeholder": "Enter your email address",
-      "subject_placeholder": "What is your inquiry about?",
-      "message_placeholder": "Write your message here..."
-    }
+  "title": "Contact Us",
+  "subtitle": "Contact & Location",
+  "description": "We are ready to help. Feel free to reach out to us through the following communication channels.",
+  "address_title": "Address",
+  "address": "Jl. Tamansari No. 6-8, Bandung 40116, West Java, Indonesia",
+  "phone_title": "Phone",
+  "phone": "0811-2046-768",
+  "email_title": "Email",
+  "email": "prodi.ekonomi.feb@unpas.ac.id",
+  "hours_title": "Operational Hours",
+  "hours": "Monday – Friday: 08:00 AM – 04:00 PM WIB",
+  "form": {
+    "subtitle": "Form",
+    "title": "Send a Message",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send Message",
+    "success": "Your message has been sent successfully! We will contact you soon.",
+    "error": "An error occurred. Please try again.",
+    "name_placeholder": "Enter your full name",
+    "email_placeholder": "Enter your email address",
+    "subject_placeholder": "What is your inquiry about?",
+    "message_placeholder": "Write your message here..."
   },
+  "brochure": {
+    "title": "Registration Brochure",
+    "subtitle": "Brochure & Information",
+    "page1_alt": "Registration Brochure Page 1",
+    "page2_alt": "Registration Brochure Page 2",
+    "download_title": "Download Brochure",
+    "download_subtitle": "Click to download printable version"
+  },
+  "extra_info": {
+    "title": "Additional Information",
+    "item1": "Direct visits are welcomed during working hours",
+    "item2": "Academic consultation can be scheduled with the supervising lecturer according to the student's needs.",
+    "item3": "For academic questions, please contact the academic department via the email or telephone number provided."
+  },
+  "cashback": {
+    "badge": "New Student Special Program",
+    "title": "Get Cashback of Rp3.000.000 Per Year",
+    "description": "Register yourself right now.",
+    "button": "Register Now"
+  }
+},
   "footer": {
     "tagline": "Creating Reliable Economists for Indonesia",
     "links_title": "Quick Links",
