@@ -390,15 +390,15 @@ export default function Academics() {
                       <SectionHeader subtitle="Faculty Members" title="Profil Tenaga Pengajar" />
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
                         {[
-                          { n: "Prof. Dr. H. M. Sidik Priadana, MS.", j: "Guru Besar", k: "Manajemen Sumber Daya Manusia", nidn: "0004125501", email: "sidikpriadana@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Prof. Dr. H. Horas Djulius, SE.", j: "Guru Besar", k: "Ekonomi Internasional", nidn: "0408077101", email: "horasdjulius@unpas.ac.id", orcid: "0000-0003-xxxx-xxxx" },
-                          { n: "Dr. H. Tete Saepudin, SE., M.Si", j: "Lektor Kepala", k: "Ekonomi Pembangunan", nidn: "0424046803", email: "tetesaepudin@unpas.ac.id", orcid: "0000-0001-xxxx-xxxx" },
-                          { n: "Dr. Dikdik Kusdiana, SE., MT.", j: "Lektor Kepala", k: "Ekonomi Industri", nidn: "0407106701", email: "dikdik@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Tubagus Thresna Irijanto, SE., M.Si., Ph.D.", j: "Lektor", k: "Ekonometrika", nidn: "0426047101", email: "tubagus@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Dr. Endang Rostiana, SE., MT.", j: "Lektor", k: "Ekonomi Publik", nidn: "0420207102", email: "endang@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Gugum Mukdas, SE., MT.", j: "Lektor", k: "Statistika Ekonomi", nidn: "0424018404", email: "gugum@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Acuviarta SE., ME.", j: "Asisten Ahli", k: "Kebijakan Publik", nidn: "0401077407", email: "acuviarta@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" },
-                          { n: "Restu Akbar Suryaman, SE., ME.", j: "Asisten Ahli", k: "Ekonomi Moneter", nidn: "0424039602", email: "restu@unpas.ac.id", orcid: "0000-0002-xxxx-xxxx" }
+                          { n: "Prof. Dr. H. Horas Djulius, S.E.", j: "Guru Besar", k: "Ekonomi Internasional", nidn: "0408077101", email: "horasdjulius@unpas.ac.id", orcid: "5974299", link: "https://scholar.google.co.id/citations?user=zyog5bkAAAAJ&hl=id&oi=ao" },
+                          { n: "Dr. H. Tete Saepudin, S.E., M.Si.", j: "Lektor Kepala", k: "Ekonomi Pembangunan", nidn: "0424046803", email: "tetesaepudin@unpas.ac.id", orcid: "6113321", link: "https://scholar.google.co.id/citations?user=dpwsgArcgugC&hl=id&oi=ao" },
+                          { n: "Dr. Dikdik Kusdiana, S.E., M.T.", j: "Lektor Kepala", k: "Ekonomi Industri", nidn: "0407106701", email: "dikdik@unpas.ac.id", orcid: "6685763", link: "https://scholar.google.co.id/citations?user=lLz22lkAAAAJ&hl=id&oi=ao" },
+                          { n: "Tubagus Thresna Irijanto, S.E., M.Si., Ph.D.", j: "Lektor", k: "Ekonometrika", nidn: "0426047101", email: "tubagus@unpas.ac.id", orcid: "6704617", link: "https://scholar.google.co.id/citations?user=R8ZQDsEAAAAJ&hl=id&oi=ao" },
+                          { n: "Dr. Endang Rostiana, S.E., M.T.", j: "Lektor Kepala", k: "Ekonomi Publik", nidn: "0420207102", email: "endang@unpas.ac.id", orcid: "5992362", link: "https://scholar.google.co.id/citations?user=683rZMMAAAAJ&hl=id&oi=ao" },
+                          { n: "Hj. Neni Murniati, S.E., M.Si.", j: "Lektor", k: "Ekonomi Publik", nidn: "0420207102", email: "nenimurniati@unpas.ac.id", orcid: "6763401", link: "https://scholar.google.co.id/citations?user=s3Gn-CsAAAAJ&hl=id&oi=ao" },
+                          { n: "Gugum Mukdas, S.E., M.T.", j: "Lektor", k: "Statistika Ekonomi", nidn: "0424018404", email: "gugum@unpas.ac.id", orcid: "6042807", link: "https://scholar.google.co.id/citations?user=5EsjhfQAAAAJ&hl=id&oi=ao" },
+                          { n: "Acuviarta S.E., M.E.", j: "Asisten Ahli", k: "Kebijakan Publik", nidn: "0401077407", email: "acuviarta@unpas.ac.id", orcid: "6831497", link: "https://scholar.google.co.id/citations?user=WRpnNYkAAAAJ&hl=id&oi=ao" },
+                          { n: "Restu Akbar Suryaman, S.E., M.E.", j: "Asisten Ahli", k: "Ekonomi Moneter", nidn: "0424039602", email: "restu@unpas.ac.id", orcid: "6834765", link: "https://scholar.google.co.id/citations?user=T2CmGQEAAAAJ&hl=id&oi=ao" }
                         ].map((dosen, index) => {
                           const isSelected = selectedDosen === index;
                           return (
@@ -420,7 +420,11 @@ export default function Academics() {
                                 className="bg-forest-800 flex items-center justify-center overflow-hidden flex-shrink-0"
                                 style={{ aspectRatio: isSelected ? "1/1" : "4/5" }}
                               >
-                                <FiUsers size={isSelected ? 32 : 64} className="text-white/20" />
+                                <img 
+                                  src={`/${dosen.n}.jpg`} 
+                                  alt={dosen.n} 
+                                  className="w-full h-full object-cover"
+                                />
                               </motion.div>
 
                               <div className="text-center mt-6 w-full px-2">
@@ -447,17 +451,23 @@ export default function Academics() {
                                         { label: "NIDN / NIDK", value: dosen.nidn },
                                         { label: "Bidang Keahlian", value: dosen.k },
                                         { label: "Email Resmi", value: dosen.email },
-                                        { label: "ORCID ID", value: dosen.orcid }
+                                        { label: "Sinta ID", value: dosen.orcid }
                                       ].map((info, i) => (
                                         <div key={i} className="flex flex-col border-b border-gray-50 pb-2 last:border-0">
                                           <span className="text-[9px] text-gray-400 uppercase font-bold tracking-tighter">{info.label}</span>
-                                          <span className="text-sm font-semibold text-forest-900 break-words">{info.value}</span>
+                                          <span className="text-sm md:text-xs font-semibold text-forest-900 break-words">{info.value}</span>
                                         </div>
                                       ))}
                                       <div className="pt-2">
-                                        <button className="w-full py-4 bg-forest-700 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg">
+                                        <a 
+                                          href={dosen.link}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          onClick={(e) => e.stopPropagation()}
+                                          className="w-full py-4 bg-forest-700 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg"
+                                        >
                                           Lihat Publikasi Ilmiah <FiLink size={14} />
-                                        </button>
+                                        </a>
                                       </div>
                                     </div>
                                   </motion.div>
