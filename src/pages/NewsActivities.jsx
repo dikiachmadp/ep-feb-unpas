@@ -26,31 +26,30 @@ const NewsActivities = () => {
             <div className="page-wrapper pt-20">
                 {/* REPLACEMENT: Menggunakan struktur Hero yang sama dengan Profile & Academics 
                 */}
-                <div className="relative bg-gradient-to-br from-forest-700 to-forest-900 py-24 overflow-hidden">
-                    <div
-                        className="absolute inset-0 opacity-10"
-                        style={{
-                            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-                            backgroundSize: '40px 40px',
-                        }}
-                    />
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-gold-400/10 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl" />
-
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <p className="section-subtitle text-gold-400 mb-3">
-                                {isId ? 'Berita Terkini' : 'Latest News'}
-                            </p>
-                            <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
-                                {t('nav.news')}
-                            </h1>
-                        </motion.div>
-                    </div>
-                </div>
+                <div className="relative bg-forest-900 py-16 lg:py-20 overflow-hidden">
+    <div
+        className="absolute inset-0 opacity-10"
+        style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px',
+        }}
+    />
+    
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <motion.div 
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }}
+        >
+            <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-[10px] mb-4">
+                {isId ? 'Berita Terkini' : 'Latest News'}
+            </p>
+            <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
+                {t('nav.news')}
+            </h1>
+            <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
+        </motion.div>
+    </div>
+</div>
 
                 {/* News Grid Section */}
                 <section className="py-20 bg-white">
