@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,16 +14,17 @@
     background-color: #fafaf8;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 
   ::selection {
     @apply bg-gold-400 text-white;
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -69,7 +70,7 @@
   }
 
   .nav-link::after {
-    content: '';
+    content: "";
     @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300;
   }
 
@@ -85,7 +86,7 @@
 
 /* Noise texture overlay */
 .noise-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
@@ -96,14 +97,14 @@
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #567418 0%, #8bb530 50%, #E4A930 100%);
+  background: linear-gradient(135deg, #567418 0%, #8bb530 50%, #e4a930 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #d4901a 0%, #E4A930 100%);
+  background: linear-gradient(135deg, #d4901a 0%, #e4a930 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,13 +116,13 @@
 }
 
 .deco-line::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -8px;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #E4A930, #567418);
+  background: linear-gradient(90deg, #e4a930, #567418);
   border-radius: 2px;
 }
 

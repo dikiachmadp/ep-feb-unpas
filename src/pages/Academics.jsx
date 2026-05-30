@@ -371,7 +371,7 @@ export default function Academics() {
 
                   {/* SECTION 3: AKREDITASI */}
                   {activeSection === 'akreditasi' && (
-                    <section className="space-y-8 text-center py-10 px-2">
+                    <section className="space-y-12">
                       <SectionHeader subtitle="Quality Assurance" title="Akreditasi Program Studi" />
                       <div className="max-w-md mx-auto p-12 bg-forest-50 rounded-[3rem] border border-forest-100 shadow-inner mt-10">
                         <FiAward className="w-20 h-20 text-gold-500 mx-auto mb-6" />
