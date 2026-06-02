@@ -37,38 +37,66 @@ export const FeatureCard = React.memo(({ icon: Icon, title, description, delay =
 ))
 
 /**
- * News / blog card.
+ * News card for news & activities grid.
+ * Added styling to enforce uniform height and text clamping.
  */
-export const NewsCard = React.memo(({ title, date, excerpt, category, delay = 0 }) => {
-  const categoryColors = {
-    Seminar: 'bg-blue-50 text-blue-600',
-    Prestasi: 'bg-gold-50 text-gold-600',
-    Kegiatan: 'bg-forest-50 text-forest-600',
-    Achievement: 'bg-gold-50 text-gold-600',
-    Activity: 'bg-forest-50 text-forest-600',
-  }
-
-  return (
-    <Card delay={delay} className="overflow-hidden group cursor-pointer">
-      {/* Placeholder image */}
-      <div className="h-44 bg-gradient-to-br from-forest-100 to-forest-200 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-500/20 to-gold-400/20" />
-        <div className="absolute bottom-3 left-3">
-          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${categoryColors[category] || 'bg-gray-100 text-gray-600'}`}>
-            {category}
-          </span>
+export const NewsCard = React.memo(({ title, date, excerpt, category, image, delay = 0 }) => (
+  <Card delay={delay} className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+    
+    {/* Container Gambar Berita - Rasio Aspek Seragam (4:3) */}
+    <div className="relative aspect-[4/3] w-full bg-gray-100 overflow-hidden">
+      {image ? (
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => {
+            // Jika gambar gagal dimuat, tampilkan placeholder warna forest soft
+            e.target.onerror = null;
+            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25' fill='%23f4f7f5'/%3E%3C/svg%3E";
+          }}
+        />
+      ) : (
+        // Fallback jika tidak ada properti image sama sekali
+        <div className="w-full h-full bg-forest-50 flex items-center justify-center">
+          <span className="text-forest-400 text-sm font-sans font-medium">No Image</span>
         </div>
+      )}
+      
+      {/* Label Kategori di Atas Gambar */}
+      <div className="absolute top-4 left-4">
+        <span className="bg-white/90 backdrop-blur-sm text-forest-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+          {category}
+        </span>
       </div>
-      <div className="p-6">
-        <p className="text-xs text-gray-400 font-sans mb-2">{date}</p>
-        <h3 className="font-display font-bold text-gray-800 text-base leading-snug mb-2 group-hover:text-forest-600 transition-colors">
+    </div>
+
+    {/* Konten Teks Card - flex-1 dan flex-col memastikan tinggi tersisa terisi penuh */}
+    <div className="p-6 flex flex-col flex-1 justify-between">
+      <div>
+        {/* Tanggal Berita */}
+        <p className="text-xs text-gray-400 font-sans font-medium mb-2">{date}</p>
+        
+        {/* Judul Berita - Dibatasi Maksimal 2 Baris */}
+        <h3 className="font-display font-bold text-gray-800 text-base md:text-lg leading-snug mb-3 group-hover:text-forest-600 transition-colors line-clamp-2 min-h-[3rem]">
           {title}
         </h3>
-        <p className="text-gray-500 text-sm leading-relaxed font-sans">{excerpt}</p>
+        
+        {/* Ringkasan Berita (Excerpt) - Dibatasi Maksimal 3 Baris */}
+        <p className="text-gray-500 text-sm font-sans font-light leading-relaxed mb-4 line-clamp-3">
+          {excerpt}
+        </p>
       </div>
-    </Card>
-  )
-})
+
+      {/* Tombol Ajakan Membaca / Selengkapnya */}
+      <div className="pt-2 border-t border-gray-50 flex items-center justify-between text-xs font-semibold text-forest-600 group-hover:text-forest-700 transition-colors font-sans">
+        <span>Baca Selengkapnya</span>
+        <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </div>
+    </div>
+
+  </Card>
+))
 
 /**
  * Faculty member card.

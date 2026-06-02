@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FiBookOpen, FiUsers, FiGlobe, FiFileText, FiArrowRight } from 'react-icons/fi'
@@ -20,6 +20,7 @@ const FEATURE_ICONS = {
 
 export default function Home() {
   const { t } = useTranslation()
+  const navigate = useNavigate() // <-- TAMBAHKAN BARIS INI
   const seo = getSEO('home')
 
   const features = Object.entries(FEATURE_ICONS).map(([key, Icon], i) => ({
@@ -133,15 +134,21 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array.isArray(news) && news.map((item, i) => (
-                <NewsCard
-                  key={i}
-                  title={item.title}
-                  date={item.date}
-                  excerpt={item.excerpt}
-                  category={item.category}
-                  delay={i * 0.1}
-                />
+              {news.map((item, index) => (
+                <div 
+                  key={index} 
+                  onClick={() => navigate(`/berita-kegiatan/${item.slug}`)} 
+                  className="cursor-pointer"
+                >
+                  <NewsCard
+                    title={item.title}
+                    date={item.date}
+                    excerpt={item.excerpt}
+                    category={item.category}
+                    image={item.image} // <-- TAMBAHKAN INI AGAR FOTO MUNCUL
+                    delay={index * 0.1}
+                  />
+                </div>
               ))}
             </div>
           </div>

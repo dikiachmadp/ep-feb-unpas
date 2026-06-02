@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
@@ -11,6 +12,8 @@ const NewsActivities = () => {
     const { t, i18n } = useTranslation()
     const isId = i18n.language === 'id'
     const seo = getSEO('news') // Pastikan 'news' ada di constants atau gunakan fallback
+
+    const navigate = useNavigate();
 
     const categories = ['all', ...new Set(NEWS_DATA.map(item => item.category))]
     const [activeCategory, setActiveCategory] = useState('all')
@@ -81,15 +84,17 @@ const NewsActivities = () => {
                         {filteredNews.length > 0 ? (
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {filteredNews.map((item, index) => (
+                                <div key={index} onClick={() => navigate(`/berita-kegiatan/${item.slug}`)}>
                                     <NewsCard
-                                        key={index}
                                         title={item.title}
                                         date={item.date}
                                         excerpt={item.excerpt}
                                         category={item.category}
+                                        image={item.image}
                                         delay={index * 0.1}
                                     />
-                                ))}
+                                </div>
+                            ))}
                             </div>
                         ) : (
                             <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">

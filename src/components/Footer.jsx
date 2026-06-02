@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.05),transparent_50%)] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
           {/* LEFT: Identity & Branding - Alignment Adjusted */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
@@ -44,7 +44,7 @@ export default function Footer() {
               ].map((item, idx) => (
                 <div key={idx} className="group relative">
                   <div className={`
-                    aspect-[16/9] lg:aspect-[16/5] bg-white rounded-xl p-3 flex items-center justify-center 
+                    aspect-[16/9] bg-white rounded-xl p-3 flex items-center justify-center 
                     shadow-lg transition-all duration-500 group-hover:-translate-y-1
                     ${item.p ? 'ring-2 ring-gold-500/20' : 'border border-white/5'}
                   `}>

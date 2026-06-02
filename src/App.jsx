@@ -16,6 +16,7 @@ const Faculty = lazy(() => import('./pages/Faculty'))
 const Contact = lazy(() => import('./pages/Contact'))
 
 const NewsActivities = lazy(() => import('./pages/NewsActivities'))
+const NewsDetail = lazy(() => import('./pages/NewsDetail'))
 
 // Loading fallback
 const PageLoader = () => (
@@ -46,6 +47,7 @@ export default function App() {
                   <Route path="/pendaftaran" element={<Contact />} />
 
                   <Route path="/berita-kegiatan" element={<NewsActivities />} />
+                  <Route path="/berita-kegiatan/:slug" element={<NewsDetail />} />
                 </Routes>
               </Suspense>
             </main>
