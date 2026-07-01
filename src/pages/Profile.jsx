@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence, useScroll } from 'framer-motion'
 import {
   FiEye, FiTarget, FiCheckCircle, FiAward, FiArrowRight,
@@ -10,6 +9,7 @@ import SectionHeader from '../components/SectionHeader'
 import { Card } from '../components/Cards'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
+import { PROFILE_DATA } from '../constants/contentData'
 
 // Objek pemetaan untuk mengubah string di JSON menjadi Komponen Icon
 const IconMap = {
@@ -17,7 +17,6 @@ const IconMap = {
 };
 
 export default function Profile() {
-  const { t } = useTranslation()
   const seo = getSEO('profile')
 
   // --- STATE UTAMA ---
@@ -42,15 +41,15 @@ export default function Profile() {
     })
   }, [scrollY])
 
-  // --- DATA DARI i18next ---
-  const navMenu = t('profile.nav_menu', { returnObjects: true })
-  const historyData = t('profile.history', { returnObjects: true })
-  const milestones = t('profile.history_milestones', { returnObjects: true })
-  const missions = t('profile.missions', { returnObjects: true })
-  const objectives = t('profile.objectives', { returnObjects: true })
-  const advantages = t('profile.advantages', { returnObjects: true })
-  const achievements = t('profile.achievements', { returnObjects: true })
-  const facilities = t('profile.facilities', { returnObjects: true })
+  // --- DATA DARI CONSTANTS ---
+  const navMenu = PROFILE_DATA.nav_menu
+  const historyData = PROFILE_DATA.history.content
+  const milestones = PROFILE_DATA.history.milestones
+  const missions = PROFILE_DATA.mission.items
+  const objectives = PROFILE_DATA.objectives.items
+  const advantages = PROFILE_DATA.advantages.items
+  const achievements = PROFILE_DATA.achievements.items
+  const facilities = PROFILE_DATA.facilities.items
 
   const containerVariants = {
     initial: { opacity: 0, y: 20 },
@@ -86,10 +85,10 @@ export default function Profile() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-xs lg:sm mb-4">
-                {t('profile.hero_badge')}
+                {PROFILE_DATA.hero_badge}
               </p>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
-                {t('profile.title')}
+                {PROFILE_DATA.title}
               </h1>
               <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
             </motion.div>
@@ -169,7 +168,7 @@ export default function Profile() {
                   {/* 1. SEJARAH DENGAN SLIDER */}
                   {activeSection === 'sejarah' && (
                     <section className="space-y-10">
-                      <SectionHeader subtitle="Sejarah" title={t('profile.history_title')} />
+                      <SectionHeader subtitle="Sejarah" title={PROFILE_DATA.history.title} />
                       <div className="grid lg:grid-cols-5 gap-8">
                         <div className="lg:col-span-3 w-full overflow-hidden">
                           <div className="relative">
@@ -208,11 +207,11 @@ export default function Profile() {
                           </div>
                           <div className="mt-8 flex gap-4 p-5 bg-forest-700 rounded-[2rem] text-white shadow-lg items-center">
                             <div className="bg-white/10 p-2 rounded-xl"><FiZap className="w-6 h-6 text-gold-400" /></div>
-                            <p className="text-xs lg:text-sm font-medium leading-snug">{t('profile.history_footer')}</p>
+                            <p className="text-xs lg:text-sm font-medium leading-snug">{PROFILE_DATA.history.footer}</p>
                           </div>
                         </div>
                         <div className="lg:col-span-2 space-y-4">
-                          <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-2">{t('profile.history_timeline_label')}</h4>
+                          <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-2">{PROFILE_DATA.history.timeline_label}</h4>
                           <div className="grid gap-3">
                             {milestones.map((milestone, idx) => (
                               <div key={idx} className="flex gap-4 items-center p-4 bg-white border border-gray-100 shadow-sm rounded-2xl">
@@ -231,63 +230,63 @@ export default function Profile() {
                   {/* 2. IDENTITAS VISUAL */}
                   {activeSection === 'logo' && (
                     <section className="space-y-12">
-                      <SectionHeader subtitle="Brand Guideline" title={t('profile.identity.title')} />
+                      <SectionHeader subtitle="Brand Guideline" title={PROFILE_DATA.identity.title} />
                       <div className="space-y-16">
                         <div className="grid lg:grid-cols-12 gap-10 items-start">
                           <div className="lg:col-span-5 bg-gray-50 rounded-[3rem] p-12 flex flex-col items-center justify-center border border-gray-100 shadow-inner relative overflow-hidden group min-h-[400px]">
                             <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(#064E3B 1px, transparent 1px), linear-gradient(90deg, #064E3B 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                             <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} whileHover={{ scale: 1.05 }} className="relative z-10 w-48 h-48 lg:w-56 lg:h-56 bg-white rounded-[2.5rem] shadow-xl flex items-center justify-center p-8 border border-gray-50">
-                              <img src="/logo.png" alt={t('profile.identity.labels.official_mark')} className="w-full h-full object-contain pointer-events-none" />
+                              <img src="/logo.png" alt={PROFILE_DATA.identity.labels.official_mark} className="w-full h-full object-contain pointer-events-none" />
                             </motion.div>
                             <div className="absolute bottom-4 left-6 right-6 text-center z-10">
-                              <p className="text-[10px] font-black text-forest-900/40 uppercase tracking-[0.3em]">{t('profile.identity.labels.official_mark')}</p>
+                              <p className="text-[10px] font-black text-forest-900/40 uppercase tracking-[0.3em]">{PROFILE_DATA.identity.labels.official_mark}</p>
                             </div>
                           </div>
                           <div className="lg:col-span-7 space-y-8">
                             <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white border border-gray-100 shadow-sm text-forest-700 rounded-full text-xs font-bold uppercase tracking-widest">
-                              <FiHexagon className="w-4 h-4 text-gold-500" /> {t('profile.identity.labels.construction')}
+                              <FiHexagon className="w-4 h-4 text-gold-500" /> {PROFILE_DATA.identity.labels.construction}
                             </div>
                             <div className="prose prose-forest max-w-none text-gray-600 leading-relaxed text-sm lg:text-base space-y-6">
-                              <p>{t('profile.identity.description')}</p>
-                              <p className="italic font-medium text-forest-900 bg-forest-50 p-6 rounded-2xl border-l-4 border-gold-400 shadow-sm">"{t('profile.identity.closing')}"</p>
+                              <p>{PROFILE_DATA.identity.description}</p>
+                              <p className="italic font-medium text-forest-900 bg-forest-50 p-6 rounded-2xl border-l-4 border-gold-400 shadow-sm">"{PROFILE_DATA.identity.closing}"</p>
                             </div>
                           </div>
                         </div>
                         <div className="space-y-8">
-                          <h4 className="font-display font-bold text-xl text-forest-900 px-2 border-l-4 border-gold-400">{t('profile.identity.labels.philosophy')}</h4>
+                          <h4 className="font-display font-bold text-xl text-forest-900 px-2 border-l-4 border-gold-400">{PROFILE_DATA.identity.labels.philosophy}</h4>
                           <div className="grid md:grid-cols-2 gap-6">
                             <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4">
                               <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-gold-50 flex items-center justify-center border border-gold-100"><FiZap className="w-6 h-6 text-gold-600" /></div>
-                                <h5 className="font-display font-bold text-lg text-forest-800">{t('profile.identity.growth_title')}</h5>
+                                <h5 className="font-display font-bold text-lg text-forest-800">{PROFILE_DATA.identity.growth_title}</h5>
                               </div>
-                              <p className="text-sm text-gray-500 leading-relaxed">{t('profile.identity.growth_desc')}</p>
+                              <p className="text-sm text-gray-500 leading-relaxed">{PROFILE_DATA.identity.growth_desc}</p>
                             </motion.div>
                             <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4">
                               <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-forest-50 flex items-center justify-center border border-forest-100"><FiTarget className="w-6 h-6 text-forest-600" /></div>
-                                <h5 className="font-display font-bold text-lg text-forest-800">{t('profile.identity.approach_title')}</h5>
+                                <h5 className="font-display font-bold text-lg text-forest-800">{PROFILE_DATA.identity.approach_title}</h5>
                               </div>
-                              <p className="text-sm text-gray-500 leading-relaxed">{t('profile.identity.approach_desc')}</p>
+                              <p className="text-sm text-gray-500 leading-relaxed">{PROFILE_DATA.identity.approach_desc}</p>
                             </motion.div>
                           </div>
                         </div>
                         <div className="space-y-8 p-10 bg-gray-50 rounded-[3rem] border border-gray-100 shadow-inner">
-                          <h4 className="font-display font-bold text-xl text-forest-900 text-center">{t('profile.identity.labels.color_palette')}</h4>
+                          <h4 className="font-display font-bold text-xl text-forest-900 text-center">{PROFILE_DATA.identity.labels.color_palette}</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
                               <div className="w-full sm:w-24 h-20 sm:h-24 rounded-xl bg-[#064E3B] shadow-lg flex-shrink-0" />
                               <div className="flex-1 space-y-2 w-full">
-                                <p className="font-bold text-gray-800">{t('profile.identity.colors.primary_name')}</p>
-                                <p className="text-xs text-gray-500">{t('profile.identity.colors.primary_desc')}</p>
+                                <p className="font-bold text-gray-800">{PROFILE_DATA.identity.colors.primary_name}</p>
+                                <p className="text-xs text-gray-500">{PROFILE_DATA.identity.colors.primary_desc}</p>
                                 <div className="flex gap-2 text-[10px] font-mono pt-1 text-forest-700"><span className="bg-forest-50 px-2 py-1 rounded">HEX: #064E3B</span></div>
                               </div>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-5">
                               <div className="w-full sm:w-24 h-20 sm:h-24 rounded-xl bg-[#FBBF24] shadow-lg flex-shrink-0" />
                               <div className="flex-1 space-y-2 w-full">
-                                <p className="font-bold text-gray-800">{t('profile.identity.colors.accent_name')}</p>
-                                <p className="text-xs text-gray-500">{t('profile.identity.colors.accent_desc')}</p>
+                                <p className="font-bold text-gray-800">{PROFILE_DATA.identity.colors.accent_name}</p>
+                                <p className="text-xs text-gray-500">{PROFILE_DATA.identity.colors.accent_desc}</p>
                                 <div className="flex gap-2 text-[10px] font-mono pt-1 text-gold-700"><span className="bg-gold-50 px-2 py-1 rounded">HEX: #FBBF24</span></div>
                               </div>
                             </div>
@@ -304,7 +303,7 @@ export default function Profile() {
                       <div className="relative p-8 lg:p-12 bg-forest-800 rounded-[2.5rem] lg:rounded-[3rem] text-center overflow-hidden">
                         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
                         <h4 className="text-gold-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6">Visi Kami</h4>
-                        <p className="text-xl md:text-3xl font-display text-white leading-relaxed italic">"{t('profile.vision')}"</p>
+                        <p className="text-xl md:text-3xl font-display text-white leading-relaxed italic">"{PROFILE_DATA.vision.text}"</p>
                       </div>
                       <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                         <Card className="p-8 lg:p-10 border-none bg-gray-50 rounded-[2rem]">
@@ -340,7 +339,7 @@ export default function Profile() {
                   {/* 4. KEUNGGULAN */}
                   {activeSection === 'keunggulan' && (
                     <section className="space-y-10">
-                      <SectionHeader subtitle="Keunggulan" title={t('profile.advantages_title')} />
+                      <SectionHeader subtitle="Keunggulan" title={PROFILE_DATA.advantages.title} />
                       <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
                         {advantages.map((item, i) => {
                           const icons = [FiZap, FiAward, FiHexagon, FiCheckCircle];
@@ -362,7 +361,7 @@ export default function Profile() {
                   {/* 5. CAPAIAN */}
                   {activeSection === 'capaian' && (
                     <section className="space-y-10">
-                      <SectionHeader subtitle={t('profile.achievements_subtitle')} title={t('profile.achievements_title')} />
+                      <SectionHeader subtitle={PROFILE_DATA.achievements.subtitle} title={PROFILE_DATA.achievements.title} />
                       <div className="relative max-w-5xl mx-auto px-4 lg:px-0">
                         <div className="absolute left-4 lg:left-1/2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-gold-400 via-forest-100 to-transparent transform lg:-translate-x-1/2" />
                         <div className="space-y-6 lg:space-y-0 lg:-mt-16">
@@ -385,7 +384,7 @@ export default function Profile() {
                         </div>
                       </div>
                       <div className="mt-24 p-6 bg-gray-50 rounded-3xl border border-gray-100 text-center relative z-30">
-                        <p className="text-[10px] lg:text-xs font-bold text-forest-700 uppercase tracking-[0.2em]">{t('profile.achievements_footer')}</p>
+                        <p className="text-[10px] lg:text-xs font-bold text-forest-700 uppercase tracking-[0.2em]">{PROFILE_DATA.achievements.footer}</p>
                       </div>
                     </section>
                   )}
@@ -393,7 +392,7 @@ export default function Profile() {
                   {/* 6. FASILITAS */}
                   {activeSection === 'fasilitas' && (
                     <section className="space-y-10">
-                      <SectionHeader subtitle="Fasilitas" title={t('profile.facilities_title')} />
+                      <SectionHeader subtitle="Fasilitas" title={PROFILE_DATA.facilities.title} />
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 items-start">
                         {facilities.map((f, i) => {
                           const isExpanded = expandedFacility === i;
@@ -415,7 +414,7 @@ export default function Profile() {
                                         <img src={f.img} alt={f.name} className="w-full h-full object-cover" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 to-transparent" />
                                       </div>
-                                      <p className="text-white/70 text-[10px] lg:text-sm mt-4 italic leading-relaxed">{t('profile.facilities_footer')}</p>
+                                      <p className="text-white/70 text-[10px] lg:text-sm mt-4 italic leading-relaxed">{PROFILE_DATA.facilities.footer}</p>
                                     </motion.div>
                                   )}
                                 </AnimatePresence>

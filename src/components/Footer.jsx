@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { FiMapPin, FiPhone, FiMail, FiClock, FiArrowRight } from 'react-icons/fi'
 import { FaInstagram, FaYoutube, FaFacebook, FaLinkedin } from 'react-icons/fa'
+import { HOME_DATA, FOOTER_DATA, NAV_DATA, CONTACT_DATA } from '../constants/contentData'
 
 const NAV_ROUTES = [
   { key: 'home', path: '/' },
@@ -21,7 +21,6 @@ const SOCIALS = [
 ]
 
 export default function Footer() {
-  const { t } = useTranslation()
 
   return (
     <footer className="bg-forest-900 text-white relative overflow-hidden border-t border-white/10 font-sans">
@@ -64,14 +63,14 @@ export default function Footer() {
             <div className="space-y-3 text-center lg:text-left mb-6">
               <div className="space-y-1">
                 <h2 className="text-white font-black text-xl lg:text-lg leading-tight tracking-tighter uppercase italic">
-                  {t('hero.subtitle')}
+                  {HOME_DATA.hero.subtitle}
                 </h2>
                 <div className="h-1 w-12 bg-gold-500 mx-auto lg:mx-0 rounded-full" />
               </div>
 
               <div className="space-y-2">
                 <p className="text-forest-100 text-[11px] lg:text-xs font-bold uppercase tracking-[0.15em] leading-tight max-w-[350px]">
-                  {t('footer.tagline')}
+                  {FOOTER_DATA.tagline}
                 </p>
               </div>
             </div>
@@ -98,14 +97,14 @@ export default function Footer() {
                 <div>
                   <h3 className="font-black text-white text-[10px] uppercase tracking-[0.2em] mb-4 flex items-center gap-3">
                     <span className="w-4 h-px bg-gold-500" />
-                    {t('footer.links_title')}
+                    {FOOTER_DATA.links_title}
                   </h3>
                   <ul className="space-y-2">
                     {NAV_ROUTES.map(({ key, path }) => (
                       <li key={key}>
                         <Link to={path} className="text-forest-200 hover:text-gold-400 text-[11px] font-semibold transition-all flex items-center gap-2 group/link">
                           <FiArrowRight className="w-3 h-3 opacity-0 -ml-3 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all text-gold-500" />
-                          {t(`nav.${key}`)}
+                          {NAV_DATA[key]}
                         </Link>
                       </li>
                     ))}
@@ -116,24 +115,24 @@ export default function Footer() {
                 <div>
                   <h3 className="font-black text-white text-[10px] uppercase tracking-[0.2em] mb-4 flex items-center gap-3">
                     <span className="w-4 h-px bg-gold-500" />
-                    {t('footer.contact_title')}
+                    {FOOTER_DATA.contact_title}
                   </h3>
                   <ul className="space-y-3 text-[11px] text-forest-200">
                     <li className="flex gap-3 group/item">
                       <FiMapPin className="shrink-0 text-gold-500 mt-0.5" />
-                      <span className="leading-tight font-medium">{t('contact.address')}</span>
+                      <span className="leading-tight font-medium">{CONTACT_DATA.address.value}</span>
                     </li>
                     <li className="flex gap-3 group/item">
                       <FiPhone className="shrink-0 text-gold-500" />
-                      <a href={`tel:${t('contact.phone')}`} className="hover:text-white transition-colors">{t('contact.phone')}</a>
+                      <a href={`tel:${CONTACT_DATA.phone.value}`} className="hover:text-white transition-colors">{CONTACT_DATA.phone.value}</a>
                     </li>
                     <li className="flex gap-3 group/item">
                       <FiMail className="shrink-0 text-gold-500" />
-                      <a href={`mailto:${t('contact.email')}`} className="hover:text-white transition-colors underline-offset-4 hover:underline">{t('contact.email')}</a>
+                      <a href={`mailto:${CONTACT_DATA.email.value}`} className="hover:text-white transition-colors underline-offset-4 hover:underline">{CONTACT_DATA.email.value}</a>
                     </li>
                     <li className="flex gap-3 opacity-80">
                       <FiClock className="shrink-0 text-gold-400" />
-                      <span className="font-medium">{t('contact.hours')}</span>
+                      <span className="font-medium">{CONTACT_DATA.hours.value}</span>
                     </li>
                   </ul>
                 </div>
@@ -158,7 +157,7 @@ export default function Footer() {
         {/* Bottom Bar: Pill-Styled Techteam */}
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-forest-400 text-[11px] font-medium tracking-wide">
-            {t('footer.copyright')}
+            {FOOTER_DATA.copyright}
           </p>
 
           <div className="flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/5 shadow-sm">

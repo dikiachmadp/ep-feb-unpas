@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { NEWS_DATA } from '../constants/newsData'
-import { NewsCard } from '../components/Cards' // <-- IMPORT NEWSCARD UNTUK REKOMENDASI
+import { NewsCard } from '../components/Cards' 
 import SEO from '../components/SEO'
 
 const NewsDetail = () => {
   const { slug } = useParams()
-  const navigate = useNavigate() // <-- INISIALISASI NAVIGATE
-  const { i18n } = useTranslation()
-  const isId = i18n.language === 'id'
+  const navigate = useNavigate() 
 
   // Cari berita berdasarkan slug
   const news = NEWS_DATA.find((item) => item.slug === slug)
@@ -23,10 +20,10 @@ const NewsDetail = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 font-sans">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            {isId ? 'Berita Tidak Ditemukan' : 'News Not Found'}
+            News Not Found
           </h2>
           <Link to="/berita-kegiatan" className="text-forest-600 font-semibold hover:underline">
-            &larr; {isId ? 'Kembali' : 'Back'}
+            &larr; Back
           </Link>
         </div>
       </div>
@@ -34,8 +31,6 @@ const NewsDetail = () => {
   }
 
   // --- LOGIKA BERITA TERKAIT ---
-  // 1. Saring agar berita yang sedang dibuka tidak muncul lagi
-  // 2. Utamakan yang kategorinya sama, atau ambil berita terbaru lainnya (maksimal 3)
   const relatedNews = NEWS_DATA
     .filter((item) => item.slug !== slug)
     .sort((a, b) => (b.category === news.category ? 1 : 0) - (a.category === news.category ? 1 : 0))
@@ -74,7 +69,7 @@ const NewsDetail = () => {
             <div key={`img-${index}`} className="my-8 w-full bg-gray-50/50 rounded-2xl overflow-hidden flex justify-center items-center p-2 border border-gray-100 shadow-sm">
               <img 
                 src={currentImgUrl} 
-                alt={`Dokumentasi tambahan ${imageInsertedCount + 1}`} 
+                alt={`Documentation ${imageInsertedCount + 1}`} 
                 className="max-h-[550px] w-auto h-auto object-contain rounded-xl transition-transform duration-500 hover:scale-[1.01]"
                 onError={(e) => { e.target.parentNode.style.display = 'none' }}
               />
@@ -101,7 +96,7 @@ const NewsDetail = () => {
             className="inline-flex items-center gap-2 text-sm font-semibold text-forest-600 hover:text-forest-700 transition-colors mb-6 group"
           >
             <span className="transform group-hover:-translate-x-1 transition-transform">&larr;</span>
-            {isId ? 'Kembali ke Berita & Kegiatan' : 'Back to News & Activities'}
+            Back to News & Activities
           </Link>
 
           {/* Meta Kategori & Tanggal */}
@@ -140,7 +135,7 @@ const NewsDetail = () => {
           {relatedNews.length > 0 && (
             <div className="mt-16 pt-12 border-t border-gray-200">
               <h2 className="font-display font-bold text-xl md:text-2xl text-gray-800 mb-8">
-                {isId ? 'Berita & Kegiatan Lainnya' : 'Other News & Activities'}
+                Other News & Activities
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {relatedNews.map((item, index) => (

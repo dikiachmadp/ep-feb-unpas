@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   FiMapPin, 
@@ -19,6 +18,7 @@ import SectionHeader from '../components/SectionHeader'
 import ContactForm from '../components/ContactForm'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
+import { CONTACT_DATA } from '../constants/contentData'
 
 const INFO_ICONS = {
   address: FiMapPin,
@@ -28,7 +28,6 @@ const INFO_ICONS = {
 }
 
 export default function Contact() {
-  const { t } = useTranslation()
   const seo = getSEO('contact')
 
   // State untuk Lightbox Preview Brosur
@@ -37,20 +36,20 @@ export default function Contact() {
 
   // Data Brosur Gambar Dinamis
   const brochureImages = [
-    { src: '/brosur1.webp', altKey: 'contact.brochure.page1_alt' },
-    { src: '/brosur2.webp', altKey: 'contact.brochure.page2_alt' },
+    { src: '/brosur1.webp', alt: 'Registration Brochure Page 1' },
+    { src: '/brosur2.webp', alt: 'Registration Brochure Page 2' },
   ]
 
   const infoItems = ['address', 'phone', 'email', 'hours'].map((key) => ({
     key,
     icon: INFO_ICONS[key],
-    title: t(`contact.${key}_title`),
-    value: t(`contact.${key}`),
+    title: CONTACT_DATA[key].title,
+    value: CONTACT_DATA[key].value,
     href:
       key === 'email'
-        ? `mailto:${t('contact.email')}`
+        ? `mailto:${CONTACT_DATA.email.value}`
         : key === 'phone'
-          ? `tel:${t('contact.phone')}`
+          ? `tel:${CONTACT_DATA.phone.value}`
           : null,
   }))
 
@@ -89,10 +88,10 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
               <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-[10px] mb-4">
-                {t('contact.subtitle')}
+                {CONTACT_DATA.subtitle}
               </p>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
-                {t('contact.title')}
+                {CONTACT_DATA.title}
               </h1>
               <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
             </motion.div>
@@ -112,11 +111,11 @@ export default function Contact() {
             >
               <div className="mb-12">
                 <SectionHeader
-                  subtitle={t('contact.brochure.subtitle')}
-                  title={t('contact.brochure.title')}
+                  subtitle={CONTACT_DATA.brochure.subtitle}
+                  title={CONTACT_DATA.brochure.title}
                 />
               </div>
-              
+
               {/* Grid Gambar Brosur yang Bisa Di-klik */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
                 {brochureImages.map((img, idx) => (
@@ -127,7 +126,7 @@ export default function Contact() {
                   >
                     <img 
                       src={img.src} 
-                      alt={t(img.altKey)} 
+                      alt={img.alt} 
                       className="w-full h-auto rounded-lg object-contain"
                     />
                     <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center rounded-xl" />
@@ -144,10 +143,10 @@ export default function Contact() {
                     </div>
                     <div className="min-w-0 text-left">
                       <h5 className="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2">
-                        {t('contact.brochure.download_title')}
+                        {CONTACT_DATA.brochure.download.title}
                       </h5>
                       <p className="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">
-                        {t('contact.brochure.download_subtitle')}
+                        {CONTACT_DATA.brochure.download.subtitle}
                       </p>
                     </div>
                   </div>
@@ -184,13 +183,13 @@ export default function Contact() {
             >
               <div className="text-center md:text-left">
                 <span className="inline-block bg-white/10 text-gold-300 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider font-sans">
-                  {t('contact.cashback.badge')}
+                  {CONTACT_DATA.cashback.badge}
                 </span>
                 <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight">
-                  {t('contact.cashback.title')}
+                  {CONTACT_DATA.cashback.title}
                 </h3>
                 <p className="text-forest-200 text-sm font-sans mt-1 font-light">
-                  {t('contact.cashback.description')}
+                  {CONTACT_DATA.cashback.description}
                 </p>
               </div>
 
@@ -201,7 +200,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="inline-flex w-full md:w-auto items-center justify-center bg-gold-400 hover:bg-gold-500 text-forest-950 font-sans font-bold text-center px-8 py-4 rounded-xl shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  {t('contact.cashback.button')}
+                  {CONTACT_DATA.cashback.button}
                 </a>
               </div>
             </motion.div>
@@ -218,8 +217,8 @@ export default function Contact() {
               >
                 <div className="mb-8">
                   <SectionHeader
-                    subtitle={t('contact.form.subtitle')}
-                    title={t('contact.form.title')}
+                    subtitle={CONTACT_DATA.form.subtitle}
+                    title={CONTACT_DATA.form.title}
                   />
                 </div>
                 <ContactForm />
@@ -247,13 +246,13 @@ export default function Contact() {
 
                 <div className="card p-6">
                   <h3 className="font-display font-bold text-forest-800 text-base mb-4">
-                    {t('contact.extra_info.title')}
+                    {CONTACT_DATA.extra_info.title}
                   </h3>
                   <ul className="space-y-3 text-sm text-gray-600 font-sans">
-                    {['item1', 'item2', 'item3'].map((itemKey, i) => (
+                    {CONTACT_DATA.extra_info.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold-400 flex-shrink-0 mt-1.5" />
-                        {t(`contact.extra_info.${itemKey}`)}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -345,7 +344,7 @@ export default function Contact() {
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.25 }}
                 src={brochureImages[activeImgIndex].src}
-                alt={t(brochureImages[activeImgIndex].altKey)}
+                alt={brochureImages[activeImgIndex].alt}
                 onClick={(e) => { e.stopPropagation(); setIsZoomed(!isZoomed); }}
                 className={`max-w-full max-h-full object-contain transition-transform origin-center ${!isZoomed && 'cursor-zoom-in'}`}
               />

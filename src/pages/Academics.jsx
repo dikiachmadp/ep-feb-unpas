@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence, useScroll } from 'framer-motion'
 import {
   FiBook, FiGlobe, FiAward, FiUsers, FiFileText, FiExternalLink,
   FiHexagon, FiZap, FiChevronRight, FiX, FiMail, FiExternalLink as FiLink,
   FiBox, FiCheckCircle, FiMapPin, FiClock, FiArrowRight, FiTarget, FiTrendingUp, FiSearch, FiBriefcase
 } from 'react-icons/fi'
+import { DOSEN_DATA, NAV_MENU, GRADUATE_PROFILES, CURRICULUM_DATA } from '../constants/facultyData'
+import { ACADEMICS_DATA, NAV_DATA } from '../constants/contentData'
 import SectionHeader from '../components/SectionHeader'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
@@ -21,7 +22,6 @@ const IconMap = {
 };
 
 export default function Academics() {
-  const { t } = useTranslation()
   const seo = getSEO('academics')
 
   // --- STATE UTAMA ---
@@ -43,15 +43,6 @@ export default function Academics() {
     })
   }, [scrollY])
 
-  const navMenu = [
-    { id: 'kurikulum', label: 'Kurikulum', icon: 'kurikulum' },
-    { id: 'kerjasama', label: 'Kerjasama', icon: 'kerjasama' },
-    { id: 'akreditasi', label: 'Akreditasi', icon: 'akreditasi' },
-    { id: 'dosen', label: 'Dosen', icon: 'dosen' },
-    { id: 'jurnal', label: 'Jurnal', icon: 'jurnal' },
-    { id: 'portal', label: 'Portal Akademik', icon: 'portal' },
-  ]
-
   const handleNavClick = (id) => {
     setActiveSection(id);
     setSelectedDosen(null);
@@ -66,98 +57,6 @@ export default function Academics() {
     exit: { opacity: 0, y: -20 }
   }
 
-  // DATA PROFIL LULUSAN (Adaptasi Dokumen Kurikulum 2021)
-  const graduateProfiles = [
-    {
-      title: "Perencana Pembangunan",
-      desc: "Ahli dalam menyusun dokumen perencanaan kebijakan ekonomi baik di instansi pemerintah pusat maupun daerah.",
-      icon: <FiTarget />,
-      color: "bg-blue-50 text-blue-600"
-    },
-    {
-      title: "Analis Ekonomi & Keuangan",
-      desc: "Mampu menganalisis fenomena ekonomi, pasar modal, dan sektor perbankan untuk rekomendasi investasi.",
-      icon: <FiTrendingUp />,
-      color: "bg-emerald-50 text-emerald-600"
-    },
-    {
-      title: "Peneliti Muda",
-      desc: "Menguasai alat analisis ekonometrika untuk melakukan riset terapan di bidang sosial dan ekonomi.",
-      icon: <FiSearch />,
-      color: "bg-purple-50 text-purple-600"
-    },
-    {
-      title: "Entrepreneur Profesional",
-      desc: "Memiliki jiwa wirausaha yang didukung kemampuan analisis kelayakan bisnis dan manajerial yang kuat.",
-      icon: <FiBriefcase />,
-      color: "bg-orange-50 text-orange-600"
-    }
-  ];
-
-  // DATA KURIKULUM (Update Sesuai Gambar Lampiran)
-  const curriculumData = [
-    {
-      year: 1,
-      label: "Tahun Pertama",
-      desc: "Fundamental Ekonomi & Alat Analisis",
-      semesters: [
-        {
-          id: 1,
-          courses: ["EAK201 - Dasar Akuntansi I", "ESP201 - Matematika Ekonomi", "ESP207 - Pengantar Ekonomi Mikro", "FEK203 - Bahasa Indonesia", "FEK205 - Bahasa Inggris Dasar", "UNV101 - Pendidikan Agama Islam", "UNV107 - Budaya Sunda", "Pancasila"]
-        },
-        {
-          id: 2,
-          courses: ["EAK301 - Dasar Akuntansi II", "EMJ202 - Pengantar Manajemen", "ESP202 - Statistika Ekonomi dan Bisnis 1", "ESP206 - Pengantar Ekonomi Makro", "ESP301 - Matematika Keuangan dan Bisnis", "FEK213 - Bahasa Inggris Untuk Ekonomi dan Bisnis", "UNV102 - Islam Untuk Disiplin Ilmu", "Kewarganegaraan"]
-        }
-      ]
-    },
-    {
-      year: 2,
-      label: "Tahun Kedua",
-      desc: "Teori Ekonomi Lanjutan",
-      semesters: [
-        {
-          id: 3,
-          courses: ["EMJ301 - Hukum Bisnis", "ESP203 - Statistika Ekonomi dan Bisnis 2", "ESP208 - Teori Ekonomi Makro", "ESP209 - Teori Ekonomi Mikro", "ESP306 - Ekonomi Moneter", "ESP308 - Ekonomi Pembangunan", "FEK210 - Ekonomi Koperasi dan UMKM", "UNV108 - Ilmu Sosial dan Budaya Dasar"]
-        },
-        {
-          id: 4,
-          courses: ["Administrasi Pembangunan Daerah", "ESP307 - Teori Perdagangan Internasional", "ESP313 - Ekonomi Pertanian dan Agrobisnis", "Kebijakan Moneter dan Kebanksentralan", "ESP326 - Ekonomi Pembangunan Berkelanjutan", "ESP427 - Demografi dan Ekonomi Ketenagakerjaan", "FEK402 - Ekonomi Syariah", "Ekonomi Digital dan Big Data"]
-        }
-      ]
-    },
-    {
-      year: 3,
-      label: "Tahun Ketiga",
-      desc: "Spesialisasi & Aplikasi Kebijakan",
-      semesters: [
-        {
-          id: 5,
-          courses: ["Ekonomi Keuangan Pemerintah Pusat dan Daerah", "ESP315 - Ekonometrika", "ESP413 - Ekonomi Moneter Internasional", "ESP415 - Perencanaan Pembangunan", "ESP434 - Ekonomi Mikro Terapan", "ESP436 - Ekonomi Makro Terapan", "Studi Kelayakan & Evaluasi Proyek", "Ekonomi Pariwisata"]
-        },
-        {
-          id: 6,
-          courses: ["EMJ313 - Ekonomi Manajerial", "EMJ402 - Kewirausahaan dan Rencana Bisnis", "ESP204 - Metode Penelitian Ekonomi dan Bisnis", "ESP403 - Ekonomi Industri", "ESP428 - Ekonomi Regional dan Perkotaan", "FEK208 - Lembaga Keuangan Bank dan Non-Bank", "FEK403 - KKM (Pilihan)", "FEK404 - KPK (Pilihan)"]
-        }
-      ]
-    },
-    {
-      year: 4,
-      label: "Tahun Keempat",
-      desc: "Sintesis & Tugas Akhir",
-      semesters: [
-        {
-          id: 7,
-          courses: ["EMJ434 - Seminar Kewirausahaan", "Perekonomian Indonesia dan Global", "ESP319 - Ekonomi SDA dan Lingkungan", "ESP467 - Keuangan Manajerial", "ESP431 - Perencanaan Pembangunan Ekonomi Kewilayahan", "ESP465 - Analisis Kinerja Institusi Publik"]
-        },
-        {
-          id: 8,
-          courses: ["ESP418 - Seminar Masalah dan Kebijakan Ekonomi", "ETA500 - Seminar Usulan Penelitian", "ETA501 - Skripsi"]
-        }
-      ]
-    }
-  ];
-
   return (
     <>
       <SEO {...seo.academics} />
@@ -169,9 +68,9 @@ export default function Academics() {
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-[10px] mb-4">Akademik</p>
+              <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-[10px] mb-4">{ACADEMICS_DATA.subtitle}</p>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
-                Ekonomi Pembangunan
+                {ACADEMICS_DATA.hero_title}
               </h1>
               <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
             </motion.div>
@@ -185,7 +84,7 @@ export default function Academics() {
             <aside className="hidden lg:block lg:w-72 flex-shrink-0">
               <nav className="sticky top-32 flex flex-col gap-1 bg-gray-50 p-4 rounded-[2rem] border border-gray-100">
                 <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 px-4">Menu Akademik</p>
-                {navMenu.map((item) => {
+                {NAV_MENU.map((item) => {
                   const isActive = activeSection === item.id;
                   const Icon = IconMap[item.icon] || FiHexagon;
                   return (
@@ -211,7 +110,7 @@ export default function Academics() {
             >
               <div className="bg-forest-900/95 backdrop-blur-lg border border-white/10 px-2 py-3 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
                 <div className="grid grid-cols-6 gap-0">
-                  {navMenu.map((item) => {
+                  {NAV_MENU.map((item) => {
                     const isActive = activeSection === item.id;
                     const Icon = IconMap[item.icon] || FiHexagon;
                     return (
@@ -240,34 +139,37 @@ export default function Academics() {
 
                       {/* --- SUB-SECTION: PROFIL LULUSAN --- */}
                       <div>
-                        <SectionHeader subtitle="Graduate Profile" title="Profil Lulusan Utama" />
+                        <SectionHeader subtitle={ACADEMICS_DATA.graduate_profile_subtitle} title={ACADEMICS_DATA.graduate_profile_title} />
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 px-2">
-                          {graduateProfiles.map((profile, i) => (
+                          {GRADUATE_PROFILES.map((profile, i) => {
+                            const Icon = profile.icon;
+                            return (
                             <div key={i} className="group p-6 bg-white border border-gray-100 rounded-[2rem] hover:shadow-xl hover:border-forest-100 transition-all duration-300">
                               <div className={`w-12 h-12 ${profile.color} rounded-2xl flex items-center justify-center text-xl mb-4 shadow-inner group-hover:scale-110 transition-transform`}>
-                                {profile.icon}
+                                <Icon />
                               </div>
                               <h4 className="font-black text-forest-900 text-lg mb-2">{profile.title}</h4>
                               <p className="text-xs text-gray-500 leading-relaxed font-medium">{profile.desc}</p>
                             </div>
-                          ))}
+                          )})}
                         </div>
                         <div className="mt-8 mx-2 p-4 bg-gray-50 rounded-2xl border border-gray-100 flex items-center gap-4">
                           <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
                             <FiAward className="text-gold-500" />
                           </div>
                           <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest leading-tight">
-                            STANDAR KOMPETENSI LULUSAN (SKL) DAN CAPAIAN PEMBELAJARAN LULUSAN
+                            {ACADEMICS_DATA.graduate_standard_label}
                           </p>
                         </div>
                       </div>
 
                       {/* --- SUB-SECTION: ROADMAP KURIKULUM --- */}
                       <div className="pt-10 border-t border-gray-100">
-                        <SectionHeader subtitle="Curriculum" title="Struktur Kurikulum" />
+                        <SectionHeader subtitle="Curriculum" title={ACADEMICS_DATA.curriculum_title} />
+...
 
                         <div className="mt-12 space-y-20 relative">
-                          {curriculumData.map((yearData, idx) => (
+                          {CURRICULUM_DATA.map((yearData, idx) => (
                             <div key={yearData.year} className="relative">
                               {/* Year Marker */}
                               <div className="flex items-center gap-4 mb-10">
@@ -333,7 +235,7 @@ export default function Academics() {
                               </div>
 
                               {/* Connector Line (Desktop Only) */}
-                              {idx !== curriculumData.length - 1 && (
+                              {idx !== CURRICULUM_DATA.length - 1 && (
                                 <div className="absolute left-8 top-16 bottom-[-40px] w-px border-l-2 border-dashed border-gray-200 -z-0 hidden md:block" />
                               )}
                             </div>
@@ -389,17 +291,7 @@ export default function Academics() {
                     <section className="space-y-12">
                       <SectionHeader subtitle="Faculty Members" title="Profil Tenaga Pengajar" />
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
-                        {[
-                          { n: "Prof. Dr. H. Horas Djulius, S.E.", j: "Guru Besar", k: "Ekonomi Internasional", nidn: "0408077101", email: "horasdjulius@unpas.ac.id", orcid: "5974299", link: "https://scholar.google.co.id/citations?user=zyog5bkAAAAJ&hl=id&oi=ao" },
-                          { n: "Dr. H. Tete Saepudin, S.E., M.Si.", j: "Lektor Kepala", k: "Ekonomi Pembangunan", nidn: "0424046803", email: "tetesaepudin@unpas.ac.id", orcid: "6113321", link: "https://scholar.google.co.id/citations?user=dpwsgArcgugC&hl=id&oi=ao" },
-                          { n: "Dr. Dikdik Kusdiana, S.E., M.T.", j: "Lektor Kepala", k: "Ekonomi Industri", nidn: "0407106701", email: "dikdik@unpas.ac.id", orcid: "6685763", link: "https://scholar.google.co.id/citations?user=lLz22lkAAAAJ&hl=id&oi=ao" },
-                          { n: "Tubagus Thresna Irijanto, S.E., M.Si., Ph.D.", j: "Lektor", k: "Ekonometrika", nidn: "0426047101", email: "tubagus@unpas.ac.id", orcid: "6704617", link: "https://scholar.google.co.id/citations?user=R8ZQDsEAAAAJ&hl=id&oi=ao" },
-                          { n: "Dr. Endang Rostiana, S.E., M.T.", j: "Lektor Kepala", k: "Ekonomi Publik", nidn: "0420207102", email: "endang@unpas.ac.id", orcid: "5992362", link: "https://scholar.google.co.id/citations?user=683rZMMAAAAJ&hl=id&oi=ao" },
-                          { n: "Hj. Neni Murniati, S.E., M.Si.", j: "Lektor", k: "Ekonomi Publik", nidn: "0420207102", email: "nenimurniati@unpas.ac.id", orcid: "6763401", link: "https://scholar.google.co.id/citations?user=s3Gn-CsAAAAJ&hl=id&oi=ao" },
-                          { n: "Gugum Mukdas, S.E., M.T.", j: "Lektor", k: "Statistika Ekonomi", nidn: "0424018404", email: "gugum@unpas.ac.id", orcid: "6042807", link: "https://scholar.google.co.id/citations?user=5EsjhfQAAAAJ&hl=id&oi=ao" },
-                          { n: "Acuviarta S.E., M.E.", j: "Asisten Ahli", k: "Kebijakan Publik", nidn: "0401077407", email: "acuviarta@unpas.ac.id", orcid: "6831497", link: "https://scholar.google.co.id/citations?user=WRpnNYkAAAAJ&hl=id&oi=ao" },
-                          { n: "Restu Akbar Suryaman, S.E., M.E.", j: "Asisten Ahli", k: "Ekonomi Moneter", nidn: "0424039602", email: "restu@unpas.ac.id", orcid: "6834765", link: "https://scholar.google.co.id/citations?user=T2CmGQEAAAAJ&hl=id&oi=ao" }
-                        ].map((dosen, index) => {
+                        {DOSEN_DATA.map((dosen, index) => {
                           const isSelected = selectedDosen === index;
                           return (
                             <motion.div

@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
 import sendContactEmail from '../utils/email'
+import { CONTACT_DATA } from '../constants/contentData'
 
 const initialState = { name: '', email: '', subject: '', message: '' }
 
 export default function ContactForm() {
-  const { t } = useTranslation()
   const [form, setForm] = useState(initialState)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState(null) // 'success' | 'error' | null
@@ -15,11 +14,11 @@ export default function ContactForm() {
 
   const validate = () => {
     const e = {}
-    if (!form.name.trim()) e.name = 'Nama wajib diisi'
-    if (!form.email.trim()) e.email = 'Email wajib diisi'
-    else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Format email tidak valid'
-    if (!form.subject.trim()) e.subject = 'Subjek wajib diisi'
-    if (!form.message.trim()) e.message = 'Pesan wajib diisi'
+    if (!form.name.trim()) e.name = 'Name is required'
+    if (!form.email.trim()) e.email = 'Email is required'
+    else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Invalid email format'
+    if (!form.subject.trim()) e.subject = 'Subject is required'
+    if (!form.message.trim()) e.message = 'Message is required'
     return e
   }
 
@@ -46,9 +45,9 @@ export default function ContactForm() {
   }
 
   const fields = [
-    { name: 'name', type: 'text', label: t('contact.form.name'), placeholder: t('contact.form.name_placeholder'), half: true },
-    { name: 'email', type: 'email', label: t('contact.form.email'), placeholder: t('contact.form.email_placeholder'), half: true },
-    { name: 'subject', type: 'text', label: t('contact.form.subject'), placeholder: t('contact.form.subject_placeholder'), half: false },
+    { name: 'name', type: 'text', label: CONTACT_DATA.form.fields.name, placeholder: CONTACT_DATA.form.placeholders.name, half: true },
+    { name: 'email', type: 'email', label: CONTACT_DATA.form.fields.email, placeholder: CONTACT_DATA.form.placeholders.email, half: true },
+    { name: 'subject', type: 'text', label: CONTACT_DATA.form.fields.subject, placeholder: CONTACT_DATA.form.placeholders.subject, half: false },
   ]
 
   return (
@@ -92,13 +91,13 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label className="block text-sm font-semibold text-gray-700 mb-1.5 font-sans">
-          {t('contact.form.message')}
+          {CONTACT_DATA.form.fields.message}
         </label>
         <textarea
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder={t('contact.form.message_placeholder')}
+          placeholder={CONTACT_DATA.form.placeholders.message}
           rows={5}
           className={`input-field resize-none ${errors.message ? 'border-red-300 focus:ring-red-400' : ''}`}
         />
@@ -119,12 +118,12 @@ export default function ContactForm() {
         {loading ? (
           <>
             <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Mengirim...
+            Sending...
           </>
         ) : (
           <>
             <FiSend className="w-4 h-4" />
-            {t('contact.form.submit')}
+            {CONTACT_DATA.form.submit}
           </>
         )}
       </button>
@@ -146,7 +145,7 @@ export default function ContactForm() {
               : <FiAlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
             }
             <span>
-              {status === 'success' ? t('contact.form.success') : t('contact.form.error')}
+              {status === 'success' ? CONTACT_DATA.form.responses.success : CONTACT_DATA.form.responses.error}
             </span>
           </motion.div>
         )}

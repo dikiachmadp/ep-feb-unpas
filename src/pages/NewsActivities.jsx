@@ -1,18 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import SectionHeader from '../components/SectionHeader'
 import { NewsCard } from '../components/Cards'
 import { NEWS_DATA } from '../constants/newsData'
+import { NEWS_PAGE_DATA, NAV_DATA } from '../constants/contentData'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
 
 const NewsActivities = () => {
-    const { t, i18n } = useTranslation()
-    const isId = i18n.language === 'id'
-    const seo = getSEO('news') // Pastikan 'news' ada di constants atau gunakan fallback
-
+    const seo = getSEO('news')
     const navigate = useNavigate();
 
     const categories = ['all', ...new Set(NEWS_DATA.map(item => item.category))]
@@ -24,7 +21,7 @@ const NewsActivities = () => {
 
     return (
         <>
-            <SEO title={t('nav.news')} description={isId ? 'Berita dan kegiatan terbaru Ekonomi Pembangunan FEB UNPAS' : 'Latest news and activities'} />
+            <SEO title={NAV_DATA.news} description='Latest news and activities' />
 
             <div className="page-wrapper pt-20">
                 {/* REPLACEMENT: Menggunakan struktur Hero yang sama dengan Profile & Academics 
@@ -37,17 +34,17 @@ const NewsActivities = () => {
             backgroundSize: '40px 40px',
         }}
     />
-    
+
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.div 
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }}
         >
             <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-[10px] mb-4">
-                {isId ? 'Berita Terkini' : 'Latest News'}
+                {NEWS_PAGE_DATA.hero}
             </p>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">
-                {t('nav.news')}
+                {NAV_DATA.news}
             </h1>
             <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
         </motion.div>
@@ -59,8 +56,8 @@ const NewsActivities = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                             <SectionHeader
-                                title={isId ? "Warta Kampus" : "Campus News"}
-                                subtitle={t('home.news_subtitle')}
+                                title={NEWS_PAGE_DATA.title}
+                                subtitle="Latest updates"
                                 margin={false}
                             />
 
@@ -75,7 +72,7 @@ const NewsActivities = () => {
                                                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                             }`}
                                     >
-                                        {category === 'all' ? (isId ? 'Semua' : 'All') : category}
+                                        {category === 'all' ? NEWS_PAGE_DATA.all : category}
                                     </button>
                                 ))}
                             </div>
@@ -99,7 +96,7 @@ const NewsActivities = () => {
                         ) : (
                             <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
                                 <p className="text-gray-500 font-sans">
-                                    {isId ? 'Belum ada berita untuk kategori ini.' : 'No news found for this category.'}
+                                    {NEWS_PAGE_DATA.empty}
                                 </p>
                             </div>
                         )}

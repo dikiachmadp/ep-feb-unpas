@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence, useScroll } from 'framer-motion'
 import {
   FiAward, FiUsers, FiBriefcase, FiHexagon, FiZap,
@@ -15,7 +14,6 @@ const IconMap = {
 };
 
 export default function StudentAlumni() {
-  const { t } = useTranslation()
   const seo = getSEO('faculty') // Sesuaikan dengan key SEO kamu
 
   // --- STATE UTAMA ---
@@ -44,19 +42,19 @@ export default function StudentAlumni() {
     { id: 'alumni', label: 'Alumni', icon: 'FiBriefcase' }
   ];
 
-  // --- DATA KONTEN (Nanti bisa ditarik dari i18n) ---
+  // --- DATA KONTEN ---
   const contentData = {
     prestasi: [
-      { id: 1, tag: "Nasional", title: "Juara 1 Debat Ekonomi Nasional", date: "2025", desc: "Berhasil meraih posisi pertama dalam kompetisi bergengsi tingkat nasional di Universitas Indonesia.", detail: "Mahasiswa angkatan 2022 berhasil menyisihkan 50 tim lainnya dengan mosi kebijakan fiskal pasca-pandemi.", icon: <FiAward /> },
-      { id: 2, tag: "Riset", title: "Hibah PKM Riset Kemdikbud", date: "2024", desc: "Tiga tim mahasiswa berhasil lolos pendanaan penelitian tingkat nasional.", detail: "Penelitian fokus pada pemberdayaan UMKM digital di Jawa Barat dengan total hibah mencapai puluhan juta rupiah.", icon: <FiAward /> }
+      { id: 1, tag: "National", title: "1st Place National Economic Debate", date: "2025", desc: "Successfully achieved the first position in a prestigious national-level competition at the University of Indonesia.", detail: "The class of 2022 students managed to outperform 50 other teams with a motion on post-pandemic fiscal policy.", icon: <FiAward /> },
+      { id: 2, tag: "Research", title: "Kemdikbud PKM Research Grant", date: "2024", desc: "Three student teams successfully passed national-level research funding.", detail: "Research focuses on empowering digital MSMEs in West Java with total grants reaching tens of millions of rupiah.", icon: <FiAward /> }
     ],
     himpunan: [
-      { id: 1, tag: "Internal", title: "HIMASPA", date: "2025/2026", desc: "Organisasi internal mahasiswa yang berfokus pada pengembangan akademik dan sosial.", detail: "Memiliki 5 departemen utama: PSDM, Bakat Minat, Humas, Kajian Strategis, dan Kewirausahaan.", icon: <FiUsers /> },
-      { id: 2, tag: "Komunitas", title: "Economic Research Club", date: "Aktif", desc: "Komunitas minat bakat di bidang penulisan ilmiah dan analisis data ekonomi.", detail: "Mengadakan pelatihan rutin penggunaan software E-Views, Stata, dan SPSS bagi mahasiswa tingkat akhir.", icon: <FiUsers /> }
+      { id: 1, tag: "Internal", title: "HIMASPA", date: "2025/2026", desc: "Student internal organization focused on academic and social development.", detail: "Has 5 main departments: Human Resource Development, Talent & Interest, Public Relations, Strategic Studies, and Entrepreneurship.", icon: <FiUsers /> },
+      { id: 2, tag: "Community", title: "Economic Research Club", date: "Active", desc: "Interest community in scientific writing and economic data analysis.", detail: "Regularly holds training on E-Views, Stata, and SPSS software for final-year students.", icon: <FiUsers /> }
     ],
     alumni: [
-      { id: 1, tag: "Karir", title: "Andini Putri, S.E.", date: "Analyst @ BI", desc: "Alumni angkatan 2018 yang kini berkarir di Bank Indonesia pusat.", detail: "Beliau aktif memberikan mentoring karir bagi mahasiswa tingkat akhir melalui program IKA-EP.", icon: <FiBriefcase /> },
-      { id: 2, tag: "Startup", title: "Budi Santoso, S.E., M.E.", date: "Tech Founder", desc: "Entrepreneur sukses yang membangun platform fintech untuk inklusi keuangan.", detail: "Lulusan 2015 yang berhasil mendapatkan pendanaan seri-A dan mempekerjakan banyak lulusan dari almamater sendiri.", icon: <FiBriefcase /> }
+      { id: 1, tag: "Career", title: "Andini Putri, S.E.", date: "Analyst @ BI", desc: "Class of 2018 alumna who now has a career at Bank Indonesia central office.", detail: "She is actively providing career mentoring for final-year students through the IKA-EP program.", icon: <FiBriefcase /> },
+      { id: 2, tag: "Startup", title: "Budi Santoso, S.E., M.E.", date: "Tech Founder", desc: "Successful entrepreneur who built a fintech platform for financial inclusion.", detail: "Class of 2015 graduate who successfully secured series-A funding and employs many graduates from his alma mater.", icon: <FiBriefcase /> }
     ]
   };
 
@@ -81,8 +79,8 @@ export default function StudentAlumni() {
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
           <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
-              <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-xs mb-4">Kemahasiswaan</p>
-              <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">Mahasiswa & Alumni</h1>
+              <p className="text-gold-400 font-bold tracking-[0.2em] uppercase text-xs mb-4">Student Affairs</p>
+              <h1 className="font-display text-3xl md:text-5xl font-bold text-white tracking-tight">Student & Alumni</h1>
               <div className="h-1.5 w-24 bg-gold-400 mx-auto mt-6 rounded-full" />
             </motion.div>
           </div>
@@ -94,7 +92,7 @@ export default function StudentAlumni() {
             {/* DESKTOP SIDE NAVIGATION */}
             <aside className="hidden lg:block lg:w-72 flex-shrink-0">
               <nav className="sticky top-32 flex flex-col gap-1 bg-gray-50 p-4 rounded-[2rem] border border-gray-100">
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 px-4">Menu Navigasi</p>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4 px-4">Navigation Menu</p>
                 {navMenu.map((item) => {
                   const isActive = activeSection === item.id;
                   const Icon = IconMap[item.icon] || FiHexagon;
@@ -152,7 +150,7 @@ export default function StudentAlumni() {
                 >
                   <SectionHeader
                     subtitle={activeSection.toUpperCase()}
-                    title={activeSection === 'prestasi' ? "Capaian Mahasiswa" : activeSection === 'himpunan' ? "Organisasi Mahasiswa" : "Jejaring Alumni"}
+                    title={activeSection === 'prestasi' ? "Student Achievements" : activeSection === 'himpunan' ? "Student Organizations" : "Alumni Network"}
                   />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
@@ -203,13 +201,13 @@ export default function StudentAlumni() {
                                 <div className="mt-6 pt-6 border-t border-gray-100 space-y-5">
                                   <p className="text-sm text-gray-500 leading-relaxed italic">"{item.desc}"</p>
                                   <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100">
-                                    <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest block mb-2">Latar Belakang</span>
+                                    <span className="text-[9px] font-black text-gray-400 uppercase tracking-widest block mb-2">Background</span>
                                     <p className="text-sm text-forest-900 font-medium leading-relaxed whitespace-normal break-words">
                                       {item.detail}
                                     </p>
                                   </div>
                                   <button className="w-full py-4 bg-forest-700 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-3">
-                                    Lihat Dokumentasi <FiLink size={14} />
+                                    View Documentation <FiLink size={14} />
                                   </button>
                                 </div>
                               </motion.div>
@@ -229,10 +227,10 @@ export default function StudentAlumni() {
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-12 p-8 bg-forest-50 border border-forest-100 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-6">
                       <div className="bg-white p-4 rounded-2xl shadow-sm"><FiBriefcase className="w-8 h-8 text-gold-500" /></div>
                       <div className="flex-1 text-center md:text-left">
-                        <h4 className="font-bold text-forest-900">Tracer Study & Karir</h4>
-                        <p className="text-sm text-gray-500 mt-1">Bantu kami meningkatkan kualitas lulusan dengan mengisi data karir Anda.</p>
+                        <h4 className="font-bold text-forest-900">Tracer Study & Career</h4>
+                        <p className="text-sm text-gray-500 mt-1">Help us improve the quality of graduates by filling in your career data.</p>
                       </div>
-                      <button className="px-8 py-3 bg-gold-500 text-forest-900 font-bold rounded-xl text-sm shadow-lg shadow-gold-500/20 active:scale-95 transition-all">Isi Tracer Study</button>
+                      <button className="px-8 py-3 bg-gold-500 text-forest-900 font-bold rounded-xl text-sm shadow-lg shadow-gold-500/20 active:scale-95 transition-all">Fill Tracer Study</button>
                     </motion.div>
                   )}
                 </motion.div>

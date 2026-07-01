@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FiBookOpen, FiUsers, FiGlobe, FiFileText, FiArrowRight } from 'react-icons/fi'
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import { FeatureCard, NewsCard } from '../components/Cards'
 import { NEWS_DATA } from '../constants/newsData'
+import { HOME_DATA } from '../constants/contentData'
 
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
@@ -19,15 +19,14 @@ const FEATURE_ICONS = {
 }
 
 export default function Home() {
-  const { t } = useTranslation()
-  const navigate = useNavigate() // <-- TAMBAHKAN BARIS INI
+  const navigate = useNavigate() 
   const seo = getSEO('home')
 
   const features = Object.entries(FEATURE_ICONS).map(([key, Icon], i) => ({
     key,
     icon: Icon,
-    title: t(`home.features.${key}.title`),
-    desc: t(`home.features.${key}.desc`),
+    title: HOME_DATA.why.features[key].title,
+    desc: HOME_DATA.why.features[key].desc,
     delay: i * 0.1,
     accent: i % 2 === 1,
   }))
@@ -50,19 +49,14 @@ export default function Home() {
             <div className="lg:flex lg:items-center lg:gap-20">
               <div className="lg:w-5/12 mb-12 lg:mb-0">
                 <SectionHeader
-                  subtitle={t('home.why_subtitle')}
-                  title={t('home.why_title')}
-                  description={t('home.why_description')}
+                  subtitle={HOME_DATA.why.subtitle}
+                  title={HOME_DATA.why.title}
+                  description={HOME_DATA.why.description}
                 />
 
                 {/* Visual stat */}
                 <div className="grid grid-cols-2 gap-4 mt-8">
-                  {[
-                    { label: 'Lulusan Bekerja', value: '92%', color: 'forest' },
-                    { label: 'Indeks Prestasi Rata-rata', value: '3.4', color: 'gold' },
-                    { label: 'Kerjasama Industri', value: '40+', color: 'gold' },
-                    { label: 'Publikasi Ilmiah/Tahun', value: '25+', color: 'forest' },
-                  ].map(({ label, value, color }) => (
+                  {HOME_DATA.hero.stats.map(({ label, value, color }) => (
                     <div key={label} className={`p-4 rounded-2xl bg-${color}-50 border border-${color}-100`}>
                       <p className={`font-display font-bold text-3xl text-${color}-600`}>{value}</p>
                       <p className="text-gray-500 text-xs mt-1 font-sans">{label}</p>
@@ -94,19 +88,19 @@ export default function Home() {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <p className="text-gold-400 text-sm font-semibold uppercase tracking-wider font-sans mb-1">Program Unggulan</p>
+                <p className="text-gold-400 text-sm font-semibold uppercase tracking-wider font-sans mb-1">{HOME_DATA.promo.label}</p>
                 <h2 className="font-display text-2xl md:text-3xl font-bold text-white">
-                  Kurikulum Merdeka Belajar
+                  {HOME_DATA.promo.title}
                 </h2>
                 <p className="text-forest-200 text-sm mt-1 font-sans">
-                  Fleksibilitas belajar dengan program MBKM yang terintegrasi
+                  {HOME_DATA.promo.desc}
                 </p>
               </div>
               <Link
                 to="/akademik"
                 className="btn-secondary whitespace-nowrap group flex-shrink-0"
               >
-                Pelajari Lebih Lanjut
+                {HOME_DATA.promo.button}
                 <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -118,8 +112,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-12">
               <SectionHeader
-                subtitle={t('home.news_subtitle')}
-                title={t('home.news_title')}
+                subtitle={HOME_DATA.news.subtitle}
+                title={HOME_DATA.news.title}
               />
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -127,7 +121,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <Link to="/berita-kegiatan" className="hidden sm:inline-flex items-center gap-2 text-forest-600 hover:text-forest-800 font-semibold text-sm font-sans group">
-                  Lihat Semua
+                  {HOME_DATA.news.button}
                   <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -145,7 +139,7 @@ export default function Home() {
                     date={item.date}
                     excerpt={item.excerpt}
                     category={item.category}
-                    image={item.image} // <-- TAMBAHKAN INI AGAR FOTO MUNCUL
+                    image={item.image}
                     delay={index * 0.1}
                   />
                 </div>
@@ -169,19 +163,19 @@ export default function Home() {
 
               <div className="relative z-10">
                 <p className="text-gold-400 text-sm font-semibold uppercase tracking-wider font-sans mb-3">
-                  Pendaftaran Mahasiswa Baru
+                  {HOME_DATA.cta.badge}
                 </p>
                 <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">
-                  {t('home.cta_title')}
+                  {HOME_DATA.cta.title}
                 </h2>
                 <p className="text-forest-100 text-base mb-8 max-w-xl mx-auto font-sans font-light">
-                  {t('home.cta_desc')}
+                  {HOME_DATA.cta.desc}
                 </p>
                 <Link
                   to="/pendaftaran"
                   className="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-gold hover:shadow-lg hover:-translate-y-0.5 text-sm"
                 >
-                  {t('home.cta_button')}
+                  {HOME_DATA.cta.button}
                   <FiArrowRight className="w-4 h-4" />
                 </Link>
               </div>

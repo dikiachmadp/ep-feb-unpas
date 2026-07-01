@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiPlay, FiUsers, FiBook, FiAward, FiStar } from 'react-icons/fi'
+import { FiArrowRight, FiUsers, FiBook, FiAward, FiStar } from 'react-icons/fi'
+import { HOME_DATA } from '../constants/contentData'
 
 const STATS = [
   { key: 'students', value: '180+', icon: FiUsers },
@@ -22,7 +22,6 @@ const itemVariants = {
 }
 
 export default function Hero() {
-  const { t } = useTranslation()
   const videoRef = useRef(null)
   const [videoLoaded, setVideoLoaded] = useState(false)
 
@@ -50,7 +49,7 @@ export default function Hero() {
       >
         <source src="/video.webm" type="video/webm" />
         <source src="/video.mp4" type="video/mp4" />
-        Browser tidak mendukung video.
+        Browser does not support video.
       </video>
 
       {/* Gradient Overlay */}
@@ -78,7 +77,7 @@ export default function Hero() {
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/20 border border-gold-400/30 text-gold-300 text-xs font-semibold font-sans uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse shadow-md" />
-                {t('hero.badge')}
+                {HOME_DATA.hero.badge}
               </span>
             </motion.div>
 
@@ -86,10 +85,10 @@ export default function Hero() {
             <motion.div variants={itemVariants}>
               <h1 className="font-display font-bold leading-none">
                 <span className="block text-3xl lg:text-7xl text-white">
-                  {t('hero.title')}
+                  {HOME_DATA.hero.title}
                 </span>
                 <span className="block text-4xl lg:text-5xl text-gold-400 mt-2">
-                  {t('hero.subtitle')}
+                  {HOME_DATA.hero.subtitle}
                 </span>
               </h1>
             </motion.div>
@@ -99,20 +98,20 @@ export default function Hero() {
               variants={itemVariants}
               className="text-forest-100/80 text-lg leading-relaxed max-w-xl font-sans font-medium"
             >
-              {t('hero.description')}
+              {HOME_DATA.hero.description}
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
               <Link to="/kontak" className="btn-secondary group">
-                {t('hero.cta_primary')}
+                {HOME_DATA.hero.cta_primary}
                 <FiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/kontak"
                 className="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm"
               >
-                {t('hero.cta_secondary')}
+                {HOME_DATA.hero.cta_secondary}
               </Link>
             </motion.div>
           </motion.div>
@@ -141,7 +140,7 @@ export default function Hero() {
                   {value}
                 </p>
                 <p className="text-forest-200 text-xs mt-1 font-sans uppercase tracking-wider">
-                  {t(`hero.stats.${key}`)}
+                  {HOME_DATA.hero.stats[key]}
                 </p>
               </div>
             </div>

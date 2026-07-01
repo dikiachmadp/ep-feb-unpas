@@ -52,4 +52,6 @@ desktop.ini
 *.swp
 *.sublime-project
 *.sublime-workspace
-*.md
+TODO.md
+README.md
+PROJECT-REVIEW.md
