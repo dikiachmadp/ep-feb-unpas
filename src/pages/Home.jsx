@@ -1,32 +1,25 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FiBookOpen, FiUsers, FiGlobe, FiFileText, FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import Hero from '../components/Hero'
 import SectionHeader from '../components/SectionHeader'
 import { FeatureCard, NewsCard } from '../components/Cards'
 import { NEWS_DATA } from '../constants/newsData'
-import { HOME_DATA } from '../constants/contentData'
+import { HOME_DATA, FEATURE_ICONS } from '../constants/contentData'
 
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
-
-const FEATURE_ICONS = {
-  curriculum: FiBookOpen,
-  research: FiFileText,
-  network: FiUsers,
-  international: FiGlobe,
-}
 
 export default function Home() {
   const navigate = useNavigate() 
   const seo = getSEO('home')
 
-  const features = Object.entries(FEATURE_ICONS).map(([key, Icon], i) => ({
+  const features = Object.entries(HOME_DATA.why.features).map(([key, data], i) => ({
     key,
-    icon: Icon,
-    title: HOME_DATA.why.features[key].title,
-    desc: HOME_DATA.why.features[key].desc,
+    icon: FEATURE_ICONS[key],
+    title: data.title,
+    desc: data.desc,
     delay: i * 0.1,
     accent: i % 2 === 1,
   }))

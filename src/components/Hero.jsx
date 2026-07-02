@@ -4,12 +4,17 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiUsers, FiBook, FiAward, FiStar } from 'react-icons/fi'
 import { HOME_DATA } from '../constants/contentData'
 
-const STATS = [
-  { key: 'students', value: '180+', icon: FiUsers },
-  { key: 'lecturers', value: '8', icon: FiBook },
-  { key: 'years', value: '30+', icon: FiStar },
-  { key: 'accreditation', value: 'Unggul', icon: FiAward },
-]
+const ICON_MAP = {
+  students: FiUsers,
+  lecturers: FiBook,
+  years: FiStar,
+  accreditation: FiAward,
+}
+
+const STATS = HOME_DATA.hero.stats.map(stat => ({
+  ...stat,
+  icon: ICON_MAP[stat.key]
+}))
 
 const containerVariants = {
   hidden: {},

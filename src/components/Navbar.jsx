@@ -4,16 +4,7 @@ import { motion, AnimatePresence, useScroll } from 'framer-motion'
 import { FiMenu, FiX, FiGlobe } from 'react-icons/fi'
 import { scrollToTop } from '../hooks/useScrollToTop'
 import logoFallback from '../assets/logo-fallback.svg'
-import { NAV_DATA } from '../constants/contentData'
-
-const NAV_ROUTES = [
-  { key: 'home', path: '/' },
-  { key: 'profile', path: '/profil' },
-  { key: 'academics', path: '/akademik' },
-  { key: 'student', path: '/mahasiswa' },
-  { key: 'registration', path: '/pendaftaran' },
-  { key: 'news', path: '/berita-kegiatan' },
-]
+import { NAV_DATA, NAV_ROUTES } from '../constants/contentData'
 
 export default function Navbar() {
   const navigate = useNavigate()

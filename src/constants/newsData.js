@@ -73,5 +73,52 @@ export const NEWS_DATA = [
             "Akreditasi Unggul yang diraih Program Studi Ekonomi FEB UNPAS menjadi jaminan mutu bagi masyarakat bahwa proses pendidikan yang diselenggarakan telah memenuhi standar kualitas terbaik. Capaian ini juga semakin memperkuat posisi Program Studi Ekonomi FEB UNPAS sebagai salah satu program studi ekonomi yang terpercaya dan berdaya saing dalam menghasilkan sumber daya manusia yang berkualitas, profesional, serta mampu berkontribusi bagi pembangunan ekonomi di tingkat regional maupun nasional.",
             "Dengan diraihnya kembali Akreditasi Unggul dari LAMEMBA, Program Studi Ekonomi FEB UNPAS berkomitmen untuk terus meningkatkan kualitas layanan pendidikan, memperkuat budaya akademik yang unggul, serta menghasilkan lulusan yang tidak hanya memiliki kompetensi akademik yang kuat, tetapi juga mampu beradaptasi dengan dinamika dan tantangan pembangunan di masa depan."
         ]
+    },
+    {
+        slug: 'sensus-ekonomi-2026',
+        title: 'Dari Ruang Kuliah ke Lapangan: Mahasiswa Prodi Ekonomi FEB UNPAS Ambil Peran dalam Sensus Ekonomi 2026',
+        date: '26 Juni 2026',
+        excerpt: 'Mahasiswa Program Studi Ekonomi Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) terlibat aktif dalam pelaksanaan Sensus Ekonomi 2026 yang diselenggarakan oleh Badan Pusat Statistik (BPS).',
+        category: 'Kegiatan Mahasiswa',
+        image: '/news/kegiatan-2-1.jpg',
+        gallery: [
+            '/news/kegiatan-2-1.jpg',
+            '/news/kegiatan-2-2.jpg',
+        ],
+        content: [
+            "Memahami ekonomi tidak cukup hanya melalui teori di ruang kuliah. Dibutuhkan pengalaman nyata untuk melihat bagaimana data dikumpulkan, bagaimana aktivitas ekonomi masyarakat dipetakan, dan bagaimana informasi tersebut menjadi dasar pengambilan kebijakan. Kesempatan inilah yang sedang dijalani oleh dua mahasiswa Program Studi Ekonomi Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) melalui keterlibatan mereka dalam Sensus Ekonomi 2026 yang diselenggarakan oleh Badan Pusat Statistik (BPS).",
+            "Dua mahasiswa tersebut adalah M. Aditya (angkatan 2025) yang bertugas sebagai petugas sensus di BPS Kota Bandung, serta Dina Mardiathus Sholihah (angkatan 2024) yang bertugas di BPS Kabupaten Bandung. Kepercayaan ini menjadi bukti bahwa mahasiswa Prodi Ekonomi FEB UNPAS memiliki kompetensi yang relevan untuk mendukung kegiatan statistik nasional yang menjadi fondasi pembangunan ekonomi Indonesia.",
+            "Bagi mahasiswa ekonomi, keterlibatan dalam Sensus Ekonomi bukan sekadar menjalankan tugas pendataan. Di balik setiap formulir yang diisi dan setiap pelaku usaha yang diwawancarai, terdapat proses pembelajaran mengenai dinamika ekonomi riil, struktur dunia usaha, karakteristik pelaku ekonomi, hingga tantangan yang dihadapi sektor usaha di berbagai wilayah.",
+            "Pengalaman tersebut selaras dengan proses pembelajaran di Prodi Ekonomi FEB UNPAS yang menekankan pentingnya kemampuan analisis berbasis data (data-driven economics). Mahasiswa tidak hanya dibekali pemahaman mengenai teori ekonomi, tetapi juga kompetensi dalam statistik, ekonometrika, pengelolaan data mikro, pemanfaatan big data, serta analisis berbagai fenomena ekonomi yang berkembang di masyarakat.",
+            "Melalui keterlibatan dalam Sensus Ekonomi 2026, mahasiswa memperoleh kesempatan untuk melihat secara langsung bagaimana data ekonomi primer dikumpulkan dan divalidasi. Pengalaman ini menjadi bekal yang sangat berharga, terutama bagi mahasiswa yang nantinya akan melakukan penelitian, menyusun tugas akhir, maupun berkarier sebagai analis ekonomi, peneliti, konsultan, maupun perencana pembangunan.",
+            "Bagi Program Studi Ekonomi FEB UNPAS, partisipasi mahasiswa dalam kegiatan strategis yang diselenggarakan oleh BPS merupakan wujud nyata implementasi pembelajaran yang menghubungkan dunia akademik dengan praktik profesional. Hal ini sejalan dengan komitmen Prodi untuk menghasilkan lulusan yang tidak hanya unggul secara akademik, tetapi juga memiliki pengalaman lapangan, kemampuan analitis, serta kesiapan menghadapi kebutuhan dunia kerja yang semakin berbasis data.",
+            "Keikutsertaan M. Aditya dan Dina Mardiathus Sholihah juga diharapkan dapat menginspirasi mahasiswa lainnya untuk aktif mengambil berbagai kesempatan belajar di luar kampus. Pengalaman profesional sejak masa perkuliahan merupakan nilai tambah yang akan memperkuat kompetensi lulusan dan memperluas jejaring dengan berbagai institusi, baik pemerintah maupun sektor lainnya.",
+            "Program Studi Ekonomi FEB UNPAS menyampaikan apresiasi atas dedikasi dan semangat kedua mahasiswa tersebut dalam mendukung pelaksanaan Sensus Ekonomi 2026. Semoga pengalaman ini menjadi langkah awal untuk terus berkontribusi dalam pengembangan ilmu ekonomi, penyediaan data yang berkualitas, serta pembangunan ekonomi Indonesia yang lebih baik."
+        ]
+    },
+        {
+        slug: 'kuliah-visit-bps-jawa-barat',
+        title: 'Belajar Langsung dari Sumber Data: Mahasiswa Prodi Ekonomi FEB UNPAS Dalami Data Mikro dan Big Data di BPS Jawa Barat',
+        date: '30 Juni 2026',
+        excerpt: 'Mahasiswa Program Studi Ekonomi Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) melakukan kunjungan ke Badan Pusat Statistik (BPS) Provinsi Jawa Barat untuk mendalami pemanfaatan data mikro dan big data dalam analisis ekonomi.',
+        category: 'Kegiatan Mahasiswa',
+        image: '/news/kegiatan-3-1.jpg',
+        gallery: [
+            '/news/kegiatan-3-1.jpg',
+            '/news/kegiatan-3-2.jpg',
+            '/news/kegiatan-3-3.jpg',
+            '/news/kegiatan-3-4.jpg'
+        ],
+        content: [
+            "Di era transformasi digital, kemampuan seorang ekonom tidak lagi hanya bertumpu pada pemahaman teori. Penguasaan data, kemampuan mengolah informasi, serta menyusun analisis berbasis bukti (evidence-based analysis) menjadi kompetensi yang semakin dibutuhkan. Untuk memperkuat kemampuan tersebut, Program Studi Ekonomi Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) menyelenggarakan Kuliah Visit ke Badan Pusat Statistik (BPS) Provinsi Jawa Barat pada 26 Juni 2026.",
+            "Kegiatan yang berlangsung di Kantor BPS Provinsi Jawa Barat ini memberikan pengalaman belajar yang berbeda bagi mahasiswa. Mereka tidak hanya memperoleh materi di ruang kelas, tetapi juga belajar secara langsung dari lembaga yang menjadi pusat penyedia data statistik resmi di Indonesia.",
+            "Pada kesempatan tersebut, mahasiswa mendapatkan pemaparan dari Ibu Marisa, SST., M.Stat., yang menjelaskan berbagai aspek mengenai data mikro dan big data dalam analisis ekonomi. Materi yang disampaikan mencakup karakteristik data mikro, pemanfaatannya dalam penelitian ekonomi, hingga bagaimana perkembangan big data membuka peluang baru dalam menghasilkan statistik yang lebih cepat, akurat, dan relevan untuk menjawab berbagai tantangan pembangunan.",
+            "Mahasiswa juga diperkenalkan dengan berbagai sumber data yang dikelola BPS, mulai dari hasil sensus, survei, hingga pemanfaatan data administratif dan sumber data digital. Melalui sesi diskusi yang interaktif, mahasiswa memperoleh pemahaman mengenai pentingnya kualitas data, etika dalam penggunaan data, serta peran statistik dalam mendukung perumusan kebijakan ekonomi di tingkat nasional maupun daerah.",
+            "Turut hadir dalam kegiatan tersebut Restu Suryaman, S.E., M.E., selaku Sekretaris Program Studi Ekonomi FEB UNPAS. Dalam kesempatan tersebut, beliau menegaskan bahwa penguasaan data merupakan salah satu kompetensi utama yang harus dimiliki oleh lulusan ekonomi di era digital.",
+            "''Saat ini ekonom tidak hanya dituntut mampu menjelaskan fenomena ekonomi, tetapi juga mampu membuktikannya melalui analisis data yang kuat. Oleh karena itu, mahasiswa perlu mengenal secara langsung bagaimana data dikumpulkan, dikelola, dan dimanfaatkan dalam menghasilkan kebijakan yang berkualitas,'' ujarnya.",
+            "Kuliah Visit ini merupakan bagian dari komitmen Program Studi Ekonomi FEB UNPAS dalam menghadirkan pembelajaran yang adaptif terhadap perkembangan ilmu pengetahuan dan kebutuhan dunia kerja. Sejalan dengan penguatan kurikulum yang menitikberatkan pada pemanfaatan statistik, ekonometrika, data mikro, dan big data, mahasiswa didorong untuk memiliki kemampuan analitis yang mampu menjawab berbagai persoalan ekonomi secara komprehensif.",
+            "Melalui pengalaman belajar langsung di BPS Provinsi Jawa Barat, mahasiswa tidak hanya memahami konsep yang dipelajari selama perkuliahan, tetapi juga memperoleh gambaran nyata mengenai bagaimana data menjadi fondasi dalam penelitian, penyusunan kebijakan publik, evaluasi pembangunan, hingga pengambilan keputusan di berbagai sektor.",
+            "Kegiatan ini diharapkan semakin memperkuat sinergi antara Program Studi Ekonomi FEB UNPAS dengan Badan Pusat Statistik, sekaligus membuka peluang kolaborasi yang lebih luas dalam bidang pendidikan, penelitian, dan pengembangan kompetensi mahasiswa. Dengan bekal pengalaman tersebut, lulusan Prodi Ekonomi FEB UNPAS diharapkan mampu menjadi ekonom yang adaptif, kritis, dan unggul dalam memanfaatkan data sebagai dasar pengambilan keputusan di era ekonomi digital."
+        ]
     }
 ];

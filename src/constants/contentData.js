@@ -1,3 +1,21 @@
+import { FiBookOpen, FiUsers, FiGlobe, FiFileText } from 'react-icons/fi'
+
+export const NAV_ROUTES = [
+  { key: 'home', path: '/' },
+  { key: 'profile', path: '/profil' },
+  { key: 'academics', path: '/akademik' },
+  { key: 'student', path: '/mahasiswa' },
+  { key: 'registration', path: '/pendaftaran' },
+  { key: 'news', path: '/berita-kegiatan' },
+];
+
+export const FEATURE_ICONS = {
+  curriculum: FiBookOpen,
+  research: FiFileText,
+  network: FiUsers,
+  international: FiGlobe,
+};
+
 export const HOME_DATA = {
     hero: {
         badge: "Accredited Excellent",
@@ -7,10 +25,10 @@ export const HOME_DATA = {
         cta_primary: "Register Now",
         cta_secondary: "Contact Us",
         stats: [
-            { label: 'Employment Rate', value: '92%', color: 'forest' },
-            { label: 'Avg. GPA', value: '3.4', color: 'gold' },
-            { label: 'Industry Partners', value: '40+', color: 'gold' },
-            { label: 'Publications/Year', value: '25+', color: 'forest' },
+            { key: 'students', value: '180+' },
+            { key: 'lecturers', value: '8' },
+            { key: 'years', value: '30+' },
+            { key: 'accreditation', value: 'Unggul' },
         ]
     },
     why: {
