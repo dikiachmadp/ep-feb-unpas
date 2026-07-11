@@ -15,7 +15,6 @@ import {
   FiArrowRight
 } from 'react-icons/fi'
 import SectionHeader from '../components/SectionHeader'
-import ContactForm from '../components/ContactForm'
 import SEO from '../components/SEO'
 import { getSEO } from '../constants'
 import { CONTACT_DATA } from '../constants/contentData'
@@ -38,6 +37,10 @@ export default function Contact() {
   const brochureImages = [
     { src: '/brosur1.webp', alt: 'Registration Brochure Page 1' },
     { src: '/brosur2.webp', alt: 'Registration Brochure Page 2' },
+    { src: '/brosur3.webp', alt: 'Registration Brochure Page 3' },
+    { src: '/brosur4.webp', alt: 'Registration Brochure Page 4' },
+    { src: '/brosur5.webp', alt: 'Registration Brochure Page 5' },
+    { src: '/brosur6.webp', alt: 'Registration Brochure Page 6' },
   ]
 
   const infoItems = ['address', 'phone', 'email', 'hours'].map((key) => ({
@@ -135,7 +138,7 @@ export default function Contact() {
               </div>
 
               {/* Tombol Unduh Brosur (Desain "Pedoman") */}
-              <div className="max-w-lg mx-auto">
+              <div className="max-w-lg mx-auto flex flex-col gap-4">
                 <div className="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center gap-4 min-w-0">
                     <div className="w-12 h-12 bg-gray-50 text-forest-700 rounded-2xl flex items-center justify-center group-hover:bg-forest-700 group-hover:text-white transition-all">
@@ -165,6 +168,41 @@ export default function Contact() {
                       download="Brosur_Pendaftaran_FEB_UNPAS.pdf" 
                       className="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gold-50 hover:text-gold-600 transition-colors" 
                       title="Download Brosur"
+                    >
+                      <FiArrowRight size={16} className="rotate-90" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="w-12 h-12 bg-gray-50 text-forest-700 rounded-2xl flex items-center justify-center group-hover:bg-forest-700 group-hover:text-white transition-all">
+                      <FiDownload size={20} />
+                    </div>
+                    <div className="min-w-0 text-left">
+                      <h5 className="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2">
+                        Download Brosur 2
+                      </h5>
+                      <p className="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">
+                        File PDF Kedua
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 ml-4">
+                    <a 
+                      href="/brosur2.pdf" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-forest-50 hover:text-forest-600 transition-colors" 
+                      title="Preview Brosur 2"
+                    >
+                      <FiExternalLink size={16} />
+                    </a>
+                    <a 
+                      href="/brosur2.pdf" 
+                      download="Brosur_Pendaftaran_FEB_UNPAS_2.pdf" 
+                      className="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gold-50 hover:text-gold-600 transition-colors" 
+                      title="Download Brosur 2"
                     >
                       <FiArrowRight size={16} className="rotate-90" />
                     </a>
@@ -204,61 +242,6 @@ export default function Contact() {
                 </a>
               </div>
             </motion.div>
-
-            {/* 3. Formulir & Maps Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-20">
-              {/* Form */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="card p-8"
-              >
-                <div className="mb-8">
-                  <SectionHeader
-                    subtitle={CONTACT_DATA.form.subtitle}
-                    title={CONTACT_DATA.form.title}
-                  />
-                </div>
-                <ContactForm />
-              </motion.div>
-
-              {/* Map + Info Extra */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="hidden lg:flex flex-col gap-6"
-              >
-                <div className="card overflow-hidden flex-1 min-h-[350px]">
-                  <iframe
-                    title="Lokasi FEB UNPAS"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0155499!2d107.60024!3d-6.91755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7288ae0e2d5%3A0x4b42f81bd9c1e47!2sUniversitas%20Pasundan!5e0!3m2!1sid!2sid!4v1"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, minHeight: '350px' }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-
-                <div className="card p-6">
-                  <h3 className="font-display font-bold text-forest-800 text-base mb-4">
-                    {CONTACT_DATA.extra_info.title}
-                  </h3>
-                  <ul className="space-y-3 text-sm text-gray-600 font-sans">
-                    {CONTACT_DATA.extra_info.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold-400 flex-shrink-0 mt-1.5" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
 
             {/* 4. Info Cards (Dipindah ke paling bawah) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
