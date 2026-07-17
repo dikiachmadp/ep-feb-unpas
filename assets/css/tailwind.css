@@ -1,0 +1,227 @@
+/*
+ * Tailwind source for the PHP public site (compiled to
+ * public/assets/css/app.css — see tailwind.public.config.js header).
+ * Base/components layers carried over from the old src/index.css;
+ * Montserrat is loaded via <link> in layout.php instead of @import.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 antialiased;
+    background-color: #fafaf8;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-gold-400 text-white;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forest-400 rounded-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-forest-500 hover:bg-forest-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-forest-500 text-forest-500 hover:bg-forest-500 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-forest-800 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gold-500 font-semibold text-sm uppercase tracking-widest font-sans;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* --- Navbar states (toggled by app.js) ------------------------------- */
+  .site-nav-shell {
+    @apply bg-white lg:bg-white/85 rounded-none lg:rounded-3xl lg:mt-3 border-b border-gray-100/50 lg:border-none;
+    height: 95px;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-nav-logo {
+    height: 65px;
+    transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .is-condensed .site-nav-shell,
+  .site-nav-shell.is-condensed {
+    @apply bg-white/95 rounded-[3rem] mx-6 lg:mx-16 mt-3.5 lg:mt-5 border-none;
+    height: 54px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .site-nav-shell.is-condensed .site-nav-logo {
+    height: 36px;
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav-shell.is-condensed {
+      height: 64px;
+    }
+
+    .site-nav-shell.is-condensed .site-nav-logo {
+      height: 42px;
+    }
+  }
+
+  .site-nav-shell.is-condensed .site-nav-cta {
+    @apply bg-forest-700 text-white border-transparent;
+  }
+
+  /* --- Article body (sanitized HTML from the CMS editor) --------------- */
+  .article-content p {
+    @apply text-justify text-gray-700 text-base md:text-lg leading-relaxed indent-0 md:indent-8;
+  }
+
+  .article-content h2 {
+    @apply font-display font-bold text-xl md:text-2xl text-gray-800 mt-8 mb-2;
+  }
+
+  .article-content h3 {
+    @apply font-display font-bold text-lg md:text-xl text-gray-800 mt-6 mb-2;
+  }
+
+  .article-content ul {
+    @apply list-disc pl-6 text-gray-700 text-base md:text-lg leading-relaxed space-y-1;
+  }
+
+  .article-content ol {
+    @apply list-decimal pl-6 text-gray-700 text-base md:text-lg leading-relaxed space-y-1;
+  }
+
+  .article-content blockquote {
+    @apply border-l-4 border-gold-400 bg-gray-50 px-5 py-3 italic text-gray-600 rounded-r-xl;
+  }
+
+  .article-content a {
+    @apply text-forest-600 font-semibold underline underline-offset-4 hover:text-forest-700;
+  }
+
+  .article-content img {
+    @apply max-w-full h-auto rounded-xl my-4;
+  }
+}
+
+/* --- Scroll reveal (IntersectionObserver in app.js) --------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Expanding cards (dosen / mahasiswa / fasilitas) --------------------- */
+.dosen-card.is-open {
+  @apply bg-white border-gold-200 p-8;
+}
+
+.dosen-card.is-open .dosen-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  aspect-ratio: 1 / 1;
+}
+
+.dosen-card.is-open .dosen-position {
+  @apply text-gold-600;
+}
+
+.dosen-card.is-open .dosen-name {
+  @apply text-xl text-forest-900;
+}
+
+.dosen-card.is-open .expand-body,
+.dosen-card.is-open .expand-close,
+.facility-card.is-open .expand-body {
+  display: block;
+}
+
+.facility-card.is-open {
+  @apply bg-forest-800 shadow-2xl;
+}
+
+@media (min-width: 1024px) {
+  .facility-card.is-open {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.facility-card.is-open .facility-icon {
+  @apply bg-gold-400 text-forest-900;
+}
+
+.facility-card.is-open .facility-desc {
+  @apply text-gold-200;
+}
+
+/* --- Accordion (kurikulum) ---------------------------------------------- */
+[data-accordion].is-open {
+  @apply border-forest-200 bg-white shadow-xl;
+}
+
+[data-accordion].is-open .acc-chevron {
+  transform: rotate(90deg);
+  @apply text-forest-700;
+}
+
+[data-accordion].is-open .acc-badge {
+  @apply bg-forest-700 text-white;
+}
+
+/* --- Mobile bottom tab bar hide-on-scroll -------------------------------- */
+#mobile-tab-bar.is-hidden {
+  transform: translateY(140%);
+}
+
+/* Page transition wrapper */
+.page-wrapper {
+  min-height: 100vh;
+}
