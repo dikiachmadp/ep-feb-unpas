@@ -34,6 +34,9 @@ $publicDir = APP_ROOT . '/public';
 /** Collected [table, row] pairs so the MySQL dump matches the dev DB exactly. */
 $dump = [];
 
+/** Tables without an auto-increment `id` column (composite primary key instead). */
+const NO_ID_TABLES = ['page_fields'];
+
 function seedInsert(string $table, array $row): int
 {
     global $dump;
@@ -43,7 +46,7 @@ function seedInsert(string $table, array $row): int
     // news_id, year_id, semester_id, ...) drift out of sync whenever this
     // script has been re-run before (SQLite's AUTOINCREMENT counter is not
     // reset by DELETE, so re-seeding a dev DB keeps inflating ids).
-    $dump[] = [$table, ['id' => $id] + $row];
+    $dump[] = [$table, in_array($table, NO_ID_TABLES, true) ? $row : ['id' => $id] + $row];
     return $id;
 }
 
