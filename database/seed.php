@@ -37,8 +37,14 @@ $dump = [];
 function seedInsert(string $table, array $row): int
 {
     global $dump;
-    $dump[] = [$table, $row];
-    return Database::insert($table, $row);
+    $id = Database::insert($table, $row);
+    // Record the actual id explicitly so seed.sql assigns the SAME ids on
+    // MySQL as the dev DB used — otherwise foreign keys (category_id,
+    // news_id, year_id, semester_id, ...) drift out of sync whenever this
+    // script has been re-run before (SQLite's AUTOINCREMENT counter is not
+    // reset by DELETE, so re-seeding a dev DB keeps inflating ids).
+    $dump[] = [$table, ['id' => $id] + $row];
+    return $id;
 }
 
 function slugify(string $text): string
@@ -94,6 +100,14 @@ $tables = [
 ];
 foreach ($tables as $t) {
     Database::run("DELETE FROM $t");
+}
+// SQLite's AUTOINCREMENT counter survives DELETE — reset it so re-running
+// this script keeps producing the same, predictable ids (1, 2, 3, ...).
+if ((APP_CONFIG['db']['driver'] ?? 'mysql') === 'sqlite') {
+    Database::run(
+        'DELETE FROM sqlite_sequence WHERE name IN (' . implode(',', array_fill(0, count($tables), '?')) . ')',
+        $tables
+    );
 }
 
 // ------------------------------------------------------------------ categories
