@@ -20,6 +20,16 @@ class Html
 
     public static function sanitize(string $html): string
     {
+        // Pasted content (Word/WhatsApp/Docs) often uses non-breaking spaces
+        // instead of regular spaces — the browser then can't wrap the line and
+        // paragraphs overflow their container. Normalize before parsing.
+        $html = str_replace(
+            ["\u{00A0}", "\u{202F}", "\u{2007}", '&nbsp;'],
+            ' ',
+            $html
+        );
+        $html = str_replace(["\u{200B}", "\u{FEFF}"], '', $html);
+
         if (trim($html) === '') {
             return '';
         }
@@ -82,6 +92,14 @@ class Html
                     }
                 }
                 self::clean($child);
+
+                // Editors leave empty <p></p> / <p><br></p> between pasted
+                // paragraphs; the layout already spaces paragraphs (space-y),
+                // so these only produce stray double gaps.
+                if ($tag === 'p' && trim($child->textContent) === ''
+                    && $child->getElementsByTagName('img')->length === 0) {
+                    $node->removeChild($child);
+                }
             } elseif (!($child instanceof \DOMText)) {
                 // Comments, CDATA, processing instructions — all dropped
                 $node->removeChild($child);
