@@ -2,14 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project status — mid-migration
+## Project status — migration COMPLETE, PHP app is LIVE
 
-This repo is being rebuilt from a static React SPA into a **server-rendered PHP + MySQL** fullstack app (custom CMS for staff, no framework, no Composer), so non-technical staff can edit content without touching code. Work is happening on branch **`rebuild-php`**.
+The rebuild from static React SPA to **server-rendered PHP + MySQL** fullstack app (custom CMS for staff, no framework, no Composer) is done: the PHP app went **live at `ekonomi.feb.unpas.ac.id` on 18 Jul 2026** (branch `rebuild-php`).
 
-- The **old React/Vite SPA** (`src/`, `index.html`, `vite.config.js`, `package.json`, `dist/`) is still what's live in production at `ekonomi.feb.unpas.ac.id` and is described under "Legacy React SPA" below. Don't delete it until cutover to the new stack is confirmed complete.
-- The **new PHP app** (`app/`, `admin/`, `public/`, `database/`, `scripts/build-dist.php`) is the active development target — this is where new work should go.
-- Full migration plan, phase status, and the step-by-step deploy guide live in **`MIGRATION_PLAN.md`** (repo root, gitignored — read it directly for current phase/progress before assuming state from this file).
-- Target host is Hostinger **shared hosting** (Premium plan) with **no SSH and no Node runtime on the server** — this constrains the whole architecture (see below).
+- The **PHP app** (`app/`, `admin/`, `public/`, `database/`, `scripts/build-dist.php`) is what runs in production and where all work happens.
+- **Read `DEPLOY.md` (repo root, gitignored) before any deploy/server work** — it maps the infrastructure (live + staging, DB names, DNS constraints), the update workflow, known hosting gotchas (e.g. hPanel's zip extractor silently skips `.htaccess`), and rollback. Migration history lives in `MIGRATION_PLAN.archive.md` (also gitignored).
+- A permanent **staging site** exists (`demo-ekonomi` subdomain, no public DNS — access details in `DEPLOY.md`). Test changes there before pushing to live.
+- The **old React/Vite SPA** (`src/`, `index.html`, `vite.config.js`, `package.json`) is replaced and no longer served anywhere; it's kept in the repo temporarily as reference/rollback material — don't delete until the user explicitly asks for cleanup.
+- Host is Hostinger **shared hosting** (Premium plan) with **no SSH and no Node runtime on the server** — this constrains the whole architecture (see below).
 
 ## New PHP app — architecture
 
@@ -33,9 +34,9 @@ This repo is being rebuilt from a static React SPA into a **server-rendered PHP 
 - **Config**: `app/Config/config.local.php` (gitignored) holds real DB credentials + `base_url`; `config.example.php` is the committed template.
 - **Security**: prepared statements everywhere, CSRF token on all admin POST forms (field name is **`_csrf`**, not `csrf_token` — see `app/Core/Csrf.php`), `password_hash`/`password_verify`, uploaded images re-encoded via GD, session hardening.
 
-## Legacy React SPA (still live in production, being replaced)
+## Legacy React SPA (replaced 18 Jul 2026 — kept only as reference)
 
-Static marketing/informational site for **Program Studi Ekonomi Pembangunan, FEB (Fakultas Ekonomi dan Bisnis), Universitas Pasundan**, built with React + Vite, deployed as a static build (`dist/`).
+The previous production site: static marketing/informational site for **Program Studi Ekonomi Pembangunan, FEB (Fakultas Ekonomi dan Bisnis), Universitas Pasundan**, built with React + Vite. No longer deployed anywhere; its data/design were the source material for the PHP port.
 
 ```bash
 npm run dev       # start Vite dev server
