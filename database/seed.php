@@ -331,6 +331,24 @@ foreach ($p['contact']['extra_info']['items'] as $i => $item) {
 
 // -- footer & nav & news list page
 seedScalars('footer', 'main', $p['footer']);
+// Social links shown in the footer; blank value = icon hidden on the site.
+// seedField skips empty values, so seed placeholders with a space-safe default
+// via direct insert to keep the field editable in the admin.
+foreach ([
+    'instagram_url' => 'https://www.instagram.com/ekonomifebunpas',
+    'facebook_url'  => '',
+    'youtube_url'   => '',
+    'linkedin_url'  => '',
+] as $socialKey => $socialUrl) {
+    seedInsert('page_fields', [
+        'page_key'    => 'footer',
+        'section_key' => 'socials',
+        'field_key'   => $socialKey,
+        'field_type'  => 'url',
+        'value'       => $socialUrl,
+        'updated_at'  => $now,
+    ]);
+}
 seedScalars('nav', 'main', $p['nav']);
 seedScalars('news_page', 'main', $p['news_page']);
 

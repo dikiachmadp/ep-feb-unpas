@@ -38,6 +38,7 @@ const SECTION_LABELS = [
     'concentration'   => 'Konsentrasi Studi',
     'prospects'       => 'Prospek Karier',
     'extra_info'      => 'Informasi Tambahan',
+    'socials'         => 'Media Sosial',
     'seo'             => 'SEO (Judul & Deskripsi di Google)',
 ];
 
@@ -55,6 +56,10 @@ const FIELD_LABELS = [
     'hero_badge'                => 'Label hero',
     'text'                      => 'Teks',
     'timeline_label'            => 'Label linimasa',
+    'instagram_url'             => 'Link Instagram (kosongkan untuk sembunyikan)',
+    'facebook_url'              => 'Link Facebook (kosongkan untuk sembunyikan)',
+    'youtube_url'               => 'Link YouTube (kosongkan untuk sembunyikan)',
+    'linkedin_url'              => 'Link LinkedIn (kosongkan untuk sembunyikan)',
 ];
 
 function sectionLabel(string $page, string $section): string

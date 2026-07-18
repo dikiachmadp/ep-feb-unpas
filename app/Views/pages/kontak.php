@@ -14,20 +14,20 @@ $registrationUrl = Page::field('pendaftaran', 'main', 'external_registration_url
 
 $brochures = [];
 for ($i = 1; $i <= 6; $i++) {
-    $brochures[] = ['src' => "/brosur{$i}.webp", 'alt' => "Registration Brochure Page {$i}"];
+    $brochures[] = ['src' => "/brosur{$i}.webp", 'alt' => "Brosur Pendaftaran Halaman {$i}"];
 }
 $infoItems = [
-    ['icon' => 'map-pin', 'title' => $main['address_title'] ?? 'Address', 'value' => $main['address_value'] ?? '', 'href' => null],
-    ['icon' => 'phone',   'title' => $main['phone_title'] ?? 'Phone',     'value' => $main['phone_value'] ?? '',   'href' => 'tel:' . ($main['phone_value'] ?? '')],
-    ['icon' => 'mail',    'title' => $main['email_title'] ?? 'Email',     'value' => $main['email_value'] ?? '',   'href' => 'mailto:' . ($main['email_value'] ?? '')],
-    ['icon' => 'clock',   'title' => $main['hours_title'] ?? 'Hours',     'value' => $main['hours_value'] ?? '',   'href' => null],
+    ['icon' => 'map-pin', 'title' => $main['address_title'] ?? 'Alamat', 'value' => $main['address_value'] ?? '', 'href' => null],
+    ['icon' => 'phone',   'title' => $main['phone_title'] ?? 'Telepon',  'value' => $main['phone_value'] ?? '',   'href' => 'tel:' . ($main['phone_value'] ?? '')],
+    ['icon' => 'mail',    'title' => $main['email_title'] ?? 'Email',    'value' => $main['email_value'] ?? '',   'href' => 'mailto:' . ($main['email_value'] ?? '')],
+    ['icon' => 'clock',   'title' => $main['hours_title'] ?? 'Jam Operasional', 'value' => $main['hours_value'] ?? '', 'href' => null],
 ];
 ?>
 <div class="page-wrapper pt-20">
 
     <?php View::partial('page-hero', [
-        'badge' => $main['subtitle'] ?? 'Contact & Location',
-        'title' => $main['title'] ?? 'Contact Us',
+        'badge' => $main['subtitle'] ?? 'Kontak & Lokasi',
+        'title' => $main['title'] ?? 'Hubungi Kami',
     ]); ?>
 
     <section class="py-20 bg-gray-50">
@@ -53,8 +53,8 @@ $infoItems = [
 
                 <div class="max-w-lg mx-auto flex flex-col gap-4">
                     <?php foreach ([
-                        ['title' => $main['brochure_download_title'] ?? 'Download Brochure', 'subtitle' => $main['brochure_download_subtitle'] ?? '', 'file' => '/brosur.pdf',  'download' => 'Brosur_Pendaftaran_FEB_UNPAS.pdf'],
-                        ['title' => 'Download Brosur 2', 'subtitle' => 'File PDF Kedua', 'file' => '/brosur2.pdf', 'download' => 'Brosur_Pendaftaran_FEB_UNPAS_2.pdf'],
+                        ['title' => $main['brochure_download_title'] ?? 'Unduh Brosur', 'subtitle' => $main['brochure_download_subtitle'] ?? '', 'file' => '/brosur.pdf',  'download' => 'Brosur_Pendaftaran_FEB_UNPAS.pdf'],
+                        ['title' => 'Unduh Brosur 2', 'subtitle' => 'File PDF Kedua', 'file' => '/brosur2.pdf', 'download' => 'Brosur_Pendaftaran_FEB_UNPAS_2.pdf'],
                     ] as $doc): ?>
                     <div class="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
                         <div class="flex items-center gap-4 min-w-0">
@@ -67,9 +67,9 @@ $infoItems = [
                             </div>
                         </div>
                         <div class="flex items-center gap-2 ml-4">
-                            <a href="<?= e(url($doc['file'])) ?>" target="_blank" rel="noreferrer" title="Preview"
+                            <a href="<?= e(url($doc['file'])) ?>" target="_blank" rel="noreferrer" title="Pratinjau"
                                class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-forest-50 hover:text-forest-600 transition-colors"><?= Icons::svg('external-link', 'w-4 h-4') ?></a>
-                            <a href="<?= e(url($doc['file'])) ?>" download="<?= e($doc['download']) ?>" title="Download"
+                            <a href="<?= e(url($doc['file'])) ?>" download="<?= e($doc['download']) ?>" title="Unduh"
                                class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gold-50 hover:text-gold-600 transition-colors"><?= Icons::svg('download', 'w-4 h-4') ?></a>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ $infoItems = [
                 <div class="flex-shrink-0 w-full md:w-auto">
                     <a href="<?= e($registrationUrl) ?>" target="_blank" rel="noopener noreferrer"
                        class="inline-flex w-full md:w-auto items-center justify-center bg-gold-400 hover:bg-gold-500 text-forest-900 font-sans font-bold text-center px-8 py-4 rounded-xl shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
-                        <?= e($main['cashback_button'] ?? 'Register Now') ?>
+                        <?= e($main['cashback_button'] ?? 'Daftar Sekarang') ?>
                     </a>
                 </div>
             </div>
@@ -111,7 +111,7 @@ $infoItems = [
 
             <?php if ($extraInfo): ?>
             <div class="mt-12 max-w-3xl mx-auto p-8 bg-white border border-gray-100 rounded-[2rem] shadow-sm" data-reveal>
-                <h4 class="font-display font-bold text-forest-800 mb-4"><?= e($main['extra_info_title'] ?? 'Additional Information') ?></h4>
+                <h4 class="font-display font-bold text-forest-800 mb-4"><?= e($main['extra_info_title'] ?? 'Informasi Tambahan') ?></h4>
                 <ul class="space-y-3">
                     <?php foreach ($extraInfo as $info): ?>
                     <li class="flex gap-3 text-sm text-gray-600 leading-relaxed">
@@ -130,10 +130,10 @@ $infoItems = [
 <!-- Lightbox brosur -->
 <div id="lightbox" class="hidden fixed inset-0 z-[200] bg-black/95 items-center justify-center p-4 select-none backdrop-blur-sm">
     <div class="absolute top-4 right-4 flex items-center gap-3 z-50">
-        <button type="button" data-lightbox-zoom class="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors" title="Zoom">
+        <button type="button" data-lightbox-zoom class="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors" title="Perbesar">
             <?= Icons::svg('zoom-in', 'w-5 h-5') ?>
         </button>
-        <button type="button" data-lightbox-close class="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors" title="Close">
+        <button type="button" data-lightbox-close class="bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors" title="Tutup">
             <?= Icons::svg('x', 'w-5 h-5') ?>
         </button>
     </div>

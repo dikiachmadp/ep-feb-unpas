@@ -406,12 +406,12 @@
   "pages": {
     "home": {
       "hero": {
-        "badge": "Accredited Excellent",
-        "title": "Study Program",
-        "subtitle": "Economic Development",
-        "description": "Faculty of Economics and Business - Pasundan University",
-        "cta_primary": "Register Now",
-        "cta_secondary": "Contact Us",
+        "badge": "Terakreditasi Unggul",
+        "title": "Program Studi",
+        "subtitle": "Ekonomi Pembangunan",
+        "description": "Fakultas Ekonomi dan Bisnis - Universitas Pasundan",
+        "cta_primary": "Daftar Sekarang",
+        "cta_secondary": "Hubungi Kami",
         "stats": [
           {
             "key": "students",
@@ -432,38 +432,38 @@
         ]
       },
       "why": {
-        "title": "Why Economic Development?",
-        "subtitle": "Our Excellence",
-        "description": "The FEB UNPAS Economic Development Study Program offers a modern curriculum relevant to industry needs and national development.",
+        "title": "Kenapa Ekonomi Pembangunan?",
+        "subtitle": "Keunggulan Kami",
+        "description": "Program Studi Ekonomi Pembangunan FEB UNPAS menghadirkan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.",
         "features": {
           "curriculum": {
-            "title": "IQF-Based Curriculum",
-            "desc": "A curriculum constantly updated according to the Indonesian Qualifications Framework and job market demands."
+            "title": "Kurikulum Berbasis KKNI",
+            "desc": "Kurikulum yang terus diperbarui sesuai Kerangka Kualifikasi Nasional Indonesia (KKNI) dan kebutuhan pasar kerja."
           },
           "research": {
-            "title": "Research & Community Service",
-            "desc": "Active in research and community service activities contributing to regional development."
+            "title": "Riset & Pengabdian Masyarakat",
+            "desc": "Aktif dalam kegiatan riset dan pengabdian masyarakat yang berkontribusi pada pembangunan daerah."
           },
           "network": {
-            "title": "Broad Alumni Network",
-            "desc": "Alumni are spread across various government agencies, financial institutions, and leading companies."
+            "title": "Jaringan Alumni Luas",
+            "desc": "Alumni tersebar di berbagai instansi pemerintahan, lembaga keuangan, dan perusahaan terkemuka."
           },
           "international": {
-            "title": "International Outlook",
-            "desc": "Student exchange programs and research collaborations with international universities and institutions."
+            "title": "Wawasan Internasional",
+            "desc": "Program pertukaran mahasiswa serta kolaborasi riset dengan universitas dan lembaga internasional."
           }
         }
       },
       "promo": {
-        "label": "Featured Program",
-        "title": "Merdeka Belajar Curriculum",
-        "desc": "Learning flexibility with integrated MBKM programs",
-        "button": "Learn More"
+        "label": "Program Unggulan",
+        "title": "Kurikulum Merdeka Belajar",
+        "desc": "Fleksibilitas belajar dengan program MBKM terintegrasi",
+        "button": "Pelajari Lebih Lanjut"
       },
       "news": {
-        "title": "News & Events",
-        "subtitle": "Latest updates",
-        "button": "See All",
+        "title": "Berita & Kegiatan",
+        "subtitle": "Informasi Terkini",
+        "button": "Lihat Semua",
         "items": [
           {
             "title": "2024 National Seminar on Economic Development",
@@ -486,16 +486,16 @@
         ]
       },
       "cta": {
-        "badge": "New Student Admission",
-        "title": "Ready to Join Us?",
-        "desc": "Register now and become part of an academic community dedicated to the progress of Indonesia's economy.",
-        "button": "Register Now"
+        "badge": "Penerimaan Mahasiswa Baru",
+        "title": "Siap Bergabung Bersama Kami?",
+        "desc": "Daftar sekarang dan jadilah bagian dari komunitas akademik yang berdedikasi untuk kemajuan ekonomi Indonesia.",
+        "button": "Daftar Sekarang"
       }
     },
     "profile": {
-      "title": "Study Program Profile",
-      "subtitle": "About Us",
-      "hero_badge": "Explore Our Essence",
+      "title": "Profil Program Studi",
+      "subtitle": "Tentang Kami",
+      "hero_badge": "Kenali Kami Lebih Dekat",
       "nav_menu": [
         {
           "id": "sejarah",
@@ -519,7 +519,7 @@
         },
         {
           "id": "capaian",
-          "label": "Achievements",
+          "label": "Capaian",
           "icon": "FiAward"
         },
         {
@@ -529,234 +529,234 @@
         }
       ],
       "history": {
-        "title": "Study Program History",
-        "footer": "Continuing to transform into a leading economics faculty in West Java.",
-        "timeline_label": "Timeline",
+        "title": "Sejarah Program Studi",
+        "footer": "Terus bertransformasi menjadi fakultas ekonomi terdepan di Jawa Barat.",
+        "timeline_label": "Linimasa",
         "content": [
-          "The Economic Development Study Program of the Faculty of Economics and Business, Pasundan University (FEB UNPAS), is a strategic program in the development of economic education in Bandung and West Java. Located in the heart of Bandung, this program was born as a response to complex national economic development needs and the increasing demand for experts in economic development.",
-          "The history of the Economic Development Study Program began in 1983, marked by the granting of the operational license through the Decree of the Directorate General of Higher Education, Ministry of Education and Culture of the Republic of Indonesia. Academic legality was further strengthened by the Decree of the Minister of Education and Culture No. 10427/0/1985 dated October 5, 1985, which became the milestone for formal economic education at Pasundan University.",
-          "In line with the development of educational quality, on August 5, 1990, the Economics Study Program obtained 'Recognized' status through Decree No. 0702/0/1990. Sustained academic quality and governance led to an upgrade to 'Equalized' status based on Decree No. 07/DIKTI/KEP/1993. This status confirmed that the educational quality was on par with state universities at that time.",
-          "Entering the era of national higher education quality assurance reform, since 1995, the government implemented an accreditation mechanism by an independent body, the National Accreditation Board for Higher Education (BAN-PT). Adapting to this policy, in 1996, the Economics Study Program underwent its first reaccreditation and achieved a 'B' (Good) rank.",
-          "A commitment to academic quality improvement was shown through curriculum strengthening, lecturer quality enhancement, research development, and network expansion. These efforts paid off in 2005 when the program upgraded its accreditation rank from 'B' to 'A' (Excellent).",
-          "This achievement was not a one-time event; it was consistently maintained. In the 2010 reaccreditation, the program again achieved an 'A' rank, which was maintained in 2016, valid until 2021. This consistency reflects a sustainable culture of quality and strong academic governance within the FEB UNPAS Economic Development Study Program.",
-          "The peak of quality achievement was marked by the Decree of the Executive Director of BAN-PT No. 4401/SK/BAN-PT/Ak.KP/S/V/2024 dated May 21, 2024, which granted the Economic Development Study Program the 'EXCELLENT' (UNGGUL) status. This rank is national recognition for education quality, research, community service, governance, and tangible contributions to regional and national economic development.",
-          "With a journey spanning over four decades, the FEB Pasundan University Economic Development Study Program continues to transform into an adaptive center for economic development science, community-oriented, and committed to producing excellent, professional, and globally competitive graduates."
+          "Program Studi Ekonomi Pembangunan Fakultas Ekonomi dan Bisnis Universitas Pasundan (FEB UNPAS) merupakan program strategis dalam pengembangan pendidikan ekonomi di Bandung dan Jawa Barat. Berlokasi di jantung Kota Bandung, program studi ini lahir sebagai jawaban atas kebutuhan pembangunan ekonomi nasional yang kompleks serta meningkatnya permintaan akan tenaga ahli di bidang ekonomi pembangunan.",
+          "Sejarah Program Studi Ekonomi Pembangunan dimulai pada tahun 1983, ditandai dengan pemberian izin operasional melalui Surat Keputusan Direktorat Jenderal Pendidikan Tinggi, Kementerian Pendidikan dan Kebudayaan Republik Indonesia. Legalitas akademik semakin diperkuat dengan SK Menteri Pendidikan dan Kebudayaan No. 10427/0/1985 tanggal 5 Oktober 1985 yang menjadi tonggak pendidikan ekonomi formal di Universitas Pasundan.",
+          "Seiring perkembangan mutu pendidikan, pada 5 Agustus 1990 Program Studi Ekonomi memperoleh status 'Diakui' melalui SK No. 0702/0/1990. Mutu akademik dan tata kelola yang terjaga membawa peningkatan ke status 'Disamakan' berdasarkan SK No. 07/DIKTI/KEP/1993. Status ini menegaskan bahwa mutu pendidikan setara dengan perguruan tinggi negeri pada masa itu.",
+          "Memasuki era reformasi penjaminan mutu pendidikan tinggi nasional, sejak 1995 pemerintah memberlakukan mekanisme akreditasi oleh lembaga independen, yaitu Badan Akreditasi Nasional Perguruan Tinggi (BAN-PT). Menyesuaikan kebijakan tersebut, pada 1996 Program Studi Ekonomi menjalani reakreditasi pertama dan meraih peringkat 'B' (Baik).",
+          "Komitmen peningkatan mutu akademik ditunjukkan melalui penguatan kurikulum, peningkatan kualitas dosen, pengembangan riset, dan perluasan jejaring. Upaya tersebut membuahkan hasil pada tahun 2005 ketika program studi berhasil menaikkan peringkat akreditasi dari 'B' menjadi 'A' (Baik Sekali).",
+          "Capaian ini bukan peristiwa sekali jadi; peringkat tersebut konsisten dipertahankan. Pada reakreditasi 2010, program studi kembali meraih peringkat 'A' yang dipertahankan pada 2016 dan berlaku hingga 2021. Konsistensi ini mencerminkan budaya mutu berkelanjutan dan tata kelola akademik yang kuat di Program Studi Ekonomi Pembangunan FEB UNPAS.",
+          "Puncak capaian mutu ditandai dengan SK Direktur Eksekutif BAN-PT No. 4401/SK/BAN-PT/Ak.KP/S/V/2024 tanggal 21 Mei 2024 yang menetapkan Program Studi Ekonomi Pembangunan berstatus 'UNGGUL'. Peringkat ini merupakan pengakuan nasional atas mutu pendidikan, penelitian, pengabdian masyarakat, tata kelola, serta kontribusi nyata bagi pembangunan ekonomi daerah dan nasional.",
+          "Dengan perjalanan lebih dari empat dekade, Program Studi Ekonomi Pembangunan FEB Universitas Pasundan terus bertransformasi menjadi pusat keilmuan ekonomi pembangunan yang adaptif, berorientasi kemasyarakatan, dan berkomitmen mencetak lulusan yang unggul, profesional, serta berdaya saing global."
         ],
         "milestones": [
           {
             "year": "1983",
-            "event": "Operational license from DGHE."
+            "event": "Izin operasional dari Ditjen Dikti."
           },
           {
             "year": "1985",
-            "event": "Formal legality via Ministerial Decree."
+            "event": "Legalitas formal melalui SK Menteri."
           },
           {
             "year": "2005",
-            "event": "Achieved 'A' Accreditation Rank."
+            "event": "Meraih Peringkat Akreditasi 'A'."
           },
           {
             "year": "2024",
-            "event": "Achieved 'EXCELLENT' Accreditation."
+            "event": "Meraih Akreditasi 'UNGGUL'."
           }
         ]
       },
       "identity": {
-        "title": "Visual Philosophy & Meaning",
-        "description": "The Economics Study Program logo at FEB Pasundan University is a visual representation of academic identity, scientific values, and future development direction. The logo features a stylized letter 'E' as the main symbol representing Economics, built from three dynamic curved elements moving upwards.",
-        "approach_title": "Scientific Approach",
-        "approach_desc": "The curved shapes symbolize a comprehensive, adaptive, and sustainable approach to economic science, while reflecting the synergy between education, research, and community service as the pillars of higher education.",
-        "growth_title": "Spirit of Growth",
-        "growth_desc": "The upward-pointing direction illustrates optimism, growth, and transformation, showing the commitment to producing graduates who continue to develop, excel academically, and compete nationally and globally.",
-        "closing": "Overall, the logo reflects a progressive, future-oriented academic identity based on professionalism and real contributions to societal economic development.",
+        "title": "Filosofi & Makna Visual",
+        "description": "Logo Program Studi Ekonomi Pembangunan FEB Universitas Pasundan merupakan representasi visual identitas akademik, nilai keilmuan, dan arah pengembangan masa depan. Logo menampilkan stilasi huruf 'E' sebagai simbol utama Ekonomi, dibentuk dari tiga elemen lengkung dinamis yang bergerak ke atas.",
+        "approach_title": "Pendekatan Ilmiah",
+        "approach_desc": "Bentuk lengkung melambangkan pendekatan ilmu ekonomi yang komprehensif, adaptif, dan berkelanjutan, sekaligus mencerminkan sinergi antara pendidikan, penelitian, dan pengabdian masyarakat sebagai pilar perguruan tinggi.",
+        "growth_title": "Semangat Bertumbuh",
+        "growth_desc": "Arah yang menunjuk ke atas menggambarkan optimisme, pertumbuhan, dan transformasi, menunjukkan komitmen mencetak lulusan yang terus berkembang, unggul secara akademik, serta berdaya saing nasional dan global.",
+        "closing": "Secara keseluruhan, logo ini mencerminkan identitas akademik yang progresif, berorientasi masa depan, serta berlandaskan profesionalisme dan kontribusi nyata bagi pembangunan ekonomi masyarakat.",
         "labels": {
-          "construction": "Symbol Construction",
-          "official_mark": "Official Study Program Mark",
-          "philosophy": "Shape Philosophy",
-          "color_palette": "Official Color Palette",
-          "typography": "Typography System",
-          "headline_font": "Headline Font (Display)",
-          "body_font": "Body Font (Content)"
+          "construction": "Konstruksi Simbol",
+          "official_mark": "Logo Resmi Program Studi",
+          "philosophy": "Filosofi Bentuk",
+          "color_palette": "Palet Warna Resmi",
+          "typography": "Sistem Tipografi",
+          "headline_font": "Font Judul (Display)",
+          "body_font": "Font Isi (Konten)"
         },
         "colors": {
-          "primary_name": "Forest Green",
-          "primary_desc": "Represents growth, sustainability, balance, and a commitment to inclusive economic development.",
-          "accent_name": "Gold",
-          "accent_desc": "Symbolizes excellence, achievement, and the intellectual value that is the primary goal of the educational process."
+          "primary_name": "Hijau Hutan (Forest Green)",
+          "primary_desc": "Merepresentasikan pertumbuhan, keberlanjutan, keseimbangan, dan komitmen terhadap pembangunan ekonomi yang inklusif.",
+          "accent_name": "Emas (Gold)",
+          "accent_desc": "Melambangkan keunggulan, prestasi, dan nilai intelektual yang menjadi tujuan utama proses pendidikan."
         }
       },
       "vision": {
-        "title": "Vision",
-        "text": "To become a leading study program in producing competent economics graduates recognized nationally and internationally in the fields of Governance, Banking, Entrepreneurship, and Academia or Economic Research Institutions, upholding Islamic values and Sundanese culture by 2037."
+        "title": "Visi",
+        "text": "Menjadi program studi unggul dalam menghasilkan lulusan ekonomi yang kompeten dan diakui secara nasional maupun internasional di bidang Tata Kelola Pemerintahan, Perbankan, Kewirausahaan, serta Akademisi atau Lembaga Riset Ekonomi, yang menjunjung tinggi nilai-nilai keislaman dan budaya Sunda pada tahun 2037."
       },
       "mission": {
-        "title": "Mission",
+        "title": "Misi",
         "items": [
-          "To organize high-quality, relevant, and adaptive economic development education in line with science and technology developments.",
-          "To conduct innovative scientific research in economic development to contribute to knowledge and national development.",
-          "To implement community service that benefits the improvement of public welfare.",
-          "To develop strategic collaborations with various national and international institutions to enhance academic quality and professional networks.",
-          "To create a conducive academic environment, based on integrity and Islamic values in campus life."
+          "Menyelenggarakan pendidikan ekonomi pembangunan yang bermutu, relevan, dan adaptif terhadap perkembangan ilmu pengetahuan dan teknologi.",
+          "Melaksanakan penelitian ilmiah yang inovatif di bidang ekonomi pembangunan untuk berkontribusi pada ilmu pengetahuan dan pembangunan nasional.",
+          "Melaksanakan pengabdian kepada masyarakat yang bermanfaat bagi peningkatan kesejahteraan masyarakat.",
+          "Mengembangkan kerja sama strategis dengan berbagai lembaga nasional dan internasional untuk meningkatkan mutu akademik dan jejaring profesional.",
+          "Menciptakan lingkungan akademik yang kondusif, berlandaskan integritas dan nilai-nilai keislaman dalam kehidupan kampus."
         ]
       },
       "objectives": {
-        "title": "Study Program Objectives",
+        "title": "Tujuan Program Studi",
         "items": [
-          "To produce competent, professional, and ethical graduates in the field of economic development.",
-          "To produce research and scientific publications recognized nationally and internationally.",
-          "To provide real contributions to society through sustainable community service programs.",
-          "To build strategic partnerships to enhance graduate quality and program relevance."
+          "Menghasilkan lulusan yang kompeten, profesional, dan beretika di bidang ekonomi pembangunan.",
+          "Menghasilkan penelitian dan publikasi ilmiah yang diakui secara nasional dan internasional.",
+          "Memberikan kontribusi nyata kepada masyarakat melalui program pengabdian yang berkelanjutan.",
+          "Membangun kemitraan strategis untuk meningkatkan kualitas lulusan dan relevansi program."
         ]
       },
       "advantages": {
-        "title": "Our Value Added",
+        "title": "Nilai Tambah Kami",
         "items": [
           {
-            "title": "Adaptive Curriculum",
-            "desc": "Aligned with the needs of the financial industry and global digital business."
+            "title": "Kurikulum Adaptif",
+            "desc": "Selaras dengan kebutuhan industri keuangan dan bisnis digital global."
           },
           {
-            "title": "Expert Faculty",
-            "desc": "A combination of doctoral academics and experienced corporate practitioners."
+            "title": "Dosen Ahli",
+            "desc": "Kombinasi akademisi bergelar doktor dan praktisi korporasi berpengalaman."
           },
           {
-            "title": "Digital Ecosystem",
-            "desc": "A learning environment with access to the latest economic data platforms."
+            "title": "Ekosistem Digital",
+            "desc": "Lingkungan belajar dengan akses ke platform data ekonomi terkini."
           },
           {
-            "title": "Professional Certification",
-            "desc": "Graduates are equipped with internationally recognized competency certifications."
+            "title": "Sertifikasi Profesional",
+            "desc": "Lulusan dibekali sertifikasi kompetensi yang diakui secara internasional."
           }
         ]
       },
       "achievements": {
-        "title": "Milestones & Accreditation",
-        "subtitle": "Achievements",
-        "footer": "Towards Sustainable Transformation & Academic Internationalization",
+        "title": "Tonggak Capaian & Akreditasi",
+        "subtitle": "Capaian",
+        "footer": "Menuju Transformasi Berkelanjutan & Internasionalisasi Akademik",
         "items": [
           {
             "year": "1983",
-            "title": "Operational License",
-            "desc": "The Economics Study Program was established through an operational license by the DGHE, Ministry of Education and Culture RI."
+            "title": "Izin Operasional",
+            "desc": "Prodi Ekonomi didirikan melalui izin operasional dari Ditjen Dikti, Kemendikbud RI."
           },
           {
             "year": "1985",
-            "title": "Legality Strengthening",
-            "desc": "Obtained academic legality through Ministerial Decree No. 10427/0/1985 as a formal milestone."
+            "title": "Penguatan Legalitas",
+            "desc": "Memperoleh legalitas akademik melalui SK Menteri No. 10427/0/1985 sebagai tonggak formal."
           },
           {
             "year": "1990",
-            "title": "Recognized Status",
-            "desc": "Obtained 'Recognized' status based on Ministerial Decree No. 0702/0/1990."
+            "title": "Status 'Diakui'",
+            "desc": "Memperoleh status 'Diakui' berdasarkan SK Menteri No. 0702/0/1990."
           },
           {
             "year": "1993",
-            "title": "Equalized Status",
-            "desc": "Upgraded to 'Equalized' status, indicating quality on par with state universities."
+            "title": "Status 'Disamakan'",
+            "desc": "Naik ke status 'Disamakan', menandakan kualitas setara perguruan tinggi negeri."
           },
           {
             "year": "1996",
-            "title": "First National Accreditation",
-            "desc": "Underwent the first national accreditation by BAN-PT and achieved a 'B' rank."
+            "title": "Akreditasi Nasional Pertama",
+            "desc": "Menjalani akreditasi nasional pertama oleh BAN-PT dan meraih peringkat 'B'."
           },
           {
             "year": "2005",
-            "title": "Accreditation A",
-            "desc": "Successfully improved academic quality, achieving the 'A' (Excellent) rank from BAN-PT."
+            "title": "Akreditasi A",
+            "desc": "Berhasil meningkatkan mutu akademik hingga meraih peringkat 'A' (Baik Sekali) dari BAN-PT."
           },
           {
             "year": "2010",
-            "title": "Quality Consistency",
-            "desc": "Maintained the 'A' Accreditation, showing consistency in education and governance."
+            "title": "Konsistensi Mutu",
+            "desc": "Mempertahankan Akreditasi 'A', menunjukkan konsistensi pendidikan dan tata kelola."
           },
           {
             "year": "2016",
-            "title": "Re-Accreditation A",
-            "desc": "Successfully maintained the 'A' rank from BAN-PT (valid until 2021)."
+            "title": "Reakreditasi A",
+            "desc": "Berhasil mempertahankan peringkat 'A' dari BAN-PT (berlaku hingga 2021)."
           },
           {
             "year": "2020",
-            "title": "MBKM Curriculum Grant",
-            "desc": "Received the Merdeka Belajar Kampus Merdeka (MBKM) curriculum grant for adaptive transformation."
+            "title": "Hibah Kurikulum MBKM",
+            "desc": "Menerima hibah kurikulum Merdeka Belajar Kampus Merdeka (MBKM) untuk transformasi adaptif."
           },
           {
             "year": "2021",
-            "title": "Quality Certification",
-            "desc": "Maintained the 'A' rank accreditation from BAN-PT."
+            "title": "Sertifikasi Mutu",
+            "desc": "Mempertahankan akreditasi peringkat 'A' dari BAN-PT."
           },
           {
             "year": "2022",
-            "title": "PKKM Grant",
-            "desc": "Won the Competitive Campus Program (PKKM) grant from the Ministry of Education for learning quality enhancement."
+            "title": "Hibah PKKM",
+            "desc": "Memenangkan hibah Program Kompetisi Kampus Merdeka (PKKM) dari Kemendikbud untuk peningkatan mutu pembelajaran."
           },
           {
             "year": "2024",
-            "title": "EXCELLENT Rank",
-            "desc": "Achieved the highest 'EXCELLENT' (UNGGUL) rank based on BAN-PT Decree No. 4401/SK/BAN-PT/Ak.KP/S/V/2024."
+            "title": "Peringkat UNGGUL",
+            "desc": "Meraih peringkat tertinggi 'UNGGUL' berdasarkan SK BAN-PT No. 4401/SK/BAN-PT/Ak.KP/S/V/2024."
           },
           {
             "year": "2025",
-            "title": "AACSB International Member",
-            "desc": "Became a member of the AACSB international accreditation body as a strategic step toward global business education standards."
+            "title": "Anggota Internasional AACSB",
+            "desc": "Menjadi anggota lembaga akreditasi internasional AACSB sebagai langkah strategis menuju standar pendidikan bisnis global."
           }
         ]
       },
       "facilities": {
-        "title": "Campus Infrastructure",
-        "footer": "Global standard facilities to support student academic potential.",
+        "title": "Infrastruktur Kampus",
+        "footer": "Fasilitas berstandar global untuk menunjang potensi akademik mahasiswa.",
         "items": [
           {
-            "name": "Library",
+            "name": "Perpustakaan",
             "icon": "FiMapPin",
-            "desc": "Access to book collections, journals, and the latest economic databases",
+            "desc": "Akses koleksi buku, jurnal, dan basis data ekonomi terkini",
             "img": "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800"
           },
           {
-            "name": "Computer Lab",
+            "name": "Lab Komputer",
             "icon": "FiBox",
-            "desc": "Computers equipped with the latest economic data analysis software",
+            "desc": "Komputer dengan perangkat lunak analisis data ekonomi terbaru",
             "img": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=800"
           },
           {
-            "name": "Seminar Room",
+            "name": "Ruang Seminar",
             "icon": "FiZap",
-            "desc": "Seminar room with complete audio-visual facilities",
+            "desc": "Ruang seminar dengan fasilitas audio-visual lengkap",
             "img": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800"
           },
           {
-            "name": "Discussion Area",
+            "name": "Area Diskusi",
             "icon": "FiTarget",
-            "desc": "Open discussion areas for collaboration and brainstorming",
+            "desc": "Area diskusi terbuka untuk kolaborasi dan curah gagasan",
             "img": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800"
           },
           {
-            "name": "Investment Gallery",
+            "name": "Galeri Investasi",
             "icon": "FiAward",
-            "desc": "Investment corner with stock market info and global economic data",
+            "desc": "Pojok investasi dengan info pasar saham dan data ekonomi global",
             "img": "https://images.unsplash.com/photo-1611974717535-7c805a0a7d53?q=80&w=800"
           },
           {
-            "name": "Hybrid Classroom",
+            "name": "Kelas Hybrid",
             "icon": "FiEye",
-            "desc": "Hybrid-ready classrooms for interactive learning",
+            "desc": "Ruang kelas siap hybrid untuk pembelajaran interaktif",
             "img": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800"
           }
         ]
       }
     },
     "academics": {
-      "subtitle": "Academics",
-      "hero_title": "Economic Development",
-      "graduate_profile_subtitle": "Graduate Profile",
-      "graduate_profile_title": "Main Graduate Profile",
-      "graduate_standard_label": "SKL & CLO STANDARDS",
-      "curriculum_title": "Curriculum Structure",
+      "subtitle": "Akademik",
+      "hero_title": "Ekonomi Pembangunan",
+      "graduate_profile_subtitle": "Profil Lulusan",
+      "graduate_profile_title": "Profil Utama Lulusan",
+      "graduate_standard_label": "STANDAR SKL & CPL",
+      "curriculum_title": "Struktur Kurikulum",
       "concentration": {
-        "title": "Study Concentrations",
+        "title": "Konsentrasi Studi",
         "items": [
           {
-            "name": "Monetary & Banking Economics",
-            "desc": "Studying monetary policy, banking systems, and macro-financial management.",
+            "name": "Ekonomi Moneter & Perbankan",
+            "desc": "Mempelajari kebijakan moneter, sistem perbankan, dan manajemen keuangan makro.",
             "courses": [
               "Monetary Economics",
               "Banking Management",
@@ -765,8 +765,8 @@
             ]
           },
           {
-            "name": "Regional Planning & Development",
-            "desc": "Focusing on regional development planning, regional autonomy, and public policy.",
+            "name": "Perencanaan & Pembangunan Wilayah",
+            "desc": "Berfokus pada perencanaan pembangunan daerah, otonomi daerah, dan kebijakan publik.",
             "courses": [
               "Regional Planning",
               "Regional Economics",
@@ -775,8 +775,8 @@
             ]
           },
           {
-            "name": "Resource & Environmental Economics",
-            "desc": "Examining natural resource management and environmental policy in sustainable development.",
+            "name": "Ekonomi Sumber Daya & Lingkungan",
+            "desc": "Mengkaji pengelolaan sumber daya alam dan kebijakan lingkungan dalam pembangunan berkelanjutan.",
             "courses": [
               "Environmental Economics",
               "Natural Resource Economics",
@@ -787,41 +787,41 @@
         ]
       },
       "prospects": {
-        "title": "Career Prospects",
+        "title": "Prospek Karier",
         "items": [
           {
             "icon": "building",
-            "title": "Government Agencies",
-            "desc": "Ministry of Finance, Bappenas, Bank Indonesia, BPS, and regional agencies."
+            "title": "Instansi Pemerintah",
+            "desc": "Kementerian Keuangan, Bappenas, Bank Indonesia, BPS, dan instansi daerah."
           },
           {
             "icon": "bank",
-            "title": "Financial Institutions",
-            "desc": "Banking, OJK, financial SOEs, and financing institutions."
+            "title": "Lembaga Keuangan",
+            "desc": "Perbankan, OJK, BUMN keuangan, dan lembaga pembiayaan."
           },
           {
             "icon": "chart",
-            "title": "Economic Consultants",
-            "desc": "Development consultants, policy analysts, and economic researchers."
+            "title": "Konsultan Ekonomi",
+            "desc": "Konsultan pembangunan, analis kebijakan, dan peneliti ekonomi."
           },
           {
             "icon": "academic",
-            "title": "Academia & Researchers",
-            "desc": "Lecturers, researchers in national and international research institutions."
+            "title": "Akademisi & Peneliti",
+            "desc": "Dosen serta peneliti di lembaga riset nasional dan internasional."
           }
         ]
       }
     },
     "contact": {
-      "title": "Contact Us",
-      "subtitle": "Contact & Location",
-      "description": "We are ready to help. Feel free to reach out to us through the following communication channels.",
+      "title": "Hubungi Kami",
+      "subtitle": "Kontak & Lokasi",
+      "description": "Kami siap membantu. Jangan ragu menghubungi kami melalui saluran komunikasi berikut.",
       "address": {
-        "title": "Address",
-        "value": "Jl. Tamansari No. 6-8, Bandung 40116, West Java, Indonesia"
+        "title": "Alamat",
+        "value": "Jl. Tamansari No. 6-8, Bandung 40116, Jawa Barat, Indonesia"
       },
       "phone": {
-        "title": "Phone",
+        "title": "Telepon",
         "value": "0811-2046-768"
       },
       "email": {
@@ -829,8 +829,8 @@
         "value": "prodi.ekonomi.feb@unpas.ac.id"
       },
       "hours": {
-        "title": "Operational Hours",
-        "value": "Monday – Friday: 08:00 AM – 04:00 PM WIB"
+        "title": "Jam Operasional",
+        "value": "Senin – Jumat: 08.00 – 16.00 WIB"
       },
       "form": {
         "subtitle": "Form",
@@ -854,54 +854,54 @@
         }
       },
       "brochure": {
-        "title": "Registration Brochure",
-        "subtitle": "Brochure & Information",
+        "title": "Brosur Pendaftaran",
+        "subtitle": "Brosur & Informasi",
         "download": {
-          "title": "Download Brochure",
-          "subtitle": "Click to download printable version"
+          "title": "Unduh Brosur",
+          "subtitle": "Klik untuk mengunduh versi cetak"
         }
       },
       "extra_info": {
-        "title": "Additional Information",
+        "title": "Informasi Tambahan",
         "items": [
-          "Direct visits are welcomed during working hours",
-          "Academic consultation can be scheduled with the supervising lecturer according to the student's needs.",
-          "For academic questions, please contact the academic department via the email or telephone number provided."
+          "Kunjungan langsung dapat dilakukan pada jam kerja.",
+          "Konsultasi akademik dapat dijadwalkan dengan dosen pembimbing sesuai kebutuhan mahasiswa.",
+          "Untuk pertanyaan akademik, silakan hubungi bagian akademik melalui email atau nomor telepon yang tersedia."
         ]
       },
       "cashback": {
-        "badge": "New Student Special Program",
-        "title": "Get Cashback of Rp3.000.000 Per Year",
-        "description": "Register yourself right now.",
-        "button": "Register Now"
+        "badge": "Program Khusus Mahasiswa Baru",
+        "title": "Dapatkan Cashback Rp3.000.000 Per Tahun",
+        "description": "Segera daftarkan diri Anda sekarang.",
+        "button": "Daftar Sekarang"
       }
     },
     "footer": {
-      "tagline": "Creating Reliable Economists for Indonesia",
-      "links_title": "Quick Links",
-      "contact_title": "Contact",
-      "social_title": "Follow Us",
-      "copyright": "Economic Development Study Program - FEB UNPAS. All Rights Reserved.",
-      "faculty": "Faculty of Economics and Business",
-      "university": "Pasundan University",
-      "location": "Our Location"
+      "tagline": "Mencetak Ekonom Andal untuk Indonesia",
+      "links_title": "Tautan Cepat",
+      "contact_title": "Kontak",
+      "social_title": "Ikuti Kami",
+      "copyright": "Program Studi Ekonomi Pembangunan - FEB UNPAS. Hak Cipta Dilindungi.",
+      "faculty": "Fakultas Ekonomi dan Bisnis",
+      "university": "Universitas Pasundan",
+      "location": "Lokasi Kami"
     },
     "nav": {
-      "home": "Home",
-      "profile": "Profile",
-      "academics": "Academics",
-      "faculty": "Faculty",
-      "contact": "Contact",
+      "home": "Beranda",
+      "profile": "Profil",
+      "academics": "Akademik",
+      "faculty": "Dosen",
+      "contact": "Kontak",
       "language": "ID",
-      "student": "Student",
-      "registration": "Registration",
-      "news": "News & Events"
+      "student": "Mahasiswa",
+      "registration": "Pendaftaran",
+      "news": "Berita & Kegiatan"
     },
     "news_page": {
-      "hero": "Latest News",
-      "title": "Campus News",
-      "all": "All",
-      "empty": "No news found for this category."
+      "hero": "Berita Terbaru",
+      "title": "Berita Kampus",
+      "all": "Semua",
+      "empty": "Belum ada berita untuk kategori ini."
     }
   }
 }

@@ -23,7 +23,7 @@ $step = $totalImages > 0 ? max(1, (int) floor($totalBlocks / ($totalImages + 1))
         <a href="<?= e(url('/berita-kegiatan')) ?>"
            class="inline-flex items-center gap-2 text-sm font-semibold text-forest-600 hover:text-forest-700 transition-colors mb-6 group">
             <span class="transform group-hover:-translate-x-1 transition-transform">&larr;</span>
-            Back to News &amp; Activities
+            Kembali ke Berita &amp; Kegiatan
         </a>
 
         <div class="flex items-center gap-4 mb-4">
@@ -37,7 +37,7 @@ $step = $totalImages > 0 ? max(1, (int) floor($totalBlocks / ($totalImages + 1))
 
         <?php if ($coverImage): ?>
         <div class="w-full bg-gray-50 rounded-3xl overflow-hidden flex justify-center items-center p-2 border border-gray-100 shadow-md mb-10">
-            <img src="<?= e(url($coverImage)) ?>" alt="Cover - <?= e($news['title']) ?>"
+            <img src="<?= e(url($coverImage)) ?>" alt="Sampul - <?= e($news['title']) ?>"
                  class="max-h-[600px] w-auto h-auto object-contain rounded-2xl">
         </div>
         <?php endif; ?>
@@ -65,7 +65,7 @@ $step = $totalImages > 0 ? max(1, (int) floor($totalBlocks / ($totalImages + 1))
 
         <?php if ($related): ?>
         <div class="mt-16 pt-12 border-t border-gray-200">
-            <h2 class="font-display font-bold text-xl md:text-2xl text-gray-800 mb-8">Other News &amp; Activities</h2>
+            <h2 class="font-display font-bold text-xl md:text-2xl text-gray-800 mb-8">Berita &amp; Kegiatan Lainnya</h2>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <?php foreach ($related as $item): ?>
                     <?php View::partial('news-card', ['item' => $item]); ?>

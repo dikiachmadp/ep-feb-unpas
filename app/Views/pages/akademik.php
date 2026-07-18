@@ -35,8 +35,8 @@ $documents = [
 <div class="page-wrapper pt-20 bg-white min-h-screen pb-32 lg:pb-0">
 
     <?php View::partial('page-hero', [
-        'badge' => $main['subtitle'] ?? 'Academics',
-        'title' => $main['hero_title'] ?? 'Economic Development',
+        'badge' => $main['subtitle'] ?? 'Akademik',
+        'title' => $main['hero_title'] ?? 'Ekonomi Pembangunan',
     ]); ?>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
@@ -50,8 +50,8 @@ $documents = [
                 <section class="space-y-16 tab-panel" data-panel="kurikulum">
                     <div>
                         <?php View::partial('section-header', [
-                            'subtitle' => $main['graduate_profile_subtitle'] ?? 'Graduate Profile',
-                            'title'    => $main['graduate_profile_title'] ?? 'Main Graduate Profile',
+                            'subtitle' => $main['graduate_profile_subtitle'] ?? 'Profil Lulusan',
+                            'title'    => $main['graduate_profile_title'] ?? 'Profil Utama Lulusan',
                         ]); ?>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 px-2">
                             <?php foreach ($profiles as $profile): ?>
@@ -75,14 +75,14 @@ $documents = [
                     </div>
 
                     <div class="pt-10 border-t border-gray-100">
-                        <?php View::partial('section-header', ['subtitle' => 'Curriculum', 'title' => $main['curriculum_title'] ?? 'Curriculum Structure']); ?>
+                        <?php View::partial('section-header', ['subtitle' => 'Kurikulum', 'title' => $main['curriculum_title'] ?? 'Struktur Kurikulum']); ?>
 
                         <div class="mt-12 space-y-20 relative">
                             <?php foreach ($curriculum as $idx => $year): ?>
                             <div class="relative">
                                 <div class="flex items-center gap-4 mb-10">
                                     <div class="w-16 h-16 bg-forest-900 text-gold-400 rounded-2xl flex flex-col items-center justify-center border-2 border-gold-500/20 shadow-xl z-10">
-                                        <span class="text-[10px] font-black uppercase leading-none">Year</span>
+                                        <span class="text-[10px] font-black uppercase leading-none">Tahun</span>
                                         <span class="text-2xl font-black">0<?= (int) $year['year_number'] ?></span>
                                     </div>
                                     <div>
@@ -129,7 +129,7 @@ $documents = [
 
                 <!-- 2. KERJASAMA -->
                 <section class="space-y-12 tab-panel hidden" data-panel="kerjasama">
-                    <?php View::partial('section-header', ['subtitle' => 'Partnership', 'title' => 'Jejaring Kerjasama']); ?>
+                    <?php View::partial('section-header', ['subtitle' => 'Kerjasama', 'title' => 'Jejaring Kerjasama']); ?>
                     <div class="space-y-10 px-2">
                         <div>
                             <h4 class="text-[10px] font-black text-gold-600 uppercase tracking-[0.2em] mb-6 px-2">Internasional</h4>
@@ -153,7 +153,7 @@ $documents = [
 
                 <!-- 3. AKREDITASI -->
                 <section class="space-y-12 tab-panel hidden" data-panel="akreditasi">
-                    <?php View::partial('section-header', ['subtitle' => 'Quality Assurance', 'title' => 'Akreditasi Program Studi']); ?>
+                    <?php View::partial('section-header', ['subtitle' => 'Penjaminan Mutu', 'title' => 'Akreditasi Program Studi']); ?>
                     <div class="max-w-md mx-auto p-12 bg-forest-50 rounded-[3rem] border border-forest-100 shadow-inner mt-10 text-center">
                         <?= Icons::svg('award', 'w-20 h-20 text-gold-500 mx-auto mb-6') ?>
                         <h3 class="text-4xl font-black text-forest-900 mb-2 font-display uppercase tracking-tight">UNGGUL</h3>
@@ -166,7 +166,7 @@ $documents = [
 
                 <!-- 4. DOSEN -->
                 <section class="space-y-12 tab-panel hidden" data-panel="dosen">
-                    <?php View::partial('section-header', ['subtitle' => 'Faculty Members', 'title' => 'Profil Tenaga Pengajar']); ?>
+                    <?php View::partial('section-header', ['subtitle' => 'Tenaga Pengajar', 'title' => 'Profil Tenaga Pengajar']); ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
                         <?php foreach ($dosen as $d): ?>
                         <!-- Overview always visible; the whole card links to the dosen detail page -->
@@ -205,7 +205,7 @@ $documents = [
 
                 <!-- 5. JURNAL -->
                 <section class="space-y-10 tab-panel hidden" data-panel="jurnal">
-                    <?php View::partial('section-header', ['subtitle' => 'Publication', 'title' => 'Jurnal Ilmiah']); ?>
+                    <?php View::partial('section-header', ['subtitle' => 'Publikasi', 'title' => 'Jurnal Ilmiah']); ?>
                     <div class="grid md:grid-cols-2 gap-10 mt-10 px-2">
                         <?php foreach ($journals as $jurnal): ?>
                         <div class="group relative bg-forest-900 rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl border border-white/5">
@@ -246,7 +246,7 @@ $documents = [
                     <div class="space-y-8 px-2">
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 px-2">
                             <div>
-                                <p class="text-gold-600 font-black text-[10px] tracking-[0.2em] uppercase mb-2">Academic Resources</p>
+                                <p class="text-gold-600 font-black text-[10px] tracking-[0.2em] uppercase mb-2">Dokumen Akademik</p>
                                 <h4 class="text-2xl font-bold text-forest-900">Pusat Unduhan Pedoman</h4>
                             </div>
                             <p class="text-xs text-gray-400 font-medium italic">Pembaruan: April 2026</p>
@@ -260,13 +260,13 @@ $documents = [
                                     </div>
                                     <div class="min-w-0">
                                         <h5 class="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2"><?= e($doc['name']) ?></h5>
-                                        <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">PDF &bull; 2025 Edition</p>
+                                        <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">PDF &bull; Edisi 2025</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2 ml-4">
-                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" target="_blank" rel="noreferrer" title="Preview"
+                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" target="_blank" rel="noreferrer" title="Pratinjau"
                                        class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-forest-50 hover:text-forest-600 transition-colors"><?= Icons::svg('external-link', 'w-4 h-4') ?></a>
-                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" download="<?= e($doc['file']) ?>" title="Download"
+                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" download="<?= e($doc['file']) ?>" title="Unduh"
                                        class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gold-50 hover:text-gold-600 transition-colors"><?= Icons::svg('download', 'w-4 h-4') ?></a>
                                 </div>
                             </div>

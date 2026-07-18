@@ -15,36 +15,36 @@ $menu = [
 
 $content = [
     'prestasi' => [
-        'title' => 'Student Achievements',
+        'title' => 'Prestasi Mahasiswa',
         'items' => [
-            ['tag' => 'National', 'title' => '1st Place National Economic Debate', 'date' => '2025', 'desc' => 'Successfully achieved the first position in a prestigious national-level competition at the University of Indonesia.', 'detail' => 'The class of 2022 students managed to outperform 50 other teams with a motion on post-pandemic fiscal policy.', 'icon' => 'award'],
-            ['tag' => 'Research', 'title' => 'Kemdikbud PKM Research Grant', 'date' => '2024', 'desc' => 'Three student teams successfully passed national-level research funding.', 'detail' => 'Research focuses on empowering digital MSMEs in West Java with total grants reaching tens of millions of rupiah.', 'icon' => 'award'],
+            ['tag' => 'Nasional', 'title' => 'Juara 1 Debat Ekonomi Nasional', 'date' => '2025', 'desc' => 'Berhasil meraih posisi pertama dalam kompetisi bergengsi tingkat nasional di Universitas Indonesia.', 'detail' => 'Mahasiswa angkatan 2022 berhasil mengungguli 50 tim lain dengan mosi kebijakan fiskal pascapandemi.', 'icon' => 'award'],
+            ['tag' => 'Riset', 'title' => 'Hibah Riset PKM Kemdikbud', 'date' => '2024', 'desc' => 'Tiga tim mahasiswa berhasil lolos pendanaan riset tingkat nasional.', 'detail' => 'Riset berfokus pada pemberdayaan UMKM digital di Jawa Barat dengan total hibah mencapai puluhan juta rupiah.', 'icon' => 'award'],
         ],
     ],
     'himpunan' => [
-        'title' => 'Student Organizations',
+        'title' => 'Organisasi Mahasiswa',
         'items' => [
-            ['tag' => 'Internal', 'title' => 'HIMASPA', 'date' => '2025/2026', 'desc' => 'Student internal organization focused on academic and social development.', 'detail' => 'Has 5 main departments: Human Resource Development, Talent & Interest, Public Relations, Strategic Studies, and Entrepreneurship.', 'icon' => 'users'],
-            ['tag' => 'Community', 'title' => 'Economic Research Club', 'date' => 'Active', 'desc' => 'Interest community in scientific writing and economic data analysis.', 'detail' => 'Regularly holds training on E-Views, Stata, and SPSS software for final-year students.', 'icon' => 'users'],
+            ['tag' => 'Internal', 'title' => 'HIMASPA', 'date' => '2025/2026', 'desc' => 'Organisasi internal mahasiswa yang berfokus pada pengembangan akademik dan sosial.', 'detail' => 'Memiliki 5 departemen utama: Pengembangan Sumber Daya Manusia, Minat & Bakat, Hubungan Masyarakat, Kajian Strategis, dan Kewirausahaan.', 'icon' => 'users'],
+            ['tag' => 'Komunitas', 'title' => 'Economic Research Club', 'date' => 'Aktif', 'desc' => 'Komunitas minat dalam penulisan ilmiah dan analisis data ekonomi.', 'detail' => 'Rutin mengadakan pelatihan perangkat lunak E-Views, Stata, dan SPSS bagi mahasiswa tingkat akhir.', 'icon' => 'users'],
         ],
     ],
     'alumni' => [
-        'title' => 'Alumni Network',
+        'title' => 'Jaringan Alumni',
         'items' => [
-            ['tag' => 'Career', 'title' => 'Andini Putri, S.E.', 'date' => 'Analyst @ BI', 'desc' => 'Class of 2018 alumna who now has a career at Bank Indonesia central office.', 'detail' => 'She is actively providing career mentoring for final-year students through the IKA-EP program.', 'icon' => 'briefcase'],
-            ['tag' => 'Startup', 'title' => 'Budi Santoso, S.E., M.E.', 'date' => 'Tech Founder', 'desc' => 'Successful entrepreneur who built a fintech platform for financial inclusion.', 'detail' => 'Class of 2015 graduate who successfully secured series-A funding and employs many graduates from his alma mater.', 'icon' => 'briefcase'],
+            ['tag' => 'Karier', 'title' => 'Andini Putri, S.E.', 'date' => 'Analis @ BI', 'desc' => 'Alumna angkatan 2018 yang kini berkarier di kantor pusat Bank Indonesia.', 'detail' => 'Aktif memberikan mentoring karier bagi mahasiswa tingkat akhir melalui program IKA-EP.', 'icon' => 'briefcase'],
+            ['tag' => 'Startup', 'title' => 'Budi Santoso, S.E., M.E.', 'date' => 'Pendiri Startup', 'desc' => 'Wirausahawan sukses yang membangun platform fintech untuk inklusi keuangan.', 'detail' => 'Lulusan angkatan 2015 yang berhasil meraih pendanaan seri A dan mempekerjakan banyak lulusan almamaternya.', 'icon' => 'briefcase'],
         ],
     ],
 ];
 ?>
 <div class="page-wrapper pt-20 bg-white min-h-screen pb-32 lg:pb-0">
 
-    <?php View::partial('page-hero', ['badge' => 'Student Affairs', 'title' => 'Student & Alumni']); ?>
+    <?php View::partial('page-hero', ['badge' => 'Kemahasiswaan', 'title' => 'Mahasiswa & Alumni']); ?>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div class="flex flex-col lg:flex-row gap-12">
 
-            <?php View::partial('tab-nav', ['menu' => $menu, 'active' => 'prestasi', 'menuTitle' => 'Navigation Menu', 'mobileCols' => 3]); ?>
+            <?php View::partial('tab-nav', ['menu' => $menu, 'active' => 'prestasi', 'menuTitle' => 'Menu Navigasi', 'mobileCols' => 3]); ?>
 
             <main class="flex-1">
                 <?php foreach ($content as $sectionId => $section): ?>
@@ -72,7 +72,7 @@ $content = [
                                 <div class="mt-6 pt-6 border-t border-gray-100 space-y-5">
                                     <p class="text-sm text-gray-500 leading-relaxed italic">"<?= e($item['desc']) ?>"</p>
                                     <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
-                                        <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest block mb-2">Background</span>
+                                        <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest block mb-2">Latar Belakang</span>
                                         <p class="text-sm text-forest-900 font-medium leading-relaxed whitespace-normal break-words"><?= e($item['detail']) ?></p>
                                     </div>
                                 </div>
@@ -86,11 +86,11 @@ $content = [
                     <div class="mt-12 p-8 bg-forest-50 border border-forest-100 rounded-[2.5rem] flex flex-col md:flex-row items-center gap-6">
                         <div class="bg-white p-4 rounded-2xl shadow-sm"><?= Icons::svg('briefcase', 'w-8 h-8 text-gold-500') ?></div>
                         <div class="flex-1 text-center md:text-left">
-                            <h4 class="font-bold text-forest-900">Tracer Study & Career</h4>
-                            <p class="text-sm text-gray-500 mt-1">Help us improve the quality of graduates by filling in your career data.</p>
+                            <h4 class="font-bold text-forest-900">Tracer Study & Karier</h4>
+                            <p class="text-sm text-gray-500 mt-1">Bantu kami meningkatkan kualitas lulusan dengan mengisi data karier Anda.</p>
                         </div>
                         <a href="https://tracerstudy.unpas.ac.id" target="_blank" rel="noopener noreferrer"
-                           class="px-8 py-3 bg-gold-500 text-forest-900 font-bold rounded-xl text-sm shadow-lg shadow-gold-500/20 active:scale-95 transition-all">Fill Tracer Study</a>
+                           class="px-8 py-3 bg-gold-500 text-forest-900 font-bold rounded-xl text-sm shadow-lg shadow-gold-500/20 active:scale-95 transition-all">Isi Tracer Study</a>
                     </div>
                     <?php endif; ?>
                 </section>

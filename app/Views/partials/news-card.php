@@ -13,7 +13,8 @@ $cover = $item['cover_image_path'] ?? '';
              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <?php else: ?>
         <div class="w-full h-full bg-forest-50 flex items-center justify-center">
-            <span class="text-forest-400 text-sm font-sans font-medium">No Image</span>
+            <img src="<?= e(url('/logo.webp')) ?>" alt="" aria-hidden="true" loading="lazy"
+                 class="w-20 h-20 object-contain opacity-25 grayscale">
         </div>
         <?php endif; ?>
 
