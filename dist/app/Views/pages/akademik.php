@@ -169,45 +169,36 @@ $documents = [
                     <?php View::partial('section-header', ['subtitle' => 'Faculty Members', 'title' => 'Profil Tenaga Pengajar']); ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
                         <?php foreach ($dosen as $d): ?>
-                        <div class="dosen-card relative cursor-pointer overflow-hidden shadow-xl flex flex-col items-center rounded-[2.5rem] p-5 border border-white/5 bg-forest-900 hover:border-gold-500/40 transition-all duration-500" data-expand-card>
-                            <div class="dosen-photo bg-forest-800 flex items-center justify-center overflow-hidden flex-shrink-0 w-full rounded-[32px] aspect-[4/5] transition-all duration-500">
+                        <!-- Overview always visible; the whole card links to the dosen detail page -->
+                        <a href="<?= e(url('/dosen/' . $d['slug'])) ?>"
+                           class="group relative overflow-hidden shadow-xl flex flex-col items-center rounded-[2.5rem] p-5 border border-white/5 bg-forest-900 hover:border-gold-500/40 hover:-translate-y-1 transition-all duration-500">
+                            <div class="bg-forest-800 flex items-center justify-center overflow-hidden flex-shrink-0 w-full rounded-[32px] aspect-[4/5]">
                                 <?php if (!empty($d['photo_path'])): ?>
-                                <img src="<?= e(url($d['photo_path'])) ?>" alt="<?= e($d['full_name']) ?>" loading="lazy" class="w-full h-full object-cover">
+                                <img src="<?= e(url($d['photo_path'])) ?>" alt="<?= e($d['full_name']) ?>" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                 <?php endif; ?>
                             </div>
 
                             <div class="text-center mt-6 w-full px-2">
-                                <p class="dosen-position uppercase font-black tracking-widest text-[10px] mb-1 transition-colors duration-500 text-gold-400"><?= e($d['position']) ?></p>
-                                <h4 class="dosen-name font-bold leading-tight break-words transition-all duration-500 text-sm text-white"><?= e($d['full_name']) ?></h4>
+                                <p class="uppercase font-black tracking-widest text-[10px] mb-1 text-gold-400"><?= e($d['position']) ?></p>
+                                <h4 class="font-bold leading-tight break-words text-sm text-white"><?= e($d['full_name']) ?></h4>
                             </div>
 
-                            <div class="expand-body hidden w-full overflow-hidden">
-                                <div class="space-y-4 border-t border-gray-100 mt-6 pt-6 text-left px-2">
-                                    <?php foreach ([
-                                        ['NIDN / NIDK', $d['nidn']],
-                                        ['Bidang Keahlian', $d['expertise']],
-                                        ['Email Resmi', $d['email']],
-                                        ['Sinta ID', $d['orcid_id']],
-                                    ] as [$label, $value]): ?>
-                                    <div class="flex flex-col border-b border-gray-50 pb-2 last:border-0">
-                                        <span class="text-[9px] text-gray-400 uppercase font-bold tracking-tighter"><?= e($label) ?></span>
-                                        <span class="text-sm md:text-xs font-semibold text-forest-900 break-words"><?= e($value ?? '-') ?></span>
-                                    </div>
-                                    <?php endforeach; ?>
-                                    <div class="pt-2 space-y-3">
-                                        <a href="<?= e(url('/dosen/' . $d['slug'])) ?>" onclick="event.stopPropagation()"
-                                           class="w-full py-4 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg">
-                                            Profil Lengkap <?= Icons::svg('chevron-right', 'w-3.5 h-3.5') ?>
-                                        </a>
-                                        <a href="<?= e($d['scholar_url'] ?? '#') ?>" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
-                                           class="w-full py-4 bg-forest-700 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg">
-                                            Lihat Publikasi Ilmiah <?= Icons::svg('external-link', 'w-3.5 h-3.5') ?>
-                                        </a>
-                                    </div>
+                            <div class="w-full mt-6 pt-5 border-t border-white/10 space-y-3 text-left px-2">
+                                <?php foreach ([
+                                    ['NIDN / NIDK', $d['nidn']],
+                                    ['Bidang Keahlian', $d['expertise']],
+                                ] as [$label, $value]): ?>
+                                <div class="flex flex-col">
+                                    <span class="text-[9px] text-white/40 uppercase font-bold tracking-tighter"><?= e($label) ?></span>
+                                    <span class="text-xs font-semibold text-white/90 break-words"><?= e($value ?: '-') ?></span>
                                 </div>
+                                <?php endforeach; ?>
                             </div>
-                            <div class="expand-close hidden absolute top-6 right-6 text-gray-300 hover:text-forest-900 transition-colors"><?= Icons::svg('x', 'w-5 h-5') ?></div>
-                        </div>
+
+                            <div class="w-full mt-5 py-3.5 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-gold-300 transition-colors">
+                                Lihat Profil Lengkap <?= Icons::svg('chevron-right', 'w-3.5 h-3.5') ?>
+                            </div>
+                        </a>
                         <?php endforeach; ?>
                     </div>
                 </section>
