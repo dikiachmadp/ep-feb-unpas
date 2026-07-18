@@ -27,6 +27,10 @@ $router->get('/profil', fn() => (new App\Controllers\ProfileController())->index
 $router->get('/akademik', fn() => (new App\Controllers\AcademicsController())->index());
 $router->get('/mahasiswa', fn() => (new App\Controllers\FacultyController())->index());
 
+// Per-dosen profile pages: unique title + Person schema per lecturer so
+// Google can rank the site for lecturer-name searches.
+$router->get('/dosen/{slug}', fn(string $slug) => (new App\Controllers\FacultyController())->show($slug));
+
 // /pendaftaran is now a lightweight CTA page linking to Unpas' official
 // registration site (URL editable via admin), not a form.
 $router->get('/pendaftaran', fn() => (new App\Controllers\RegistrationController())->index());

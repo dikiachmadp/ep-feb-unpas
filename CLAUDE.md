@@ -2,11 +2,40 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project
+## Project status — mid-migration
 
-Static marketing/informational website for **Program Studi Ekonomi Pembangunan, FEB (Fakultas Ekonomi dan Bisnis), Universitas Pasundan**. Single-page-app style site built with React + Vite, deployed as a static build (see `dist/`).
+This repo is being rebuilt from a static React SPA into a **server-rendered PHP + MySQL** fullstack app (custom CMS for staff, no framework, no Composer), so non-technical staff can edit content without touching code. Work is happening on branch **`rebuild-php`**.
 
-## Commands
+- The **old React/Vite SPA** (`src/`, `index.html`, `vite.config.js`, `package.json`, `dist/`) is still what's live in production at `ekonomi.feb.unpas.ac.id` and is described under "Legacy React SPA" below. Don't delete it until cutover to the new stack is confirmed complete.
+- The **new PHP app** (`app/`, `admin/`, `public/`, `database/`, `scripts/build-dist.php`) is the active development target — this is where new work should go.
+- Full migration plan, phase status, and the step-by-step deploy guide live in **`MIGRATION_PLAN.md`** (repo root, gitignored — read it directly for current phase/progress before assuming state from this file).
+- Target host is Hostinger **shared hosting** (Premium plan) with **no SSH and no Node runtime on the server** — this constrains the whole architecture (see below).
+
+## New PHP app — architecture
+
+- **No Composer, no framework.** Manual `spl_autoload_register` autoloading. PDO with a driver switch: SQLite for local dev (`database/dev.sqlite`), MySQL in production.
+- **Structure**:
+  - `app/Core/` — `Database`, `Router`, `Session`, `Csrf`, `Auth`, `View`, `Seo`, `Html`, `Icons` (inline SVG icon system replacing react-icons), `StorageInterface`/`LocalFilesystemStorage` (upload abstraction).
+  - `app/Models/` — `News`, `Faculty`, `Curriculum`, `GraduateProfile`, `Page` (generic `page_fields`/`page_items` tables back page copy for Home/Profile/Academics/Contact instead of dedicated tables per section).
+  - `app/Controllers/` — thin controllers per public route, call Models and `View::render()`.
+  - `app/Views/layout.php` + `partials/` (navbar, footer, seo-tags, section-header, page-hero, news-card, tab-nav) + `pages/` (home, profil, akademik, mahasiswa, berita-list, berita-detail, kontak, pendaftaran, 404).
+  - `admin/` — hand-rolled CMS, plain PHP scripts per page (no router — internal tool, URLs don't need to be pretty): `login.php`, `index.php` (dashboard), `news/`, `faculty/`, `curriculum/`, `pages/`, `profiles/`, `users/`, plus shared `_bootstrap.php`, `_layout.php`, `_crud.php`.
+  - `public/` — document root for local dev: `index.php` front controller, `.htaccess`, `assets/css/app.css` (compiled Tailwind, committed), `assets/js/app.js` (vanilla JS), `uploads/`. In dev, `public/admin` is a **symlink** to `../admin`.
+  - `database/schema/001_init.sql` — numbered schema migrations, applied manually via phpMyAdmin (no migration runner). `database/seed.php` seeds the dev DB and regenerates `database/seed.sql` (gitignored — contains password hashes) for one-time phpMyAdmin import into production/staging.
+- **Routing is hybrid**: public site goes through one front controller (`public/index.php`) for dynamic slugs + centralized SEO/CSRF; admin is plain per-file PHP scripts.
+- **SEO is server-rendered per page** via `App\Core\Seo::page()`/`::article()` + `app/Views/partials/seo-tags.php` — title/description/canonical/OG/Twitter/JSON-LD are in the *first* HTML response, not injected client-side. `SitemapController` generates `/sitemap.xml` dynamically from published news + static routes.
+- **Styling**: Tailwind CSS, same theme as the old site (`forest`/`gold` palette, `fade-up`/`fade-in`/`slide-right` animations) defined in `tailwind.public.config.js`, source in `assets/css/tailwind.css`, compiled locally (no Node on server) to `public/assets/css/app.css` and **committed**. **Recompile after any class changes in `app/Views/**/*.php` or `public/assets/js/app.js`**:
+  ```bash
+  npx tailwindcss -c tailwind.public.config.js -i assets/css/tailwind.css -o public/assets/css/app.css --minify
+  ```
+- **Animation**: `framer-motion` is replaced by vanilla JS in `public/assets/js/app.js` — IntersectionObserver-based scroll reveal (`data-reveal`), navbar condense-on-scroll, tabbed nav (`data-tab-group`/`data-panel`), accordions, expanding cards, image slider, category filter, lightbox.
+- **Deploy**: `scripts/build-dist.php` (CLI-only, run with a local PHP binary, e.g. `/opt/homebrew/opt/php@8.1/bin/php scripts/build-dist.php`) assembles an upload-ready flat-layout `dist/` folder (public + app + admin all in one docroot, matching the old manual-upload workflow) for File Manager/FTP upload to Hostinger — no Git/SSH deploy pipeline. It excludes legacy React `dist/` assets, writes a hardened root `.htaccess` (blocks `app/`, `database/`, `*.sql`/`*.sqlite`, `config.local.php`), `app/.htaccess` (`Require all denied`), and a production-flavored `app/Config/config.example.php` template.
+- **Config**: `app/Config/config.local.php` (gitignored) holds real DB credentials + `base_url`; `config.example.php` is the committed template.
+- **Security**: prepared statements everywhere, CSRF token on all admin POST forms (field name is **`_csrf`**, not `csrf_token` — see `app/Core/Csrf.php`), `password_hash`/`password_verify`, uploaded images re-encoded via GD, session hardening.
+
+## Legacy React SPA (still live in production, being replaced)
+
+Static marketing/informational site for **Program Studi Ekonomi Pembangunan, FEB (Fakultas Ekonomi dan Bisnis), Universitas Pasundan**, built with React + Vite, deployed as a static build (`dist/`).
 
 ```bash
 npm run dev       # start Vite dev server
@@ -14,28 +43,19 @@ npm run build     # production build to dist/
 npm run preview   # preview the production build locally
 ```
 
-There is no lint or test script configured in `package.json` — don't assume `npm test`/`npm run lint` exist.
+No lint/test script configured in `package.json`.
 
-## Architecture
-
-- **Routing**: `src/App.jsx` defines all routes with `react-router-dom`. Every page component is lazy-loaded (`React.lazy`) and wrapped in a single `Suspense` boundary with a shared `PageLoader`. Routes use Indonesian-language paths (`/profil`, `/akademik`, `/mahasiswa`, `/pendaftaran`, `/berita-kegiatan`, `/berita-kegiatan/:slug`), not English ones — keep this mapping in mind when cross-referencing nav labels to routes.
-- **Content is centralized in `src/constants/`, not hardcoded in JSX.** This is the most important structural convention in the codebase:
-  - `contentData.js` — all page copy grouped by module (`HOME_DATA`, `PROFILE_DATA`, `ACADEMICS_DATA`, `CONTACT_DATA`, `FOOTER_DATA`, `NAV_DATA`, `NEWS_PAGE_DATA`), plus `NAV_ROUTES` and `FEATURE_ICONS`.
-  - `facultyData.js` — lecturer roster (`DOSEN_DATA`), academic nav (`NAV_MENU`), `GRADUATE_PROFILES`, `CURRICULUM_DATA`.
-  - `newsData.js` — `NEWS_DATA` array driving both the news list (`NewsActivities.jsx`) and detail page (`NewsDetail.jsx`) via `slug`. Each entry has `image` (card cover), `gallery` (detail-page images), and `content` (array of paragraphs).
-  - `index.js` — design tokens (`COLORS`, `BREAKPOINTS`), `SEO_DEFAULTS`, the `getSEO(page)` helper, `FORM_CONFIG` (EmailJS env vars), `ANIMATION_DELAYS`, and re-exports `NEWS_DATA`.
-  - When adding/editing page copy or data-driven content, edit these constants files rather than the page components.
-- **The site previously used i18next for bilingual ID/EN content; this was fully removed** (see deleted `GEMINI.md`/`SUMMARY.md` in git history for the migration rationale). All copy is now static English or Indonesian strings directly in the constants files — do not reintroduce an i18n library or `src/locales/`.
-- **SEO**: `src/components/SEO.jsx` wraps `react-helmet-async`'s `Helmet` and is rendered once globally in `App.jsx` with `SEO_DEFAULTS`, then again per-page with page-specific overrides from `getSEO('pagekey')` (see usage in `Home.jsx`, `Profile.jsx`, `Academics.jsx`, `Contact.jsx`, `NewsActivities.jsx`).
-- **Contact form**: `src/components/ContactForm.jsx` + `src/utils/email.js` send via EmailJS (`@emailjs/browser`), configured through `FORM_CONFIG` which reads `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY` from `.env` (gitignored). Includes a honeypot field (`bot-field`) silently swallowed before sending.
-- **Error handling**: `src/components/ErrorBoundary.jsx` wraps the whole routed app inside `App.jsx`.
-- **Styling**: Tailwind CSS with a custom theme in `tailwind.config.js` — brand colors are `forest` (primary green) and `gold` (accent), plus custom `fade-up`/`fade-in`/`slide-right` animations and `card`/`card-hover`/`gold` box-shadows. Prefer these existing tokens over ad-hoc colors/shadows.
-- **Animation**: `framer-motion` is used throughout pages/components for scroll/entry animations; `ANIMATION_DELAYS` in `constants/index.js` centralizes stagger timing.
-- **Build**: `vite.config.js` defines a `@` alias to `src/` and manually splits vendor chunks (`vendor`: react/react-dom/react-router-dom, `motion`: framer-motion) — keep this in mind if adding new heavy dependencies.
-- **Static assets**: images/PDFs/video live in `public/` and are referenced by absolute path (e.g. `/logo.webp`, `/news/kegiatan-1-1.jpg`). `dist/` is a committed build output directory, not source — never hand-edit files there.
+- **Routing**: `src/App.jsx`, `react-router-dom`, lazy-loaded pages, Indonesian-language paths (`/profil`, `/akademik`, `/mahasiswa`, `/pendaftaran`, `/berita-kegiatan`, `/berita-kegiatan/:slug`).
+- **Content centralized in `src/constants/`** (`contentData.js`, `facultyData.js`, `newsData.js`, `index.js`) — this is the data being migrated into the new MySQL schema (see `database/export-data.mjs` → `seed-data.json` → `database/seed.php`).
+- **SEO**: `src/components/SEO.jsx` (`react-helmet-async`) — client-rendered, which is the exact limitation the PHP rebuild's server-rendered SEO fixes.
+- **Contact form**: `src/components/ContactForm.jsx` + `src/utils/email.js`, EmailJS-only (no server-side record) — being replaced by DB-backed submissions in the new stack.
+- **Styling**: Tailwind (`tailwind.config.js` — the theme source of truth that `tailwind.public.config.js` mirrors), `framer-motion` for animation.
+- **Static assets**: `public/` (old faculty photos with commas/periods in filenames, `news/` folder, etc.) — being re-slugged and moved to `public/uploads/` in the new stack.
+- `dist/` is a committed build output directory — never hand-edit files there; regenerate via `npm run build` (legacy) or `scripts/build-dist.php` (new stack).
 
 ## Conventions worth preserving
 
-- Keep visual layout/styling/responsiveness unchanged unless a task explicitly calls for a redesign.
+- Keep visual layout/styling/responsiveness unchanged unless a task explicitly calls for a redesign — the new PHP views are a 1:1 visual port of the old React pages.
 - Don't delete assets, text, or config unless verified as completely unused across the whole project.
-- News content (`NEWS_DATA`) mixes Indonesian prose with English-keyed structure — match the existing language of whatever section you're editing rather than translating wholesale.
+- News content mixes Indonesian prose with English-keyed structure — match the existing language of whatever section you're editing rather than translating wholesale.
+- Never have the user paste passwords/secrets into chat — have them run password-setting commands (e.g. `ADMIN_PASSWORD='...' php database/seed.php`) in their own local terminal.

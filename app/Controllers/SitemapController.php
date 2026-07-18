@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Faculty;
 use App\Models\News;
 
 /**
@@ -27,6 +28,13 @@ class SitemapController
         $urls = [];
         foreach (self::STATIC_ROUTES as $path => $meta) {
             $urls[] = ['loc' => url($path)] + $meta;
+        }
+        foreach (Faculty::all() as $d) {
+            $urls[] = [
+                'loc'        => url('/dosen/' . $d['slug']),
+                'priority'   => '0.6',
+                'changefreq' => 'monthly',
+            ];
         }
         foreach (News::published() as $item) {
             $urls[] = [

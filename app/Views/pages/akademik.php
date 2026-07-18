@@ -194,7 +194,11 @@ $documents = [
                                         <span class="text-sm md:text-xs font-semibold text-forest-900 break-words"><?= e($value ?? '-') ?></span>
                                     </div>
                                     <?php endforeach; ?>
-                                    <div class="pt-2">
+                                    <div class="pt-2 space-y-3">
+                                        <a href="<?= e(url('/dosen/' . $d['slug'])) ?>" onclick="event.stopPropagation()"
+                                           class="w-full py-4 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg">
+                                            Profil Lengkap <?= Icons::svg('chevron-right', 'w-3.5 h-3.5') ?>
+                                        </a>
                                         <a href="<?= e($d['scholar_url'] ?? '#') ?>" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"
                                            class="w-full py-4 bg-forest-700 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-3 active:opacity-80 transition-opacity shadow-lg">
                                             Lihat Publikasi Ilmiah <?= Icons::svg('external-link', 'w-3.5 h-3.5') ?>
