@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'content'         => $content,
             'published_date'  => $_POST['published_date'] ?: date('Y-m-d'),
             'status'          => $_POST['status'] === 'published' ? 'published' : 'draft',
+            'author_name'     => trim($_POST['author_name'] ?? '') ?: null,
             'seo_title'       => trim($_POST['seo_title'] ?? '') ?: null,
             'seo_description' => trim($_POST['seo_description'] ?? '') ?: null,
             'updated_at'      => Database::now(),
@@ -140,10 +141,17 @@ adminHeader($id ? 'Edit Berita' : 'Tulis Berita', ['quill' => true]);
         <option value="published" <?= ($news['status'] ?? '') === 'published' ? 'selected' : '' ?>>Tayang</option>
       </select>
     </label>
+    <label class="field">Penulis
+      <input type="text" name="author_name" value="<?= e($news['author_name'] ?? '') ?>">
+      <div class="hint">Opsional. Tampil di halaman artikel; kosongkan jika atas nama prodi.</div>
+    </label>
     <label class="field">Slug (alamat URL)
       <input type="text" name="slug" value="<?= e($news['slug'] ?? '') ?>">
       <div class="hint">Kosongkan agar dibuat otomatis dari judul. Contoh: kunjungan-industri-2026</div>
     </label>
+    <?php if ($id): ?>
+    <div class="hint">Dilihat <?= number_format((int) ($news['view_count'] ?? 0), 0, ',', '.') ?> kali sejak tayang.</div>
+    <?php endif; ?>
   </div>
 
   <div class="card form-grid">

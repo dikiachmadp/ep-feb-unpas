@@ -159,28 +159,38 @@
     render();
   });
 
-  /* --- News category filter ---------------------------------------------- */
-  var filterBar = document.querySelector('[data-news-filter]');
-  if (filterBar) {
-    var grid = document.querySelector('[data-news-grid]');
-    var empty = document.querySelector('[data-news-empty]');
-    filterBar.querySelectorAll('[data-filter]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var cat = btn.getAttribute('data-filter');
-        filterBar.querySelectorAll('[data-filter]').forEach(function (other) {
-          var active = other === btn;
-          other.className = 'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ' +
-            (active ? 'bg-forest-500 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-gray-200');
-        });
-        var visible = 0;
-        grid.querySelectorAll('[data-category]').forEach(function (card) {
-          var show = cat === 'all' || card.getAttribute('data-category') === cat;
-          card.classList.toggle('hidden', !show);
-          if (show) visible++;
-        });
-        if (empty) empty.classList.toggle('hidden', visible > 0);
-      });
+  /* --- Salin link artikel (tombol share) ---------------------------------- */
+  document.querySelectorAll('[data-copy-link]').forEach(function (btn) {
+    var label = btn.querySelector('[data-copy-label]');
+    var original = label ? label.textContent : '';
+    btn.addEventListener('click', function () {
+      var url = btn.getAttribute('data-copy-link') || window.location.href;
+      function done() {
+        if (!label) return;
+        label.textContent = 'Tersalin!';
+        btn.classList.add('is-copied');
+        setTimeout(function () {
+          label.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, function () { fallbackCopy(url, done); });
+      } else {
+        fallbackCopy(url, done);
+      }
     });
+  });
+  function fallbackCopy(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) { /* abaikan */ }
+    document.body.removeChild(ta);
   }
 
   /* --- Lightbox (brosur kontak) ------------------------------------------ */
