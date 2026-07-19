@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  var prefersReducedMotion = window.matchMedia
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* --- Scroll reveal ----------------------------------------------------- */
   var revealEls = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -91,7 +94,7 @@
         }
       });
       if (window.innerWidth < 1024) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       }
     };
     tabButtons.forEach(function (btn) {

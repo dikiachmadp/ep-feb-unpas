@@ -157,12 +157,50 @@
   transform: translateY(0);
 }
 
+/* Reduced motion: matikan SEMUA gerakan (reveal, condense navbar, slider,
+   zoom lightbox, hover-translate) — bukan hanya scroll reveal. */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
   [data-reveal] {
     opacity: 1;
     transform: none;
-    transition: none;
   }
+}
+
+/* --- Lightbox fade-in ----------------------------------------------------- */
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#lightbox:not(.hidden) {
+  animation: lightbox-fade 0.25s ease;
+}
+
+/* --- Accordion body: soft slide-down when opened -------------------------- */
+@keyframes acc-open {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+[data-acc-body]:not(.hidden) {
+  animation: acc-open 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Expand-card body: same soft entrance --------------------------------- */
+[data-expand-card].is-open .expand-body {
+  animation: acc-open 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --- Expanding cards (dosen / mahasiswa / fasilitas) --------------------- */

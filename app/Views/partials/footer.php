@@ -105,9 +105,9 @@ $socials = array_filter([
                                     <span class="shrink-0 text-gold-500"><?= Icons::svg('phone', 'w-4 h-4') ?></span>
                                     <a href="tel:<?= e($contact['phone_value'] ?? '') ?>" class="hover:text-white transition-colors"><?= e($contact['phone_value'] ?? '') ?></a>
                                 </li>
-                                <li class="flex gap-3">
+                                <li class="flex gap-3 min-w-0">
                                     <span class="shrink-0 text-gold-500"><?= Icons::svg('mail', 'w-4 h-4') ?></span>
-                                    <a href="mailto:<?= e($contact['email_value'] ?? '') ?>" class="hover:text-white transition-colors underline-offset-4 hover:underline"><?= e($contact['email_value'] ?? '') ?></a>
+                                    <a href="mailto:<?= e($contact['email_value'] ?? '') ?>" class="hover:text-white transition-colors underline-offset-4 hover:underline break-all min-w-0"><?= e($contact['email_value'] ?? '') ?></a>
                                 </li>
                                 <li class="flex gap-3 opacity-80">
                                     <span class="shrink-0 text-gold-400"><?= Icons::svg('clock', 'w-4 h-4') ?></span>

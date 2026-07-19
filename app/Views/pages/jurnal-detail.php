@@ -19,7 +19,7 @@ use App\Core\View;
         <span aria-hidden="true">/</span>
         <a href="<?= e(url('/akademik/jurnal')) ?>" class="hover:text-forest-600 transition-colors">Jurnal Ilmiah</a>
         <span aria-hidden="true">/</span>
-        <span class="text-gray-600" aria-current="page"><?= e($journal['name'] ?? '') ?></span>
+        <span class="text-gray-600 break-words" aria-current="page"><?= e($journal['name'] ?? '') ?></span>
     </nav>
 
     <div class="grid grid-cols-1 md:grid-cols-5 gap-10 items-start" data-reveal>

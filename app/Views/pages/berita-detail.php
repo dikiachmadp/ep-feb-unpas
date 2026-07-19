@@ -48,7 +48,7 @@ $shareLinks = [
             <span class="text-gray-400 text-sm font-medium"><?= e(tanggal_id($news['published_date'])) ?></span>
         </div>
 
-        <h1 class="text-2xl md:text-4xl font-display font-bold text-gray-900 mb-5 leading-tight"><?= e($news['title']) ?></h1>
+        <h1 class="text-2xl md:text-4xl font-display font-bold text-gray-900 mb-5 leading-tight break-words"><?= e($news['title']) ?></h1>
 
         <div class="flex items-center gap-x-5 gap-y-2 mb-8 flex-wrap text-sm text-gray-500">
             <?php if (!empty($news['author_name'])): ?>

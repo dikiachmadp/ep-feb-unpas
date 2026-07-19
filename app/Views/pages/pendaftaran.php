@@ -124,9 +124,9 @@ $infoItems = [
                     </div>
                     <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5 font-sans"><?= e($info['title']) ?></p>
                     <?php if ($info['href']): ?>
-                    <a href="<?= e($info['href']) ?>" class="text-gray-700 text-sm font-medium hover:text-forest-600 transition-colors font-sans leading-relaxed"><?= e($info['value']) ?></a>
+                    <a href="<?= e($info['href']) ?>" class="text-gray-700 text-sm font-medium hover:text-forest-600 transition-colors font-sans leading-relaxed break-words"><?= e($info['value']) ?></a>
                     <?php else: ?>
-                    <p class="text-gray-700 text-sm font-medium font-sans leading-relaxed"><?= e($info['value']) ?></p>
+                    <p class="text-gray-700 text-sm font-medium font-sans leading-relaxed break-words"><?= e($info['value']) ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
