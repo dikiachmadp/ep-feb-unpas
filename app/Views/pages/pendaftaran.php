@@ -86,7 +86,7 @@ $infoItems = [
                 </div>
 
                 <?php if ($downloads): ?>
-                <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <?php foreach ($downloads as $doc): ?>
                     <div class="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
                         <div class="flex items-center gap-4 min-w-0">
@@ -94,8 +94,8 @@ $infoItems = [
                                 <?= Icons::svg('download', 'w-5 h-5') ?>
                             </div>
                             <div class="min-w-0 text-left">
-                                <h5 class="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2"><?= e($doc['title']) ?></h5>
-                                <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1"><?= e($doc['subtitle'] ?? '') ?></p>
+                                <h5 class="font-bold text-gray-800 text-[13px] leading-tight break-words pr-2"><?= e($doc['title']) ?></h5>
+                                <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1 leading-snug"><?= e($doc['subtitle'] ?? '') ?></p>
                             </div>
                         </div>
                         <div class="flex items-center gap-2 ml-4">
