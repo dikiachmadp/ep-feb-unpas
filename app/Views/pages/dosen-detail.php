@@ -10,6 +10,8 @@ use App\Core\View;
  */
 ?>
 
+<div class="page-wrapper pt-20 bg-white min-h-screen">
+
 <?php
 // Uniform hero on every dosen page; the dosen name stays the page's h1 in the
 // profile card below so name searches keep their strongest signal.
@@ -72,4 +74,5 @@ View::partial('page-hero', ['badge' => 'Tenaga Pengajar', 'title' => 'Profil Dos
             </a>
         </div>
     </div>
+</div>
 </div>

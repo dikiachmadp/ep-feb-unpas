@@ -370,7 +370,7 @@ for ($i = 1; $i <= 6; $i++) {
     ]);
 }
 seedItem('pendaftaran', 'downloads', 1, ['title' => 'Unduh Brosur Pendaftaran', 'subtitle' => 'Klik untuk mengunduh versi cetak', 'image_path' => '/brosur.pdf']);
-seedItem('pendaftaran', 'downloads', 2, ['title' => 'Unduh Brosur 2', 'subtitle' => 'File PDF kedua', 'image_path' => '/brosur2.pdf']);
+seedItem('pendaftaran', 'downloads', 2, ['title' => 'Unduh Brosur KIP-K', 'subtitle' => 'Klik untuk mengunduh versi cetak', 'image_path' => '/brosur2.pdf']);
 
 // -- academics: kerjasama, akreditasi, dokumen pedoman, portal, jurnal → DB
 // (previously hardcoded in the akademik view; editable via admin since G3)

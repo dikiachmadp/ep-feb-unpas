@@ -17,12 +17,12 @@ $ach = $fields['achievements'] ?? [];
 $fac = $fields['facilities'] ?? [];
 
 $menu = [
-    ['id' => 'sejarah',    'label' => 'History',        'icon' => 'clock'],
-    ['id' => 'logo',       'label' => 'Identity',       'icon' => 'hexagon'],
-    ['id' => 'visimisi',   'label' => 'Vision Mission', 'icon' => 'target'],
-    ['id' => 'keunggulan', 'label' => 'Excellence',     'icon' => 'star'],
-    ['id' => 'capaian',    'label' => 'Achievements',   'icon' => 'award'],
-    ['id' => 'fasilitas',  'label' => 'Facilities',     'icon' => 'map-pin'],
+    ['id' => 'sejarah',    'label' => 'Sejarah',    'icon' => 'clock'],
+    ['id' => 'logo',       'label' => 'Identitas',  'icon' => 'hexagon'],
+    ['id' => 'visimisi',   'label' => 'Visi Misi',  'icon' => 'target'],
+    ['id' => 'keunggulan', 'label' => 'Keunggulan', 'icon' => 'star'],
+    ['id' => 'capaian',    'label' => 'Capaian',    'icon' => 'award'],
+    ['id' => 'fasilitas',  'label' => 'Fasilitas',  'icon' => 'map-pin'],
 ];
 $advIcons = ['zap', 'award', 'hexagon', 'check-circle'];
 ?>
@@ -30,7 +30,7 @@ $advIcons = ['zap', 'award', 'hexagon', 'check-circle'];
 
     <?php View::partial('page-hero', [
         'badge' => $main['hero_badge'] ?? '',
-        'title' => $main['title'] ?? 'Study Program Profile',
+        'title' => $main['title'] ?? 'Profil Program Studi',
     ]); ?>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
@@ -83,7 +83,7 @@ $advIcons = ['zap', 'award', 'hexagon', 'check-circle'];
                             </div>
                         </div>
                         <div class="lg:col-span-2 space-y-4">
-                            <h4 class="text-[10px] font-black text-gray-400 uppercase tracking-widest px-2"><?= e($hist['timeline_label'] ?? 'Timeline') ?></h4>
+                            <h4 class="text-[10px] font-black text-gray-400 uppercase tracking-widest px-2"><?= e($hist['timeline_label'] ?? 'Linimasa') ?></h4>
                             <div class="grid gap-3">
                                 <?php foreach ($milestones as $m): ?>
                                 <div class="flex gap-4 items-center p-4 bg-white border border-gray-100 shadow-sm rounded-2xl">
@@ -100,7 +100,7 @@ $advIcons = ['zap', 'award', 'hexagon', 'check-circle'];
 
                 <!-- 2. IDENTITAS VISUAL -->
                 <section class="space-y-12 tab-panel hidden" data-panel="logo">
-                    <?php View::partial('section-header', ['subtitle' => 'Brand Guideline', 'title' => $identity['title'] ?? '']); ?>
+                    <?php View::partial('section-header', ['subtitle' => 'Identitas Visual', 'title' => $identity['title'] ?? '']); ?>
                     <div class="space-y-16">
                         <div class="grid lg:grid-cols-12 gap-10 items-start">
                             <div class="lg:col-span-5 bg-gray-50 rounded-[3rem] p-12 flex flex-col items-center justify-center border border-gray-100 shadow-inner relative overflow-hidden group min-h-[400px]">

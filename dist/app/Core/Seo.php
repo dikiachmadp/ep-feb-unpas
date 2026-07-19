@@ -53,6 +53,13 @@ class Seo
         if (!empty($news['cover_image_path'])) {
             $seo->image = url($news['cover_image_path']);
         }
+        $author = !empty($news['author_name'])
+            ? ['@type' => 'Person', 'name' => $news['author_name']]
+            : [
+                '@type' => 'Organization',
+                'name'  => 'Program Studi Ekonomi Pembangunan FEB UNPAS',
+                'url'   => BASE_URL,
+            ];
         $seo->jsonLd[] = self::organizationSchema();
         $seo->jsonLd[] = [
             '@context'      => 'https://schema.org',
@@ -63,11 +70,7 @@ class Seo
             'datePublished' => $news['published_date'],
             'dateModified'  => $news['updated_at'] ?? $news['published_date'],
             'mainEntityOfPage' => $seo->canonical,
-            'author'        => [
-                '@type' => 'Organization',
-                'name'  => 'Program Studi Ekonomi Pembangunan FEB UNPAS',
-                'url'   => BASE_URL,
-            ],
+            'author'        => $author,
             'publisher'     => [
                 '@type' => 'Organization',
                 'name'  => 'Program Studi Ekonomi Pembangunan FEB UNPAS',
@@ -123,7 +126,7 @@ class Seo
             '@type'           => 'BreadcrumbList',
             'itemListElement' => [
                 ['@type' => 'ListItem', 'position' => 1, 'name' => 'Beranda', 'item' => url('/')],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Akademik', 'item' => url('/akademik')],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Dosen', 'item' => url('/akademik/dosen')],
                 ['@type' => 'ListItem', 'position' => 3, 'name' => $d['full_name'], 'item' => $seo->canonical],
             ],
         ];
@@ -180,6 +183,32 @@ class Seo
             '@context'        => 'https://schema.org',
             '@type'           => 'ItemList',
             'name'            => 'Kurikulum & Mata Kuliah Ekonomi Pembangunan FEB UNPAS',
+            'itemListElement' => $items,
+        ];
+    }
+
+    /**
+     * BreadcrumbList from [name => path-or-null] pairs, in order; null path
+     * marks the current page (no link). Reused by news detail (G2) and the
+     * per-tab/journal pages (G3).
+     */
+    public static function breadcrumbs(array $trail): array
+    {
+        $items = [];
+        foreach ($trail as $name => $path) {
+            $item = [
+                '@type'    => 'ListItem',
+                'position' => count($items) + 1,
+                'name'     => $name,
+            ];
+            if ($path !== null) {
+                $item['item'] = url($path);
+            }
+            $items[] = $item;
+        }
+        return [
+            '@context'        => 'https://schema.org',
+            '@type'           => 'BreadcrumbList',
             'itemListElement' => $items,
         ];
     }

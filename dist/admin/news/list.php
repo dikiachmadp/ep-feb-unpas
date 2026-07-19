@@ -18,7 +18,7 @@ adminHeader('Berita & Kegiatan');
   <a class="btn" href="<?= adminUrl('news/form.php') ?>">+ Tulis Berita</a>
 </div>
 <table class="list">
-  <tr><th>Cover</th><th>Judul</th><th>Kategori</th><th>Tanggal</th><th>Status</th><th></th></tr>
+  <tr><th>Cover</th><th>Judul</th><th>Kategori</th><th>Tanggal</th><th>Dilihat</th><th>Status</th><th></th></tr>
   <?php foreach ($rows as $n): ?>
   <tr>
     <td><img class="thumb" src="<?= e(url($n['cover_image_path'])) ?>" alt=""></td>
@@ -30,6 +30,7 @@ adminHeader('Berita & Kegiatan');
     </td>
     <td><?= e($n['category_name']) ?></td>
     <td><?= e($n['published_date']) ?></td>
+    <td><?= number_format((int) ($n['view_count'] ?? 0), 0, ',', '.') ?></td>
     <td><span class="badge <?= e($n['status']) ?>"><?= $n['status'] === 'published' ? 'tayang' : 'draf' ?></span></td>
     <td style="white-space:nowrap">
       <a class="btn small secondary" href="<?= adminUrl('news/form.php?id=' . $n['id']) ?>">Edit</a>

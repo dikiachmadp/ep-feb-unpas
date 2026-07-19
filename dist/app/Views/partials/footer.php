@@ -7,7 +7,9 @@ use App\Models\Page;
  * @var array $navLabels
  * @var array $navRoutes
  */
-$footer  = Page::fields('footer')['main'] ?? [];
+$footerFields = Page::fields('footer');
+$footer  = $footerFields['main'] ?? [];
+$socialUrls = $footerFields['socials'] ?? [];
 $contact = Page::fields('contact')['main'] ?? [];
 $brand   = Page::field('home', 'hero', 'subtitle', 'Economic Development');
 
@@ -17,12 +19,14 @@ $logos = [
     ['src' => '/aacsb.webp',     'href' => 'https://www.aacsb.edu/members?searchTerm=universitas+pasundan',       'alt' => 'AACSB',     'ring' => false],
     ['src' => '/berdampak.webp', 'href' => 'https://kemdiktisaintek.go.id/library/book/diktisaintek-berdampak',   'alt' => 'Berdampak', 'ring' => false],
 ];
-$socials = [
-    ['icon' => 'instagram', 'href' => 'https://www.instagram.com/ekonomifebunpas', 'label' => 'Instagram'],
-    ['icon' => 'facebook',  'href' => '#', 'label' => 'Facebook'],
-    ['icon' => 'youtube',   'href' => '#', 'label' => 'YouTube'],
-    ['icon' => 'linkedin',  'href' => '#', 'label' => 'LinkedIn'],
-];
+// URL diedit staf via admin (Konten Halaman > footer, section socials);
+// akun tanpa URL (kosong/'#') tidak ditampilkan.
+$socials = array_filter([
+    ['icon' => 'instagram', 'href' => $socialUrls['instagram_url'] ?? '', 'label' => 'Instagram'],
+    ['icon' => 'facebook',  'href' => $socialUrls['facebook_url'] ?? '',  'label' => 'Facebook'],
+    ['icon' => 'youtube',   'href' => $socialUrls['youtube_url'] ?? '',   'label' => 'YouTube'],
+    ['icon' => 'linkedin',  'href' => $socialUrls['linkedin_url'] ?? '',  'label' => 'LinkedIn'],
+], fn ($s) => $s['href'] !== '' && $s['href'] !== '#');
 ?>
 <footer class="bg-forest-900 text-white relative overflow-hidden border-t border-white/10 font-sans">
     <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,rgba(34,197,94,0.05),transparent_50%)] pointer-events-none"></div>
@@ -59,7 +63,7 @@ $socials = [
 
                 <div class="flex items-center gap-2.5 mt-auto">
                     <?php foreach ($socials as $social): ?>
-                    <a href="<?= e($social['href']) ?>" aria-label="<?= e($social['label']) ?>"
+                    <a href="<?= e($social['href']) ?>" target="_blank" rel="noopener noreferrer" aria-label="<?= e($social['label']) ?>"
                        class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 hover:bg-gold-500 group shadow-md">
                         <?= Icons::svg($social['icon'], 'w-4 h-4 text-white group-hover:text-forest-900') ?>
                     </a>
@@ -73,7 +77,7 @@ $socials = [
                         <div>
                             <h3 class="font-black text-white text-[10px] uppercase tracking-[0.2em] mb-4 flex items-center gap-3">
                                 <span class="w-4 h-px bg-gold-500"></span>
-                                <?= e($footer['links_title'] ?? 'Quick Links') ?>
+                                <?= e($footer['links_title'] ?? 'Tautan Cepat') ?>
                             </h3>
                             <ul class="space-y-2">
                                 <?php foreach ($navRoutes as $route): ?>
@@ -90,7 +94,7 @@ $socials = [
                         <div>
                             <h3 class="font-black text-white text-[10px] uppercase tracking-[0.2em] mb-4 flex items-center gap-3">
                                 <span class="w-4 h-px bg-gold-500"></span>
-                                <?= e($footer['contact_title'] ?? 'Contact') ?>
+                                <?= e($footer['contact_title'] ?? 'Kontak') ?>
                             </h3>
                             <ul class="space-y-3 text-[11px] text-forest-200">
                                 <li class="flex gap-3">
@@ -101,9 +105,9 @@ $socials = [
                                     <span class="shrink-0 text-gold-500"><?= Icons::svg('phone', 'w-4 h-4') ?></span>
                                     <a href="tel:<?= e($contact['phone_value'] ?? '') ?>" class="hover:text-white transition-colors"><?= e($contact['phone_value'] ?? '') ?></a>
                                 </li>
-                                <li class="flex gap-3">
+                                <li class="flex gap-3 min-w-0">
                                     <span class="shrink-0 text-gold-500"><?= Icons::svg('mail', 'w-4 h-4') ?></span>
-                                    <a href="mailto:<?= e($contact['email_value'] ?? '') ?>" class="hover:text-white transition-colors underline-offset-4 hover:underline"><?= e($contact['email_value'] ?? '') ?></a>
+                                    <a href="mailto:<?= e($contact['email_value'] ?? '') ?>" class="hover:text-white transition-colors underline-offset-4 hover:underline break-all min-w-0"><?= e($contact['email_value'] ?? '') ?></a>
                                 </li>
                                 <li class="flex gap-3 opacity-80">
                                     <span class="shrink-0 text-gold-400"><?= Icons::svg('clock', 'w-4 h-4') ?></span>

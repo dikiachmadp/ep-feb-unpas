@@ -4,54 +4,55 @@ use App\Core\Icons;
 use App\Core\View;
 
 /**
- * @var array $fields     page_fields academics
- * @var array $curriculum years -> semesters -> course strings
- * @var array $profiles   graduate_profiles rows
- * @var array $dosen      faculty rows
+ * /akademik/{tab} — only the active tab's panel is rendered (each tab is its
+ * own URL + SEO since G3). Tab data is passed per-tab by AcademicsController.
+ *
+ * @var array  $fields    page_fields academics
+ * @var string $activeTab
+ * @var array  $tabLabels tab-slug => nav label
  */
 $main = $fields['main'] ?? [];
 
-$menu = [
-    ['id' => 'kurikulum',  'label' => 'Kurikulum',       'icon' => 'book'],
-    ['id' => 'kerjasama',  'label' => 'Kerjasama',       'icon' => 'globe'],
-    ['id' => 'akreditasi', 'label' => 'Akreditasi',      'icon' => 'award'],
-    ['id' => 'dosen',      'label' => 'Dosen',           'icon' => 'users'],
-    ['id' => 'jurnal',     'label' => 'Jurnal',          'icon' => 'file-text'],
-    ['id' => 'portal',     'label' => 'Portal Akademik', 'icon' => 'external-link', 'short' => 'Portal'],
+$tabIcons = [
+    'kurikulum'  => 'book',
+    'kerjasama'  => 'globe',
+    'akreditasi' => 'award',
+    'dosen'      => 'users',
+    'jurnal'     => 'file-text',
+    'portal'     => 'external-link',
 ];
-
-$journals = [
-    ['name' => 'JRIE',   'full' => 'Journal of Regional and Indonesia Economy',  'img' => '/jrie.webp',   'url' => 'https://jrie.feb.unpas.ac.id/index.php/jrie'],
-    ['name' => 'BRAINY', 'full' => 'Bandung Regional Investment & Economy',      'img' => '/brainy.webp', 'url' => 'https://brainy.feb.unpas.ac.id/index.php/brainy'],
-];
-$documents = [
-    ['name' => 'Pedoman Akademik Mahasiswa 2025',        'file' => '1_Pedoman_Akademik_Mahasiswa_2025.pdf',  'icon' => 'book'],
-    ['name' => 'Pedoman Kode Etik Mahasiswa 2025',       'file' => '2_Pedoman_Kode_Etik_Mahasiswa_2025.pdf', 'icon' => 'check-circle'],
-    ['name' => 'Pedoman Kuliah Praktek Kerja (KPK) 2025','file' => '3_Pedoman_KPK_2025.pdf',                 'icon' => 'map-pin'],
-    ['name' => 'Pedoman Penulisan Skripsi 2025',         'file' => '4_Pedoman_Skripsi_2025.pdf',             'icon' => 'award'],
-    ['name' => 'Pedoman RPL Mahasiswa 2025',             'file' => '5_Pedoman_RPL_Mahasiswa_2025.pdf',       'icon' => 'zap'],
-];
+$menu = [];
+foreach ($tabLabels as $tabId => $label) {
+    $menu[] = [
+        'id'    => $tabId,
+        'label' => $label,
+        'icon'  => $tabIcons[$tabId] ?? 'hexagon',
+        'href'  => url('/akademik/' . $tabId),
+        'short' => $tabId === 'portal' ? 'Portal' : null,
+    ];
+}
 ?>
 <div class="page-wrapper pt-20 bg-white min-h-screen pb-32 lg:pb-0">
 
     <?php View::partial('page-hero', [
-        'badge' => $main['subtitle'] ?? 'Academics',
-        'title' => $main['hero_title'] ?? 'Economic Development',
+        'badge' => $main['subtitle'] ?? 'Akademik',
+        'title' => $main['hero_title'] ?? 'Ekonomi Pembangunan',
     ]); ?>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div class="flex flex-col lg:flex-row gap-12">
 
-            <?php View::partial('tab-nav', ['menu' => $menu, 'active' => 'kurikulum', 'menuTitle' => 'Menu Akademik', 'mobileCols' => 6]); ?>
+            <?php View::partial('tab-nav', ['menu' => $menu, 'active' => $activeTab, 'menuTitle' => 'Menu Akademik', 'mobileCols' => 6]); ?>
 
             <main class="flex-1">
 
-                <!-- 1. KURIKULUM + PROFIL LULUSAN -->
-                <section class="space-y-16 tab-panel" data-panel="kurikulum">
+                <?php if ($activeTab === 'kurikulum'): ?>
+                <!-- KURIKULUM + PROFIL LULUSAN -->
+                <section class="space-y-16">
                     <div>
                         <?php View::partial('section-header', [
-                            'subtitle' => $main['graduate_profile_subtitle'] ?? 'Graduate Profile',
-                            'title'    => $main['graduate_profile_title'] ?? 'Main Graduate Profile',
+                            'subtitle' => $main['graduate_profile_subtitle'] ?? 'Profil Lulusan',
+                            'title'    => $main['graduate_profile_title'] ?? 'Profil Utama Lulusan',
                         ]); ?>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 px-2">
                             <?php foreach ($profiles as $profile): ?>
@@ -75,14 +76,14 @@ $documents = [
                     </div>
 
                     <div class="pt-10 border-t border-gray-100">
-                        <?php View::partial('section-header', ['subtitle' => 'Curriculum', 'title' => $main['curriculum_title'] ?? 'Curriculum Structure']); ?>
+                        <?php View::partial('section-header', ['subtitle' => 'Kurikulum', 'title' => $main['curriculum_title'] ?? 'Struktur Kurikulum']); ?>
 
                         <div class="mt-12 space-y-20 relative">
                             <?php foreach ($curriculum as $idx => $year): ?>
                             <div class="relative">
                                 <div class="flex items-center gap-4 mb-10">
                                     <div class="w-16 h-16 bg-forest-900 text-gold-400 rounded-2xl flex flex-col items-center justify-center border-2 border-gold-500/20 shadow-xl z-10">
-                                        <span class="text-[10px] font-black uppercase leading-none">Year</span>
+                                        <span class="text-[10px] font-black uppercase leading-none">Tahun</span>
                                         <span class="text-2xl font-black">0<?= (int) $year['year_number'] ?></span>
                                     </div>
                                     <div>
@@ -126,47 +127,64 @@ $documents = [
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>
 
-                <!-- 2. KERJASAMA -->
-                <section class="space-y-12 tab-panel hidden" data-panel="kerjasama">
-                    <?php View::partial('section-header', ['subtitle' => 'Partnership', 'title' => 'Jejaring Kerjasama']); ?>
+                <?php if ($activeTab === 'kerjasama'): ?>
+                <!-- KERJASAMA -->
+                <section class="space-y-12">
+                    <?php View::partial('section-header', ['subtitle' => 'Kerjasama', 'title' => 'Jejaring Kerjasama']); ?>
                     <div class="space-y-10 px-2">
                         <div>
                             <h4 class="text-[10px] font-black text-gold-600 uppercase tracking-[0.2em] mb-6 px-2">Internasional</h4>
                             <div class="grid md:grid-cols-3 gap-4">
-                                <?php foreach (['Kyung Hee University', 'Korea Foundation', 'University Utara Malaysia'] as $uni): ?>
+                                <?php foreach ($partnersInternational as $partner): ?>
                                 <div class="p-6 bg-white border border-gray-100 rounded-3xl text-center shadow-sm hover:border-gold-200 transition-colors">
                                     <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><?= Icons::svg('globe', 'w-6 h-6') ?></div>
-                                    <p class="font-bold text-sm text-gray-800 leading-tight"><?= e($uni) ?></p>
+                                    <p class="font-bold text-sm text-gray-800 leading-tight"><?= e($partner['title']) ?></p>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-[10px] font-black text-forest-700 uppercase tracking-[0.2em] mb-6 px-2">Nasional</h4>
-                            <div class="p-12 border-2 border-dashed border-gray-100 rounded-[3rem] text-center">
-                                <p class="text-gray-400 text-sm italic">Data kerjasama instansi nasional sedang dalam tahap pembaharuan</p>
+                            <?php if ($partnersNational): ?>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <?php foreach ($partnersNational as $partner): ?>
+                                <div class="p-6 bg-white border border-gray-100 rounded-3xl text-center shadow-sm hover:border-forest-200 transition-colors">
+                                    <div class="w-12 h-12 bg-forest-50 text-forest-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><?= Icons::svg('briefcase', 'w-6 h-6') ?></div>
+                                    <p class="font-bold text-sm text-gray-800 leading-tight"><?= e($partner['title']) ?></p>
+                                </div>
+                                <?php endforeach; ?>
                             </div>
+                            <?php else: ?>
+                            <div class="p-12 border-2 border-dashed border-gray-100 rounded-[3rem] text-center">
+                                <p class="text-gray-400 text-sm italic"><?= e($fields['kerjasama']['national_placeholder'] ?? 'Data kerjasama instansi nasional sedang dalam tahap pembaharuan') ?></p>
+                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>
 
-                <!-- 3. AKREDITASI -->
-                <section class="space-y-12 tab-panel hidden" data-panel="akreditasi">
-                    <?php View::partial('section-header', ['subtitle' => 'Quality Assurance', 'title' => 'Akreditasi Program Studi']); ?>
+                <?php if ($activeTab === 'akreditasi'): $akr = $fields['akreditasi'] ?? []; ?>
+                <!-- AKREDITASI -->
+                <section class="space-y-12">
+                    <?php View::partial('section-header', ['subtitle' => 'Penjaminan Mutu', 'title' => 'Akreditasi Program Studi']); ?>
                     <div class="max-w-md mx-auto p-12 bg-forest-50 rounded-[3rem] border border-forest-100 shadow-inner mt-10 text-center">
                         <?= Icons::svg('award', 'w-20 h-20 text-gold-500 mx-auto mb-6') ?>
-                        <h3 class="text-4xl font-black text-forest-900 mb-2 font-display uppercase tracking-tight">UNGGUL</h3>
-                        <p class="text-[10px] text-forest-700/60 uppercase tracking-[0.3em] font-bold">Sertifikasi BAN-PT</p>
+                        <h3 class="text-4xl font-black text-forest-900 mb-2 font-display uppercase tracking-tight"><?= e($akr['title'] ?? 'UNGGUL') ?></h3>
+                        <p class="text-[10px] text-forest-700/60 uppercase tracking-[0.3em] font-bold"><?= e($akr['subtitle'] ?? 'Sertifikasi BAN-PT') ?></p>
                         <div class="mt-8 pt-8 border-t border-forest-200/50">
-                            <p class="text-xs text-gray-500 leading-relaxed font-medium">Berlaku hingga tahun 2029 sesuai SK resmi Badan Akreditasi Nasional Perguruan Tinggi.</p>
+                            <p class="text-xs text-gray-500 leading-relaxed font-medium"><?= e($akr['description'] ?? '') ?></p>
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>
 
-                <!-- 4. DOSEN -->
-                <section class="space-y-12 tab-panel hidden" data-panel="dosen">
-                    <?php View::partial('section-header', ['subtitle' => 'Faculty Members', 'title' => 'Profil Tenaga Pengajar']); ?>
+                <?php if ($activeTab === 'dosen'): ?>
+                <!-- DOSEN -->
+                <section class="space-y-12">
+                    <?php View::partial('section-header', ['subtitle' => 'Tenaga Pengajar', 'title' => 'Profil Tenaga Pengajar']); ?>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
                         <?php foreach ($dosen as $d): ?>
                         <!-- Overview always visible; the whole card links to the dosen detail page -->
@@ -202,42 +220,46 @@ $documents = [
                         <?php endforeach; ?>
                     </div>
                 </section>
+                <?php endif; ?>
 
-                <!-- 5. JURNAL -->
-                <section class="space-y-10 tab-panel hidden" data-panel="jurnal">
-                    <?php View::partial('section-header', ['subtitle' => 'Publication', 'title' => 'Jurnal Ilmiah']); ?>
+                <?php if ($activeTab === 'jurnal'): ?>
+                <!-- JURNAL -->
+                <section class="space-y-10">
+                    <?php View::partial('section-header', ['subtitle' => 'Publikasi', 'title' => 'Jurnal Ilmiah']); ?>
                     <div class="grid md:grid-cols-2 gap-10 mt-10 px-2">
-                        <?php foreach ($journals as $jurnal): ?>
+                        <?php foreach ($journals as $jSlug => $jurnal): ?>
                         <div class="group relative bg-forest-900 rounded-[3rem] overflow-hidden aspect-[4/5] shadow-2xl border border-white/5">
-                            <img src="<?= e(url($jurnal['img'])) ?>" alt="<?= e($jurnal['name']) ?>" loading="lazy"
+                            <img src="<?= e(url($jurnal['cover'] ?? '')) ?>" alt="Sampul jurnal <?= e($jurnal['name']) ?>" loading="lazy"
                                  class="absolute inset-0 w-full h-full object-cover opacity-60 transition-all duration-1000 ease-out group-hover:scale-110 group-hover:opacity-100">
                             <div class="absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/40 to-transparent z-10"></div>
                             <div class="absolute inset-0 flex flex-col items-center justify-end p-10 text-center z-20">
                                 <span class="mb-4 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[10px] uppercase tracking-widest text-gold-400 font-bold">Peer Reviewed</span>
                                 <h4 class="text-white font-black text-3xl mb-3 group-hover:text-gold-400 transition-colors duration-300"><?= e($jurnal['name']) ?></h4>
-                                <p class="text-white/60 text-sm leading-relaxed mb-10 max-w-[240px] font-medium"><?= e($jurnal['full']) ?></p>
-                                <a href="<?= e($jurnal['url']) ?>" target="_blank" rel="noopener noreferrer"
+                                <p class="text-white/60 text-sm leading-relaxed mb-10 max-w-[240px] font-medium"><?= e($jurnal['full_name'] ?? '') ?></p>
+                                <a href="<?= e(url('/jurnal/' . $jSlug)) ?>"
                                    class="relative inline-flex items-center justify-center px-8 py-4 bg-white text-forest-900 rounded-2xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-gold-400">
-                                    Kunjungi Situs Jurnal
+                                    Lihat Profil Jurnal
                                 </a>
                             </div>
                         </div>
                         <?php endforeach; ?>
                     </div>
                 </section>
+                <?php endif; ?>
 
-                <!-- 6. PORTAL & DOKUMEN -->
-                <section class="space-y-12 tab-panel hidden" data-panel="portal">
+                <?php if ($activeTab === 'portal'): $portal = $fields['portal'] ?? []; ?>
+                <!-- PORTAL & DOKUMEN -->
+                <section class="space-y-12">
                     <div class="relative overflow-hidden bg-gradient-to-br from-forest-600 to-forest-900 rounded-[3rem] p-10 md:p-16 text-center shadow-2xl mx-2 mt-4">
                         <div class="relative z-10 flex flex-col items-center">
                             <div class="w-20 h-20 bg-white/10 backdrop-blur-md text-gold-400 rounded-[2rem] flex items-center justify-center mb-6 border border-white/10">
                                 <?= Icons::svg('zap', 'w-8 h-8') ?>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-4">Portal SITU 2 UNPAS</h3>
-                            <p class="text-forest-100 text-sm max-w-md mb-10 leading-relaxed font-light">Akses sistem informasi terpadu untuk pengisian KRS, melihat KHS, dan jadwal perkuliahan harian.</p>
-                            <a href="https://situ2.unpas.ac.id/gate/login" target="_blank" rel="noreferrer"
+                            <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-4"><?= e($portal['title'] ?? 'Portal SITU 2 UNPAS') ?></h3>
+                            <p class="text-forest-100 text-sm max-w-md mb-10 leading-relaxed font-light"><?= e($portal['description'] ?? '') ?></p>
+                            <a href="<?= e($portal['url'] ?? 'https://situ2.unpas.ac.id/gate/login') ?>" target="_blank" rel="noreferrer"
                                class="group flex items-center gap-4 px-10 py-5 bg-gold-500 text-forest-900 rounded-2xl font-black hover:bg-gold-400 shadow-xl transition-all">
-                                Masuk ke Portal Akademik
+                                <?= e($portal['button'] ?? 'Masuk ke Portal Akademik') ?>
                                 <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><?= Icons::svg('external-link', 'w-4 h-4') ?></span>
                             </a>
                         </div>
@@ -246,27 +268,27 @@ $documents = [
                     <div class="space-y-8 px-2">
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 px-2">
                             <div>
-                                <p class="text-gold-600 font-black text-[10px] tracking-[0.2em] uppercase mb-2">Academic Resources</p>
+                                <p class="text-gold-600 font-black text-[10px] tracking-[0.2em] uppercase mb-2">Dokumen Akademik</p>
                                 <h4 class="text-2xl font-bold text-forest-900">Pusat Unduhan Pedoman</h4>
                             </div>
-                            <p class="text-xs text-gray-400 font-medium italic">Pembaruan: April 2026</p>
+                            <p class="text-xs text-gray-400 font-medium italic"><?= e($fields['documents']['updated_label'] ?? '') ?></p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <?php foreach ($documents as $doc): ?>
                             <div class="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
                                 <div class="flex items-center gap-4 min-w-0">
                                     <div class="w-12 h-12 bg-gray-50 text-forest-700 rounded-2xl flex items-center justify-center group-hover:bg-forest-700 group-hover:text-white transition-all">
-                                        <?= Icons::svg($doc['icon'], 'w-5 h-5') ?>
+                                        <?= Icons::svg($doc['icon_key'] ?? 'file-text', 'w-5 h-5') ?>
                                     </div>
                                     <div class="min-w-0">
-                                        <h5 class="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2"><?= e($doc['name']) ?></h5>
-                                        <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">PDF &bull; 2025 Edition</p>
+                                        <h5 class="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2"><?= e($doc['title']) ?></h5>
+                                        <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1">PDF &bull; Edisi 2025</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-2 ml-4">
-                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" target="_blank" rel="noreferrer" title="Preview"
+                                    <a href="<?= e(url($doc['image_path'])) ?>" target="_blank" rel="noreferrer" title="Pratinjau"
                                        class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-forest-50 hover:text-forest-600 transition-colors"><?= Icons::svg('external-link', 'w-4 h-4') ?></a>
-                                    <a href="<?= e(url('/documents/' . $doc['file'])) ?>" download="<?= e($doc['file']) ?>" title="Download"
+                                    <a href="<?= e(url($doc['image_path'])) ?>" download title="Unduh"
                                        class="w-9 h-9 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-gold-50 hover:text-gold-600 transition-colors"><?= Icons::svg('download', 'w-4 h-4') ?></a>
                                 </div>
                             </div>
@@ -274,6 +296,7 @@ $documents = [
                         </div>
                     </div>
                 </section>
+                <?php endif; ?>
 
             </main>
         </div>

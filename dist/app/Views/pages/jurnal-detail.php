@@ -11,8 +11,6 @@ use App\Core\View;
  */
 ?>
 
-<div class="page-wrapper pt-20 bg-white min-h-screen">
-
 <?php View::partial('page-hero', ['badge' => 'Publikasi Ilmiah', 'title' => $journal['name'] ?? 'Jurnal']); ?>
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
@@ -73,5 +71,4 @@ use App\Core\View;
             </a>
         </div>
     </div>
-</div>
 </div>

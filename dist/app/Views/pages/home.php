@@ -18,8 +18,8 @@ $cta = $fields['cta'] ?? [];
 // Old data never stored stat labels (SPA bug rendered them empty); subtitle
 // column is the editable label, these are the defaults until staff fill it.
 $statLabels = [
-    'students' => 'Active Students', 'lecturers' => 'Lecturers',
-    'years' => 'Years of Experience', 'accreditation' => 'Accreditation',
+    'students' => 'Mahasiswa Aktif', 'lecturers' => 'Dosen',
+    'years' => 'Tahun Pengalaman', 'accreditation' => 'Akreditasi',
 ];
 ?>
 <div class="page-wrapper">
@@ -61,12 +61,12 @@ $statLabels = [
 
                 <div class="flex flex-wrap gap-4 pt-2" data-reveal data-reveal-delay="300">
                     <a href="<?= e(url('/pendaftaran')) ?>" class="btn-secondary group">
-                        <?= e($hero['cta_primary'] ?? 'Register Now') ?>
+                        <?= e($hero['cta_primary'] ?? 'Daftar Sekarang') ?>
                         <span class="group-hover:translate-x-1 transition-transform"><?= Icons::svg('arrow-right', 'w-4 h-4') ?></span>
                     </a>
-                    <a href="<?= e(url('/kontak')) ?>"
+                    <a href="<?= e(url('/pendaftaran#kontak')) ?>"
                        class="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm">
-                        <?= e($hero['cta_secondary'] ?? 'Contact Us') ?>
+                        <?= e($hero['cta_secondary'] ?? 'Hubungi Kami') ?>
                     </a>
                 </div>
             </div>
@@ -144,7 +144,7 @@ $statLabels = [
                     <p class="text-forest-200 text-sm mt-1 font-sans"><?= e($promo['desc'] ?? '') ?></p>
                 </div>
                 <a href="<?= e(url('/akademik')) ?>" class="btn-secondary whitespace-nowrap group flex-shrink-0">
-                    <?= e($promo['button'] ?? 'Learn More') ?>
+                    <?= e($promo['button'] ?? 'Pelajari Lebih Lanjut') ?>
                     <span class="group-hover:translate-x-1 transition-transform"><?= Icons::svg('arrow-right', 'w-4 h-4') ?></span>
                 </a>
             </div>
@@ -161,7 +161,7 @@ $statLabels = [
                 ]); ?>
                 <a href="<?= e(url('/berita-kegiatan')) ?>"
                    class="hidden sm:inline-flex items-center gap-2 text-forest-600 hover:text-forest-800 font-semibold text-sm font-sans group mb-12" data-reveal>
-                    <?= e($newsSec['button'] ?? 'See All') ?>
+                    <?= e($newsSec['button'] ?? 'Lihat Semua') ?>
                     <span class="group-hover:translate-x-1 transition-transform"><?= Icons::svg('arrow-right', 'w-4 h-4') ?></span>
                 </a>
             </div>
@@ -187,7 +187,7 @@ $statLabels = [
                     <p class="text-forest-100 text-base mb-8 max-w-xl mx-auto font-sans font-light"><?= e($cta['desc'] ?? '') ?></p>
                     <a href="<?= e(url('/pendaftaran')) ?>"
                        class="inline-flex items-center gap-2 bg-gold-400 hover:bg-gold-500 text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-gold hover:shadow-lg hover:-translate-y-0.5 text-sm">
-                        <?= e($cta['button'] ?? 'Register Now') ?>
+                        <?= e($cta['button'] ?? 'Daftar Sekarang') ?>
                         <?= Icons::svg('arrow-right', 'w-4 h-4') ?>
                     </a>
                 </div>

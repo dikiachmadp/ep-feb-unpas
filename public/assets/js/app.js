@@ -162,6 +162,21 @@
     render();
   });
 
+  /* --- Carousel scroll-snap (brosur pendaftaran) --------------------------- */
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('[data-carousel-track]');
+    var prev = carousel.querySelector('[data-carousel-prev]');
+    var next = carousel.querySelector('[data-carousel-next]');
+    if (!track) return;
+    function slideBy(dir) {
+      var slide = track.firstElementChild;
+      var step = slide ? slide.offsetWidth + 20 : track.clientWidth; // 20 = gap-5
+      track.scrollBy({ left: dir * step, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
+    if (prev) prev.addEventListener('click', function () { slideBy(-1); });
+    if (next) next.addEventListener('click', function () { slideBy(1); });
+  });
+
   /* --- Salin link artikel (tombol share) ---------------------------------- */
   document.querySelectorAll('[data-copy-link]').forEach(function (btn) {
     var label = btn.querySelector('[data-copy-label]');
