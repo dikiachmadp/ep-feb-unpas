@@ -10,7 +10,11 @@ use App\Core\View;
  */
 ?>
 
-<?php View::partial('page-hero', ['badge' => 'Profil Dosen', 'title' => $dosen['full_name']]); ?>
+<?php
+// Uniform hero on every dosen page; the dosen name stays the page's h1 in the
+// profile card below so name searches keep their strongest signal.
+View::partial('page-hero', ['badge' => 'Tenaga Pengajar', 'title' => 'Profil Dosen', 'headingTag' => 'p']);
+?>
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-10 items-start" data-reveal>
@@ -24,7 +28,7 @@ use App\Core\View;
                 </div>
                 <div class="text-center mt-6 px-2 pb-2">
                     <p class="uppercase font-black tracking-widest text-[10px] mb-1 text-gold-400"><?= e($dosen['position']) ?></p>
-                    <h2 class="font-bold leading-tight text-white text-base break-words"><?= e($dosen['full_name']) ?></h2>
+                    <h1 class="font-bold leading-tight text-white text-base break-words"><?= e($dosen['full_name']) ?></h1>
                 </div>
             </div>
         </div>
@@ -63,7 +67,7 @@ use App\Core\View;
                 dengan bidang keahlian <?= e($dosen['expertise']) ?>.
             </p>
 
-            <a href="<?= e(url('/akademik')) ?>" class="inline-flex items-center gap-2 text-forest-700 font-bold text-sm hover:text-gold-500 transition-colors px-2">
+            <a href="<?= e(url('/akademik/dosen')) ?>" class="inline-flex items-center gap-2 text-forest-700 font-bold text-sm hover:text-gold-500 transition-colors px-2">
                 <?= Icons::svg('chevron-left', 'w-4 h-4') ?> Lihat Semua Dosen
             </a>
         </div>

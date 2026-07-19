@@ -12,13 +12,19 @@ use App\Models\News;
 class SitemapController
 {
     private const STATIC_ROUTES = [
-        '/'                => ['priority' => '1.0', 'changefreq' => 'weekly'],
-        '/profil'          => ['priority' => '0.8', 'changefreq' => 'monthly'],
-        '/akademik'        => ['priority' => '0.8', 'changefreq' => 'monthly'],
-        '/mahasiswa'       => ['priority' => '0.7', 'changefreq' => 'monthly'],
-        '/pendaftaran'     => ['priority' => '0.9', 'changefreq' => 'monthly'],
-        '/kontak'          => ['priority' => '0.6', 'changefreq' => 'yearly'],
-        '/berita-kegiatan' => ['priority' => '0.9', 'changefreq' => 'daily'],
+        '/'                    => ['priority' => '1.0', 'changefreq' => 'weekly'],
+        '/profil'              => ['priority' => '0.8', 'changefreq' => 'monthly'],
+        '/akademik/kurikulum'  => ['priority' => '0.8', 'changefreq' => 'monthly'],
+        '/akademik/kerjasama'  => ['priority' => '0.6', 'changefreq' => 'monthly'],
+        '/akademik/akreditasi' => ['priority' => '0.6', 'changefreq' => 'yearly'],
+        '/akademik/dosen'      => ['priority' => '0.8', 'changefreq' => 'monthly'],
+        '/akademik/jurnal'     => ['priority' => '0.6', 'changefreq' => 'monthly'],
+        '/akademik/portal'     => ['priority' => '0.5', 'changefreq' => 'monthly'],
+        '/jurnal/jrie'         => ['priority' => '0.6', 'changefreq' => 'monthly'],
+        '/jurnal/brainy'       => ['priority' => '0.6', 'changefreq' => 'monthly'],
+        '/mahasiswa'           => ['priority' => '0.7', 'changefreq' => 'monthly'],
+        '/pendaftaran'         => ['priority' => '0.9', 'changefreq' => 'monthly'],
+        '/berita-kegiatan'     => ['priority' => '0.9', 'changefreq' => 'daily'],
     ];
 
     public function index(): void

@@ -34,7 +34,7 @@ use App\Core\Icons;
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="<?= e(url('/kontak')) ?>"
+                <a href="<?= e(url('/pendaftaran#kontak')) ?>"
                    class="site-nav-cta flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 font-bold text-[10px] uppercase tracking-wider transition-all duration-500 bg-white text-forest-600">
                     <?= Icons::svg('phone', 'w-4 h-4') ?>
                     <span class="hidden sm:inline"><?= e($navLabels['contact'] ?? 'Kontak') ?></span>

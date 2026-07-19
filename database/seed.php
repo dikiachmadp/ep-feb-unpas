@@ -321,13 +321,11 @@ foreach ($ac['prospects']['items'] as $i => $c) {
     ]);
 }
 
-// -- contact (info-only page: the form was dropped from scope, skip its copy)
+// -- contact: core info only (address/phone/email/hours) — the footer reads it
+// too. Brochures/cashback/extra info moved to the merged /pendaftaran page.
 $contactData = $p['contact'];
-unset($contactData['form']);
+unset($contactData['form'], $contactData['brochure'], $contactData['cashback'], $contactData['extra_info']);
 seedScalars('contact', 'main', $contactData);
-foreach ($p['contact']['extra_info']['items'] as $i => $item) {
-    seedItem('contact', 'extra_info', $i + 1, ['description' => $item]);
-}
 
 // -- footer & nav & news list page
 seedScalars('footer', 'main', $p['footer']);
@@ -352,11 +350,65 @@ foreach ([
 seedScalars('nav', 'main', $p['nav']);
 seedScalars('news_page', 'main', $p['news_page']);
 
-// -- pendaftaran page: CTA to Unpas' official registration site (no more form)
+// -- pendaftaran: merged registration+contact page — brochures at the top,
+// external registration CTA, downloadable PDFs, cashback promo, extra info.
 seedField('pendaftaran', 'main', 'title', 'Pendaftaran Mahasiswa Baru');
 seedField('pendaftaran', 'main', 'description', 'Pendaftaran mahasiswa baru Program Studi Ekonomi Pembangunan dilakukan melalui portal SPMB Universitas Pasundan. Klik tombol di bawah untuk menuju halaman pendaftaran resmi.', 'textarea');
 seedField('pendaftaran', 'main', 'button_label', 'Daftar Sekarang');
 seedField('pendaftaran', 'main', 'external_registration_url', 'https://situ2.unpas.ac.id/spmbfront/program-studi-detail/detail/60201', 'url');
+seedField('pendaftaran', 'main', 'brochure_title', $p['contact']['brochure']['title']);
+seedField('pendaftaran', 'main', 'brochure_subtitle', $p['contact']['brochure']['subtitle']);
+seedScalars('pendaftaran', 'main', $p['contact']['cashback'], 'cashback_');
+seedField('pendaftaran', 'main', 'extra_info_title', $p['contact']['extra_info']['title']);
+foreach ($p['contact']['extra_info']['items'] as $i => $item) {
+    seedItem('pendaftaran', 'extra_info', $i + 1, ['description' => $item]);
+}
+for ($i = 1; $i <= 6; $i++) {
+    seedItem('pendaftaran', 'brochures', $i, [
+        'title'      => "Brosur Pendaftaran Halaman $i",
+        'image_path' => "/brosur$i.webp",
+    ]);
+}
+seedItem('pendaftaran', 'downloads', 1, ['title' => 'Unduh Brosur Pendaftaran', 'subtitle' => 'Klik untuk mengunduh versi cetak', 'image_path' => '/brosur.pdf']);
+seedItem('pendaftaran', 'downloads', 2, ['title' => 'Unduh Brosur 2', 'subtitle' => 'File PDF kedua', 'image_path' => '/brosur2.pdf']);
+
+// -- academics: kerjasama, akreditasi, dokumen pedoman, portal, jurnal → DB
+// (previously hardcoded in the akademik view; editable via admin since G3)
+foreach (['Kyung Hee University', 'Korea Foundation', 'University Utara Malaysia'] as $i => $uni) {
+    seedItem('academics', 'partners_international', $i + 1, ['title' => $uni]);
+}
+seedField('academics', 'kerjasama', 'national_placeholder', 'Data kerjasama instansi nasional sedang dalam tahap pembaharuan');
+seedField('academics', 'akreditasi', 'title', 'UNGGUL');
+seedField('academics', 'akreditasi', 'subtitle', 'Sertifikasi BAN-PT');
+seedField('academics', 'akreditasi', 'description', 'Berlaku hingga tahun 2029 sesuai SK resmi Badan Akreditasi Nasional Perguruan Tinggi.', 'textarea');
+$pedoman = [
+    ['book',         'Pedoman Akademik Mahasiswa 2025',         '/documents/1_Pedoman_Akademik_Mahasiswa_2025.pdf'],
+    ['check-circle', 'Pedoman Kode Etik Mahasiswa 2025',        '/documents/2_Pedoman_Kode_Etik_Mahasiswa_2025.pdf'],
+    ['map-pin',      'Pedoman Kuliah Praktek Kerja (KPK) 2025', '/documents/3_Pedoman_KPK_2025.pdf'],
+    ['award',        'Pedoman Penulisan Skripsi 2025',          '/documents/4_Pedoman_Skripsi_2025.pdf'],
+    ['zap',          'Pedoman RPL Mahasiswa 2025',              '/documents/5_Pedoman_RPL_Mahasiswa_2025.pdf'],
+];
+foreach ($pedoman as $i => [$icon, $name, $file]) {
+    seedItem('academics', 'documents', $i + 1, ['icon_key' => $icon, 'title' => $name, 'image_path' => $file]);
+}
+seedField('academics', 'documents', 'updated_label', 'Pembaruan: April 2026');
+seedField('academics', 'portal', 'title', 'Portal SITU 2 UNPAS');
+seedField('academics', 'portal', 'description', 'Akses sistem informasi terpadu untuk pengisian KRS, melihat KHS, dan jadwal perkuliahan harian.', 'textarea');
+seedField('academics', 'portal', 'url', 'https://situ2.unpas.ac.id/gate/login', 'url');
+seedField('academics', 'portal', 'button', 'Masuk ke Portal Akademik');
+$journals = [
+    'jrie'   => ['JRIE', 'Journal of Regional and Indonesia Economy', 'https://jrie.feb.unpas.ac.id/index.php/jrie', '/jrie.webp',
+                 'Journal of Regional and Indonesia Economy (JRIE) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan. JRIE memuat artikel hasil penelitian dan kajian di bidang ekonomi regional, ekonomi pembangunan, serta dinamika perekonomian Indonesia.'],
+    'brainy' => ['BRAINY', 'Bandung Regional Investment & Economy', 'https://brainy.feb.unpas.ac.id/index.php/brainy', '/brainy.webp',
+                 'Bandung Regional Investment & Economy (BRAINY) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan, menyoroti kajian investasi dan perekonomian regional, khususnya kawasan Bandung dan Jawa Barat.'],
+];
+foreach ($journals as $jSlug => [$name, $full, $jUrl, $cover, $desc]) {
+    seedField('academics', "jurnal_$jSlug", 'name', $name);
+    seedField('academics', "jurnal_$jSlug", 'full_name', $full);
+    seedField('academics', "jurnal_$jSlug", 'url', $jUrl, 'url');
+    seedField('academics', "jurnal_$jSlug", 'cover', $cover, 'image');
+    seedField('academics', "jurnal_$jSlug", 'description', $desc, 'textarea');
+}
 
 // -- per-page SEO (from the old getSEO map, editable by staff via admin)
 $seoPages = [

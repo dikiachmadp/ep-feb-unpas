@@ -64,7 +64,7 @@ $statLabels = [
                         <?= e($hero['cta_primary'] ?? 'Daftar Sekarang') ?>
                         <span class="group-hover:translate-x-1 transition-transform"><?= Icons::svg('arrow-right', 'w-4 h-4') ?></span>
                     </a>
-                    <a href="<?= e(url('/kontak')) ?>"
+                    <a href="<?= e(url('/pendaftaran#kontak')) ?>"
                        class="inline-flex items-center gap-2 border-2 border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-sm">
                         <?= e($hero['cta_secondary'] ?? 'Hubungi Kami') ?>
                     </a>

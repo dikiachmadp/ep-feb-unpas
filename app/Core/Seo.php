@@ -126,7 +126,7 @@ class Seo
             '@type'           => 'BreadcrumbList',
             'itemListElement' => [
                 ['@type' => 'ListItem', 'position' => 1, 'name' => 'Beranda', 'item' => url('/')],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Akademik', 'item' => url('/akademik')],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Dosen', 'item' => url('/akademik/dosen')],
                 ['@type' => 'ListItem', 'position' => 3, 'name' => $d['full_name'], 'item' => $seo->canonical],
             ],
         ];

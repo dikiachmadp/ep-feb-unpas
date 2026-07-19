@@ -9,8 +9,8 @@ const PAGE_EDIT_LABELS = [
     'profile'     => 'Profil',
     'academics'   => 'Akademik',
     'faculty'     => 'Dosen (SEO)',
-    'contact'     => 'Kontak',
-    'pendaftaran' => 'Pendaftaran',
+    'contact'     => 'Info Kontak (tampil di footer & halaman Pendaftaran)',
+    'pendaftaran' => 'Pendaftaran & Kontak',
     'news_page'   => 'Halaman Berita',
     'footer'      => 'Footer',
     'nav'         => 'Menu Navigasi',
@@ -39,6 +39,16 @@ const SECTION_LABELS = [
     'prospects'       => 'Prospek Karier',
     'extra_info'      => 'Informasi Tambahan',
     'socials'         => 'Media Sosial',
+    'brochures'       => 'Brosur (gambar, urutan dipertahankan)',
+    'downloads'       => 'File Unduhan (PDF)',
+    'partners_international' => 'Kerjasama Internasional',
+    'partners_national'      => 'Kerjasama Nasional',
+    'kerjasama'       => 'Kerjasama (teks umum)',
+    'akreditasi'      => 'Akreditasi',
+    'documents'       => 'Dokumen Pedoman',
+    'portal'          => 'Portal Akademik',
+    'jurnal_jrie'     => 'Jurnal JRIE',
+    'jurnal_brainy'   => 'Jurnal BRAINY',
     'seo'             => 'SEO (Judul & Deskripsi di Google)',
 ];
 
@@ -60,6 +70,12 @@ const FIELD_LABELS = [
     'facebook_url'              => 'Link Facebook (kosongkan untuk sembunyikan)',
     'youtube_url'               => 'Link YouTube (kosongkan untuk sembunyikan)',
     'linkedin_url'              => 'Link LinkedIn (kosongkan untuk sembunyikan)',
+    'name'                      => 'Nama singkat',
+    'full_name'                 => 'Nama lengkap',
+    'url'                       => 'Alamat situs (URL)',
+    'cover'                     => 'Gambar sampul',
+    'national_placeholder'      => 'Teks jika belum ada data nasional',
+    'updated_label'             => 'Label tanggal pembaruan',
 ];
 
 function sectionLabel(string $page, string $section): string
