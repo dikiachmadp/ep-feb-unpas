@@ -43,40 +43,50 @@ $infoItems = [
                     ]); ?>
                 </div>
 
-                <!-- Kartu CTA daftar berdampingan dengan brosur; urutan gambar brosur dipertahankan -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
-                    <div class="relative bg-gradient-to-br from-forest-500 to-forest-700 rounded-[2rem] p-8 lg:p-10 overflow-hidden text-center shadow-xl flex flex-col items-center justify-center">
-                        <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="absolute bottom-0 left-0 w-40 h-40 bg-gold-400/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                        <div class="relative z-10 flex flex-col items-center">
-                            <div class="w-16 h-16 bg-white/10 backdrop-blur-md text-gold-400 rounded-[1.5rem] flex items-center justify-center mb-5 border border-white/10">
-                                <?= Icons::svg('external-link', 'w-7 h-7') ?>
-                            </div>
-                            <p class="text-forest-100 text-sm md:text-base mb-8 max-w-md leading-relaxed font-sans font-light">
-                                <?= e($main['description'] ?? '') ?>
-                            </p>
-                            <a href="<?= e($registrationUrl) ?>" target="_blank" rel="noopener noreferrer"
-                               class="group inline-flex items-center gap-3 px-8 py-4 bg-gold-400 hover:bg-gold-500 text-forest-900 rounded-2xl font-black text-sm md:text-base shadow-gold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-                                <?= e($main['button_label'] ?? 'Daftar Sekarang') ?>
-                                <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><?= Icons::svg('external-link', 'w-4 h-4') ?></span>
-                            </a>
-                            <p class="text-forest-200/70 text-[11px] mt-5 font-sans">
-                                Anda akan diarahkan ke portal resmi penerimaan mahasiswa baru Universitas Pasundan.
-                            </p>
-                        </div>
+                <!-- Banner CTA daftar full width (gaya sama dengan kartu cashback) -->
+                <div class="relative bg-gradient-to-br from-forest-500 to-forest-700 rounded-2xl p-8 md:p-10 overflow-hidden shadow-xl mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div class="absolute bottom-0 left-0 w-40 h-40 bg-gold-400/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                    <div class="relative z-10 text-center md:text-left">
+                        <p class="text-forest-100 text-sm md:text-base max-w-2xl leading-relaxed font-sans font-light">
+                            <?= e($main['description'] ?? '') ?>
+                        </p>
+                        <p class="text-forest-200/70 text-[11px] mt-3 font-sans">
+                            Anda akan diarahkan ke portal resmi penerimaan mahasiswa baru Universitas Pasundan.
+                        </p>
                     </div>
+                    <div class="relative z-10 flex-shrink-0 w-full md:w-auto">
+                        <a href="<?= e($registrationUrl) ?>" target="_blank" rel="noopener noreferrer"
+                           class="group inline-flex w-full md:w-auto items-center justify-center gap-3 px-8 py-4 bg-gold-400 hover:bg-gold-500 text-forest-900 rounded-2xl font-black text-sm md:text-base shadow-gold hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+                            <?= e($main['button_label'] ?? 'Daftar Sekarang') ?>
+                            <span class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"><?= Icons::svg('external-link', 'w-4 h-4') ?></span>
+                        </a>
+                    </div>
+                </div>
 
-                    <?php foreach ($brochures as $idx => $img): ?>
-                    <button type="button" data-lightbox-src="<?= e(url($img['image_path'])) ?>" data-lightbox-index="<?= $idx ?>"
-                            class="card p-2 bg-white shadow-sm overflow-hidden border border-gray-100 rounded-xl cursor-zoom-in hover:shadow-md transition-shadow duration-200 group relative">
-                        <img src="<?= e(url($img['image_path'])) ?>" alt="<?= e($img['title'] ?? 'Brosur pendaftaran') ?>" loading="lazy" class="w-full h-auto rounded-lg object-contain">
-                        <span class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center rounded-xl"></span>
+                <!-- Carousel brosur (scroll-snap, urutan gambar dipertahankan); klik gambar → lightbox -->
+                <div class="relative mb-10" data-carousel>
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 scroll-smooth" data-carousel-track>
+                        <?php foreach ($brochures as $idx => $img): ?>
+                        <button type="button" data-lightbox-src="<?= e(url($img['image_path'])) ?>" data-lightbox-index="<?= $idx ?>"
+                                class="card flex-shrink-0 snap-center w-[75%] sm:w-[55%] md:w-[40%] lg:w-[30%] p-2 bg-white shadow-sm overflow-hidden border border-gray-100 rounded-xl cursor-zoom-in hover:shadow-md transition-shadow duration-200 group relative">
+                            <img src="<?= e(url($img['image_path'])) ?>" alt="<?= e($img['title'] ?? 'Brosur pendaftaran') ?>" loading="lazy" class="w-full h-auto rounded-lg object-contain">
+                            <span class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center rounded-xl"></span>
+                        </button>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="button" data-carousel-prev aria-label="Brosur sebelumnya"
+                            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-forest-700 hover:bg-forest-700 hover:text-white transition-colors z-10">
+                        <?= Icons::svg('chevron-left', 'w-5 h-5') ?>
                     </button>
-                    <?php endforeach; ?>
+                    <button type="button" data-carousel-next aria-label="Brosur berikutnya"
+                            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center text-forest-700 hover:bg-forest-700 hover:text-white transition-colors z-10">
+                        <?= Icons::svg('chevron-right', 'w-5 h-5') ?>
+                    </button>
                 </div>
 
                 <?php if ($downloads): ?>
-                <div class="max-w-lg mx-auto flex flex-col gap-4">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <?php foreach ($downloads as $doc): ?>
                     <div class="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-[2rem] hover:border-forest-200 hover:shadow-xl transition-all duration-300">
                         <div class="flex items-center gap-4 min-w-0">
@@ -84,8 +94,8 @@ $infoItems = [
                                 <?= Icons::svg('download', 'w-5 h-5') ?>
                             </div>
                             <div class="min-w-0 text-left">
-                                <h5 class="font-bold text-gray-800 text-[13px] leading-tight truncate pr-2"><?= e($doc['title']) ?></h5>
-                                <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1"><?= e($doc['subtitle'] ?? '') ?></p>
+                                <h5 class="font-bold text-gray-800 text-[13px] leading-tight break-words pr-2"><?= e($doc['title']) ?></h5>
+                                <p class="text-[9px] font-black uppercase tracking-widest text-gray-400 mt-1 leading-snug"><?= e($doc['subtitle'] ?? '') ?></p>
                             </div>
                         </div>
                         <div class="flex items-center gap-2 ml-4">
