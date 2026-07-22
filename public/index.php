@@ -35,6 +35,8 @@ $router->get('/profil', fn() => (new App\Controllers\ProfileController())->index
 // Each academics tab is its own URL with its own SEO; the bare /akademik
 // keeps old backlinks working via a 301 to the first tab.
 $router->get('/akademik', fn() => $redirect301('/akademik/kurikulum'));
+// Tab "Kerjasama" dipindah jadi section mitra di beranda; URL lama 301 ke sana.
+$router->get('/akademik/kerjasama', fn() => $redirect301('/#kerjasama'));
 $router->get('/akademik/{tab}', fn(string $tab) => (new App\Controllers\AcademicsController())->index($tab));
 
 $router->get('/mahasiswa', fn() => (new App\Controllers\FacultyController())->index());

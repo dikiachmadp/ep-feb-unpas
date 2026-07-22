@@ -15,7 +15,6 @@ class SitemapController
         '/'                    => ['priority' => '1.0', 'changefreq' => 'weekly'],
         '/profil'              => ['priority' => '0.8', 'changefreq' => 'monthly'],
         '/akademik/kurikulum'  => ['priority' => '0.8', 'changefreq' => 'monthly'],
-        '/akademik/kerjasama'  => ['priority' => '0.6', 'changefreq' => 'monthly'],
         '/akademik/akreditasi' => ['priority' => '0.6', 'changefreq' => 'yearly'],
         '/akademik/dosen'      => ['priority' => '0.8', 'changefreq' => 'monthly'],
         '/akademik/jurnal'     => ['priority' => '0.6', 'changefreq' => 'monthly'],

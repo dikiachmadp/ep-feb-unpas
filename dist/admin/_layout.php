@@ -24,6 +24,7 @@ function adminHeader(string $title, array $options = []): void
         'Berita'         => 'news/list.php',
         'Dosen'          => 'faculty/list.php',
         'Profil Lulusan' => 'profiles/list.php',
+        'Mitra'          => 'partners/list.php',
         'Kurikulum'      => 'curriculum/index.php',
         'Konten Halaman' => 'pages/index.php',
     ];

@@ -15,7 +15,6 @@ $main = $fields['main'] ?? [];
 
 $tabIcons = [
     'kurikulum'  => 'book',
-    'kerjasama'  => 'globe',
     'akreditasi' => 'award',
     'dosen'      => 'users',
     'jurnal'     => 'file-text',
@@ -124,43 +123,6 @@ foreach ($tabLabels as $tabId => $label) {
                                 <?php endif; ?>
                             </div>
                             <?php endforeach; ?>
-                        </div>
-                    </div>
-                </section>
-                <?php endif; ?>
-
-                <?php if ($activeTab === 'kerjasama'): ?>
-                <!-- KERJASAMA -->
-                <section class="space-y-12">
-                    <?php View::partial('section-header', ['subtitle' => 'Kerjasama', 'title' => 'Jejaring Kerjasama']); ?>
-                    <div class="space-y-10 px-2">
-                        <div>
-                            <h4 class="text-[10px] font-black text-gold-600 uppercase tracking-[0.2em] mb-6 px-2">Internasional</h4>
-                            <div class="grid md:grid-cols-3 gap-4">
-                                <?php foreach ($partnersInternational as $partner): ?>
-                                <div class="p-6 bg-white border border-gray-100 rounded-3xl text-center shadow-sm hover:border-gold-200 transition-colors">
-                                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><?= Icons::svg('globe', 'w-6 h-6') ?></div>
-                                    <p class="font-bold text-sm text-gray-800 leading-tight"><?= e($partner['title']) ?></p>
-                                </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-[10px] font-black text-forest-700 uppercase tracking-[0.2em] mb-6 px-2">Nasional</h4>
-                            <?php if ($partnersNational): ?>
-                            <div class="grid md:grid-cols-3 gap-4">
-                                <?php foreach ($partnersNational as $partner): ?>
-                                <div class="p-6 bg-white border border-gray-100 rounded-3xl text-center shadow-sm hover:border-forest-200 transition-colors">
-                                    <div class="w-12 h-12 bg-forest-50 text-forest-600 rounded-2xl flex items-center justify-center mx-auto mb-4"><?= Icons::svg('briefcase', 'w-6 h-6') ?></div>
-                                    <p class="font-bold text-sm text-gray-800 leading-tight"><?= e($partner['title']) ?></p>
-                                </div>
-                                <?php endforeach; ?>
-                            </div>
-                            <?php else: ?>
-                            <div class="p-12 border-2 border-dashed border-gray-100 rounded-[3rem] text-center">
-                                <p class="text-gray-400 text-sm italic"><?= e($fields['kerjasama']['national_placeholder'] ?? 'Data kerjasama instansi nasional sedang dalam tahap pembaharuan') ?></p>
-                            </div>
-                            <?php endif; ?>
                         </div>
                     </div>
                 </section>

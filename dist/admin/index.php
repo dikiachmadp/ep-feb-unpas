@@ -8,6 +8,7 @@ $stats = [
     'Berita'          => ['news/list.php', Database::fetch('SELECT COUNT(*) AS n FROM news')['n']],
     'Dosen'           => ['faculty/list.php', Database::fetch('SELECT COUNT(*) AS n FROM faculty WHERE is_active = 1')['n']],
     'Profil Lulusan'  => ['profiles/list.php', Database::fetch('SELECT COUNT(*) AS n FROM graduate_profiles WHERE is_active = 1')['n']],
+    'Mitra'           => ['partners/list.php', Database::fetch('SELECT COUNT(*) AS n FROM partners WHERE is_active = 1')['n']],
     'Mata Kuliah'     => ['curriculum/index.php', Database::fetch('SELECT COUNT(*) AS n FROM curriculum_courses')['n']],
 ];
 

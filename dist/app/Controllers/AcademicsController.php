@@ -24,11 +24,6 @@ class AcademicsController
             'Kurikulum & Profil Lulusan - Ekonomi FEB UNPAS',
             'Struktur kurikulum per semester dan profil lulusan Program Studi Ekonomi FEB Universitas Pasundan.',
         ],
-        'kerjasama' => [
-            'Kerjasama',
-            'Kerjasama & Kemitraan - Ekonomi FEB UNPAS',
-            'Jejaring kerjasama internasional dan nasional Program Studi Ekonomi FEB Universitas Pasundan.',
-        ],
         'akreditasi' => [
             'Akreditasi',
             'Akreditasi Unggul BAN-PT - Ekonomi FEB UNPAS',
@@ -86,10 +81,6 @@ class AcademicsController
                 // Machine-readable course list so mata-kuliah searches
                 // associate them with this site, not just the news pages.
                 $seo->jsonLd[] = Seo::courseListSchema($data['curriculum']);
-                break;
-            case 'kerjasama':
-                $data['partnersInternational'] = Page::items('academics', 'partners_international');
-                $data['partnersNational'] = Page::items('academics', 'partners_national');
                 break;
             case 'dosen':
                 $data['dosen'] = Faculty::all();

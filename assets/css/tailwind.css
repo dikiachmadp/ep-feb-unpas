@@ -270,3 +270,9 @@
 .page-wrapper {
   min-height: 100vh;
 }
+
+/* --- Marquee mitra (beranda): logo memudar di tepi kiri & kanan ---------- */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}

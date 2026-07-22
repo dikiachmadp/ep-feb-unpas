@@ -34,6 +34,22 @@ function crudEntities(): array
                 'photo_path' => ['label' => 'Foto', 'type' => 'image'],
             ],
         ],
+        'partners' => [
+            'table'      => 'partners',
+            'title'      => 'Mitra',
+            'singular'   => 'Mitra',
+            'dir'        => 'partners',
+            'order_by'   => 'sort_order',
+            'upload_dir' => 'partners',
+            'list'       => ['logo_path' => 'Logo', 'name' => 'Nama', 'link_url' => 'Website'],
+            'fields'     => [
+                'name'       => ['label' => 'Nama mitra', 'type' => 'text', 'required' => true],
+                'logo_path'  => ['label' => 'Logo', 'type' => 'image', 'hint' => 'Idealnya PNG transparan / rasio landskap. JPG/PNG/WebP.'],
+                'link_url'   => ['label' => 'Website (opsional)', 'type' => 'url', 'hint' => 'Jika diisi, logo bisa diklik ke situs mitra.'],
+                'sort_order' => ['label' => 'Urutan tampil', 'type' => 'number', 'default' => 99],
+                'is_active'  => ['label' => 'Tampilkan di website', 'type' => 'checkbox', 'default' => 1],
+            ],
+        ],
         'profiles' => [
             'table'      => 'graduate_profiles',
             'title'      => 'Profil Lulusan',

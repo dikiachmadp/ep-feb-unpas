@@ -8,6 +8,7 @@ use App\Core\View;
  * @var array $stats    page_items home/stats
  * @var array $features page_items home/features
  * @var array $news     3 latest published news rows
+ * @var array $partners mitra aktif (logo marquee di atas footer)
  */
 $hero = $fields['hero'] ?? [];
 $why = $fields['why'] ?? [];
@@ -194,4 +195,44 @@ $statLabels = [
             </div>
         </div>
     </section>
+
+    <?php if (!empty($partners)): ?>
+    <!-- Kerjasama / Mitra (logo marquee) -->
+    <section id="kerjasama" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <?php View::partial('section-header', [
+                'subtitle' => 'Kerjasama',
+                'title'    => 'Mitra & Jejaring Kerjasama',
+                'center'   => true,
+            ]); ?>
+        </div>
+        <?php
+        // Render satu logo mitra (jadi link bila punya URL, kalau tidak tampil polos).
+        $renderPartner = static function (array $p): void {
+            $inner = !empty($p['logo_path'])
+                ? '<img src="' . e(url($p['logo_path'])) . '" alt="' . e($p['name']) . '" loading="lazy" class="max-h-14 w-auto object-contain">'
+                : '<span class="font-bold text-forest-800 text-lg whitespace-nowrap">' . e($p['name']) . '</span>';
+            $box = '<div class="flex items-center justify-center h-20 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" title="' . e($p['name']) . '">' . $inner . '</div>';
+            if (!empty($p['link_url'])) {
+                echo '<a href="' . e($p['link_url']) . '" target="_blank" rel="noopener" class="shrink-0 px-6">' . $box . '</a>';
+            } else {
+                echo '<div class="shrink-0 px-6">' . $box . '</div>';
+            }
+        };
+        ?>
+        <div class="mt-10 relative overflow-hidden marquee-mask" data-reveal>
+            <!-- Dua grup identik, masing-masing min-w-full (selalu ≥ lebar layar). Track
+                 = 2 grup, bergeser -50% = tepat 1 grup → grup ke-2 mengisi posisi grup
+                 ke-1: loop mulus tanpa ruang kosong di semua lebar layar. -->
+            <div class="flex animate-marquee hover:[animation-play-state:paused]">
+                <div class="flex shrink-0 min-w-full items-center justify-around">
+                    <?php foreach ($partners as $p) { $renderPartner($p); } ?>
+                </div>
+                <div class="flex shrink-0 min-w-full items-center justify-around" aria-hidden="true">
+                    <?php foreach ($partners as $p) { $renderPartner($p); } ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
 </div>

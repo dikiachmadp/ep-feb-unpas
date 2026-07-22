@@ -56,6 +56,7 @@ No lint/test script configured in `package.json`.
 
 ## Conventions worth preserving
 
+- **ALWAYS keep the project docs current after any feature or development work.** Every time a feature is added or non-trivial development is done, update **`REFINEMENT.md`** (add a dated entry to its **Log Progres** section — what was done, current position, anything pending/deployed) and, when the change alters architecture/structure/conventions, update this **`CLAUDE.md`** too. This is mandatory so any later session can resume from the docs alone, without the user having to re-explain where things left off. `REFINEMENT.md` is the running work tracker (gitignored, like `DEPLOY.md`); newest log entries go at the top.
 - Keep visual layout/styling/responsiveness unchanged unless a task explicitly calls for a redesign — the new PHP views are a 1:1 visual port of the old React pages.
 - Don't delete assets, text, or config unless verified as completely unused across the whole project.
 - News content mixes Indonesian prose with English-keyed structure — match the existing language of whatever section you're editing rather than translating wholesale.

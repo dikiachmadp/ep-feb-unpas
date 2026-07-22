@@ -41,9 +41,6 @@ const SECTION_LABELS = [
     'socials'         => 'Media Sosial',
     'brochures'       => 'Brosur (gambar, urutan dipertahankan)',
     'downloads'       => 'File Unduhan (PDF)',
-    'partners_international' => 'Kerjasama Internasional',
-    'partners_national'      => 'Kerjasama Nasional',
-    'kerjasama'       => 'Kerjasama (teks umum)',
     'akreditasi'      => 'Akreditasi',
     'documents'       => 'Dokumen Pedoman',
     'portal'          => 'Portal Akademik',
@@ -74,7 +71,6 @@ const FIELD_LABELS = [
     'full_name'                 => 'Nama lengkap',
     'url'                       => 'Alamat situs (URL)',
     'cover'                     => 'Gambar sampul',
-    'national_placeholder'      => 'Teks jika belum ada data nasional',
     'updated_label'             => 'Label tanggal pembaruan',
 ];
 

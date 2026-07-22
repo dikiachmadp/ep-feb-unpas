@@ -6,6 +6,7 @@ use App\Core\Seo;
 use App\Core\View;
 use App\Models\News;
 use App\Models\Page;
+use App\Models\Partner;
 
 class HomeController
 {
@@ -20,6 +21,7 @@ class HomeController
             'stats'    => Page::items('home', 'stats'),
             'features' => Page::items('home', 'features'),
             'news'     => News::published(3),
+            'partners' => Partner::all(),
         ]);
     }
 }

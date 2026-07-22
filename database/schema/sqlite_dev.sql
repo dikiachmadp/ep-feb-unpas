@@ -126,6 +126,17 @@ CREATE TABLE page_items (
 );
 CREATE INDEX idx_page_items_section ON page_items (page_key, section_key);
 
+-- Mitra/kerjasama — logo marquee di beranda, CRUD via /admin/partners.
+-- Mirrors 004_partners.sql.
+CREATE TABLE partners (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  logo_path TEXT NULL,
+  link_url TEXT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 99,
+  is_active INTEGER NOT NULL DEFAULT 1
+);
+
 CREATE TABLE admin_users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,

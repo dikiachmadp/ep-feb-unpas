@@ -99,7 +99,7 @@ $now = Database::now();
 $tables = [
     'news_gallery', 'news', 'news_categories', 'faculty_items', 'faculty',
     'curriculum_courses', 'curriculum_semesters', 'curriculum_years',
-    'graduate_profiles', 'page_fields', 'page_items', 'admin_users',
+    'graduate_profiles', 'partners', 'page_fields', 'page_items', 'admin_users',
 ];
 foreach ($tables as $t) {
     Database::run("DELETE FROM $t");
@@ -226,6 +226,19 @@ foreach ($data['curriculum'] as $i => $year) {
 // ---------------------------------------------------------- graduate profiles
 foreach ($data['graduate_profiles'] as $g) {
     seedInsert('graduate_profiles', array_merge($g, ['is_active' => 1]));
+}
+
+// ------------------------------------------------------------------- mitra
+// Data awal dari tab "Kerjasama" lama (dulu teks tanpa logo); admin tinggal
+// mengunggah logonya lewat /admin/partners. Marquee ditampilkan di beranda.
+foreach (['Kyung Hee University', 'Korea Foundation', 'University Utara Malaysia'] as $i => $name) {
+    seedInsert('partners', [
+        'name'       => $name,
+        'logo_path'  => null,
+        'link_url'   => null,
+        'sort_order' => $i + 1,
+        'is_active'  => 1,
+    ]);
 }
 
 // ------------------------------------------------- page_fields & page_items
@@ -404,12 +417,9 @@ for ($i = 1; $i <= 6; $i++) {
 seedItem('pendaftaran', 'downloads', 1, ['title' => 'Unduh Brosur Pendaftaran', 'subtitle' => 'Klik untuk mengunduh versi cetak', 'image_path' => '/brosur.pdf']);
 seedItem('pendaftaran', 'downloads', 2, ['title' => 'Unduh Brosur KIP-K', 'subtitle' => 'Klik untuk mengunduh versi cetak', 'image_path' => '/brosur2.pdf']);
 
-// -- academics: kerjasama, akreditasi, dokumen pedoman, portal, jurnal → DB
+// -- academics: akreditasi, dokumen pedoman, portal, jurnal → DB
 // (previously hardcoded in the akademik view; editable via admin since G3)
-foreach (['Kyung Hee University', 'Korea Foundation', 'University Utara Malaysia'] as $i => $uni) {
-    seedItem('academics', 'partners_international', $i + 1, ['title' => $uni]);
-}
-seedField('academics', 'kerjasama', 'national_placeholder', 'Data kerjasama instansi nasional sedang dalam tahap pembaharuan');
+// Kerjasama dipindah ke tabel `partners` (marquee beranda) — lihat blok "mitra" di atas.
 seedField('academics', 'akreditasi', 'title', 'UNGGUL');
 seedField('academics', 'akreditasi', 'subtitle', 'Sertifikasi BAN-PT');
 seedField('academics', 'akreditasi', 'description', 'Berlaku hingga tahun 2029 sesuai SK resmi Badan Akreditasi Nasional Perguruan Tinggi.', 'textarea');
