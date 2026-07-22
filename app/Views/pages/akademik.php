@@ -202,11 +202,6 @@ foreach ($tabLabels as $tabId => $label) {
                                 <h4 class="font-bold leading-tight break-words text-sm text-white"><?= e($d['full_name']) ?></h4>
                             </div>
 
-                            <div class="w-full mt-6 pt-5 border-t border-white/10 text-left px-2">
-                                <span class="text-[9px] text-white/40 uppercase font-bold tracking-tighter">NIDN / NIDK</span>
-                                <p class="text-xs font-semibold text-white/90 break-words"><?= e($d['nidn'] ?: '-') ?></p>
-                            </div>
-
                             <div class="w-full mt-auto py-3.5 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-gold-300 transition-colors">
                                 Lihat Profil Lengkap <?= Icons::svg('chevron-right', 'w-3.5 h-3.5') ?>
                             </div>

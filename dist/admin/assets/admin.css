@@ -80,6 +80,8 @@ table.list th, table.list td { text-align: left; padding: 10px 14px; border-bott
 table.list th { background: var(--gray-100); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--gray-600); }
 table.list tr:last-child td { border-bottom: none; }
 table.list img.thumb { width: 52px; height: 38px; object-fit: cover; border-radius: 6px; display: block; }
+/* Image preview inside a form field (not a list) — proportional thumbnail. */
+label.field img.thumb { width: auto; max-width: 220px; height: auto; border-radius: 10px; border: 1px solid var(--gray-200); display: block; margin: 6px 0; }
 
 /* Forms */
 .form-grid { display: grid; gap: 16px; }
