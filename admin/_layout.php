@@ -52,7 +52,7 @@ function adminHeader(string $title, array $options = []): void
 <body>
 <div class="admin-shell">
   <aside class="sidebar">
-    <div class="brand">Admin CMS<small>Ekonomi Pembangunan FEB UNPAS</small></div>
+    <div class="brand">Admin CMS<small>Ekonomi FEB UNPAS</small></div>
     <nav>
       <?php foreach ($nav as $label => $href): ?>
       <a href="<?= adminUrl($href) ?>" class="<?= $isActive($href) ? 'active' : '' ?>"><?= e($label) ?></a>

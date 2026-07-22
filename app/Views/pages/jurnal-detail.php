@@ -49,7 +49,7 @@ use App\Core\View;
                     <?php foreach ([
                         ['Nama Jurnal', $journal['full_name'] ?? ''],
                         ['Singkatan', $journal['name'] ?? ''],
-                        ['Penerbit', 'Program Studi Ekonomi Pembangunan FEB Universitas Pasundan'],
+                        ['Penerbit', 'Program Studi Ekonomi FEB Universitas Pasundan'],
                     ] as [$label, $value]): ?>
                     <div class="flex flex-col border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                         <span class="text-[10px] text-gray-400 uppercase font-bold tracking-widest mb-1"><?= e($label) ?></span>

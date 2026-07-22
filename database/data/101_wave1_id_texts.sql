@@ -25,15 +25,15 @@ UPDATE page_fields SET value = 'Dosen'              WHERE page_key = 'nav' AND s
 -- home / hero
 UPDATE page_fields SET value = 'Terakreditasi Unggul'                            WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'badge';
 UPDATE page_fields SET value = 'Program Studi'                                   WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'title';
-UPDATE page_fields SET value = 'Ekonomi Pembangunan'                             WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'subtitle';
+UPDATE page_fields SET value = 'Ekonomi'                                         WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'subtitle';
 UPDATE page_fields SET value = 'Fakultas Ekonomi dan Bisnis - Universitas Pasundan' WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'description';
 UPDATE page_fields SET value = 'Daftar Sekarang'                                 WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'cta_primary';
 UPDATE page_fields SET value = 'Hubungi Kami'                                    WHERE page_key = 'home' AND section_key = 'hero' AND field_key = 'cta_secondary';
 
 -- home / why
 UPDATE page_fields SET value = 'Keunggulan Kami'               WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'subtitle';
-UPDATE page_fields SET value = 'Kenapa Ekonomi Pembangunan?'   WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'title';
-UPDATE page_fields SET value = 'Program Studi Ekonomi Pembangunan FEB UNPAS menghadirkan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.' WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'description';
+UPDATE page_fields SET value = 'Kenapa Ekonomi?'   WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'title';
+UPDATE page_fields SET value = 'Program Studi Ekonomi FEB UNPAS menghadirkan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.' WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'description';
 UPDATE page_fields SET value = 'Kurikulum Berbasis KKNI'       WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'features_curriculum_title';
 UPDATE page_fields SET value = 'Kurikulum yang terus diperbarui sesuai Kerangka Kualifikasi Nasional Indonesia (KKNI) dan kebutuhan pasar kerja.' WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'features_curriculum_desc';
 UPDATE page_fields SET value = 'Riset & Pengabdian Masyarakat' WHERE page_key = 'home' AND section_key = 'why' AND field_key = 'features_research_title';
@@ -72,7 +72,7 @@ UPDATE page_fields SET value = 'Linimasa'               WHERE page_key = 'profil
 
 -- profile / identity
 UPDATE page_fields SET value = 'Filosofi & Makna Visual' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'title';
-UPDATE page_fields SET value = 'Logo Program Studi Ekonomi Pembangunan FEB Universitas Pasundan merupakan representasi visual identitas akademik, nilai keilmuan, dan arah pengembangan masa depan. Logo menampilkan stilasi huruf ''E'' sebagai simbol utama Ekonomi, dibentuk dari tiga elemen lengkung dinamis yang bergerak ke atas.' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'description';
+UPDATE page_fields SET value = 'Logo Program Studi Ekonomi FEB Universitas Pasundan merupakan representasi visual identitas akademik, nilai keilmuan, dan arah pengembangan masa depan. Logo menampilkan stilasi huruf ''E'' sebagai simbol utama Ekonomi, dibentuk dari tiga elemen lengkung dinamis yang bergerak ke atas.' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'description';
 UPDATE page_fields SET value = 'Pendekatan Ilmiah' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'approach_title';
 UPDATE page_fields SET value = 'Bentuk lengkung melambangkan pendekatan ilmu ekonomi yang komprehensif, adaptif, dan berkelanjutan, sekaligus mencerminkan sinergi antara pendidikan, penelitian, dan pengabdian masyarakat sebagai pilar perguruan tinggi.' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'approach_desc';
 UPDATE page_fields SET value = 'Semangat Bertumbuh' WHERE page_key = 'profile' AND section_key = 'identity' AND field_key = 'growth_title';
@@ -106,7 +106,7 @@ UPDATE page_fields SET value = 'Fasilitas berstandar global untuk menunjang pote
 
 -- academics
 UPDATE page_fields SET value = 'Akademik'              WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'subtitle';
-UPDATE page_fields SET value = 'Ekonomi Pembangunan'   WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'hero_title';
+UPDATE page_fields SET value = 'Ekonomi'   WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'hero_title';
 UPDATE page_fields SET value = 'Profil Lulusan'        WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'graduate_profile_subtitle';
 UPDATE page_fields SET value = 'Profil Utama Lulusan'  WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'graduate_profile_title';
 UPDATE page_fields SET value = 'STANDAR SKL & CPL'     WHERE page_key = 'academics' AND section_key = 'main' AND field_key = 'graduate_standard_label';
@@ -147,7 +147,7 @@ UPDATE page_fields SET value = 'Ikuti Kami'    WHERE page_key = 'footer' AND sec
 UPDATE page_fields SET value = 'Mencetak Ekonom Andal untuk Indonesia' WHERE page_key = 'footer' AND section_key = 'main' AND field_key = 'tagline';
 UPDATE page_fields SET value = 'Fakultas Ekonomi dan Bisnis' WHERE page_key = 'footer' AND section_key = 'main' AND field_key = 'faculty';
 UPDATE page_fields SET value = 'Universitas Pasundan'        WHERE page_key = 'footer' AND section_key = 'main' AND field_key = 'university';
-UPDATE page_fields SET value = 'Program Studi Ekonomi Pembangunan - FEB UNPAS. Hak Cipta Dilindungi.' WHERE page_key = 'footer' AND section_key = 'main' AND field_key = 'copyright';
+UPDATE page_fields SET value = 'Program Studi Ekonomi - FEB UNPAS. Hak Cipta Dilindungi.' WHERE page_key = 'footer' AND section_key = 'main' AND field_key = 'copyright';
 
 -- ---------------------------------------------------------------------------
 -- page_items — konten daftar per halaman (match: page_key + section_key + sort_order)

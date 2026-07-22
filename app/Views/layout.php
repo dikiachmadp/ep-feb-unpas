@@ -5,7 +5,7 @@ use App\Core\View;
 use App\Models\Page;
 
 /** @var Seo $seo set by every controller; hard fallback for safety */
-$seo = $seo ?? Seo::page(config('app.name', 'Ekonomi Pembangunan FEB UNPAS'), '');
+$seo = $seo ?? Seo::page(config('app.name', 'Ekonomi FEB UNPAS'), '');
 
 $navLabels   = Page::fields('nav')['main'] ?? [];
 $navRoutes   = [

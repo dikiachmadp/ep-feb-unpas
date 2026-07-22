@@ -353,7 +353,7 @@ seedScalars('news_page', 'main', $p['news_page']);
 // -- pendaftaran: merged registration+contact page — brochures at the top,
 // external registration CTA, downloadable PDFs, cashback promo, extra info.
 seedField('pendaftaran', 'main', 'title', 'Pendaftaran Mahasiswa Baru');
-seedField('pendaftaran', 'main', 'description', 'Pendaftaran mahasiswa baru Program Studi Ekonomi Pembangunan dilakukan melalui portal SPMB Universitas Pasundan. Klik tombol di bawah untuk menuju halaman pendaftaran resmi.', 'textarea');
+seedField('pendaftaran', 'main', 'description', 'Pendaftaran mahasiswa baru Program Studi Ekonomi dilakukan melalui portal SPMB Universitas Pasundan. Klik tombol di bawah untuk menuju halaman pendaftaran resmi.', 'textarea');
 seedField('pendaftaran', 'main', 'button_label', 'Daftar Sekarang');
 seedField('pendaftaran', 'main', 'external_registration_url', 'https://situ2.unpas.ac.id/spmbfront/program-studi-detail/detail/60201', 'url');
 seedField('pendaftaran', 'main', 'brochure_title', $p['contact']['brochure']['title']);
@@ -398,9 +398,9 @@ seedField('academics', 'portal', 'url', 'https://situ2.unpas.ac.id/gate/login', 
 seedField('academics', 'portal', 'button', 'Masuk ke Portal Akademik');
 $journals = [
     'jrie'   => ['JRIE', 'Journal of Regional and Indonesia Economy', 'https://jrie.feb.unpas.ac.id/index.php/jrie', '/jrie.webp',
-                 'Journal of Regional and Indonesia Economy (JRIE) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan. JRIE memuat artikel hasil penelitian dan kajian di bidang ekonomi regional, ekonomi pembangunan, serta dinamika perekonomian Indonesia.'],
+                 'Journal of Regional and Indonesia Economy (JRIE) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi FEB Universitas Pasundan. JRIE memuat artikel hasil penelitian dan kajian di bidang ekonomi regional, ekonomi pembangunan, serta dinamika perekonomian Indonesia.'],
     'brainy' => ['BRAINY', 'Bandung Regional Investment & Economy', 'https://brainy.feb.unpas.ac.id/index.php/brainy', '/brainy.webp',
-                 'Bandung Regional Investment & Economy (BRAINY) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan, menyoroti kajian investasi dan perekonomian regional, khususnya kawasan Bandung dan Jawa Barat.'],
+                 'Bandung Regional Investment & Economy (BRAINY) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi FEB Universitas Pasundan, menyoroti kajian investasi dan perekonomian regional, khususnya kawasan Bandung dan Jawa Barat.'],
 ];
 foreach ($journals as $jSlug => [$name, $full, $jUrl, $cover, $desc]) {
     seedField('academics', "jurnal_$jSlug", 'name', $name);
@@ -412,13 +412,13 @@ foreach ($journals as $jSlug => [$name, $full, $jUrl, $cover, $desc]) {
 
 // -- per-page SEO (from the old getSEO map, editable by staff via admin)
 $seoPages = [
-    'home'        => ['Prodi Ekonomi Pembangunan - FEB UNPAS', 'Program S1 Ekonomi Pembangunan terakreditasi Unggul dengan kurikulum Merdeka Belajar.'],
+    'home'        => ['Ekonomi FEB Unpas', 'Program S1 Ekonomi terakreditasi Unggul dengan kurikulum Merdeka Belajar.'],
     'profile'     => ['Profil - Visi Misi - FEB UNPAS', 'Sejarah, visi, misi, dan capaian Fakultas Ekonomi dan Bisnis Universitas Pasundan.'],
-    'academics'   => ['Akademik - Kurikulum - FEB UNPAS', 'Informasi kurikulum, peminatan, prospek karier program Ekonomi Pembangunan.'],
+    'academics'   => ['Akademik - Kurikulum - FEB UNPAS', 'Informasi kurikulum, peminatan, prospek karier program Ekonomi.'],
     'faculty'     => ['Dosen - Tim Pengajar - FEB UNPAS', 'Profil dosen Fakultas Ekonomi dan Bisnis Universitas Pasundan.'],
     'contact'     => ['Kontak - FEB UNPAS', 'Hubungi Fakultas Ekonomi dan Bisnis Universitas Pasundan untuk informasi lebih lanjut.'],
-    'pendaftaran' => ['Pendaftaran Mahasiswa Baru - FEB UNPAS', 'Informasi dan tautan pendaftaran mahasiswa baru Program Studi Ekonomi Pembangunan FEB UNPAS.'],
-    'news_page'   => ['Berita & Kegiatan - FEB UNPAS', 'Berita dan kegiatan terbaru Program Studi Ekonomi Pembangunan FEB UNPAS.'],
+    'pendaftaran' => ['Pendaftaran Mahasiswa Baru - FEB UNPAS', 'Informasi dan tautan pendaftaran mahasiswa baru Program Studi Ekonomi FEB UNPAS.'],
+    'news_page'   => ['Berita & Kegiatan - FEB UNPAS', 'Berita dan kegiatan terbaru Program Studi Ekonomi FEB UNPAS.'],
 ];
 foreach ($seoPages as $page => [$title, $desc]) {
     seedField($page, 'seo', 'title', $title);

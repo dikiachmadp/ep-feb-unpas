@@ -77,9 +77,9 @@ INSERT INTO page_fields (page_key, section_key, field_key, field_type, value, up
 ('academics', 'jurnal_jrie', 'full_name', 'text', 'Journal of Regional and Indonesia Economy', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_jrie', 'url', 'url', 'https://jrie.feb.unpas.ac.id/index.php/jrie', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_jrie', 'cover', 'image', '/jrie.webp', '2026-07-19 00:00:00'),
-('academics', 'jurnal_jrie', 'description', 'textarea', 'Journal of Regional and Indonesia Economy (JRIE) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan. JRIE memuat artikel hasil penelitian dan kajian di bidang ekonomi regional, ekonomi pembangunan, serta dinamika perekonomian Indonesia.', '2026-07-19 00:00:00'),
+('academics', 'jurnal_jrie', 'description', 'textarea', 'Journal of Regional and Indonesia Economy (JRIE) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi FEB Universitas Pasundan. JRIE memuat artikel hasil penelitian dan kajian di bidang ekonomi regional, ekonomi pembangunan, serta dinamika perekonomian Indonesia.', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_brainy', 'name', 'text', 'BRAINY', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_brainy', 'full_name', 'text', 'Bandung Regional Investment & Economy', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_brainy', 'url', 'url', 'https://brainy.feb.unpas.ac.id/index.php/brainy', '2026-07-19 00:00:00'),
 ('academics', 'jurnal_brainy', 'cover', 'image', '/brainy.webp', '2026-07-19 00:00:00'),
-('academics', 'jurnal_brainy', 'description', 'textarea', 'Bandung Regional Investment & Economy (BRAINY) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan, menyoroti kajian investasi dan perekonomian regional, khususnya kawasan Bandung dan Jawa Barat.', '2026-07-19 00:00:00');
+('academics', 'jurnal_brainy', 'description', 'textarea', 'Bandung Regional Investment & Economy (BRAINY) adalah jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi FEB Universitas Pasundan, menyoroti kajian investasi dan perekonomian regional, khususnya kawasan Bandung dan Jawa Barat.', '2026-07-19 00:00:00');

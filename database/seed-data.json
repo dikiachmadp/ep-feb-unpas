@@ -408,7 +408,7 @@
       "hero": {
         "badge": "Terakreditasi Unggul",
         "title": "Program Studi",
-        "subtitle": "Ekonomi Pembangunan",
+        "subtitle": "Ekonomi",
         "description": "Fakultas Ekonomi dan Bisnis - Universitas Pasundan",
         "cta_primary": "Daftar Sekarang",
         "cta_secondary": "Hubungi Kami",
@@ -432,9 +432,9 @@
         ]
       },
       "why": {
-        "title": "Kenapa Ekonomi Pembangunan?",
+        "title": "Kenapa Ekonomi?",
         "subtitle": "Keunggulan Kami",
-        "description": "Program Studi Ekonomi Pembangunan FEB UNPAS menghadirkan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.",
+        "description": "Program Studi Ekonomi FEB UNPAS menghadirkan kurikulum modern yang relevan dengan kebutuhan industri dan pembangunan nasional.",
         "features": {
           "curriculum": {
             "title": "Kurikulum Berbasis KKNI",
@@ -563,7 +563,7 @@
       },
       "identity": {
         "title": "Filosofi & Makna Visual",
-        "description": "Logo Program Studi Ekonomi Pembangunan FEB Universitas Pasundan merupakan representasi visual identitas akademik, nilai keilmuan, dan arah pengembangan masa depan. Logo menampilkan stilasi huruf 'E' sebagai simbol utama Ekonomi, dibentuk dari tiga elemen lengkung dinamis yang bergerak ke atas.",
+        "description": "Logo Program Studi Ekonomi FEB Universitas Pasundan merupakan representasi visual identitas akademik, nilai keilmuan, dan arah pengembangan masa depan. Logo menampilkan stilasi huruf 'E' sebagai simbol utama Ekonomi, dibentuk dari tiga elemen lengkung dinamis yang bergerak ke atas.",
         "approach_title": "Pendekatan Ilmiah",
         "approach_desc": "Bentuk lengkung melambangkan pendekatan ilmu ekonomi yang komprehensif, adaptif, dan berkelanjutan, sekaligus mencerminkan sinergi antara pendidikan, penelitian, dan pengabdian masyarakat sebagai pilar perguruan tinggi.",
         "growth_title": "Semangat Bertumbuh",
@@ -746,7 +746,7 @@
     },
     "academics": {
       "subtitle": "Akademik",
-      "hero_title": "Ekonomi Pembangunan",
+      "hero_title": "Ekonomi",
       "graduate_profile_subtitle": "Profil Lulusan",
       "graduate_profile_title": "Profil Utama Lulusan",
       "graduate_standard_label": "STANDAR SKL & CPL",
@@ -881,7 +881,7 @@
       "links_title": "Tautan Cepat",
       "contact_title": "Kontak",
       "social_title": "Ikuti Kami",
-      "copyright": "Program Studi Ekonomi Pembangunan - FEB UNPAS. Hak Cipta Dilindungi.",
+      "copyright": "Program Studi Ekonomi - FEB UNPAS. Hak Cipta Dilindungi.",
       "faculty": "Fakultas Ekonomi dan Bisnis",
       "university": "Universitas Pasundan",
       "location": "Lokasi Kami"

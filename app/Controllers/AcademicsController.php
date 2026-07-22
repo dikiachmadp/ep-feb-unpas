@@ -21,33 +21,33 @@ class AcademicsController
     private const TABS = [
         'kurikulum' => [
             'Kurikulum',
-            'Kurikulum & Profil Lulusan - Ekonomi Pembangunan FEB UNPAS',
-            'Struktur kurikulum per semester dan profil lulusan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan.',
+            'Kurikulum & Profil Lulusan - Ekonomi FEB UNPAS',
+            'Struktur kurikulum per semester dan profil lulusan Program Studi Ekonomi FEB Universitas Pasundan.',
         ],
         'kerjasama' => [
             'Kerjasama',
-            'Kerjasama & Kemitraan - Ekonomi Pembangunan FEB UNPAS',
-            'Jejaring kerjasama internasional dan nasional Program Studi Ekonomi Pembangunan FEB Universitas Pasundan.',
+            'Kerjasama & Kemitraan - Ekonomi FEB UNPAS',
+            'Jejaring kerjasama internasional dan nasional Program Studi Ekonomi FEB Universitas Pasundan.',
         ],
         'akreditasi' => [
             'Akreditasi',
-            'Akreditasi Unggul BAN-PT - Ekonomi Pembangunan FEB UNPAS',
-            'Program Studi Ekonomi Pembangunan FEB Universitas Pasundan terakreditasi Unggul dari BAN-PT.',
+            'Akreditasi Unggul BAN-PT - Ekonomi FEB UNPAS',
+            'Program Studi Ekonomi FEB Universitas Pasundan terakreditasi Unggul dari BAN-PT.',
         ],
         'dosen' => [
             'Dosen',
-            'Dosen & Tenaga Pengajar - Ekonomi Pembangunan FEB UNPAS',
-            'Profil dosen dan tenaga pengajar Program Studi Ekonomi Pembangunan FEB Universitas Pasundan.',
+            'Dosen & Tenaga Pengajar - Ekonomi FEB UNPAS',
+            'Profil dosen dan tenaga pengajar Program Studi Ekonomi FEB Universitas Pasundan.',
         ],
         'jurnal' => [
             'Jurnal',
-            'Jurnal Ilmiah JRIE & BRAINY - Ekonomi Pembangunan FEB UNPAS',
-            'Jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi Pembangunan FEB Universitas Pasundan.',
+            'Jurnal Ilmiah JRIE & BRAINY - Ekonomi FEB UNPAS',
+            'Jurnal ilmiah peer-review yang diterbitkan Program Studi Ekonomi FEB Universitas Pasundan.',
         ],
         'portal' => [
             'Portal Akademik',
-            'Portal Akademik & Dokumen Pedoman - Ekonomi Pembangunan FEB UNPAS',
-            'Akses portal SITU 2 UNPAS dan unduhan dokumen pedoman akademik Program Studi Ekonomi Pembangunan.',
+            'Portal Akademik & Dokumen Pedoman - Ekonomi FEB UNPAS',
+            'Akses portal SITU 2 UNPAS dan unduhan dokumen pedoman akademik Program Studi Ekonomi.',
         ],
     ];
 

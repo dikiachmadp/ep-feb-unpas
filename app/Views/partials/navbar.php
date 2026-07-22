@@ -16,7 +16,7 @@ use App\Core\Icons;
         <div id="site-nav" class="site-nav-shell flex items-center justify-between px-8 lg:px-12 backdrop-blur-md">
 
             <a href="<?= e(url('/')) ?>" class="flex items-center focus:outline-none py-1 mr-6">
-                <img src="<?= e(url('/logo.webp')) ?>" alt="Logo Ekonomi Pembangunan FEB UNPAS"
+                <img src="<?= e(url('/logo.webp')) ?>" alt="Logo Ekonomi FEB UNPAS"
                      class="site-nav-logo w-auto object-contain pointer-events-none">
             </a>
 

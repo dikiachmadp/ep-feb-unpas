@@ -45,7 +45,7 @@ class Seo
     public static function article(array $news): self
     {
         $seo = new self(
-            $news['title'] . ' – Ekonomi Pembangunan FEB UNPAS',
+            $news['title'] . ' – Ekonomi FEB UNPAS',
             $news['excerpt']
         );
         $seo->canonical = url('/berita-kegiatan/' . $news['slug']);
@@ -57,7 +57,7 @@ class Seo
             ? ['@type' => 'Person', 'name' => $news['author_name']]
             : [
                 '@type' => 'Organization',
-                'name'  => 'Program Studi Ekonomi Pembangunan FEB UNPAS',
+                'name'  => 'Program Studi Ekonomi FEB UNPAS',
                 'url'   => BASE_URL,
             ];
         $seo->jsonLd[] = self::organizationSchema();
@@ -73,7 +73,7 @@ class Seo
             'author'        => $author,
             'publisher'     => [
                 '@type' => 'Organization',
-                'name'  => 'Program Studi Ekonomi Pembangunan FEB UNPAS',
+                'name'  => 'Program Studi Ekonomi FEB UNPAS',
                 'logo'  => ['@type' => 'ImageObject', 'url' => url('/logo.webp')],
             ],
         ];
@@ -84,9 +84,9 @@ class Seo
     public static function person(array $d): self
     {
         $seo = new self(
-            $d['full_name'] . ' – Dosen Ekonomi Pembangunan FEB UNPAS',
+            $d['full_name'] . ' – Dosen Ekonomi FEB UNPAS',
             'Profil ' . $d['full_name'] . ', ' . $d['position']
-            . ' Program Studi Ekonomi Pembangunan FEB Universitas Pasundan.'
+            . ' Program Studi Ekonomi FEB Universitas Pasundan.'
             . ' Bidang keahlian: ' . $d['expertise'] . '.'
         );
         $seo->canonical = url('/dosen/' . $d['slug']);
@@ -104,7 +104,7 @@ class Seo
             'image'      => $seo->image,
             'worksFor'   => [
                 '@type' => 'EducationalOrganization',
-                'name'  => 'Program Studi Ekonomi Pembangunan – Fakultas Ekonomi dan Bisnis Universitas Pasundan',
+                'name'  => 'Program Studi Ekonomi – Fakultas Ekonomi dan Bisnis Universitas Pasundan',
                 'url'   => BASE_URL,
             ],
         ];
@@ -139,7 +139,7 @@ class Seo
         return [
             '@context'        => 'https://schema.org',
             '@type'           => 'ItemList',
-            'name'            => 'Dosen Program Studi Ekonomi Pembangunan FEB UNPAS',
+            'name'            => 'Dosen Program Studi Ekonomi FEB UNPAS',
             'itemListElement' => array_map(fn(array $d, int $i) => [
                 '@type'    => 'ListItem',
                 'position' => $i + 1,
@@ -168,7 +168,7 @@ class Seo
                     }
                     $course['provider'] = [
                         '@type' => 'EducationalOrganization',
-                        'name'  => 'Program Studi Ekonomi Pembangunan FEB Universitas Pasundan',
+                        'name'  => 'Program Studi Ekonomi FEB Universitas Pasundan',
                         'url'   => BASE_URL,
                     ];
                     $items[] = [
@@ -182,7 +182,7 @@ class Seo
         return [
             '@context'        => 'https://schema.org',
             '@type'           => 'ItemList',
-            'name'            => 'Kurikulum & Mata Kuliah Ekonomi Pembangunan FEB UNPAS',
+            'name'            => 'Kurikulum & Mata Kuliah Ekonomi FEB UNPAS',
             'itemListElement' => $items,
         ];
     }
@@ -218,7 +218,15 @@ class Seo
         return [
             '@context' => 'https://schema.org',
             '@type'    => 'EducationalOrganization',
-            'name'     => 'Program Studi Ekonomi Pembangunan – Fakultas Ekonomi dan Bisnis Universitas Pasundan',
+            'name'     => 'Program Studi Ekonomi – Fakultas Ekonomi dan Bisnis Universitas Pasundan',
+            // Nama-nama alternatif agar situs tetap ditemukan untuk ketiga varian
+            // pencarian (nama resmi baru, nama lama, dan nama promosi sementara).
+            'alternateName' => [
+                'Ekonomi FEB Unpas',
+                'Ekonomi Pembangunan FEB Unpas',
+                'Ekonomi Bisnis FEB Unpas',
+                'Program Studi Ekonomi Pembangunan',
+            ],
             'url'      => BASE_URL,
             'logo'     => url('/logo.webp'),
             'address'  => [

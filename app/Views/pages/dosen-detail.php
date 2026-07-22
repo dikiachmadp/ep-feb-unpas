@@ -65,7 +65,7 @@ View::partial('page-hero', ['badge' => 'Tenaga Pengajar', 'title' => 'Profil Dos
 
             <p class="text-sm text-gray-500 leading-relaxed px-2">
                 <?= e($dosen['full_name']) ?> adalah <?= e(lcfirst($dosen['position'])) ?> pada
-                Program Studi Ekonomi Pembangunan, Fakultas Ekonomi dan Bisnis, Universitas Pasundan,
+                Program Studi Ekonomi, Fakultas Ekonomi dan Bisnis, Universitas Pasundan,
                 dengan bidang keahlian <?= e($dosen['expertise']) ?>.
             </p>
 

@@ -13,7 +13,7 @@ return [
         // 'production' hides error detail from visitors; 'development' shows it
         'env'      => 'development',
         'base_url' => 'http://localhost:8000',
-        'name'     => 'Ekonomi Pembangunan – FEB UNPAS',
+        'name'     => 'Ekonomi – FEB UNPAS',
     ],
 
     'db' => [
