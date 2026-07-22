@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="login-wrap">
   <form class="login-card" method="post" action="">
     <h1>Admin CMS</h1>
-    <p class="sub">Ekonomi Pembangunan – FEB UNPAS</p>
+    <p class="sub">Ekonomi – FEB UNPAS</p>
     <?php if ($error): ?><div class="flash err"><?= e($error) ?></div><?php endif; ?>
     <?= Csrf::field() ?>
     <div class="form-grid">

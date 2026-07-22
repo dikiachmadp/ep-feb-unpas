@@ -40,14 +40,32 @@ CREATE TABLE faculty (
   full_name TEXT NOT NULL,
   position TEXT NOT NULL,
   expertise TEXT NOT NULL,
+  bio TEXT NULL,
   nidn TEXT NULL,
   email TEXT NULL,
   orcid_id TEXT NULL,
   scholar_url TEXT NULL,
+  sinta_url TEXT NULL,
+  scopus_url TEXT NULL,
   photo_path TEXT NULL,
   display_order INTEGER NOT NULL DEFAULT 0,
   is_active INTEGER NOT NULL DEFAULT 1
 );
+
+-- Repeating dosen detail sections (education/teaching/publications/etc).
+-- Generic child table distinguished by section_key; mirrors 002_faculty_profile.sql.
+CREATE TABLE faculty_items (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  faculty_id INTEGER NOT NULL REFERENCES faculty(id) ON DELETE CASCADE,
+  section_key TEXT NOT NULL,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  title TEXT NULL,
+  subtitle TEXT NULL,
+  meta TEXT NULL,
+  url TEXT NULL,
+  is_active INTEGER NOT NULL DEFAULT 1
+);
+CREATE INDEX idx_faculty_items_section ON faculty_items (faculty_id, section_key);
 
 CREATE TABLE curriculum_years (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

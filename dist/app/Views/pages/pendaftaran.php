@@ -69,8 +69,9 @@ $infoItems = [
                     <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 scroll-smooth" data-carousel-track>
                         <?php foreach ($brochures as $idx => $img): ?>
                         <button type="button" data-lightbox-src="<?= e(url($img['image_path'])) ?>" data-lightbox-index="<?= $idx ?>"
-                                class="card flex-shrink-0 snap-center w-[75%] sm:w-[55%] md:w-[40%] lg:w-[30%] p-2 bg-white shadow-sm overflow-hidden border border-gray-100 rounded-xl cursor-zoom-in hover:shadow-md transition-shadow duration-200 group relative">
-                            <img src="<?= e(url($img['image_path'])) ?>" alt="<?= e($img['title'] ?? 'Brosur pendaftaran') ?>" loading="lazy" class="w-full h-auto rounded-lg object-contain">
+                                class="card flex-shrink-0 snap-center p-2 bg-white shadow-sm overflow-hidden border border-gray-100 rounded-xl cursor-zoom-in hover:shadow-md transition-shadow duration-200 group relative">
+                            <img src="<?= e(url($img['image_path'])) ?>" alt="<?= e($img['title'] ?? 'Brosur pendaftaran') ?>" loading="lazy"
+                                 class="h-[340px] sm:h-[400px] md:h-[440px] w-auto rounded-lg object-contain">
                             <span class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center rounded-xl"></span>
                         </button>
                         <?php endforeach; ?>

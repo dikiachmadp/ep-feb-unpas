@@ -12,7 +12,7 @@ class HomeController
     public function index(): void
     {
         $fields = Page::fields('home');
-        $seoData = Page::seo('home', 'Prodi Ekonomi Pembangunan - FEB UNPAS');
+        $seoData = Page::seo('home', 'Ekonomi FEB Unpas');
 
         View::render('pages/home', [
             'seo'      => Seo::page($seoData['title'], $seoData['description'], '/'),

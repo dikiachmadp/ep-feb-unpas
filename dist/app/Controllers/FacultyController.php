@@ -36,6 +36,7 @@ class FacultyController
         View::render('pages/dosen-detail', [
             'seo'   => Seo::person($dosen),
             'dosen' => $dosen,
+            'items' => Faculty::items((int) $dosen['id']),
         ]);
     }
 }

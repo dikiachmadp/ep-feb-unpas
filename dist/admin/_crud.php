@@ -15,6 +15,10 @@ use App\Core\Session;
 function crudEntities(): array
 {
     return [
+        // NOTE: faculty uses a BESPOKE form (admin/faculty/form.php) because its
+        // detail sections are repeating child rows (faculty_items), which this
+        // generic engine can't model. The config below only drives crudList()
+        // and crudDelete(); the 'fields' here are not the edit form.
         'faculty' => [
             'table'      => 'faculty',
             'title'      => 'Dosen',
@@ -22,18 +26,12 @@ function crudEntities(): array
             'dir'        => 'faculty',
             'order_by'   => 'display_order',
             'upload_dir' => 'faculty',
-            'list'       => ['photo_path' => 'Foto', 'full_name' => 'Nama', 'position' => 'Jabatan', 'expertise' => 'Keahlian'],
+            'list'       => ['photo_path' => 'Foto', 'full_name' => 'Nama', 'position' => 'Status', 'expertise' => 'Keahlian'],
             'fields'     => [
-                'full_name'     => ['label' => 'Nama lengkap (dengan gelar)', 'type' => 'text', 'required' => true],
-                'position'      => ['label' => 'Jabatan fungsional', 'type' => 'text', 'required' => true, 'hint' => 'Contoh: Guru Besar, Lektor Kepala, Lektor, Asisten Ahli'],
-                'expertise'     => ['label' => 'Bidang keahlian', 'type' => 'text', 'required' => true],
-                'nidn'          => ['label' => 'NIDN', 'type' => 'text'],
-                'email'         => ['label' => 'Email', 'type' => 'email'],
-                'orcid_id'      => ['label' => 'Scopus/ORCID ID', 'type' => 'text'],
-                'scholar_url'   => ['label' => 'Link Google Scholar', 'type' => 'url'],
-                'photo_path'    => ['label' => 'Foto', 'type' => 'image'],
-                'display_order' => ['label' => 'Urutan tampil', 'type' => 'number', 'default' => 99],
-                'is_active'     => ['label' => 'Tampilkan di website', 'type' => 'checkbox', 'default' => 1],
+                'full_name'  => ['label' => 'Nama', 'type' => 'text'],
+                'position'   => ['label' => 'Status', 'type' => 'text'],
+                'expertise'  => ['label' => 'Keahlian', 'type' => 'text'],
+                'photo_path' => ['label' => 'Foto', 'type' => 'image'],
             ],
         ],
         'profiles' => [

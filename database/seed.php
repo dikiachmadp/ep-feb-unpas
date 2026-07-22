@@ -97,7 +97,7 @@ $now = Database::now();
 
 // ---------------------------------------------------------------- wipe tables
 $tables = [
-    'news_gallery', 'news', 'news_categories', 'faculty',
+    'news_gallery', 'news', 'news_categories', 'faculty_items', 'faculty',
     'curriculum_courses', 'curriculum_semesters', 'curriculum_years',
     'graduate_profiles', 'page_fields', 'page_items', 'admin_users',
 ];
@@ -147,16 +147,48 @@ foreach ($data['news'] as $n) {
 }
 
 // --------------------------------------------------------------------- faculty
+$statuses = \App\Models\Faculty::STATUSES;
+$facultyIds = [];
 foreach ($data['faculty'] as $f) {
     // Old photos are named exactly after the lecturer, commas and all
     $oldPhoto = $publicDir . '/' . $f['full_name'] . '.jpg';
     $photo = is_file($oldPhoto)
         ? copyImage($oldPhoto, 'faculty', $f['full_name'])
         : null;
-    seedInsert('faculty', array_merge($f, [
+    // Mirror the 002 migration: map the old "jabatan fungsional" to the new
+    // Status vocabulary (Guru Besar kept; everything else → Dosen Pengajar).
+    $status = in_array($f['position'], $statuses, true) ? $f['position'] : 'Dosen Pengajar';
+    $facultyIds[] = seedInsert('faculty', array_merge($f, [
+        'position'   => $status,
         'photo_path' => $photo,
         'is_active'  => 1,
     ]));
+}
+
+// Sample detail items for the first dosen so the new profile sections can be
+// verified locally. Production content is filled in by staff via the admin.
+function seedFacultyItem(int $facultyId, string $section, int $order, array $cols): void
+{
+    seedInsert('faculty_items', array_merge([
+        'faculty_id'  => $facultyId,
+        'section_key' => $section,
+        'sort_order'  => $order,
+        'is_active'   => 1,
+    ], $cols));
+}
+if (!empty($facultyIds)) {
+    $fid = $facultyIds[0];
+    seedFacultyItem($fid, 'education', 1, ['title' => 'S3 Ilmu Ekonomi', 'subtitle' => 'Universitas Padjadjaran', 'meta' => '2012']);
+    seedFacultyItem($fid, 'education', 2, ['title' => 'S2 Ilmu Ekonomi', 'subtitle' => 'Universitas Indonesia', 'meta' => '2004']);
+    seedFacultyItem($fid, 'education', 3, ['title' => 'S1 Ekonomi Pembangunan', 'subtitle' => 'Universitas Pasundan', 'meta' => '1998']);
+    seedFacultyItem($fid, 'teaching', 1, ['title' => 'Ekonomi Internasional']);
+    seedFacultyItem($fid, 'teaching', 2, ['title' => 'Ekonomi Moneter']);
+    seedFacultyItem($fid, 'teaching', 3, ['title' => 'Perekonomian Indonesia']);
+    seedFacultyItem($fid, 'publications', 1, ['title' => 'Foreign Direct Investment and Regional Economic Growth in Indonesia', 'subtitle' => 'Journal of Regional and Indonesia Economy', 'meta' => '2023', 'url' => 'https://jrie.feb.unpas.ac.id/index.php/jrie']);
+    seedFacultyItem($fid, 'publications', 2, ['title' => 'Analisis Daya Saing Ekspor Jawa Barat', 'subtitle' => 'BRAINY', 'meta' => '2021']);
+    seedFacultyItem($fid, 'certifications', 1, ['title' => 'Sertifikasi Dosen (SERDOS)', 'subtitle' => 'Kemendikbudristek', 'meta' => '2015']);
+    seedFacultyItem($fid, 'organizations', 1, ['title' => 'Ikatan Sarjana Ekonomi Indonesia (ISEI)', 'subtitle' => 'Anggota', 'meta' => '2010–sekarang']);
+    seedFacultyItem($fid, 'networks', 1, ['title' => 'Kyung Hee University', 'subtitle' => 'Kolaborasi riset ekonomi regional']);
 }
 
 // ------------------------------------------------------------------ curriculum
@@ -468,7 +500,7 @@ file_put_contents(__DIR__ . '/seed.sql', $sql);
 
 // ---------------------------------------------------------------------- report
 echo "Seed selesai.\n";
-foreach (['news', 'news_gallery', 'faculty', 'curriculum_courses', 'graduate_profiles', 'page_fields', 'page_items', 'admin_users'] as $t) {
+foreach (['news', 'news_gallery', 'faculty', 'faculty_items', 'curriculum_courses', 'graduate_profiles', 'page_fields', 'page_items', 'admin_users'] as $t) {
     $n = Database::fetch("SELECT COUNT(*) AS n FROM $t")['n'];
     echo str_pad("  $t", 24), ": $n baris\n";
 }

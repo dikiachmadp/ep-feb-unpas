@@ -185,11 +185,12 @@ foreach ($tabLabels as $tabId => $label) {
                 <!-- DOSEN -->
                 <section class="space-y-12">
                     <?php View::partial('section-header', ['subtitle' => 'Tenaga Pengajar', 'title' => 'Profil Tenaga Pengajar']); ?>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start px-2 mt-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch px-2 mt-10">
                         <?php foreach ($dosen as $d): ?>
-                        <!-- Overview always visible; the whole card links to the dosen detail page -->
+                        <!-- Overview always visible; the whole card links to the dosen detail page.
+                             h-full + mt-auto keep every card the same height with the CTA aligned. -->
                         <a href="<?= e(url('/dosen/' . $d['slug'])) ?>"
-                           class="group relative overflow-hidden shadow-xl flex flex-col items-center rounded-[2.5rem] p-5 border border-white/5 bg-forest-900 hover:border-gold-500/40 hover:-translate-y-1 transition-all duration-500">
+                           class="group relative h-full overflow-hidden shadow-xl flex flex-col items-center rounded-[2.5rem] p-5 border border-white/5 bg-forest-900 hover:border-gold-500/40 hover:-translate-y-1 transition-all duration-500">
                             <div class="bg-forest-800 flex items-center justify-center overflow-hidden flex-shrink-0 w-full rounded-[32px] aspect-[4/5]">
                                 <?php if (!empty($d['photo_path'])): ?>
                                 <img src="<?= e(url($d['photo_path'])) ?>" alt="<?= e($d['full_name']) ?>" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
@@ -201,19 +202,12 @@ foreach ($tabLabels as $tabId => $label) {
                                 <h4 class="font-bold leading-tight break-words text-sm text-white"><?= e($d['full_name']) ?></h4>
                             </div>
 
-                            <div class="w-full mt-6 pt-5 border-t border-white/10 space-y-3 text-left px-2">
-                                <?php foreach ([
-                                    ['NIDN / NIDK', $d['nidn']],
-                                    ['Bidang Keahlian', $d['expertise']],
-                                ] as [$label, $value]): ?>
-                                <div class="flex flex-col">
-                                    <span class="text-[9px] text-white/40 uppercase font-bold tracking-tighter"><?= e($label) ?></span>
-                                    <span class="text-xs font-semibold text-white/90 break-words"><?= e($value ?: '-') ?></span>
-                                </div>
-                                <?php endforeach; ?>
+                            <div class="w-full mt-6 pt-5 border-t border-white/10 text-left px-2">
+                                <span class="text-[9px] text-white/40 uppercase font-bold tracking-tighter">NIDN / NIDK</span>
+                                <p class="text-xs font-semibold text-white/90 break-words"><?= e($d['nidn'] ?: '-') ?></p>
                             </div>
 
-                            <div class="w-full mt-5 py-3.5 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-gold-300 transition-colors">
+                            <div class="w-full mt-auto py-3.5 bg-gold-400 text-forest-900 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-gold-300 transition-colors">
                                 Lihat Profil Lengkap <?= Icons::svg('chevron-right', 'w-3.5 h-3.5') ?>
                             </div>
                         </a>

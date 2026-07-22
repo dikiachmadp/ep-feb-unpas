@@ -85,9 +85,11 @@ class Seo
     {
         $seo = new self(
             $d['full_name'] . ' – Dosen Ekonomi FEB UNPAS',
-            'Profil ' . $d['full_name'] . ', ' . $d['position']
-            . ' Program Studi Ekonomi FEB Universitas Pasundan.'
-            . ' Bidang keahlian: ' . $d['expertise'] . '.'
+            !empty($d['bio'])
+                ? $d['bio']
+                : 'Profil ' . $d['full_name'] . ', ' . $d['position']
+                . ' Program Studi Ekonomi FEB Universitas Pasundan.'
+                . ' Bidang keahlian: ' . $d['expertise'] . '.'
         );
         $seo->canonical = url('/dosen/' . $d['slug']);
         $seo->type = 'profile';
@@ -111,8 +113,13 @@ class Seo
         if (!empty($d['email'])) {
             $person['email'] = 'mailto:' . $d['email'];
         }
-        if (!empty($d['scholar_url'])) {
-            $person['sameAs'] = [$d['scholar_url']];
+        $sameAs = array_values(array_filter([
+            $d['scholar_url'] ?? null,
+            $d['sinta_url'] ?? null,
+            $d['scopus_url'] ?? null,
+        ]));
+        if ($sameAs) {
+            $person['sameAs'] = $sameAs;
         }
 
         $seo->jsonLd[] = self::organizationSchema();

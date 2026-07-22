@@ -12,6 +12,24 @@ class Faculty
         'se', 'sh', 'st', 'ssi', 'me', 'mt', 'msi', 'mm', 'msc', 'ma', 'mba', 'phd',
     ];
 
+    /** Status vocabulary for the `position` column (dropdown in the admin). */
+    public const STATUSES = [
+        'Dosen Pengajar',
+        'Ketua Program Studi',
+        'Sekretaris Program Studi',
+        'Guru Besar',
+    ];
+
+    /** Repeating detail sections, in display order: section_key => heading. */
+    public const SECTIONS = [
+        'education'      => 'Riwayat Pendidikan',
+        'teaching'       => 'Pengajaran',
+        'publications'   => 'Publikasi Ilmiah',
+        'certifications' => 'Sertifikasi',
+        'organizations'  => 'Organisasi',
+        'networks'       => 'Jejaring Akademik & Profesional',
+    ];
+
     /** All active rows, each decorated with a URL 'slug' derived from the name. */
     public static function all(): array
     {
@@ -39,6 +57,25 @@ class Faculty
             }
         }
         return null;
+    }
+
+    /**
+     * Active detail items for one dosen, grouped by section_key and ordered
+     * by sort_order. Keys follow self::SECTIONS; empty sections are omitted.
+     *
+     * @return array<string, array<int, array>>
+     */
+    public static function items(int $facultyId): array
+    {
+        $rows = Database::fetchAll(
+            'SELECT * FROM faculty_items WHERE faculty_id = ? AND is_active = 1 ORDER BY section_key, sort_order, id',
+            [$facultyId]
+        );
+        $grouped = [];
+        foreach ($rows as $row) {
+            $grouped[$row['section_key']][] = $row;
+        }
+        return $grouped;
     }
 
     /** "Dr. Dikdik Kusdiana, S.E., M.T." -> "dikdik-kusdiana" */
