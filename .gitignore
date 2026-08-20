@@ -63,6 +63,8 @@ DEPLOY.md
 REFINEMENT.md
 sitemap.md
 PROJECT_OVERVIEW.md
+# Tracking internal lokal (gabungan semua dokumen, tidak untuk di-upload)
+PROJECT-BRIEF.md
 
 # --- Rebuild PHP (rahasia & artefak dev lokal) ---
 # public/uploads/ sengaja TIDAK di-gitignore: gambar seed harus ikut
