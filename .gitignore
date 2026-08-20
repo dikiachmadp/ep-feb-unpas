@@ -56,6 +56,23 @@ TODO.md
 README.md
 PROJECT-REVIEW.md
 DATA_INVENTORY.md
-MIGRATION_PLAN.md
+MIGRATION_PLAN.archive.md
+# Peta infrastruktur & panduan operasional deploy (berisi detail server)
+DEPLOY.md
+# Panduan kerja refinement frontend (dokumen kerja internal)
+REFINEMENT.md
 sitemap.md
 PROJECT_OVERVIEW.md
+# Tracking internal lokal (gabungan semua dokumen, tidak untuk di-upload)
+PROJECT-BRIEF.md
+
+# --- Rebuild PHP (rahasia & artefak dev lokal) ---
+# public/uploads/ sengaja TIDAK di-gitignore: gambar seed harus ikut
+# terdeploy via git (tidak ada SSH untuk copy manual di shared hosting)
+app/Config/config.local.php
+database/dev.sqlite
+# Berisi hash password admin — generate per lingkungan via database/seed.php
+database/seed.sql
+# Symlink dev lokal (produksi pakai layout flat dari build script)
+public/admin
+dev-router.php
